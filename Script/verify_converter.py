@@ -16,7 +16,7 @@ def main():
     root = c.ROOT
     source = c.load_source(root)
     c.require_native_ids(source)
-    for path in (root / 'Preserved').rglob('*.json'):
+    for path in (root / 'Data').rglob('*.json'):
         assert not re.search(r'"#[0-9A-Fa-f]{6}"', path.read_text(encoding='utf-8')), 'Palette literals belong in Colours.sct'
     changed_colors = dict(source['colors'], BACKGROUND_COLOR='#123456')
     changed_settings = c.load_preserved(changed_colors)
@@ -93,11 +93,16 @@ def main():
                         archive.writestr('France-Ground-Layouts-master/' + file.relative_to(root).as_posix(), file.read_bytes())
         buffer.seek(0)
         assert c.load_source(buffer) == source
-        with patch.object(c, 'github_source', side_effect=OSError('simulated offline')) as github:
+        with patch.object(c, 'github_source', side_effect=AssertionError('Local conversion contacted GitHub')):
             assert c.choose_source() == source
-            github.assert_called_once()
-        with patch.object(c, 'github_source', return_value=source), patch.object(c, 'local_source', side_effect=AssertionError('local input used despite GitHub success')):
-            assert c.choose_source() == source
+        with patch.object(c, 'github_source', return_value=source), patch.object(c, 'local_source', side_effect=AssertionError('GitHub selection used local input')):
+            assert c.choose_source('github') == source
+        with patch.object(c, 'github_source', side_effect=OSError('simulated offline')):
+            try:
+                c.choose_source('github')
+                raise AssertionError('Explicit GitHub failure silently changed source')
+            except OSError:
+                pass
 
         # Source text/coordinates remain live. Added labels inherit the same settings.
         saved = c.load_preserved()
@@ -138,7 +143,7 @@ def main():
         assert {p.name:p.read_bytes() for p in (scratch / 'AVISO').iterdir()} == actual_files
         assert not list(scratch.rglob('Conversion report.json'))
         assert not list(scratch.rglob('Conversion summary.txt'))
-    print(f'PASS: {len(expected_files)} AVISO files; {len(native_gng)} native features; exact GNG/KMZ agreement; source edits; palettes/groups; GitHub priority and fallback.')
+    print(f'PASS: {len(expected_files)} AVISO files; {len(native_gng)} native features; exact GNG/KMZ agreement; source edits; palettes/groups; explicit local/GitHub selection.')
 
 
 if __name__ == '__main__':

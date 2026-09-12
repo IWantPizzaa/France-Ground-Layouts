@@ -1,0 +1,259 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFPO AVISO",
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFPO",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "BACKGROUND_COLOR",
+      "light": "BACKGROUND_COLOR"
+    },
+    "runways": [
+      {
+        "ends": [
+          "07",
+          "25"
+        ],
+        "headings": [
+          73,
+          253
+        ],
+        "thresholds": [
+          [
+            2.358591944,
+            48.719407778
+          ],
+          [
+            2.396391944,
+            48.726382778
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "06",
+          "24"
+        ],
+        "headings": [
+          61,
+          241
+        ],
+        "thresholds": [
+          [
+            2.320513889,
+            48.721246944
+          ],
+          [
+            2.360677778,
+            48.735455833
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "02",
+          "20"
+        ],
+        "headings": [
+          17,
+          197
+        ],
+        "thresholds": [
+          [
+            2.376702778,
+            48.717546944
+          ],
+          [
+            2.386975,
+            48.738025
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [
+      {
+        "runway": "06",
+        "mode": "arrival"
+      },
+      {
+        "runway": "07",
+        "mode": "departure"
+      }
+    ],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      2.379443889,
+      48.723332778
+    ]
+  },
+  "styles": {
+    "polygon.terrain2.6c6a68": {
+      "name": "Terrain 2",
+      "layer": "Terrain",
+      "object_type": "Area",
+      "paint": {
+        "fill": "DARK_POLYGON_TERRAIN2_FILL_2",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "LIGHT_LFPO_POLYGON_TERRAIN2_FILL"
+          }
+        }
+      }
+    },
+    "polygon.grassurface3.727e67": {
+      "name": "Gras Surface 3",
+      "layer": "Terrain",
+      "object_type": "Area",
+      "paint": {
+        "fill": "DARK_POLYGON_GRASSURFACE3_FILL_2",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "LIGHT_LFPO_POLYGON_GRASSURFACE3_FILL"
+          }
+        }
+      }
+    },
+    "polygon.hardsurface3.8a807f": {
+      "$ref": "style.polygon.hardsurface3.8a807f"
+    },
+    "polygon.parkpos.726f6b": {
+      "name": "Stand areas",
+      "layer": "Airfield surfaces",
+      "object_type": "Area",
+      "paint": {
+        "fill": "DARK_POLYGON_PARKPOS_FILL",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "LIGHT_LFPO_POLYGON_PARKPOS_FILL"
+          }
+        }
+      }
+    },
+    "polygon.hardsurface5.413e3f": {
+      "name": "Hard Surface 5",
+      "layer": "Airfield surfaces",
+      "object_type": "Area",
+      "paint": {
+        "fill": "DARK_POLYGON_HARDSURFACE5_FILL_2",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "LIGHT_LFPO_POLYGON_HARDSURFACE5_FILL"
+          }
+        }
+      }
+    },
+    "polygon.terrain3.282525": {
+      "name": "Terrain 3",
+      "layer": "Terrain",
+      "object_type": "Area",
+      "paint": {
+        "fill": "DARK_POLYGON_TERRAIN3_FILL_2",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "LIGHT_LFPO_POLYGON_TERRAIN3_FILL"
+          }
+        }
+      }
+    },
+    "polygon.building2.545253": {
+      "name": "Building 2",
+      "layer": "Buildings and structures",
+      "object_type": "Area",
+      "paint": {
+        "fill": "DARK_POLYGON_BUILDING2_FILL_2",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "LIGHT_LFPO_POLYGON_BUILDING2_FILL"
+          }
+        }
+      }
+    },
+    "polygon.closurearea.ff0000": {
+      "$ref": "style.polygon.closurearea.ff0000"
+    },
+    "polygon.terrain4.932a30": {
+      "name": "Terrain 4",
+      "layer": "Terrain",
+      "object_type": "Area",
+      "paint": {
+        "fill": "DARK_POLYGON_TERRAIN4_FILL_2",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "LIGHT_LFPO_POLYGON_TERRAIN4_FILL"
+          }
+        }
+      }
+    },
+    "polygon.runwaymarking.b3b3b3": {
+      "name": "Surface markings",
+      "layer": "Surface markings",
+      "object_type": "Area",
+      "paint": {
+        "fill": "DARK_POLYGON_RUNWAYMARKING_FILL",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "LIGHT_LFPO_POLYGON_RUNWAYMARKING_FILL"
+          }
+        }
+      }
+    },
+    "polygon.taxiwayorange.cc6d00": {
+      "$ref": "style.polygon.taxiwayorange.cc6d00"
+    },
+    "line.runwaymarking.b3b3b3": {
+      "name": "Surface markings",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "DARK_LINE_RUNWAYMARKING_STROKE",
+        "stroke-opacity": 1,
+        "stroke-width": 1,
+        "palette-overrides": {
+          "light": {
+            "stroke": "LIGHT_LFPO_LINE_RUNWAYMARKING_STROKE"
+          }
+        }
+      }
+    },
+    "line.taxiway.c0b631": {
+      "$ref": "style.line.taxiway.c0b631"
+    },
+    "line.taxiwayblue.004080": {
+      "$ref": "style.line.taxiwayblue.004080"
+    },
+    "line.taxiwayorange.cc6d00": {
+      "$ref": "style.line.taxiwayorange.cc6d00"
+    },
+    "label.gates": {
+      "$ref": "style.label.gates"
+    },
+    "label.taxiways": {
+      "$ref": "style.label.taxiways"
+    }
+  },
+  "vsmr_groups": [
+    {
+      "id": "stands-and-gates",
+      "name": "Stands & gates",
+      "visible": true,
+      "accent": "DARK_VSMR_GROUPS_ACCENT"
+    }
+  ]
+}

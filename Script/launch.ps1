@@ -22,7 +22,16 @@ if ($null -eq $converterPython) {
     Write-Host 'Python 3.10 or later was not found. No conversion was performed.' -ForegroundColor Red
     return
 }
-& $converterPython @converterArgs (Join-Path $PSScriptRoot 'aviso_converter.py')
+Write-Host ''
+Write-Host '  AVISO SOURCE' -ForegroundColor Cyan
+Write-Host '  [1] Local GNG / KMZ / Colours.sct (default)'
+Write-Host '  [2] Original official GitHub repository'
+do {
+    $sourceChoice = Read-Host '  Choose 1 or 2 (Enter = local)'
+} while ($sourceChoice -notin @('', '1', '2'))
+$sourceArgs = @('--local')
+if ($sourceChoice -eq '2') { $sourceArgs = @('--github') }
+& $converterPython @converterArgs (Join-Path $PSScriptRoot 'aviso_converter.py') @sourceArgs
 if ($LASTEXITCODE -ne 0) {
     Write-Host 'Conversion did not complete. See the error above.' -ForegroundColor Red
 }

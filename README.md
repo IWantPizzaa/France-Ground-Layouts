@@ -1,33 +1,3 @@
-# France Ground Layouts — vSMR fork
-
-This fork integrates the vSMR additions into native GNG and KMZ source files and
-includes a converter for 196 AVISO datasets. Their geometry, text, palettes,
-groups and runway settings preserve the original vSMR data, with runway reference
-lines removed. Empty datasets have been removed.
-
-**Double-click `Script/Convert AVISO.cmd` on Windows.** The converter reads this
-fork's GitHub source first, falls back to local source when unavailable, and
-writes the GeoJSON files into `AVISO/`. It asks no questions and generates no
-report or summary files. Python 3.10+ is required; there are no extra packages.
-
-- `GNG/`: native regions, lines and labels without feature ID comments.
-- `KMZ/`: matching KML placemarks, including polygon holes and multipart geometry.
-- `Colours.sct`: the Light palette, including shared custom color definitions.
-- `Preserved/`: only vSMR palettes, groups, zoom/runway settings and feature overrides.
-- `Script/`: converter, double-click launcher and regression checks.
-- `AVISO/`: generated shared-geometry GeoJSON files.
-
-See [converter instructions](Script/README.md) and
-[customization instructions](Preserved/README.md). For source edits, run
-`python Script/aviso_converter.py --local`, then `python Script/verify_converter.py`
-before committing the updated native files and AVISO output.
-
-The original [vaccfr/France-Ground-Layouts](https://github.com/vaccfr/France-Ground-Layouts)
-documentation and GPL-3.0 license follow below. Additional datasets are under
-`GNG/Additional/`; established airport directories retain their original FIR grouping.
-
----
-
 <p align="center"><img src="https://i.imgur.com/n17WHdO.png" width="auto"></p>
 
 <p align="center"><br>Official repository for the ground layouts of the French Sector File<br>
@@ -52,20 +22,37 @@ A map displaying the available, work-in-progress and planned airports is availab
 
 ## Colors  
 
-- **Runways** must be defined as separate polygons, color **LIGHT_RUNWAY_CONCRETE**
-- **Grass runways** must be defined as separate polygons, color **LIGHT_RUNWAY_GRASS**
-- **Taxiways** must be defined as separate polygons, with the color **LIGHT_HARD_SURFACE2**
-- **Grass taxiways** must be defined as separate polygons, with the color **LIGHT_GRASS_SURFACE2**
-- **Aprons** must be defined as separate polygons, with the color **LIGHT_HARD_SURFACE3**
-- **Grass areas** must be defined as separate polygons, color **LIGHT_GRAS_SURFACE**
-- **Buildings** must be defined as separate polygons, color **LIGHT_BUILDING**
-- **CAT I holding points** must be defined as separate polygons, color **LIGHT_STOPBAR**
-- **CAT III holding points** must be defined as separate polygons, color **LIGHT_TAXIWAY_ORANGE**
-- **Unusable paved areas** must be defined as separate polygons, color **LIGHT_HARD_SURFACE4**
-- **Gate centerlines** must be defined as separate lines (under the [GEO] section), using the color **LIGHT_TAXIWAY**
-- **Intermediate holding points** must be defined as dashed lines, using the color **LIGHT_TAXIWAY_ORANGE**
+- **Runways** must be defined as separate polygons, color **COLOR_RunwayConcrete**
+- **Grass runways** must be defined as separate polygons, color **COLOR_RunwayGrass**
+- **Taxiways** must be defined as separate polygons, with the color **COLOR_HardSurface2**
+- **Grass taxiways** must be defined as separate polygons, with the color **COLOR_GrassSurface2**
+- **Aprons** must be defined as separate polygons, with the color **COLOR_HardSurface3**
+- **Grass areas** must be defined as separate polygons, color **COLOR_GrasSurface**
+- **Buildings** must be defined as separate polygons, color **COLOR_Building**
+- **CAT I holding points** must be defined as separate polygons, color **COLOR_Stopbar**
+- **CAT III holding points** must be defined as separate polygons, color **COLOR_TaxiwayOrange**
+- **Unusable paved areas** must be defined as separate polygons, color **COLOR_HardSurface4**
+- **Gate centerlines** must be defined as separate lines (under the [GEO] section), using the color **COLOR_Taxiway**
+- **Intermediate holding points** must be defined as dashed lines, using the color **COLOR_TaxiwayOrange**
   
 If you have any questions or issues regarding the creation or updating of an AVISO, please visit the French vACC Discord server.
 
-Palette values are centralized in `Colours.sct` under `DARK_*`, `LIGHT_*`,
-and `REAL_<ICAO>_*` names. Preserved files reference these definitions.
+
+## Optional vSMR AVISO conversion
+
+The native GNG/KMZ files and original `COLOR_*` definitions remain available for
+the French sector-file workflow. Additional palette definitions support AVISO.
+
+On Windows, double-click **Script/Convert AVISO.cmd** and choose:
+
+1. **Local** (default): use this checkout's GNG, KMZ and Colours.sct.
+2. **Official GitHub**: download original source from vaccfr/France-Ground-Layouts.
+
+Python 3.10+ is required. Conversion writes GeoJSON into AVISO. No reports or
+summaries are produced. An explicit GitHub failure is reported; it does not
+silently switch to different source data.
+
+`Data/` holds runtime styles, groups, zoom levels and airport settings. Colors
+are defined in Colours.sct. Text/background defaults are shared; unrelated
+geometry roles remain independently editable even when RGB values match.
+See [converter usage](Script/README.md) and [runtime settings](Data/README.md).

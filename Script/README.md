@@ -1,86 +1,50 @@
 # AVISO converter
 
-Double-click **Convert AVISO.cmd**. It downloads the native source from
-[IWantPizzaa/France-Ground-Layouts](https://github.com/IWantPizzaa/France-Ground-Layouts)
-(master), converts it immediately and writes **AVISO/** beside this folder.
-The terminal stays open when finished. No prompts, reports, summaries or download
-cache files are generated. Python 3.10+ and Windows PowerShell are required.
+Double-click **Convert AVISO.cmd** on Windows. Select local source (Enter/1) or
+the original official GitHub source (2). Python 3.10+ is required.
 
-If GitHub is unavailable or its pack lacks the fork's native feature IDs, local
-sources are tried automatically:
-
-1. GNG/, KMZ/ and Colours.sct in this checkout.
-2. Those three entries inside Input/.
-3. An extracted repository directory inside Input/.
-4. A repository ZIP inside Input/, newest first.
-
-Only GNG, KMZ and Colours.sct are source inputs. The converter never executes
-anything from a downloaded ZIP. Palettes and runtime settings come from Preserved.
-
-## Maintaining native layouts
-
-The 10,168 retained vSMR features are integrated into standard native files.
-Runway reference lines have been removed from all datasets.
-Existing GNG FIR directories were retained; added datasets use GNG/Additional.
-KMZ files use normal KML geometry, styles, names and placemark IDs. Extra archive
-assets are retained. LFXX and the separate LFMM coastline remain reference data.
-
-GNG files use ordinary native regions, line segments and text rows:
-
-```text
-COLOR_RunwayConcrete
-N049.00.00.0000 E002.30.00.0000
-N049.00.01.0000 E002.30.00.0000
-N049.00.01.0000 E002.30.01.0000
-N049.00.00.0000 E002.30.00.0000
-```
-
-KML placemarks retain standard IDs for runtime customizations. GNG contains no
-feature ID comments and needs no custom syntax. The converter matches GNG
-coordinates and colors to KML placemarks, including multipart geometry and holes.
-Shared line segments may belong to multiple KML features (such as arrow groups).
-
-Fractional seconds keep the source precision. Polygon holes use zero-width
-bridges in GNG and standard innerBoundaryIs rings in KML. KMZ preserves multipart
-topology and placemark ordering. Labels use GNG text at the matching coordinate.
-New or changed unmatched GNG geometry remains live with a generated ID; if an
-edit changes its identity, review its feature overrides in Preserved. Keep GNG
-and KMZ geometry synchronized when maintaining a layout.
-
-All color values are standard #define entries in Colours.sct: LIGHT_*, DARK_*
-and REAL_<ICAO>_*. GNG and KML style names use LIGHT_* entries; KML also embeds
-its native color values for authoring applications. Preserved references the
-palette names and stores vSMR groups, zoom levels and runway settings. Real palettes are not created for every airport.
-
-## Local changes and checks
-
-Normal double-click conversion deliberately prefers the published GitHub pack.
-To preview uncommitted source changes instead:
+For unattended conversion:
 
 ```powershell
 python Script/aviso_converter.py --local
-python Script/verify_converter.py
+python Script/aviso_converter.py --github
+python Script/aviso_converter.py --source "path/to/folder-or.zip"
 ```
 
-An explicit ZIP or directory can also be converted with
-`python Script/aviso_converter.py --source "path"`.
+No arguments means local source; it never contacts GitHub. Explicit GitHub
+selection downloads vaccfr/France-Ground-Layouts master and reports network
+errors without silently using another source. Local input accepts a checkout,
+an extracted outer repository folder, or a ZIP with GNG/, KMZ/ and Colours.sct.
+The root source is preferred, then equivalent inputs under Input/.
 
-The checks run offline. They verify:
-- Generated output matches the committed AVISO files.
-- Every GNG feature has matching KMZ geometry, color and label text.
-- Polygon holes and multipart lines remain equivalent.
-- Added, renamed and moved labels follow source data.
-- Runtime palettes/groups remain independent of geometry.
-- GitHub-first selection, local fallback and invalid-input isolation.
+AVISO/ is generated output. All products are validated before writing files.
+An explicit source selection overwrites the existing AVISO output; official
+source may contain different airports and geometry from a customized checkout.
+No reports, summaries or cached downloads are generated.
 
-Commit source edits and their regenerated AVISO files together. CI runs the same
-checks on pushes and pull requests. AVISO is a generated output folder; store
-manual appearance changes in Preserved.
+Data/ contains runtime styles, groups, zoom levels, runway settings and
+per-feature overrides. Colours.sct contains original native COLOR_* definitions
+plus AVISO palette entries. When external input lacks the AVISO palette entries,
+local definitions supply them; definitions present in the selected source win.
+Local geometry provenance is labeled local, and GitHub provenance names the
+official repository.
 
-See [the customization guide](../Preserved/README.md) for runtime editing.
+## Geometry and identities
 
-Shared defaults are `BACKGROUND_COLOR`, `TEXT_COLOR` and `TEXT_HALO_COLOR`.
-LFPG Real uses `REAL_LFPG_BACKGROUND_COLOR`; all other backgrounds share the
-default. Equal color values share one definition across airports and palettes,
-so changing that definition changes every reference to it. Sections and RGB
-comments in Colours.sct make the decimal BGR values easier to edit.
+GNG uses standard regions, line segments and text rows without feature comments.
+Matching KML placemarks supply stable identifiers and multipart/hole topology.
+Unmatched GNG remains live with deterministic IDs. KMZ-only layouts without
+placemark IDs receive deterministic IDs as well. New geometry does not
+necessarily inherit the groups of a differently identified previous object.
+Keep both native representations synchronized when editing a layout.
+
+## Verification
+
+```powershell
+python Script/verify_converter.py
+python Script/verify_upstream.py
+```
+
+The full regression check compares generated customized layouts with AVISO/.
+The upstream check also works against unmodified official layouts, which need
+not have matched GNG/KMZ geometry or committed GeoJSON snapshots.

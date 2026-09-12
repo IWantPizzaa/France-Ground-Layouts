@@ -5,6 +5,7 @@ import collections
 import argparse
 import copy
 import ctypes
+import hashlib
 from decimal import Decimal
 import io
 import json
@@ -21,7 +22,7 @@ import xml.etree.ElementTree as ET
 from native_geometry import match_native_records
 
 ROOT = Path(__file__).resolve().parent.parent
-GITHUB_URL = 'https://codeload.github.com/IWantPizzaa/France-Ground-Layouts/zip/refs/heads/master'
+GITHUB_URL = 'https://codeload.github.com/vaccfr/France-Ground-Layouts/zip/refs/heads/master'
 COORD = re.compile(r'([NSEW])(\d{2,3})[. :](\d{2})[. :](\d{2}(?:\.\d+)?)')
 NS = {'k': 'http://www.opengis.net/kml/2.2'}
 DEFAULT_STYLES = {}
@@ -281,6 +282,19 @@ def load_source(path):
             authoring = [r for _, (airport, records) in sorted(kmz.items())
                          if airport == code for r in records]
             airports[code] = match_native_records(code, airports[code], authoring)
+        # Official KMZ-only airports need not provide stable placemark IDs.
+        for code in set(airports) - published:
+            seen = set()
+            for item in airports[code]:
+                identifier = item.get('source_id')
+                if not identifier or identifier in seen:
+                    base = code + '-' + hashlib.sha256(packed(item)).hexdigest()[:20]
+                    identifier, suffix = base, 1
+                    while identifier in seen:
+                        suffix += 1
+                        identifier = base + '-' + str(suffix)
+                    item['source_id'] = identifier
+                seen.add(identifier)
     if not gng or not kmz or not extras.get('colors'):
         raise ValueError('Expected GNG/, KMZ/ and a valid Colours.sct')
     return dict(airports=dict(airports), **extras)
@@ -299,7 +313,7 @@ def coordinates(geometry):
 def load_preserved(colors=None):
     if colors is None:
         colors = read_colors((ROOT / 'Colours.sct').read_bytes())
-    folder = ROOT / 'Preserved'
+    folder = ROOT / 'Data'
     common = json.loads((folder / 'common.json').read_text(encoding='utf-8-sig'))
     def merge(base, changes):
         for key, value in changes.items():
@@ -460,7 +474,7 @@ def require_native_ids(source):
     for code, records in source['airports'].items():
         ids = [r.get('source_id') for r in records]
         if any(not i for i in ids) or len(ids) != len(set(ids)):
-            raise ValueError(code + ': this pack needs the fork native feature IDs')
+            raise ValueError(code + ': source feature identifiers are missing or duplicated')
 
 
 def local_source():
@@ -485,29 +499,30 @@ def local_source():
     raise ValueError('No usable local source. Put GNG/, KMZ/ and Colours.sct beside Script/, or put them, an extracted repository folder, or its ZIP in Input/. ' + '; '.join(errors))
 
 
-def choose_source():
-    try:
-        source = github_source()
-        say('        Using latest GitHub master', '92')
-        return source
-    except Exception as error:
-        say('        GitHub unavailable: ' + str(error), '93')
-        say('        Trying local input...', '37')
-        return local_source()
+def choose_source(mode='local'):
+    if mode == 'github':
+        say('        Using official GitHub master', '92')
+        return github_source()
+    if mode != 'local':
+        raise ValueError('Unknown source mode: ' + mode)
+    return local_source()
 
 
-def run(source_path=None, output=None):
+def run(source_path=None, output=None, source_mode='local'):
     start = time.perf_counter()
     output = Path(output) if output is not None else ROOT / 'AVISO'
     say('\n  +----------------------------------------------------------+')
     say('  |                  vSMR AVISO CONVERTER                     |')
-    say('  |      IWantPizzaa fork  /  Native GNG and KMZ layouts      |')
+    say('  |      France Ground Layouts / GNG and KMZ source      |')
     say('  +----------------------------------------------------------+\n')
-    say('  [1/4] Reading GitHub...' if source_path is None else '  [1/4] Reading local source...', '37')
-    source = choose_source() if source_path is None else load_source(source_path)
+    say('  [1/4] Reading official GitHub...' if source_mode == 'github' else '  [1/4] Reading local source...', '37')
+    source = choose_source(source_mode) if source_path is None else load_source(source_path)
     require_native_ids(source)
     say('  [2/4] Applying palettes, groups and runtime settings...', '37')
-    saved = load_preserved(source['colors'])
+    palette_colors = read_colors((ROOT / 'Colours.sct').read_bytes())
+    palette_colors.update(source['colors'])
+    source['colors'] = palette_colors
+    saved = load_preserved(palette_colors)
     votes = collections.defaultdict(collections.Counter)
     for recipe in saved['recipes'].values():
         for key, original_style in recipe['document']['styles'].items():
@@ -524,7 +539,7 @@ def run(source_path=None, output=None):
             recipe = dict(document=dict(type='FeatureCollection', name=code + ' AVISO', bbox=[], metadata=dict(schema='vSMR AVISO', schema_version=2, geometry_mode='shared', airport=code, coordinate_reference_system='WGS84', coordinate_order='longitude, latitude', default_color_palette='dark', color_palettes=['dark','light'], background_colors={'dark':source['colors']['BACKGROUND_COLOR'],'light':source['colors']['BACKGROUND_COLOR']}), styles={}, vsmr_groups=[]), overrides={})
         doc = convert_airport(code, recipe, source['airports'][code], source['colors'])
         update_counts(doc)
-        doc['metadata'].update(geometry_source='IWantPizzaa/France-Ground-Layouts', geometry_source_url='https://github.com/IWantPizzaa/France-Ground-Layouts', geometry_license='GPL-3.0')
+        doc['metadata'].update(geometry_source='vaccfr/France-Ground-Layouts' if source_mode == 'github' else 'local GNG/KMZ', geometry_source_url='https://github.com/vaccfr/France-Ground-Layouts' if source_mode == 'github' else '', geometry_license='GPL-3.0')
         validate(code, doc)
         products[code + '.geojson'] = serialize_document(doc)
         if n % 50 == 0 or n == len(all_codes):
@@ -553,8 +568,9 @@ if __name__ == '__main__':
         inputs = parser.add_mutually_exclusive_group()
         inputs.add_argument('--local', action='store_true', help='Convert this checkout before committing local source edits')
         inputs.add_argument('--source', type=Path, help='Convert an explicit repository folder or ZIP')
+        inputs.add_argument('--github', action='store_true', help='Download original data from vaccfr/France-Ground-Layouts')
         arguments = parser.parse_args()
-        run(ROOT if arguments.local else arguments.source)
+        run(ROOT if arguments.local else arguments.source, source_mode='github' if arguments.github else 'local')
     except Exception as error:
         say('\n  CONVERSION FAILED: ' + str(error), '91')
         traceback.print_exc()
