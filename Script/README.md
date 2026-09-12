@@ -17,8 +17,8 @@ errors without silently using another source. Local input accepts a checkout,
 an extracted outer repository folder, or a ZIP with GNG/, KMZ/ and Colours.sct.
 The root source is preferred, then equivalent inputs under Input/.
 
-AVISO/ is generated output. All products are validated before writing files.
-An explicit source selection overwrites the existing AVISO output; official
+GeoJSON/ is generated output. All products are validated before writing files.
+An explicit source selection overwrites the existing GeoJSON output; official
 source may contain different airports and geometry from a customized checkout.
 No reports, summaries or cached downloads are generated.
 
@@ -45,6 +45,6 @@ python Script/verify_converter.py
 python Script/verify_upstream.py
 ```
 
-The full regression check compares generated customized layouts with AVISO/.
+The full regression check compares generated customized layouts with GeoJSON/.
 The upstream check also works against unmodified official layouts, which need
 not have matched GNG/KMZ geometry or committed GeoJSON snapshots.

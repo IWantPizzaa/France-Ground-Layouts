@@ -43,13 +43,13 @@ def main():
         raise AssertionError('Duplicate palette definition accepted')
     except ValueError as error:
         assert 'Duplicate color' in str(error)
-    expected_files = {p.name: p.read_bytes() for p in (root / 'AVISO').glob('*.geojson')}
-    assert expected_files, 'Generate AVISO before running the checks'
+    expected_files = {p.name: p.read_bytes() for p in (root / 'GeoJSON').glob('*.geojson')}
+    assert expected_files, 'Generate GeoJSON before running the checks'
     with tempfile.TemporaryDirectory(prefix='vsmr-aviso-tests-') as scratch:
         scratch = Path(scratch)
-        c.run(root, scratch / 'AVISO')
-        actual_files = {p.name:p.read_bytes() for p in (scratch / 'AVISO').iterdir()}
-        assert actual_files == expected_files, 'Committed AVISO is not current: regenerate from local source'
+        c.run(root, scratch / 'GeoJSON')
+        actual_files = {p.name:p.read_bytes() for p in (scratch / 'GeoJSON').iterdir()}
+        assert actual_files == expected_files, 'Committed GeoJSON is not current: regenerate from local source'
         # Both native representations must agree, including holes and multipart lines.
         native_gng = {r['source_id']: r for records in source['airports'].values() for r in records}
         native_kmz = {}
@@ -136,14 +136,14 @@ def main():
         broken = scratch / 'broken.zip'
         broken.write_bytes(b'not a zip')
         try:
-            c.run(broken, scratch / 'AVISO')
+            c.run(broken, scratch / 'GeoJSON')
             raise AssertionError('Malformed ZIP accepted')
         except zipfile.BadZipFile:
             pass
-        assert {p.name:p.read_bytes() for p in (scratch / 'AVISO').iterdir()} == actual_files
+        assert {p.name:p.read_bytes() for p in (scratch / 'GeoJSON').iterdir()} == actual_files
         assert not list(scratch.rglob('Conversion report.json'))
         assert not list(scratch.rglob('Conversion summary.txt'))
-    print(f'PASS: {len(expected_files)} AVISO files; {len(native_gng)} native features; exact GNG/KMZ agreement; source edits; palettes/groups; explicit local/GitHub selection.')
+    print(f'PASS: {len(expected_files)} GeoJSON files; {len(native_gng)} native features; exact GNG/KMZ agreement; source edits; palettes/groups; explicit local/GitHub selection.')
 
 
 if __name__ == '__main__':

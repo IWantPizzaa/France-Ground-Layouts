@@ -510,7 +510,7 @@ def choose_source(mode='local'):
 
 def run(source_path=None, output=None, source_mode='local'):
     start = time.perf_counter()
-    output = Path(output) if output is not None else ROOT / 'AVISO'
+    output = Path(output) if output is not None else ROOT / 'GeoJSON'
     say('\n  +----------------------------------------------------------+')
     say('  |                  vSMR AVISO CONVERTER                     |')
     say('  |      France Ground Layouts / GNG and KMZ source      |')
@@ -545,7 +545,7 @@ def run(source_path=None, output=None, source_mode='local'):
         if n % 50 == 0 or n == len(all_codes):
             say(f'        [{"#" * (n * 24 // len(all_codes)):<24}] {n:3}/{len(all_codes)} airports', '90')
     say('  [3/4] Geometry, style references and coordinates validated.', '37')
-    say('  [4/4] Writing AVISO files...', '37')
+    say('  [4/4] Writing GeoJSON files...', '37')
     output.mkdir(parents=True, exist_ok=True)
     for filename, data in products.items():
         path = output / filename

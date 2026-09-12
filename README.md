@@ -48,7 +48,7 @@ On Windows, double-click **Script/Convert AVISO.cmd** and choose:
 1. **Local** (default): use this checkout's GNG, KMZ and Colours.sct.
 2. **Official GitHub**: download original source from vaccfr/France-Ground-Layouts.
 
-Python 3.10+ is required. Conversion writes GeoJSON into AVISO. No reports or
+Python 3.10+ is required. Conversion writes GeoJSON into `GeoJSON/`. No reports or
 summaries are produced. An explicit GitHub failure is reported; it does not
 silently switch to different source data.
 
