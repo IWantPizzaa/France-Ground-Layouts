@@ -92,12 +92,5 @@
       "$ref": "style.label.gates"
     }
   },
-  "vsmr_groups": [
-    {
-      "id": "stands-and-gates",
-      "name": "Stands & gates",
-      "visible": true,
-      "accent": "DARK_VSMR_GROUPS_ACCENT"
-    }
-  ]
+  "vsmr_groups": []
 }

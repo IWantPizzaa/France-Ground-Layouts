@@ -430,10 +430,7 @@
   "LFPG-41c0d96f1a563753009d": "polygon.taxiwayorange.cc6d00",
   "LFPG-fa175a7bc22fdebeb018": "polygon.taxiwayorange.cc6d00",
   "LFPG-392b1324b6fafa01a2bf": {
-    "style_id": "line.taxiway.c0b631.stands",
-    "vsmr_group_ids": [
-      "stands-and-gates"
-    ]
+    "style_id": "line.taxiway.c0b631.stands"
   },
   "LFPG-f7909f606e81eea7c6b1": "line.taxiwayblue.004080",
   "LFPG-3c97b1a84cb33d1c3481": "line.taxiwayorange.cc6d00",

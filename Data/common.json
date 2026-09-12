@@ -442,22 +442,13 @@
     }
   },
   "feature-options.Gates": {
-    "style_id": "label.gates",
-    "vsmr_group_ids": [
-      "stands-and-gates"
-    ]
+    "style_id": "label.gates"
   },
   "feature-options.TORA-CONF04": {
-    "style_id": "label.tora-conf04",
-    "vsmr_group_ids": [
-      "runway-details"
-    ]
+    "style_id": "label.tora-conf04"
   },
   "feature-options.TORA-CONF22": {
-    "style_id": "label.tora-conf22",
-    "vsmr_group_ids": [
-      "runway-details"
-    ]
+    "style_id": "label.tora-conf22"
   },
   "feature-options.Airport-reference": {
     "style_id": "airport.reference",

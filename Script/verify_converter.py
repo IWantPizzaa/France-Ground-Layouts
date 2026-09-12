@@ -45,6 +45,12 @@ def main():
         assert 'Duplicate color' in str(error)
     expected_files = {p.name: p.read_bytes() for p in (root / 'GeoJSON').glob('*.geojson')}
     assert expected_files, 'Generate GeoJSON before running the checks'
+    for name, data in expected_files.items():
+        doc = json.loads(data)
+        allowed = {'ground-layout-east', 'ground-layout-west'} if name == 'LFPG.geojson' else set()
+        assert {g['id'] for g in doc.get('vsmr_groups', [])} == allowed
+        for feature in doc['features']:
+            assert set(feature['properties'].get('vsmr_group_ids', [])) <= allowed
     with tempfile.TemporaryDirectory(prefix='vsmr-aviso-tests-') as scratch:
         scratch = Path(scratch)
         c.run(root, scratch / 'GeoJSON')
