@@ -1,2 +1,1 @@
-; Feature: LFFX-5510a4640271c3b16dbf
-N046.33.34.4080008 E004.58.29.3080008 N046.33.55.9689984 E004.58.35.6800008 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

@@ -1,2 +1,1 @@
-; Feature: LFFE-0f08300e53cb0174e668
-N049.02.41.2800 E002.20.59.1500004 N049.02.50.7080004 E002.21.32.0609988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

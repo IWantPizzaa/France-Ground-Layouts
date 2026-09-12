@@ -1,12 +1,1 @@
-{
-  "LFEX-85f51454ee93cddca6da": {
-    "style_id": "runway.reference",
-    "source_group": "LFEX Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFEX-ba3535258d689337a4f3": {
-    "style_id": "runway.reference",
-    "source_group": "LFEX Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

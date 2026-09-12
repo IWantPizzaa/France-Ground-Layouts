@@ -1,2 +1,1 @@
-; Feature: LFDK-404f203bfcef84f6313d
-N045.29.44.6489988 W001.05.11.7989988 N045.29.28.3300008 W001.04.48.5500008 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

@@ -1,14 +1,4 @@
 {
   "LFCY-b37f129e9bf943425d50": "line.runwayconcrete.555555",
-  "LFCY-1890ffd376bac327038f": "line.runwaygrass.008000",
-  "LFCY-18e1f41e3ed1ef683410": {
-    "style_id": "runway.reference",
-    "source_group": "LFCY Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFCY-35d763592244e94136b5": {
-    "style_id": "runway.reference",
-    "source_group": "LFCY Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFCY-1890ffd376bac327038f": "line.runwaygrass.008000"
 }

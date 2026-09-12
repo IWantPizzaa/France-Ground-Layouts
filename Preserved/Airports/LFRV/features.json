@@ -1,14 +1,4 @@
 {
   "LFRV-e0aa006716a8e5c62e5c": "line.runwayconcrete.555555",
-  "LFRV-046b9fd95c10a33f2a03": "line.runwaygrass.008000",
-  "LFRV-5659d8016a53141bdd3d": {
-    "style_id": "runway.reference",
-    "source_group": "LFRV Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFRV-fa46a7a59ca8cb9ac2b1": {
-    "style_id": "runway.reference",
-    "source_group": "LFRV Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFRV-046b9fd95c10a33f2a03": "line.runwaygrass.008000"
 }

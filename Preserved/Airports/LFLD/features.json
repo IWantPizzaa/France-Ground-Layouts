@@ -1,14 +1,4 @@
 {
   "LFLD-ecab327436a11a446396": "line.runwayconcrete.555555",
-  "LFLD-87c5efa2862866865be7": "line.runwaygrass.008000",
-  "LFLD-8bbc5f40db7c1853a07e": {
-    "style_id": "runway.reference",
-    "source_group": "LFLD Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFLD-445820943409533d33d7": {
-    "style_id": "runway.reference",
-    "source_group": "LFLD Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFLD-87c5efa2862866865be7": "line.runwaygrass.008000"
 }

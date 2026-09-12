@@ -1,12 +1,1 @@
-{
-  "LFNJ-102456cd5e48fa3b036b": {
-    "style_id": "runway.reference",
-    "source_group": "LFNJ Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFNJ-1c2c360402981b8169f9": {
-    "style_id": "runway.reference",
-    "source_group": "LFNJ Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

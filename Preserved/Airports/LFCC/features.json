@@ -1,14 +1,4 @@
 {
   "LFCC-3fdd8027ca2621857acd": "line.runwayconcrete.555555",
-  "LFCC-2431fd97e266bc299d0a": "line.runwaygrass.008000",
-  "LFCC-9e1cb04b3cba44d231f1": {
-    "style_id": "runway.reference",
-    "source_group": "LFCC Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFCC-91e6c1d0380ab6e196b3": {
-    "style_id": "runway.reference",
-    "source_group": "LFCC Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFCC-2431fd97e266bc299d0a": "line.runwaygrass.008000"
 }

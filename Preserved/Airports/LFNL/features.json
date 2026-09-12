@@ -1,12 +1,1 @@
-{
-  "LFNL-e33a9f78943b12ebc28c": {
-    "style_id": "runway.reference",
-    "source_group": "LFNL Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFNL-b5e4dd7f40d90a5e08ba": {
-    "style_id": "runway.reference",
-    "source_group": "LFNL Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

@@ -1,2 +1,1 @@
-; Feature: LFTM-cd3c3ce407027ab00366
-N044.27.31.8309984 E005.43.38.1280008 N044.27.15.6589992 E005.43.37.1100 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

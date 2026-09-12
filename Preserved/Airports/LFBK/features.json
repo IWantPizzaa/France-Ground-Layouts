@@ -1,14 +1,4 @@
 {
   "LFBK-ba55cd75b240a287bc8e": "line.runwaygrass.008000",
-  "LFBK-83fc3bec9980996dcd5b": "line.runwayconcrete.555555",
-  "LFBK-baaae2746d4d40c75530": {
-    "style_id": "runway.reference",
-    "source_group": "LFBK Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFBK-97df0440a6e557a62c7a": {
-    "style_id": "runway.reference",
-    "source_group": "LFBK Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFBK-83fc3bec9980996dcd5b": "line.runwayconcrete.555555"
 }

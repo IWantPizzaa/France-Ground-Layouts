@@ -1,2 +1,1 @@
-; Feature: LFDP-75fcd0c71662ed1eae6c
-N045.57.29.4580008 W001.19.00.3680004 N045.57.26.3300004 W001.18.23.9289984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

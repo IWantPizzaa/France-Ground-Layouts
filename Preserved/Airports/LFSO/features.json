@@ -1,10 +1,5 @@
 {
   "LFSO-45fdd8ae93fc9002d267": "line.taxiway.c0b631",
   "LFSO-e4d4a9f57fb6e259872e": "line.runwayconcrete.555555",
-  "LFSO-de1a4eb6a11d72d26335": "line.apronsurface.808080",
-  "LFSO-06548eed4d84aaa40963": {
-    "style_id": "runway.reference",
-    "source_group": "LFSO Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFSO-de1a4eb6a11d72d26335": "line.apronsurface.808080"
 }

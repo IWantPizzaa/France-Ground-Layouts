@@ -1,2 +1,1 @@
-; Feature: LFIM-ec5877ce47ef8b188b8e
-N043.06.22.6509984 E000.36.53.4200004 N043.06.29.2780008 E000.37.18.1409988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

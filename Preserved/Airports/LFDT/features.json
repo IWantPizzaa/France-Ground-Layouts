@@ -1,12 +1,1 @@
-{
-  "LFDT-8c16da1f849872b8d133": {
-    "style_id": "runway.reference",
-    "source_group": "LFDT Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFDT-b3fdc850a98853c5c2fa": {
-    "style_id": "runway.reference",
-    "source_group": "LFDT Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

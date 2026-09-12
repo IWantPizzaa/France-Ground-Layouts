@@ -1,2 +1,1 @@
-; Feature: LFNV-42ef9684a4e25ca2a7a8
-N044.19.56.6680008 E004.54.18.7189992 N044.20.20.5109988 E004.54.30.7789992 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

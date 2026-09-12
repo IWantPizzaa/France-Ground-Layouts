@@ -75,10 +75,5 @@
   "LFSL-6678168e778b49aa027e": "label.taxiways",
   "LFSL-e639824b6ce8569901d5": "label.taxiways",
   "LFSL-ab9ef02ceaa8f208ae84": "label.taxiways",
-  "LFSL-a69304fc63507974b4ca": "label.taxiways",
-  "LFSL-fcc6e09fded92b758278": {
-    "style_id": "runway.reference",
-    "source_group": "LFSL Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFSL-a69304fc63507974b4ca": "label.taxiways"
 }

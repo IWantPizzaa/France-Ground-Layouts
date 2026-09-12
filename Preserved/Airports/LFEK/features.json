@@ -1,11 +1,1 @@
-{
-  "LFEK-74e18dfa162d93be0bd9": {
-    "$ref": "feature-options.Runway-centerlines.4"
-  },
-  "LFEK-9a24115b9f490667b4ee": {
-    "$ref": "feature-options.Runway-centerlines.4"
-  },
-  "LFEK-bb75cb670f37d7145a12": {
-    "$ref": "feature-options.Runway-centerlines.4"
-  }
-}
+{}

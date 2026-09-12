@@ -1,2 +1,1 @@
-; Feature: LFDS-326468a70b6917117b33
-N044.47.33.6689988 E001.14.30.4689984 N044.47.27.6609984 E001.15.03.2789988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

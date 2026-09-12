@@ -40,10 +40,5 @@
   },
   "LFKS-0f678d186fbeedf585dc": {
     "$ref": "feature-options.Gates"
-  },
-  "LFKS-5a2ffde0d5377ad54184": {
-    "style_id": "runway.reference",
-    "source_group": "LFKS Runways",
-    "geometry_role": "runway_centerline"
   }
 }

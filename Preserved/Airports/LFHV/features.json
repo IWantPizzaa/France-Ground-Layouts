@@ -1,12 +1,1 @@
-{
-  "LFHV-594296aadb218c3d883a": {
-    "style_id": "runway.reference",
-    "source_group": "LFHV Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFHV-bd50e5b8caaca1839616": {
-    "style_id": "runway.reference",
-    "source_group": "LFHV Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

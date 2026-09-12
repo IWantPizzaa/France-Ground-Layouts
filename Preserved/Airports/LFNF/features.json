@@ -1,11 +1,1 @@
-{
-  "LFNF-9a125590cd54d61ef7d0": {
-    "$ref": "feature-options.Runway-centerlines.14"
-  },
-  "LFNF-ca270f7853d7090f4fd8": {
-    "$ref": "feature-options.Runway-centerlines.14"
-  },
-  "LFNF-3bf690a9af6770e4f3e4": {
-    "$ref": "feature-options.Runway-centerlines.14"
-  }
-}
+{}

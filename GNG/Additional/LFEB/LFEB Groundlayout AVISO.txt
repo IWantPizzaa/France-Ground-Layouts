@@ -1,2 +1,1 @@
-; Feature: LFEB-6d6b8c9e4d067c6851ea
-N048.26.31.6280004 W002.06.29.6309988 N048.26.40.6389984 W002.05.51.6300 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

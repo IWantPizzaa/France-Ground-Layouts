@@ -1,2 +1,1 @@
-; Feature: LFTA-fa759a0e16dcf8bb74b5
-N046.22.02.3800008 W001.25.40.6589988 N046.21.36.6909984 W001.25.35.7989988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

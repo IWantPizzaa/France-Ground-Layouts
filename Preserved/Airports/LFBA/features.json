@@ -64,10 +64,5 @@
   "LFBA-4ada997b7294b259d4b5": "label.taxiways",
   "LFBA-b9bbc84a798240b39363": "label.taxiways",
   "LFBA-d78e2238820be76062e5": "label.taxiways",
-  "LFBA-5e22970e0f066a3ba6f1": "label.taxiways",
-  "LFBA-fa304be5c2b2397bb613": {
-    "style_id": "runway.reference",
-    "source_group": "LFBA Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFBA-5e22970e0f066a3ba6f1": "label.taxiways"
 }

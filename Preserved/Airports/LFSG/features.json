@@ -34,10 +34,5 @@
   "LFSG-ae0cdbffcfb6a9d2c141": "label.taxiways",
   "LFSG-cffc02fedb0ae1312cfa": "label.taxiways",
   "LFSG-dde362d1fad49f91d085": "label.taxiways",
-  "LFSG-01ee423fb5ac6a8fd1e8": "label.taxiways",
-  "LFSG-e9f1fdc08b71d4487245": {
-    "style_id": "runway.reference",
-    "source_group": "LFSG Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFSG-01ee423fb5ac6a8fd1e8": "label.taxiways"
 }

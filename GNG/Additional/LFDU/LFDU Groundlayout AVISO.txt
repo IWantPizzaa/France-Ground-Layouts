@@ -1,2 +1,1 @@
-; Feature: LFDU-21699fa83b4cfc7718fc
-N045.11.42.7589988 W000.53.17.3289984 N045.11.55.7909988 W000.52.40.3100004 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

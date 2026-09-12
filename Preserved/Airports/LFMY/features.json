@@ -1,15 +1,3 @@
 {
-  "LFMY-76162e54845b040040db": "line.runwayconcrete.555555",
-  "LFMY-6e44e3cfd416db4e3260": {
-    "$ref": "feature-options.Runway-centerlines.13"
-  },
-  "LFMY-ce715e6740350317eee2": {
-    "$ref": "feature-options.Runway-centerlines.13"
-  },
-  "LFMY-c0e7b7f70a231a761c61": {
-    "$ref": "feature-options.Runway-centerlines.13"
-  },
-  "LFMY-04c2c191873371080bde": {
-    "$ref": "feature-options.Runway-centerlines.13"
-  }
+  "LFMY-76162e54845b040040db": "line.runwayconcrete.555555"
 }

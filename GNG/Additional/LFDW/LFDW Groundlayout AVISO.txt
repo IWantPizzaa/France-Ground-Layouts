@@ -1,2 +1,1 @@
-; Feature: LFDW-1a321b474cf553c3cf3e
-N046.34.53.6980008 E000.38.22.1309988 N046.35.07.1009988 E000.38.44.0189988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

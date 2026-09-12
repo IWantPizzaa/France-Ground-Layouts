@@ -1,2 +1,1 @@
-; Feature: LFED-a87e1d7b8751f257170c
-N048.03.25.5700008 W002.55.42.0200004 N048.03.23.2880004 W002.54.50.9389992 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

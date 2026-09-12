@@ -1,8 +1,3 @@
 {
-  "LFBM-7437ed2a8ccb86c493f1": "line.runwayconcrete.555555",
-  "LFBM-31aa7424e1deff933552": {
-    "style_id": "runway.reference",
-    "source_group": "LFBM Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFBM-7437ed2a8ccb86c493f1": "line.runwayconcrete.555555"
 }

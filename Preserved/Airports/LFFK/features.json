@@ -1,12 +1,1 @@
-{
-  "LFFK-90e16ebd03919cf664b0": {
-    "style_id": "runway.reference",
-    "source_group": "LFFK Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFFK-d3e34047f215b46a3327": {
-    "style_id": "runway.reference",
-    "source_group": "LFFK Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

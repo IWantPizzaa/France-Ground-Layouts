@@ -1,13 +1,4 @@
 {
   "LFAV-9867fa8bce3e429e19fb": "line.runwaygrass.008000",
-  "LFAV-a1f765a13ed13cbb077b": "line.runwayconcrete.555555",
-  "LFAV-3fdd018a7c370790cfde": {
-    "$ref": "feature-options.Runway-centerlines.2"
-  },
-  "LFAV-ac2016461435e41a93f5": {
-    "$ref": "feature-options.Runway-centerlines.2"
-  },
-  "LFAV-1af19aae3573efe71d48": {
-    "$ref": "feature-options.Runway-centerlines.2"
-  }
+  "LFAV-a1f765a13ed13cbb077b": "line.runwayconcrete.555555"
 }

@@ -1,2 +1,1 @@
-; Feature: LFHY-f4c3c500446461578fab
-N046.32.01.6509984 E003.24.55.1909988 N046.32.07.3500 E003.25.55.6280004 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

@@ -34,15 +34,5 @@
   "LFOX-89ea580ba96b0c2e7838": "label.taxiways",
   "LFOX-75a0a73f97d7141765e3": "label.taxiways",
   "LFOX-18241ea9b8fe80c94937": "label.taxiways",
-  "LFOX-5adc18df7efb532db2fa": "label.taxiways",
-  "LFOX-2ddfcc298847b0ce3610": {
-    "style_id": "runway.reference",
-    "source_group": "LFOX Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFOX-ebd5ba7c1d935d19bc63": {
-    "style_id": "runway.reference",
-    "source_group": "LFOX Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFOX-5adc18df7efb532db2fa": "label.taxiways"
 }

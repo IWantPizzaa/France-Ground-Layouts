@@ -1,12 +1,1 @@
-{
-  "LFSM-a7f90358b7dc5859d123": {
-    "style_id": "runway.reference",
-    "source_group": "LFSM Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFSM-0bafb476fa923d4d656d": {
-    "style_id": "runway.reference",
-    "source_group": "LFSM Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

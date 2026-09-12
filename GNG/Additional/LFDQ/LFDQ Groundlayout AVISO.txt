@@ -1,2 +1,1 @@
-; Feature: LFDQ-a103a668e893942f2f3e
-N043.16.29.0309988 E000.30.59.8600008 N043.16.46.7000004 E000.31.18.5009988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

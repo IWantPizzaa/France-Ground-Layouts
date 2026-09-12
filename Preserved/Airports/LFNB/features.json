@@ -1,8 +1,3 @@
 {
-  "LFNB-432b421183945a13a345": "line.runwayconcrete.555555",
-  "LFNB-933cb618fab7a30087fc": {
-    "style_id": "runway.reference",
-    "source_group": "LFNB Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFNB-432b421183945a13a345": "line.runwayconcrete.555555"
 }

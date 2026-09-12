@@ -1,2 +1,1 @@
-; Feature: LFKE-936b5a17f2442e7b67b1
-N045.01.42.3080004 E005.18.25.5380004 N045.01.26.4609984 E005.18.41.9500008 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

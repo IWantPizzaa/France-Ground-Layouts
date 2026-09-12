@@ -1,2 +1,1 @@
-; Feature: LFID-c7bfdf7bb11c1425049c
-N043.54.39.4089984 E000.22.49.1009988 N043.54.30.6680004 E000.23.19.1109984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

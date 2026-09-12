@@ -50,15 +50,5 @@
   "LFPM-30b707f0a4b82493da90": "label.taxiways",
   "LFPM-a8d5324b4a63122f5c7d": "label.taxiways",
   "LFPM-c8d36483b6b21def75f6": "label.taxiways",
-  "LFPM-af02a53557e798c7712d": "label.taxiways",
-  "LFPM-570e7ef5823540b41d9a": {
-    "style_id": "runway.reference",
-    "source_group": "LFPM Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFPM-18702eaea8c226f5dc78": {
-    "style_id": "runway.reference",
-    "source_group": "LFPM Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFPM-af02a53557e798c7712d": "label.taxiways"
 }

@@ -1,2 +1,1 @@
-; Feature: LFDB-3fdc47eb7ea46d13bb7f
-N044.01.39.8309988 E001.22.31.1409984 N044.01.22.8000 E001.22.55.1709984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

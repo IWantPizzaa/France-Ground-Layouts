@@ -1,2 +1,1 @@
-; Feature: LFRT-6c8e7ffcf693987beead
-N048.31.59.3109984 W002.52.02.5709988 N048.32.36.2000004 W002.50.30.6380004 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

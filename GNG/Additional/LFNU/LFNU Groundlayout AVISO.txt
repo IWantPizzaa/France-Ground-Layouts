@@ -1,2 +1,1 @@
-; Feature: LFNU-06f30c00d64458491661
-N044.05.12.4509984 E004.23.36.5489988 N044.04.43.4309988 E004.23.39.5800008 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

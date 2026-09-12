@@ -1,2 +1,1 @@
-; Feature: LFOD-5520d1267bfc186d4bc5
-N047.15.26.6109984 W000.07.28.5089988 N047.15.22.8989988 W000.06.26.4700008 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

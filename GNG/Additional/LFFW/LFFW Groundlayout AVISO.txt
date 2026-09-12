@@ -1,2 +1,1 @@
-; Feature: LFFW-91e143c18c4597627e30
-N046.55.49.6409988 W001.19.55.7389992 N046.55.59.3500008 W001.19.23.1989988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

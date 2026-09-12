@@ -19,15 +19,5 @@
     "$ref": "feature-options.Gates"
   },
   "LFDH-4122ff4ecc6929e31d91": "label.taxiways",
-  "LFDH-c776b99ddd894808c070": "label.taxiways",
-  "LFDH-d8d8f76cc916679ac477": {
-    "style_id": "runway.reference",
-    "source_group": "LFDH Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFDH-003bf1bb2bd02549bcb1": {
-    "style_id": "runway.reference",
-    "source_group": "LFDH Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFDH-c776b99ddd894808c070": "label.taxiways"
 }

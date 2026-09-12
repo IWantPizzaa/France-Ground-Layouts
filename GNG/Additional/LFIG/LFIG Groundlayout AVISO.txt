@@ -1,2 +1,1 @@
-; Feature: LFIG-e43f5a97bec8ce11673d
-N044.10.44.4280008 E002.30.19.7380008 N044.10.42.5380008 E002.30.53.6180004 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

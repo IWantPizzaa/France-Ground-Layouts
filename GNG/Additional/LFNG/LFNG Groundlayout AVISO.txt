@@ -1,2 +1,1 @@
-; Feature: LFNG-4ba20f87a2940e3e1785
-N043.36.46.0400004 E004.04.02.9989992 N043.36.24.8609988 E004.04.24.5309988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

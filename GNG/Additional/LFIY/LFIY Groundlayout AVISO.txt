@@ -1,2 +1,1 @@
-; Feature: LFIY-b51105ee2f21f9eb1382
-N045.57.56.4580008 W000.31.44.6800008 N045.57.53.0100 W000.31.10.8800004 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

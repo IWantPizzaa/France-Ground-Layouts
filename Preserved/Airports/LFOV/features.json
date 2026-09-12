@@ -66,15 +66,5 @@
   },
   "LFOV-f0afe9cb2a2fefcd483e": "label.taxiways",
   "LFOV-e0fe0459311e6f4745f6": "label.taxiways",
-  "LFOV-add40c3813034d334d21": "label.taxiways",
-  "LFOV-71867675c18e2b61fd88": {
-    "style_id": "runway.reference",
-    "source_group": "LFOV Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFOV-91453577cdf1a67cd0cf": {
-    "style_id": "runway.reference",
-    "source_group": "LFOV Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFOV-add40c3813034d334d21": "label.taxiways"
 }

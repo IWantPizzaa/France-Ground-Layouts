@@ -1,2 +1,1 @@
-; Feature: LFLM-f7bd0be2a397247c3776
-N046.17.58.9809984 E004.47.42.9900 N046.17.23.7909984 E004.47.48.3789984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

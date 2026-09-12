@@ -37,10 +37,5 @@
   },
   "LFBF-2f8833cbe4d8b45947c7": {
     "$ref": "feature-options.Gates"
-  },
-  "LFBF-c1392dbfa970d22d172f": {
-    "style_id": "runway.reference",
-    "source_group": "LFBF Runways",
-    "geometry_role": "runway_centerline"
   }
 }

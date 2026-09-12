@@ -31,10 +31,5 @@
   "LFMH-dde411d9aa4d440e35ba": "label.taxiways",
   "LFMH-d9bb172e834491265150": "label.taxiways",
   "LFMH-dad85fb50356a6da526a": "label.taxiways",
-  "LFMH-a5e51b01954af393a3ee": "label.taxiways",
-  "LFMH-66ac21c621900398131d": {
-    "style_id": "runway.reference",
-    "source_group": "LFMH Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFMH-a5e51b01954af393a3ee": "label.taxiways"
 }

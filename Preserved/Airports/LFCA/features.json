@@ -1,10 +1,5 @@
 {
   "LFCA-71d934ef450a7684fe9a": {
     "$ref": "feature-options.Gates"
-  },
-  "LFCA-06979baea1d674fdc3f7": {
-    "style_id": "runway.reference",
-    "source_group": "LFCA Runways",
-    "geometry_role": "runway_centerline"
   }
 }

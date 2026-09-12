@@ -37,10 +37,5 @@
   },
   "LFRT-8b48f304fa96a13d6388": "label.taxiways",
   "LFRT-79bb93d94386e892e69c": "label.taxiways",
-  "LFRT-413eb9f23e2469007333": "label.taxiways",
-  "LFRT-6c8e7ffcf693987beead": {
-    "style_id": "runway.reference",
-    "source_group": "LFRT Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFRT-413eb9f23e2469007333": "label.taxiways"
 }

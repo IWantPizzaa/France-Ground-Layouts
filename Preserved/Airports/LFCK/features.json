@@ -56,10 +56,5 @@
   },
   "LFCK-a34c0c0be41f084105c2": {
     "$ref": "feature-options.Gates"
-  },
-  "LFCK-ddb0b519dddb4096a783": {
-    "style_id": "runway.reference",
-    "source_group": "LFCK Runways",
-    "geometry_role": "runway_centerline"
   }
 }

@@ -1,2 +1,1 @@
-; Feature: LFAG-e648171ada4a96a59edb
-N049.52.08.6080008 E003.01.12.5109984 N049.52.07.8309984 E003.02.20.3489988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

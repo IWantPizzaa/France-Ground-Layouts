@@ -1,12 +1,1 @@
-{
-  "LFIT-aeb63d377cca5be1915d": {
-    "style_id": "runway.reference",
-    "source_group": "LFIT Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFIT-68190953a787c9033a4e": {
-    "style_id": "runway.reference",
-    "source_group": "LFIT Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

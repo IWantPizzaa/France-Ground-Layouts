@@ -1,2 +1,1 @@
-; Feature: LFKX-4e30add6c071b4a202e4
-N045.24.33.0800004 E006.34.35.3600004 N045.24.21.1600008 E006.34.43.3089984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

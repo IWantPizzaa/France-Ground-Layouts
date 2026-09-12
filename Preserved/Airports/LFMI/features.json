@@ -99,10 +99,5 @@
   "LFMI-1f766d9813d69ebcfe72": "label.taxiways",
   "LFMI-89fb9f1d5f882695c11f": "label.taxiways",
   "LFMI-77cc06fcb40c24841ea8": "label.taxiways",
-  "LFMI-2d5f287fd9622b96f264": "label.taxiways",
-  "LFMI-c30d4e00fd3e54442b0b": {
-    "style_id": "runway.reference",
-    "source_group": "LFMI Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFMI-2d5f287fd9622b96f264": "label.taxiways"
 }

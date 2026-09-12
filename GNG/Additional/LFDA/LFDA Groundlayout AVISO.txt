@@ -1,2 +1,1 @@
-; Feature: LFDA-b13fb7da2045deffd1ca
-N043.42.33.8900004 W000.15.05.4680004 N043.42.26.6900004 W000.14.44.5200 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

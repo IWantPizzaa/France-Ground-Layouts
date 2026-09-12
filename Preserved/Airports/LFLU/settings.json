@@ -84,9 +84,6 @@
     },
     "label.gates": {
       "$ref": "style.label.gates"
-    },
-    "runway.reference": {
-      "$ref": "style.runway.reference"
     }
   },
   "vsmr_groups": [

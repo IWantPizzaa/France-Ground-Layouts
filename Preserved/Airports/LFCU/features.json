@@ -1,12 +1,1 @@
-{
-  "LFCU-cb568d77c21474c7372d": {
-    "style_id": "runway.reference",
-    "source_group": "LFCU Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFCU-3292dfb13dd09a7031ac": {
-    "style_id": "runway.reference",
-    "source_group": "LFCU Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

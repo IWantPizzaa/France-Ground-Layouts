@@ -1,12 +1,1 @@
-{
-  "LFCX-93bf036d68e204688fb3": {
-    "style_id": "runway.reference",
-    "source_group": "LFCX Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFCX-ad0eae5fc34671b0bafe": {
-    "style_id": "runway.reference",
-    "source_group": "LFCX Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

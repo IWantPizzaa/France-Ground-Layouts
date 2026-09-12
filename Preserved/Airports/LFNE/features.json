@@ -1,12 +1,1 @@
-{
-  "LFNE-e3e716f75073859d1b10": {
-    "style_id": "runway.reference",
-    "source_group": "LFNE Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFNE-1980dd00c3b247bad58b": {
-    "style_id": "runway.reference",
-    "source_group": "LFNE Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

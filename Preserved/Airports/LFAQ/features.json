@@ -21,15 +21,5 @@
   "LFAQ-c47ea307ec6eb5a34c77": "label.taxiways",
   "LFAQ-9b79047e2eff6543d332": "label.taxiways",
   "LFAQ-0f85993a5caf2ee3d6b1": "label.taxiways",
-  "LFAQ-3c75212e59529773ae98": "label.taxiways",
-  "LFAQ-4908b274ddc520dff787": {
-    "style_id": "runway.reference",
-    "source_group": "LFAQ Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFAQ-361c1414d6e14e989294": {
-    "style_id": "runway.reference",
-    "source_group": "LFAQ Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFAQ-3c75212e59529773ae98": "label.taxiways"
 }

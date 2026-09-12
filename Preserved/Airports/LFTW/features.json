@@ -25,10 +25,5 @@
   },
   "LFTW-d25a5a1b73333648b792": {
     "$ref": "feature-options.Gates"
-  },
-  "LFTW-064abf7965c5e5877bda": {
-    "style_id": "runway.reference",
-    "source_group": "LFTW Runways",
-    "geometry_role": "runway_centerline"
   }
 }

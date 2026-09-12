@@ -37,10 +37,5 @@
   },
   "LFBC-6f8e185252b0d6198f84": {
     "$ref": "feature-options.Gates"
-  },
-  "LFBC-100108468660399d6516": {
-    "style_id": "runway.reference",
-    "source_group": "LFBC Runways",
-    "geometry_role": "runway_centerline"
   }
 }

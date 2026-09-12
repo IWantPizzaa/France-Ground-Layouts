@@ -1,12 +1,1 @@
-{
-  "LFES-6b2fa7168815a4930581": {
-    "style_id": "runway.reference",
-    "source_group": "LFES Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFES-88fc2aa3a07966aa9802": {
-    "style_id": "runway.reference",
-    "source_group": "LFES Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

@@ -1,2 +1,1 @@
-; Feature: LFHA-f84f6cdf031f55851af6
-N045.31.01.9089984 E003.15.58.7409984 N045.30.38.8109988 E003.16.00.8680008 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

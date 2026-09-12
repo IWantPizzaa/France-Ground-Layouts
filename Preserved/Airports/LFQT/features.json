@@ -30,15 +30,5 @@
   "LFQT-ee5139d8c31aa8bf2fbb": "label.taxiways",
   "LFQT-12231c46a69051c59dec": "label.taxiways",
   "LFQT-32566575fcf9e1f41a15": "label.taxiways",
-  "LFQT-2c076546c608dffce21c": "label.taxiways",
-  "LFQT-789654831a519951aee5": {
-    "style_id": "runway.reference",
-    "source_group": "LFQT Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFQT-ffeee38ab79dda894ca0": {
-    "style_id": "runway.reference",
-    "source_group": "LFQT Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFQT-2c076546c608dffce21c": "label.taxiways"
 }

@@ -1,2 +1,1 @@
-; Feature: LFCT-325f1ff1c5f8360f0d3b
-N046.57.46.5980004 W000.09.33.6589992 N046.57.32.7089988 W000.08.56.5789992 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

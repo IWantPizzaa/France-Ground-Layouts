@@ -60,10 +60,5 @@
   "LFOH-3f1e54d4d26302c82209": "label.taxiways",
   "LFOH-d6e657166ace5f26d4cc": "label.taxiways",
   "LFOH-a051c0e16fb67b38bc2e": "label.taxiways",
-  "LFOH-70f527ae5cc10bb64044": "label.taxiways",
-  "LFOH-8fa9138b4d164510ddd7": {
-    "style_id": "runway.reference",
-    "source_group": "LFOH Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFOH-70f527ae5cc10bb64044": "label.taxiways"
 }

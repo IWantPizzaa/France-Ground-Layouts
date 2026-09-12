@@ -55,9 +55,6 @@
   "styles": {
     "line.runwaygrass.008000": {
       "$ref": "style.line.runwaygrass.008000"
-    },
-    "runway.reference": {
-      "$ref": "style.runway.reference"
     }
   },
   "vsmr_groups": []

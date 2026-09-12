@@ -1,10 +1,5 @@
 {
   "LFOC-4510e0001415c87544c8": "line.taxiwayborder.0000ff",
   "LFOC-904d6e9e8a4594d91ac8": "line.runwayconcrete.555555",
-  "LFOC-04e9f1ba5965cec71c8a": "line.landmark3.b4424b",
-  "LFOC-6ff1461eddd727543db4": {
-    "style_id": "runway.reference",
-    "source_group": "LFOC Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFOC-04e9f1ba5965cec71c8a": "line.landmark3.b4424b"
 }

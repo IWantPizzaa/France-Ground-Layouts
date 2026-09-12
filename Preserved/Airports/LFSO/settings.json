@@ -61,9 +61,6 @@
     },
     "line.apronsurface.808080": {
       "$ref": "style.line.apronsurface.808080"
-    },
-    "runway.reference": {
-      "$ref": "style.runway.reference"
     }
   },
   "vsmr_groups": []

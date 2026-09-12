@@ -1,2 +1,1 @@
-; Feature: LFNX-a9460ee4e8a5dda39f65
-N043.38.37.8989988 E003.08.39.1200 N043.38.07.7200008 E003.08.43.9509984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

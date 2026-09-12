@@ -1,12 +1,1 @@
-{
-  "LFET-7d1a110253a282a816e8": {
-    "style_id": "runway.reference",
-    "source_group": "LFET Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFET-f64185bb09043517aac7": {
-    "style_id": "runway.reference",
-    "source_group": "LFET Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

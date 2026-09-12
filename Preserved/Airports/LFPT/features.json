@@ -57,15 +57,5 @@
   "LFPT-ced9102cfc28ec74608b": "label.taxiways",
   "LFPT-abde3de43905545e1411": "label.taxiways",
   "LFPT-8c38ddbe3832ce076af7": "label.taxiways",
-  "LFPT-97e5b6bfaaa871e026dc": "label.taxiways",
-  "LFPT-b6954c8b9f1a848e7963": {
-    "style_id": "runway.reference",
-    "source_group": "LFPT Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFPT-f2b23dca25a9cef5cdce": {
-    "style_id": "runway.reference",
-    "source_group": "LFPT Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFPT-97e5b6bfaaa871e026dc": "label.taxiways"
 }

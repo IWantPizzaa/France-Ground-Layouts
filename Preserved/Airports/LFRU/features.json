@@ -23,14 +23,5 @@
   },
   "LFRU-b26e79744d0f593ba4a5": "label.taxiways",
   "LFRU-046afdde894012607b5d": "label.taxiways",
-  "LFRU-a32f13c762cb54522b73": "label.taxiways",
-  "LFRU-76341a6f6873f7b9f0e0": {
-    "$ref": "feature-options.Runway-centerlines.19"
-  },
-  "LFRU-1ad660b524c032ac33a1": {
-    "$ref": "feature-options.Runway-centerlines.19"
-  },
-  "LFRU-515f8aad35d3ff9e9115": {
-    "$ref": "feature-options.Runway-centerlines.19"
-  }
+  "LFRU-a32f13c762cb54522b73": "label.taxiways"
 }

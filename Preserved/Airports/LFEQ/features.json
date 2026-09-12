@@ -13,10 +13,5 @@
   "LFEQ-275393d43529a5f1e4fa": "label.taxiways",
   "LFEQ-1d83fedf812f2eceef02": "label.taxiways",
   "LFEQ-7871bceb25358f44ab83": "label.taxiways",
-  "LFEQ-a57bea3bde48dd807c60": "label.taxiways",
-  "LFEQ-b5ae269b41896769e2f7": {
-    "style_id": "runway.reference",
-    "source_group": "LFEQ Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFEQ-a57bea3bde48dd807c60": "label.taxiways"
 }

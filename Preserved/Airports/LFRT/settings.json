@@ -58,9 +58,6 @@
     },
     "label.taxiways": {
       "$ref": "style.label.taxiways"
-    },
-    "runway.reference": {
-      "$ref": "style.runway.reference"
     }
   },
   "vsmr_groups": [

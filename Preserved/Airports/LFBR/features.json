@@ -16,15 +16,5 @@
   },
   "LFBR-8463dd53e669fd6da627": {
     "$ref": "feature-options.Gates"
-  },
-  "LFBR-dcd2ea42e01691d83990": {
-    "style_id": "runway.reference",
-    "source_group": "LFBR Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFBR-f73cec62a3d91907022b": {
-    "style_id": "runway.reference",
-    "source_group": "LFBR Runways",
-    "geometry_role": "runway_centerline"
   }
 }

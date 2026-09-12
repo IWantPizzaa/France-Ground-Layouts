@@ -1,2 +1,1 @@
-; Feature: LFHS-1a719758363d90ac7abc
-N046.12.24.8289984 E005.17.30.4400004 N046.11.47.9500008 E005.17.30.6380004 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

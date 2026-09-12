@@ -53,15 +53,5 @@
   "LFBG-a0e2026ddf119ad326e1": "label.taxiways",
   "LFBG-20888513be8f551f7d33": "label.taxiways",
   "LFBG-f7f1333a61eff81ec884": "label.taxiways",
-  "LFBG-695ffead08aa59379236": "label.taxiways",
-  "LFBG-6d54a87dbbcfd61d9625": {
-    "style_id": "runway.reference",
-    "source_group": "LFBG Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFBG-1cce7493b64d3f05df47": {
-    "style_id": "runway.reference",
-    "source_group": "LFBG Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFBG-695ffead08aa59379236": "label.taxiways"
 }

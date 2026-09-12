@@ -52,10 +52,5 @@
     "$ref": "feature-options.Gates"
   },
   "LFRO-93d19859d9d4993d5cab": "label.taxiways",
-  "LFRO-4c0acc299e4ade99886b": "label.taxiways",
-  "LFRO-1c6f8a50fbe3631661c1": {
-    "style_id": "runway.reference",
-    "source_group": "LFRO Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFRO-4c0acc299e4ade99886b": "label.taxiways"
 }

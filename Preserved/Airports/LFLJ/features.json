@@ -16,10 +16,5 @@
   },
   "LFLJ-35f8f612025504795c15": {
     "$ref": "feature-options.Gates"
-  },
-  "LFLJ-9b845db271eb2e8ba050": {
-    "style_id": "runway.reference",
-    "source_group": "LFLJ Runways",
-    "geometry_role": "runway_centerline"
   }
 }

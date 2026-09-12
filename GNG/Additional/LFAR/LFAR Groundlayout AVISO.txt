@@ -1,2 +1,1 @@
-; Feature: LFAR-0151bc1a6545a40c9eca
-N049.40.18.9300 E002.33.45.2909988 N049.40.20.6289984 E002.34.22.5080004 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

@@ -40,10 +40,5 @@
   "LFRI-e4cd1e8e868ae4f51cf5": "label.taxiways",
   "LFRI-d8c6b7b90d00df3e12bc": "label.taxiways",
   "LFRI-a6e1b81d566292def894": "label.taxiways",
-  "LFRI-1206e95dd607372962d9": "label.taxiways",
-  "LFRI-4cd97321b3e1e3d30e1d": {
-    "style_id": "runway.reference",
-    "source_group": "LFRI Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFRI-1206e95dd607372962d9": "label.taxiways"
 }

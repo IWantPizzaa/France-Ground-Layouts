@@ -78,9 +78,6 @@
     },
     "line.runwayconcrete.555555": {
       "$ref": "style.line.runwayconcrete.555555"
-    },
-    "runway.reference": {
-      "$ref": "style.runway.reference"
     }
   },
   "vsmr_groups": []

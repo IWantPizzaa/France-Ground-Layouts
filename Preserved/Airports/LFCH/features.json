@@ -1,14 +1,4 @@
 {
   "LFCH-0991316f2e9d365a4f14": "line.runwayconcrete.555555",
-  "LFCH-7faab6ec1bdde0ea28ba": "line.runwaygrass.008000",
-  "LFCH-e591a5f845763633e93e": {
-    "style_id": "runway.reference",
-    "source_group": "LFCH Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFCH-be42f01e633832615c22": {
-    "style_id": "runway.reference",
-    "source_group": "LFCH Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFCH-7faab6ec1bdde0ea28ba": "line.runwaygrass.008000"
 }

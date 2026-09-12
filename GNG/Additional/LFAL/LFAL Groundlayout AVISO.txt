@@ -1,2 +1,1 @@
-; Feature: LFAL-f11fd8ab6d9a74523258
-N047.41.32.7300 W000.00.17.6789988 N047.41.35.7100008 E000.00.20.4289992 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

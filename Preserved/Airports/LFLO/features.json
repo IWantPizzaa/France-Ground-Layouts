@@ -1,14 +1,4 @@
 {
   "LFLO-d63538f7a7fc8580b349": "line.runwayconcrete.555555",
-  "LFLO-b9a5db645bc77f1c087e": "line.runwaygrass.008000",
-  "LFLO-d23f167118e996136c35": {
-    "style_id": "runway.reference",
-    "source_group": "LFLO Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFLO-966379e640f7d1696efa": {
-    "style_id": "runway.reference",
-    "source_group": "LFLO Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFLO-b9a5db645bc77f1c087e": "line.runwaygrass.008000"
 }

@@ -10,10 +10,5 @@
   },
   "LFOE-b90d59c062bf21abe789": {
     "$ref": "feature-options.Gates"
-  },
-  "LFOE-48db3ecd87d94dbf07e1": {
-    "style_id": "runway.reference",
-    "source_group": "LFOE Runways",
-    "geometry_role": "runway_centerline"
   }
 }

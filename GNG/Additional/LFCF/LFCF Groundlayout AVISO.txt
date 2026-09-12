@@ -1,2 +1,1 @@
-; Feature: LFCF-79f264cd571064338884
-N044.40.25.5680004 E001.46.57.3880008 N044.40.17.5000008 E001.47.29.0609988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

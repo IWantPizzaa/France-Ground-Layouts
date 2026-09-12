@@ -19,7 +19,8 @@ anything from a downloaded ZIP. Palettes and runtime settings come from Preserve
 
 ## Maintaining native layouts
 
-All 10,578 original vSMR features were integrated into standard native files.
+The 10,168 retained vSMR features are integrated into standard native files.
+Runway reference lines have been removed from all datasets.
 Existing GNG FIR directories were retained; added datasets use GNG/Additional.
 KMZ files use normal KML geometry, styles, names and placemark IDs. Extra archive
 assets are retained. LFXX and the separate LFMM coastline remain reference data.

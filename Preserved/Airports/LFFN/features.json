@@ -1,12 +1,1 @@
-{
-  "LFFN-15c3e25455a546e6013a": {
-    "style_id": "runway.reference",
-    "source_group": "LFFN Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFFN-a2560ae11f5eb8149aa9": {
-    "style_id": "runway.reference",
-    "source_group": "LFFN Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

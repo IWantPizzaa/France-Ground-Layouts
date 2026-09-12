@@ -29,14 +29,5 @@
   },
   "LFBS-042258b6f4530080f61f": "label.taxiways",
   "LFBS-a4eeb4873392465eae2b": "label.taxiways",
-  "LFBS-4c32964d3c97e9752d8d": "label.taxiways",
-  "LFBS-baf32a465e6bde48ff3a": {
-    "$ref": "feature-options.Runway-centerlines.3"
-  },
-  "LFBS-c06235de0687e49930b8": {
-    "$ref": "feature-options.Runway-centerlines.3"
-  },
-  "LFBS-500d3fa19c36a147db16": {
-    "$ref": "feature-options.Runway-centerlines.3"
-  }
+  "LFBS-4c32964d3c97e9752d8d": "label.taxiways"
 }

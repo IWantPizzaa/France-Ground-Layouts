@@ -1,14 +1,4 @@
 {
   "LFSN-8dc0be2440f535de67c3": "line.runwayconcrete.555555",
-  "LFSN-668ed865e66be7ae884b": "line.runwaygrass.008000",
-  "LFSN-42e771807d36dc6df3c0": {
-    "style_id": "runway.reference",
-    "source_group": "LFSN Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFSN-dfa90c1471d9008f0c7c": {
-    "style_id": "runway.reference",
-    "source_group": "LFSN Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFSN-668ed865e66be7ae884b": "line.runwaygrass.008000"
 }

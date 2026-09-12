@@ -1,2 +1,1 @@
-; Feature: LFAK-639d97b1fe285ba8ca44
-N051.02.18.0700008 E002.32.40.5809988 N051.02.25.9180008 E002.33.10.9180008 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

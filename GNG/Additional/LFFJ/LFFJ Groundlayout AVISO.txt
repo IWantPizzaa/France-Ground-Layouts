@@ -1,2 +1,1 @@
-; Feature: LFFJ-ee23dcc5d25271649f2b
-N048.23.07.1189988 E005.08.24.8200008 N048.23.05.7909984 E005.08.49.6709988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

@@ -1,12 +1,1 @@
-{
-  "LFLE-9f06c994029a3a935f06": {
-    "style_id": "runway.reference",
-    "source_group": "LFLE Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFLE-e01ca351609c0c65ac4b": {
-    "style_id": "runway.reference",
-    "source_group": "LFLE Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

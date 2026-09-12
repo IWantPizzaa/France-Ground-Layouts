@@ -1,8 +1,3 @@
 {
-  "LFLV-225da0894b2890430118": "line.runwayconcrete.555555",
-  "LFLV-6b1d274697ce8bc8fcf7": {
-    "style_id": "runway.reference",
-    "source_group": "LFLV Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFLV-225da0894b2890430118": "line.runwayconcrete.555555"
 }

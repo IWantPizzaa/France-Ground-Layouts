@@ -52,10 +52,6 @@
       46.870143889
     ]
   },
-  "styles": {
-    "runway.reference": {
-      "$ref": "style.runway.reference"
-    }
-  },
+  "styles": {},
   "vsmr_groups": []
 }

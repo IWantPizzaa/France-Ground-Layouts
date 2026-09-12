@@ -129,10 +129,5 @@
   "LFGJ-97bcaacf33b22cc490b8": "label.taxiways",
   "LFGJ-3787abb782f8cde1bb42": "label.taxiways",
   "LFGJ-b0d104c9f7ebd5a93a10": "label.taxiways",
-  "LFGJ-8aeadb89e1ac764686fd": "label.taxiways",
-  "LFGJ-6ff852584a77c99120f2": {
-    "style_id": "runway.reference",
-    "source_group": "LFGJ Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFGJ-8aeadb89e1ac764686fd": "label.taxiways"
 }

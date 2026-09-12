@@ -1,8 +1,3 @@
 {
-  "LFRE-dbe8e981671d7a398e2d": "line.runwayconcrete.555555",
-  "LFRE-29eb5af26a53d903535e": {
-    "style_id": "runway.reference",
-    "source_group": "LFRE Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFRE-dbe8e981671d7a398e2d": "line.runwayconcrete.555555"
 }

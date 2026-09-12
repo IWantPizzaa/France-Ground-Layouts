@@ -62,15 +62,5 @@
   "LFGA-38fd91b4c17ce35ba46d": "label.taxiways",
   "LFGA-37fea5c67e6f5617903b": "label.taxiways",
   "LFGA-d45747f4dc09c54d6ab1": "label.taxiways",
-  "LFGA-69084207ad9ba01c21dc": "label.taxiways",
-  "LFGA-2222b65f107158e8a169": {
-    "style_id": "runway.reference",
-    "source_group": "LFGA Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFGA-afb3546813f027898adb": {
-    "style_id": "runway.reference",
-    "source_group": "LFGA Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFGA-69084207ad9ba01c21dc": "label.taxiways"
 }

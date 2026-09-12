@@ -13,10 +13,5 @@
   },
   "LFDN-f3b2989c2f4529187e52": {
     "$ref": "feature-options.Gates"
-  },
-  "LFDN-7e75bfa2de2154537b0d": {
-    "style_id": "runway.reference",
-    "source_group": "LFDN Runways",
-    "geometry_role": "runway_centerline"
   }
 }

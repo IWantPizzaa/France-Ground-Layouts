@@ -1,2 +1,1 @@
-; Feature: LFHT-08af19bcc2860ca4c8ee
-N045.30.51.9580008 E003.44.39.8400 N045.31.10.5700008 E003.44.47.6009988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

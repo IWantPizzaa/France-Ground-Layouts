@@ -1,2 +1,1 @@
-; Feature: LFLI-b22be99e847d5b654e81
-N046.11.37.7980008 E006.15.47.5300008 N046.11.24.2589984 E006.16.25.1289984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

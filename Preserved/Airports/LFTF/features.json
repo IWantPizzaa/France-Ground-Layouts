@@ -32,10 +32,5 @@
   "LFTF-ceec999c4b36c26f3bbf": "label.taxiways",
   "LFTF-74a7605fd4fcb69a49ae": "label.taxiways",
   "LFTF-37796fea3825758db40d": "label.taxiways",
-  "LFTF-9748ab07d2f83675465b": "label.taxiways",
-  "LFTF-157f105603d0e50ad54e": {
-    "style_id": "runway.reference",
-    "source_group": "LFTF Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFTF-9748ab07d2f83675465b": "label.taxiways"
 }

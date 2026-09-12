@@ -11,15 +11,5 @@
   },
   "LFOU-384aa18b0be6f6fcb2b1": "label.taxiways",
   "LFOU-5377685aaa7b2dc489c0": "label.taxiways",
-  "LFOU-af5b7ac2e8c271fbcec0": "label.taxiways",
-  "LFOU-1ec4c3df115f53cb5c7e": {
-    "style_id": "runway.reference",
-    "source_group": "LFOU Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFOU-8ca7cd845884c31b8897": {
-    "style_id": "runway.reference",
-    "source_group": "LFOU Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFOU-af5b7ac2e8c271fbcec0": "label.taxiways"
 }

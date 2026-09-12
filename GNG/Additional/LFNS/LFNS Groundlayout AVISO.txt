@@ -1,2 +1,1 @@
-; Feature: LFNS-4e3feea1891f0b5d39df
-N044.17.23.0780004 E005.55.43.2980004 N044.16.59.4189984 E005.55.46.1889984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

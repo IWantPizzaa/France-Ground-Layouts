@@ -1,2 +1,1 @@
-; Feature: LFDV-7cd519514701b43a1478
-N046.16.03.9280008 E000.11.13.0880004 N046.16.26.6480004 E000.11.24.9609984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

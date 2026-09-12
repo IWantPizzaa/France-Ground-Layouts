@@ -13,10 +13,5 @@
   },
   "LFDJ-f898a95eceb2b7de88ef": {
     "$ref": "feature-options.Gates"
-  },
-  "LFDJ-2d1a605bee46d07bad72": {
-    "style_id": "runway.reference",
-    "source_group": "LFDJ Runways",
-    "geometry_role": "runway_centerline"
   }
 }

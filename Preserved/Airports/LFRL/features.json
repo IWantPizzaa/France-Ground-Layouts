@@ -1,13 +1,3 @@
 {
-  "LFRL-b8c5438bd0202057805c": "line.runwayconcrete.555555",
-  "LFRL-d4697a90c87139b1c419": {
-    "style_id": "runway.reference",
-    "source_group": "LFRL Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFRL-aa8402e00a14fba569b2": {
-    "style_id": "runway.reference",
-    "source_group": "LFRL Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFRL-b8c5438bd0202057805c": "line.runwayconcrete.555555"
 }

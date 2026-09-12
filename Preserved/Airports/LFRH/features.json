@@ -57,15 +57,5 @@
   "LFRH-0e7f1e5ed94f041ee702": "label.taxiways",
   "LFRH-c794abd6ff2cc5cfc90f": "label.taxiways",
   "LFRH-ee5e37b14f33878545fc": "label.taxiways",
-  "LFRH-142f3a827619977e8593": "label.taxiways",
-  "LFRH-17a3a8ade3cafd869340": {
-    "style_id": "runway.reference",
-    "source_group": "LFRH Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFRH-4e39daa28010f0378b02": {
-    "style_id": "runway.reference",
-    "source_group": "LFRH Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFRH-142f3a827619977e8593": "label.taxiways"
 }

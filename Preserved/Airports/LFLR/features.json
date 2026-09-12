@@ -1,12 +1,1 @@
-{
-  "LFLR-745c57d051534b24cdd4": {
-    "style_id": "runway.reference",
-    "source_group": "LFLR Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFLR-657562368bdb336f7e35": {
-    "style_id": "runway.reference",
-    "source_group": "LFLR Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

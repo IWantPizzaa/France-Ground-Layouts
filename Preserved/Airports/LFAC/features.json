@@ -22,10 +22,5 @@
   "LFAC-6d7d8a4fa4c0079fccd2": "label.taxiways",
   "LFAC-1256267925d635cb4f45": "label.taxiways",
   "LFAC-2748ae440c15963b6092": "label.taxiways",
-  "LFAC-992b41adb104ab5014ee": "label.taxiways",
-  "LFAC-4b25f36b3a28b7998c5e": {
-    "style_id": "runway.reference",
-    "source_group": "LFAC Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFAC-992b41adb104ab5014ee": "label.taxiways"
 }

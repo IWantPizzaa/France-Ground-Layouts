@@ -16,7 +16,7 @@ individual fields without copying the shared definition:
 
 ```json
 {
-  "$ref": "style.runway.reference",
+  "$ref": "style.line.runwayconcrete.555555",
   "paint": { "stroke": "#FFFFFF" }
 }
 ```

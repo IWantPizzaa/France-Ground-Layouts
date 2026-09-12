@@ -1,14 +1,4 @@
 {
-  "style.runway.reference": {
-    "name": "Runway centerlines",
-    "layer": "Runways",
-    "object_type": "Line",
-    "paint": {
-      "stroke": "#CCCCCC",
-      "stroke-width": 2,
-      "stroke-opacity": 1
-    }
-  },
   "style.line.runwayconcrete.555555": {
     "name": "Runways",
     "layer": "Guidance lines",
@@ -457,66 +447,6 @@
       "stands-and-gates"
     ]
   },
-  "feature-options.Runway-centerlines": {
-    "style_id": "runway.reference",
-    "source_group": "LFAU Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.2": {
-    "style_id": "runway.reference",
-    "source_group": "LFAV Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.3": {
-    "style_id": "runway.reference",
-    "source_group": "LFBS Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.4": {
-    "style_id": "runway.reference",
-    "source_group": "LFEK Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.5": {
-    "style_id": "runway.reference",
-    "source_group": "LFEV Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.6": {
-    "style_id": "runway.reference",
-    "source_group": "LFEZ Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.7": {
-    "style_id": "runway.reference",
-    "source_group": "LFGB Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.8": {
-    "style_id": "runway.reference",
-    "source_group": "LFJR Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.9": {
-    "style_id": "runway.reference",
-    "source_group": "LFJY Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.10": {
-    "style_id": "runway.reference",
-    "source_group": "LFLN Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.11": {
-    "style_id": "runway.reference",
-    "source_group": "LFMF Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.12": {
-    "style_id": "runway.reference",
-    "source_group": "LFMG Runways",
-    "geometry_role": "runway_centerline"
-  },
   "feature-options.TORA-CONF04": {
     "style_id": "label.tora-conf04",
     "vsmr_group_ids": [
@@ -529,43 +459,8 @@
       "runway-details"
     ]
   },
-  "feature-options.Runway-centerlines.13": {
-    "style_id": "runway.reference",
-    "source_group": "LFMY Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.14": {
-    "style_id": "runway.reference",
-    "source_group": "LFNF Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.15": {
-    "style_id": "runway.reference",
-    "source_group": "LFNO Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.16": {
-    "style_id": "runway.reference",
-    "source_group": "LFNT Runways",
-    "geometry_role": "runway_centerline"
-  },
   "feature-options.Airport-reference": {
     "style_id": "airport.reference",
     "geometry_role": "airport_reference_point"
-  },
-  "feature-options.Runway-centerlines.17": {
-    "style_id": "runway.reference",
-    "source_group": "LFOQ Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.18": {
-    "style_id": "runway.reference",
-    "source_group": "LFQB Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "feature-options.Runway-centerlines.19": {
-    "style_id": "runway.reference",
-    "source_group": "LFRU Runways",
-    "geometry_role": "runway_centerline"
   }
 }

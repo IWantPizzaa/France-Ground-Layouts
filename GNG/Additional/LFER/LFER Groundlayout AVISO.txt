@@ -1,2 +1,1 @@
-; Feature: LFER-3beecd4ff500b78f035d
-N047.41.45.6889992 W002.02.30.6880008 N047.42.05.0680008 W002.02.02.5109988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

@@ -1,11 +1,1 @@
-{
-  "LFEZ-41e0a00fc62ace96ead6": {
-    "$ref": "feature-options.Runway-centerlines.6"
-  },
-  "LFEZ-970b4c85dda6696b23eb": {
-    "$ref": "feature-options.Runway-centerlines.6"
-  },
-  "LFEZ-90dbc0f4817313c18676": {
-    "$ref": "feature-options.Runway-centerlines.6"
-  }
-}
+{}

@@ -105,10 +105,5 @@
   "LFMA-52833ea53433461a0cff": "label.taxiways",
   "LFMA-d5f89103fd2693338cbd": "label.taxiways",
   "LFMA-ca0e8e5749db564e1453": "label.taxiways",
-  "LFMA-c6b58dfa362a5fb2cc69": "label.taxiways",
-  "LFMA-c9aea69663b2b6a64037": {
-    "style_id": "runway.reference",
-    "source_group": "LFMA Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFMA-c6b58dfa362a5fb2cc69": "label.taxiways"
 }

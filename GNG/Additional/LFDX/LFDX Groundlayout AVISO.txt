@@ -1,2 +1,1 @@
-; Feature: LFDX-037142b68a8332adf646
-N044.27.44.6400 E001.00.23.2089984 N044.27.21.9089988 E001.00.28.4609988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

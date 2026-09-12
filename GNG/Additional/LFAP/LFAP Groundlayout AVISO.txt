@@ -1,2 +1,1 @@
-; Feature: LFAP-d8a718488f10e8470b7f
-N049.28.47.8300008 E004.21.38.7389988 N049.28.56.3300004 E004.21.57.5489988 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

@@ -1,2 +1,1 @@
-; Feature: LFKR-d72e80c873abb2897613
-N045.22.47.8989984 E006.16.30.1109988 N045.22.25.1000004 E006.16.42.9880008 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

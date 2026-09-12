@@ -9,10 +9,5 @@
   },
   "LFEC-5fc57e08d99fbacc7c86": {
     "$ref": "feature-options.Gates"
-  },
-  "LFEC-a6f3d648cf8e099d4d28": {
-    "style_id": "runway.reference",
-    "source_group": "LFEC Runways",
-    "geometry_role": "runway_centerline"
   }
 }

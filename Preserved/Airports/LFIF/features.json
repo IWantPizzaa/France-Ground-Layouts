@@ -1,12 +1,1 @@
-{
-  "LFIF-8ac85243bb4626f753d8": {
-    "style_id": "runway.reference",
-    "source_group": "LFIF Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFIF-4d6fdd82ffc2517bfa51": {
-    "style_id": "runway.reference",
-    "source_group": "LFIF Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

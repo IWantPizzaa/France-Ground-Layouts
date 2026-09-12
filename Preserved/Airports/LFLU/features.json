@@ -16,15 +16,5 @@
   },
   "LFLU-7a9c2215bcb90570a377": {
     "$ref": "feature-options.Gates"
-  },
-  "LFLU-7193e78e6b914573c35a": {
-    "style_id": "runway.reference",
-    "source_group": "LFLU Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFLU-6af707cd2ff07f558d34": {
-    "style_id": "runway.reference",
-    "source_group": "LFLU Runways",
-    "geometry_role": "runway_centerline"
   }
 }

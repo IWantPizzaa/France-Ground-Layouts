@@ -1,2 +1,1 @@
-; Feature: LFYS-449e0f9272055e92df80
-N042.26.41.2900008 E002.00.06.9509988 N042.26.49.5380004 E002.00.38.3289984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

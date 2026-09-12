@@ -1,8 +1,3 @@
 {
-  "LFLA-d8c4a46a55e52c996702": "line.runwayconcrete.555555",
-  "LFLA-a5fad127f3624caeb6a6": {
-    "style_id": "runway.reference",
-    "source_group": "LFLA Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFLA-d8c4a46a55e52c996702": "line.runwayconcrete.555555"
 }

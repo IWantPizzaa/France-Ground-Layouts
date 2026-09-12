@@ -1,2 +1,1 @@
-; Feature: LFOO-c47329c8eb8e7b924ac6
-N046.28.28.3109988 W001.43.41.2100004 N046.28.36.6089988 W001.43.18.4509984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

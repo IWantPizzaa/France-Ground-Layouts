@@ -1,12 +1,1 @@
-{
-  "LFTP-4509a69a2970c6765a69": {
-    "style_id": "runway.reference",
-    "source_group": "LFTP Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFTP-31ceaad6aebd54a219bb": {
-    "style_id": "runway.reference",
-    "source_group": "LFTP Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

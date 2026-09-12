@@ -77,10 +77,5 @@
   },
   "LFBU-010dd295dac77b97143d": {
     "$ref": "feature-options.Gates"
-  },
-  "LFBU-d4143fb1bd57770e39bd": {
-    "style_id": "runway.reference",
-    "source_group": "LFBU Runways",
-    "geometry_role": "runway_centerline"
   }
 }

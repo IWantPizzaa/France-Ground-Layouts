@@ -87,10 +87,5 @@
     "$ref": "feature-options.Gates"
   },
   "LFRG-a1688e1218cc6a73b98f": "label.taxiways",
-  "LFRG-bbe6a70761b1070b94f3": "label.taxiways",
-  "LFRG-97a46e9a0cd6f251cbe6": {
-    "style_id": "runway.reference",
-    "source_group": "LFRG Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFRG-bbe6a70761b1070b94f3": "label.taxiways"
 }

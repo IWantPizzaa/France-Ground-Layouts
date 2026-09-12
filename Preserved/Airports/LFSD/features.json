@@ -31,15 +31,5 @@
   "LFSD-3582f5c0dea3a215e4ac": "label.taxiways",
   "LFSD-96589fdae1b40c7fc1b5": "label.taxiways",
   "LFSD-6326a97d099edf80366f": "label.taxiways",
-  "LFSD-df1e966db7e4933300f7": "label.taxiways",
-  "LFSD-afd2483e67e51cb50fcc": {
-    "style_id": "runway.reference",
-    "source_group": "LFSD Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFSD-4e2e078b5fe667a3c717": {
-    "style_id": "runway.reference",
-    "source_group": "LFSD Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFSD-df1e966db7e4933300f7": "label.taxiways"
 }

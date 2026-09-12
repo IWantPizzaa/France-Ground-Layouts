@@ -1,2 +1,1 @@
-; Feature: LFMR-ec83a05dbf4e28991c41
-N044.23.14.3800008 E006.36.15.1989984 N044.23.13.5589992 E006.36.47.6709984 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

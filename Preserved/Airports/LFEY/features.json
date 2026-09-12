@@ -20,15 +20,5 @@
   "LFEY-a5db84442dfd9a5c2deb": {
     "$ref": "feature-options.Gates"
   },
-  "LFEY-00dadc1adc466568976b": "label.taxiways",
-  "LFEY-1fbe1e0e90e0fa7bd8a4": {
-    "style_id": "runway.reference",
-    "source_group": "LFEY Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFEY-7cd472e0507ec75eb6c4": {
-    "style_id": "runway.reference",
-    "source_group": "LFEY Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFEY-00dadc1adc466568976b": "label.taxiways"
 }

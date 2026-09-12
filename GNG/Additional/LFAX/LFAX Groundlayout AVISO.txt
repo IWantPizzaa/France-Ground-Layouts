@@ -1,2 +1,1 @@
-; Feature: LFAX-8f5af8e4307af427a861
-N048.32.17.3400 E000.31.41.9189988 N048.32.24.9389988 E000.32.09.4200 COLOR_vSMR_runway_reference_CCCCCC
+; No ground layout geometry available.

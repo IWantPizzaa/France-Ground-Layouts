@@ -88,14 +88,5 @@
   "LFJR-64949413af41028c211f": "label.taxiways",
   "LFJR-652e3f6d1a7b9301f7d0": "label.taxiways",
   "LFJR-b549af1cf0e2e9278f69": "label.taxiways",
-  "LFJR-173ac6f04e35b3a15c94": "label.taxiways",
-  "LFJR-e8916722095a09dddc8d": {
-    "$ref": "feature-options.Runway-centerlines.8"
-  },
-  "LFJR-a4898650190af33f9a47": {
-    "$ref": "feature-options.Runway-centerlines.8"
-  },
-  "LFJR-d9e005eae0874d43bfa7": {
-    "$ref": "feature-options.Runway-centerlines.8"
-  }
+  "LFJR-173ac6f04e35b3a15c94": "label.taxiways"
 }

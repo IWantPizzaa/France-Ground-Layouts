@@ -1,12 +1,1 @@
-{
-  "LFHE-4ec8bb0a15894a2e2c1a": {
-    "style_id": "runway.reference",
-    "source_group": "LFHE Runways",
-    "geometry_role": "runway_centerline"
-  },
-  "LFHE-56e83e910a8980b59ecc": {
-    "style_id": "runway.reference",
-    "source_group": "LFHE Runways",
-    "geometry_role": "runway_centerline"
-  }
-}
+{}

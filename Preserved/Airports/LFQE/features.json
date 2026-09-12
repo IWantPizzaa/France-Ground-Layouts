@@ -1,9 +1,4 @@
 {
   "LFQE-2a3f768b3142ecaef6ae": "line.runwayconcrete.555555",
-  "LFQE-7f4048127c7adcc28171": "line.runwaygrass.008000",
-  "LFQE-deb00650f084a0d7904b": {
-    "style_id": "runway.reference",
-    "source_group": "LFQE Runways",
-    "geometry_role": "runway_centerline"
-  }
+  "LFQE-7f4048127c7adcc28171": "line.runwaygrass.008000"
 }

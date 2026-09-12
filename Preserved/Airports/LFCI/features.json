@@ -11,10 +11,5 @@
   },
   "LFCI-0afdb0bfa30959d42784": {
     "$ref": "feature-options.Gates"
-  },
-  "LFCI-82679bf6564874a03fd5": {
-    "style_id": "runway.reference",
-    "source_group": "LFCI Runways",
-    "geometry_role": "runway_centerline"
   }
 }
