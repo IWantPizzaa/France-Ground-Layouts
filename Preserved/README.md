@@ -24,7 +24,7 @@ individual fields without copying the shared definition:
 ```json
 {
   "$ref": "style.line.runwayconcrete.555555",
-  "paint": { "stroke": "DARK_LINE_RUNWAYCONCRETE_STROKE" }
+  "paint": { "stroke": "TEXT_COLOR" }
 }
 ```
 
@@ -61,3 +61,9 @@ GNG takes priority and the regression check asks you to synchronize them.
 
 Run `python Script/aviso_converter.py --local` after local edits. Double-click
 conversion intentionally prefers the published GitHub pack.
+
+Shared defaults are `BACKGROUND_COLOR`, `TEXT_COLOR` and `TEXT_HALO_COLOR`.
+LFPG Real uses `REAL_LFPG_BACKGROUND_COLOR`; all other backgrounds share the
+default. Equal color values share one definition across airports and palettes,
+so changing that definition changes every reference to it. Sections and RGB
+comments in Colours.sct make the decimal BGR values easier to edit.

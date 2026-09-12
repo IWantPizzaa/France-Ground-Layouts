@@ -14,8 +14,8 @@
       "light"
     ],
     "background_colors": {
-      "dark": "DARK_BACKGROUND_COLORS",
-      "light": "LIGHT_LFLH_BACKGROUND_COLORS"
+      "dark": "BACKGROUND_COLOR",
+      "light": "BACKGROUND_COLOR"
     },
     "runways": [
       {

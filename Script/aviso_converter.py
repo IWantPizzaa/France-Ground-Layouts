@@ -25,7 +25,7 @@ GITHUB_URL = 'https://codeload.github.com/IWantPizzaa/France-Ground-Layouts/zip/
 COORD = re.compile(r'([NSEW])(\d{2,3})[. :](\d{2})[. :](\d{2}(?:\.\d+)?)')
 NS = {'k': 'http://www.opengis.net/kml/2.2'}
 DEFAULT_STYLES = {}
-COLOR_TOKEN = r'(?:COLOR_|DARK_|LIGHT_|REAL_)[A-Za-z0-9_]+'
+COLOR_TOKEN = r'(?:(?:COLOR_|DARK_|LIGHT_|REAL_)[A-Za-z0-9_]+|BACKGROUND_COLOR|TEXT_COLOR|TEXT_HALO_COLOR)'
 
 
 def packed(value):
@@ -311,7 +311,7 @@ def load_preserved(colors=None):
     def resolve(value, stack=()):
         if isinstance(value, list):
             return [resolve(v, stack) for v in value]
-        if isinstance(value, str) and re.fullmatch(r'(?:DARK_|LIGHT_|REAL_)[A-Za-z0-9_]+', value):
+        if isinstance(value, str) and re.fullmatch(COLOR_TOKEN, value):
             if value not in colors:
                 raise ValueError('Undefined palette color: ' + value)
             return colors[value]
@@ -361,10 +361,10 @@ def infer_style(item, doc, colors):
                 doc['styles'][key] = copy.deepcopy(DEFAULT_STYLES[key])
             return key
     style_id = prefix.rstrip('.')
-    color = colors.get(item['color'], colors['DARK_DEFAULT_TEXT'])
+    color = colors.get(item['color'], colors['TEXT_COLOR'])
     category = label_category(item['file']) if kind == 'label' else token
     layer = {'label': 'Labels', 'line': 'Guidance lines', 'polygon': 'Airfield surfaces'}[kind]
-    paint = {'text-color': color, 'text-font': 'Arial', 'text-size': 12, 'text-halo-color': colors['DARK_DEFAULT_TEXT_HALO'], 'text-halo-width': 1, 'text-anchor': 'center', 'zoomLevel': 9 if 'gate' in category.lower() else 7} if kind == 'label' else {'stroke': color, 'stroke-width': 1, 'stroke-opacity': 1} if kind == 'line' else {'fill': color, 'fill-opacity': 1}
+    paint = {'text-color': color, 'text-font': 'Arial', 'text-size': 12, 'text-halo-color': colors['TEXT_HALO_COLOR'], 'text-halo-width': 1, 'text-anchor': 'center', 'zoomLevel': 9 if 'gate' in category.lower() else 7} if kind == 'label' else {'stroke': color, 'stroke-width': 1, 'stroke-opacity': 1} if kind == 'line' else {'fill': color, 'fill-opacity': 1}
     doc['styles'][style_id] = dict(name=category, layer=layer, object_type={'label': 'Label', 'line': 'Line', 'polygon': 'Area'}[kind], paint=paint)
     return style_id
 
@@ -521,7 +521,7 @@ def run(source_path=None, output=None):
     for n, code in enumerate(all_codes, 1):
         recipe = saved['recipes'].get(code)
         if recipe is None:
-            recipe = dict(document=dict(type='FeatureCollection', name=code + ' AVISO', bbox=[], metadata=dict(schema='vSMR AVISO', schema_version=2, geometry_mode='shared', airport=code, coordinate_reference_system='WGS84', coordinate_order='longitude, latitude', default_color_palette='dark', color_palettes=['dark','light'], background_colors={'dark':source['colors']['DARK_BACKGROUND_COLORS'],'light':source['colors']['LIGHT_DEFAULT_BACKGROUND']}), styles={}, vsmr_groups=[]), overrides={})
+            recipe = dict(document=dict(type='FeatureCollection', name=code + ' AVISO', bbox=[], metadata=dict(schema='vSMR AVISO', schema_version=2, geometry_mode='shared', airport=code, coordinate_reference_system='WGS84', coordinate_order='longitude, latitude', default_color_palette='dark', color_palettes=['dark','light'], background_colors={'dark':source['colors']['BACKGROUND_COLOR'],'light':source['colors']['BACKGROUND_COLOR']}), styles={}, vsmr_groups=[]), overrides={})
         doc = convert_airport(code, recipe, source['airports'][code], source['colors'])
         update_counts(doc)
         doc['metadata'].update(geometry_source='IWantPizzaa/France-Ground-Layouts', geometry_source_url='https://github.com/IWantPizzaa/France-Ground-Layouts', geometry_license='GPL-3.0')

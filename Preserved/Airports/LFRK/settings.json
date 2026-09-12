@@ -14,8 +14,8 @@
       "light"
     ],
     "background_colors": {
-      "dark": "DARK_BACKGROUND_COLORS",
-      "light": "LIGHT_LFRK_BACKGROUND_COLORS"
+      "dark": "BACKGROUND_COLOR",
+      "light": "BACKGROUND_COLOR"
     },
     "runways": [
       {
@@ -75,11 +75,11 @@
       "layer": "Operational restrictions",
       "object_type": "Area",
       "paint": {
-        "fill": "DARK_POLYGON_DANGERAREA_FILL",
+        "fill": "LIGHT_POLYGON_STOPBAR_2",
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFRK_POLYGON_DANGERAREA_FILL"
+            "fill": "LIGHT_POLYGON_STOPBAR_2"
           }
         }
       }

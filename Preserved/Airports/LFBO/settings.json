@@ -14,8 +14,8 @@
       "light"
     ],
     "background_colors": {
-      "dark": "DARK_BACKGROUND_COLORS",
-      "light": "LIGHT_LFBO_BACKGROUND_COLORS"
+      "dark": "BACKGROUND_COLOR",
+      "light": "BACKGROUND_COLOR"
     },
     "runways": [
       {
@@ -117,12 +117,12 @@
       "layer": "Guidance lines",
       "object_type": "Line",
       "paint": {
-        "stroke": "DARK_LINE_TAXIWAYPURPLE_STROKE",
+        "stroke": "LIGHT_RMZ",
         "stroke-opacity": 1,
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFBO_LINE_TAXIWAYPURPLE_STROKE"
+            "stroke": "LIGHT_RMZ"
           }
         }
       }

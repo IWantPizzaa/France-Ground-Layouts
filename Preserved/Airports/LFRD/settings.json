@@ -14,8 +14,8 @@
       "light"
     ],
     "background_colors": {
-      "dark": "DARK_BACKGROUND_COLORS",
-      "light": "LIGHT_LFRD_BACKGROUND_COLORS"
+      "dark": "BACKGROUND_COLOR",
+      "light": "BACKGROUND_COLOR"
     },
     "runways": [
       {
@@ -102,12 +102,12 @@
       "layer": "Guidance lines",
       "object_type": "Line",
       "paint": {
-        "stroke": "DARK_LINE_AORAPPROACH5_STROKE",
+        "stroke": "LIGHT_LANDMARK1",
         "stroke-opacity": 1,
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFRD_LINE_AORAPPROACH5_STROKE"
+            "stroke": "LIGHT_LANDMARK1"
           }
         }
       }

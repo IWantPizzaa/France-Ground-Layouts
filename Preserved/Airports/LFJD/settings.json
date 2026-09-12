@@ -13,8 +13,8 @@
       "day"
     ],
     "background_colors": {
-      "night": "DARK_BACKGROUND_COLORS_NIGHT",
-      "day": "DARK_BACKGROUND_COLORS_DAY"
+      "night": "BACKGROUND_COLOR",
+      "day": "BACKGROUND_COLOR"
     },
     "geometry_mode": "shared"
   },
@@ -25,8 +25,8 @@
       "object_type": "Label",
       "paint": {
         "text-anchor": "center",
-        "text-color": "DARK_LABEL_TEXT_LABEL_LABELS_TEXT_COLOR",
-        "text-halo-color": "DARK_LABEL_TEXT_LABEL_LABELS_TEXT_HALO_COLOR",
+        "text-color": "TEXT_COLOR",
+        "text-halo-color": "TEXT_HALO_COLOR",
         "text-halo-width": 1,
         "text-size": 12,
         "zoomLevel": 5

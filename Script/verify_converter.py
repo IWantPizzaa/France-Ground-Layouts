@@ -18,11 +18,21 @@ def main():
     c.require_native_ids(source)
     for path in (root / 'Preserved').rglob('*.json'):
         assert not re.search(r'"#[0-9A-Fa-f]{6}"', path.read_text(encoding='utf-8')), 'Palette literals belong in Colours.sct'
-    changed_colors = dict(source['colors'], DARK_BACKGROUND_COLORS='#123456')
+    changed_colors = dict(source['colors'], BACKGROUND_COLOR='#123456')
     changed_settings = c.load_preserved(changed_colors)
     assert changed_settings['recipes']['LFPG']['document']['metadata']['background_colors']['dark'] == '#123456'
+    assert changed_settings['recipes']['LFPG']['document']['metadata']['background_colors']['real'] == '#6F6F6F'
+    for code, recipe in changed_settings['recipes'].items():
+        for mode, color in recipe['document']['metadata']['background_colors'].items():
+            if (code, mode) != ('LFPG', 'real'):
+                assert color == '#123456', (code, mode)
+    text_settings = c.load_preserved(dict(source['colors'], TEXT_COLOR='#123456'))
+    for recipe in text_settings['recipes'].values():
+        for style in recipe['document']['styles'].values():
+            if 'text-color' in style['paint']:
+                assert style['paint']['text-color'] == '#123456'
     missing_colors = dict(source['colors'])
-    del missing_colors['DARK_BACKGROUND_COLORS']
+    del missing_colors['BACKGROUND_COLOR']
     try:
         c.load_preserved(missing_colors)
         raise AssertionError('Undefined palette color accepted')

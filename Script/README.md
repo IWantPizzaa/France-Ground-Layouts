@@ -78,3 +78,9 @@ checks on pushes and pull requests. AVISO is a generated output folder; store
 manual appearance changes in Preserved.
 
 See [the customization guide](../Preserved/README.md) for runtime editing.
+
+Shared defaults are `BACKGROUND_COLOR`, `TEXT_COLOR` and `TEXT_HALO_COLOR`.
+LFPG Real uses `REAL_LFPG_BACKGROUND_COLOR`; all other backgrounds share the
+default. Equal color values share one definition across airports and palettes,
+so changing that definition changes every reference to it. Sections and RGB
+comments in Colours.sct make the decimal BGR values easier to edit.
