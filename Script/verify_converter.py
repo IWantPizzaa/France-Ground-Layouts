@@ -8,7 +8,7 @@ from unittest.mock import patch
 import zipfile
 
 import aviso_converter as c
-from native_geometry import native_equivalent
+from native_geometry import match_native_records
 
 
 def main():
@@ -23,12 +23,10 @@ def main():
         actual_files = {p.name:p.read_bytes() for p in (scratch / 'AVISO').iterdir()}
         assert actual_files == expected_files, 'Committed AVISO is not current: regenerate from local source'
         # Both native representations must agree, including holes and multipart lines.
-        native_gng, native_kmz = {}, {}
+        native_gng = {r['source_id']: r for records in source['airports'].values() for r in records}
+        native_kmz = {}
         for path in (root / 'GNG').rglob('*.txt'):
-            for item in c.parse_gng(path.relative_to(root).as_posix(), path.read_bytes()):
-                if 'source_id' in item:
-                    assert item['source_id'] not in native_gng, 'Duplicate GNG feature ID'
-                    native_gng[item['source_id']] = item
+            assert b'; Feature:' not in path.read_bytes(), 'GNG must use ordinary native syntax'
         for path in (root / 'KMZ').glob('*.kmz'):
             for item in c.parse_kmz(path.relative_to(root).as_posix(), path.read_bytes()):
                 if 'source_id' in item:
@@ -37,11 +35,25 @@ def main():
         assert native_gng.keys() == native_kmz.keys(), 'GNG/KMZ feature IDs differ'
         for fid, published in native_gng.items():
             authoring = native_kmz[fid]
-            assert native_equivalent(published['geometry'], authoring['geometry']), fid
+            assert published['geometry'] == authoring['geometry'], fid
             if published['kind'] == 'label':
                 assert published['name'] == authoring['name'], fid
             else:
                 assert source['colors'][published['color']].upper() == authoring['kml_color'].upper(), fid
+
+        # Exercise the raw GNG-to-KML matching, not just already matched records.
+        raw = c.parse_gng('GNG/LFFF/TEST/TEST Gates.txt',
+                          b'N049.00.00.000 E002.00.00.000 renamed\n')
+        authored = dict(raw[0], source_id='TEST-gate', name='old')
+        matched = match_native_records('TEST', raw, [authored])
+        assert matched[0]['source_id'] == 'TEST-gate'
+        assert matched[0]['name'] == 'renamed'
+        assert match_native_records('TEST', [], [authored]) == []
+        moved = copy.deepcopy(raw)
+        moved[0]['geometry']['coordinates'][0] += 0.001
+        updated = match_native_records('TEST', moved, [authored])
+        assert len(updated) == 1 and updated[0]['geometry'] == moved[0]['geometry']
+        assert updated == match_native_records('TEST', moved, [authored])
 
         # Only the three native source entries are needed; no old geometry snapshot.
         buffer = io.BytesIO()

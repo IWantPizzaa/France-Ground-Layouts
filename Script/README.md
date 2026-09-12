@@ -25,10 +25,9 @@ Existing GNG FIR directories were retained; added datasets use GNG/Additional.
 KMZ files use normal KML geometry, styles, names and placemark IDs. Extra archive
 assets are retained. LFXX and the separate LFMM coastline remain reference data.
 
-A native GNG feature starts with an ordinary comment:
+GNG files use ordinary native regions, line segments and text rows:
 
 ```text
-; Feature: LFPG-example-id
 COLOR_RunwayConcrete
 N049.00.00.0000 E002.30.00.0000
 N049.00.01.0000 E002.30.00.0000
@@ -36,16 +35,17 @@ N049.00.01.0000 E002.30.01.0000
 N049.00.00.0000 E002.30.00.0000
 ```
 
-The same feature is a normal KML placemark with `id="LFPG-example-id"`.
-Keep these IDs stable and unique. Comments remain comments to native GNG consumers;
-no proprietary geometry syntax or KML ExtendedData is used.
+KML placemarks retain standard IDs for runtime customizations. GNG contains no
+feature ID comments and needs no custom syntax. The converter matches GNG
+coordinates and colors to KML placemarks, including multipart geometry and holes.
+Shared line segments may belong to multiple KML features (such as arrow groups).
 
-Regions, line segments and coordinate/text rows retain their original syntax.
 Fractional seconds keep the source precision. Polygon holes use zero-width
-bridges in GNG and standard innerBoundaryIs rings in KML. MultiPolygon components
-share the same feature comment; KMZ uses MultiGeometry. GNG and KMZ must describe
-the same geometry; KMZ preserves topology and original placemark ordering.
-Labels use the GNG text row, so editing GNG text updates the next conversion.
+bridges in GNG and standard innerBoundaryIs rings in KML. KMZ preserves multipart
+topology and placemark ordering. Labels use GNG text at the matching coordinate.
+New or changed unmatched GNG geometry remains live with a generated ID; if an
+edit changes its identity, review its feature overrides in Preserved. Keep GNG
+and KMZ geometry synchronized when maintaining a layout.
 
 Light colors are standard COLOR_* definitions in Colours.sct and KML styles.
 Dark/Real palette variants, vSMR groups, zoom levels and runway settings remain

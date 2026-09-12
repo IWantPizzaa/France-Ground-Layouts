@@ -10,7 +10,7 @@ fork's GitHub source first, falls back to local source when unavailable, and
 writes the GeoJSON files into `AVISO/`. It asks no questions and generates no
 report or summary files. Python 3.10+ is required; there are no extra packages.
 
-- `GNG/`: native regions, lines, labels and stable IDs in ordinary comments.
+- `GNG/`: native regions, lines and labels without feature ID comments.
 - `KMZ/`: matching KML placemarks, including polygon holes and multipart geometry.
 - `Colours.sct`: the Light palette, including shared custom color definitions.
 - `Preserved/`: only vSMR palettes, groups, zoom/runway settings and feature overrides.

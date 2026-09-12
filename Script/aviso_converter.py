@@ -19,7 +19,7 @@ import traceback
 import urllib.request
 import zipfile
 import xml.etree.ElementTree as ET
-from native_geometry import native_equivalent
+from native_geometry import match_native_records
 
 ROOT = Path(__file__).resolve().parent.parent
 GITHUB_URL = 'https://codeload.github.com/IWantPizzaa/France-Ground-Layouts/zip/refs/heads/master'
@@ -71,22 +71,6 @@ def record(file, kind, color, name, geometry):
 
 def parse_gng(file, data):
     text = decode(data)
-    markers = list(re.finditer(r'^; Feature: ([A-Za-z_][\w.-]*)\s*$', text, re.MULTILINE))
-    if markers:
-        identified = []
-        for i, marker in enumerate(markers):
-            body = text[marker.end():markers[i + 1].start() if i + 1 < len(markers) else len(text)]
-            parts = parse_gng(file, body.encode('utf-8'))
-            if not parts:
-                raise ValueError(file + ': empty identified feature ' + marker[1])
-            item = parts[0]
-            if len(parts) > 1:
-                if any(p['kind'] != 'polygon' or p['color'] != item['color'] for p in parts):
-                    raise ValueError(file + ': incompatible components in ' + marker[1])
-                item['geometry'] = dict(type='MultiPolygon', coordinates=[p['geometry']['coordinates'] for p in parts])
-            item['source_id'] = marker[1]
-            identified.append(item)
-        return identified
     records, polygon, color = [], [], None
     lines = collections.defaultdict(list)
     stem = Path(file).stem
@@ -287,27 +271,9 @@ def load_source(path):
             if code not in published and code not in ('LFXX', 'LFMM'):
                 airports[code].extend(records)
         for code in published:
-            identified = {r['source_id']: r for r in airports[code] if 'source_id' in r}
-            if not identified:
-                continue
-            if len(identified) != len(airports[code]):
-                raise ValueError(code + ': mixed/duplicate native feature IDs')
-            ordered = []
-            for file, (airport, records) in sorted(kmz.items()):
-                if airport != code:
-                    continue
-                for authoring in records:
-                    source_id = authoring.get('source_id')
-                    if source_id not in identified:
-                        continue
-                    published_item = identified.pop(source_id)
-                    if native_equivalent(published_item['geometry'], authoring['geometry']):
-                        published_item['geometry'] = authoring['geometry']
-                    if published_item['kind'] != 'label':
-                        published_item['name'] = authoring['name']
-                    ordered.append(published_item)
-            ordered.extend(identified.values())
-            airports[code] = ordered
+            authoring = [r for _, (airport, records) in sorted(kmz.items())
+                         if airport == code for r in records]
+            airports[code] = match_native_records(code, airports[code], authoring)
         extras['kmz'] = {f: dict(airport=c, features=len(rs), usage='authoring copy' if c in published else 'reference/region' if c in ('LFXX', 'LFMM') else 'fallback') for f, (c, rs) in kmz.items()}
     if not gng or not kmz or not extras.get('colors'):
         raise ValueError('Expected GNG/, KMZ/ and a valid Colours.sct')

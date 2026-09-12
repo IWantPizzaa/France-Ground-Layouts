@@ -41,8 +41,9 @@ In features.json, for example:
 }
 ```
 
-Native feature IDs come from `; Feature: ...` comments in GNG and matching
-`Placemark id="..."` attributes in KMZ. Preserve IDs when editing existing objects.
+Native feature IDs come from standard `Placemark id="..."` attributes in KMZ.
+GNG geometry is matched to these placemarks without custom comments. Preserve
+KMZ IDs when editing existing objects; unmatched GNG objects get generated IDs.
 A `null` property override omits that property. Optional
 `metadata.exclude_features` is a list of native IDs to hide only in vSMR.
 
