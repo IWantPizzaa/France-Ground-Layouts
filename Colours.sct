@@ -1,6 +1,3 @@
-; AVISO colors - edit values here; shared colors apply everywhere they are used.
-; Decimal BGR: red + green * 256 + blue * 65536.
-
 ; -----------------------------------------------------------------------------
 ; SHARED DEFAULTS
 ; -----------------------------------------------------------------------------
@@ -96,6 +93,7 @@
 #define REAL_LFML_POLYGON_TERRAIN7_FILL                  5066061   ; #4D4D4D
 #define REAL_LFML_POLYGON_TERRAIN8_FILL                  5855577   ; #595959
 #define REAL_LFML_POLYGON_TERRAIN9_FILL                  2378664   ; #A84B24
+
 #define REAL_LFMN_LINE_PARKPOS_STROKE                    11053224  ; #A8A8A8
 #define REAL_LFMN_LINE_TAXIWAYGREY_STROKE                6838088   ; #485768
 #define REAL_LFMN_POLYGON_BUILDING2_FILL                 3618615   ; #373737
@@ -104,6 +102,7 @@
 #define REAL_LFMN_POLYGON_TERRAIN2_FILL                  8816262   ; #868686
 #define REAL_LFMN_POLYGON_TERRAIN3_FILL                  9737364   ; #949494
 #define REAL_LFMN_POLYGON_WATER_FILL                     7885385   ; #495278
+
 #define REAL_LFPG_BACKGROUND_COLOR                       7303023   ; #6F6F6F
 #define REAL_LFPG_LINE_TAXIWAYBLUE_STROKE                1578008   ; #181418
 #define REAL_LFPG_LINE_TAXIWAY_STROKE                    2763306   ; #2A2A2A
