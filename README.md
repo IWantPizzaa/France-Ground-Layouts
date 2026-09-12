@@ -1,9 +1,9 @@
 # France Ground Layouts — vSMR fork
 
 This fork integrates the vSMR additions into native GNG and KMZ source files and
-includes a converter for 395 AVISO datasets. Their geometry, text, palettes,
+includes a converter for 196 AVISO datasets. Their geometry, text, palettes,
 groups and runway settings preserve the original vSMR data, with runway reference
-lines removed. Datasets without ground layout geometry remain empty.
+lines removed. Empty datasets have been removed.
 
 **Double-click `Script/Convert AVISO.cmd` on Windows.** The converter reads this
 fork's GitHub source first, falls back to local source when unavailable, and
