@@ -14,8 +14,8 @@
       "light"
     ],
     "background_colors": {
-      "dark": "#434A4F",
-      "light": "#434A4F"
+      "dark": "DARK_BACKGROUND_COLORS",
+      "light": "LIGHT_LFPX_BACKGROUND_COLORS"
     },
     "runways": [],
     "saved_active_runways": [],
@@ -34,11 +34,11 @@
       "layer": "Terrain",
       "object_type": "Area",
       "paint": {
-        "fill": "#727E67",
+        "fill": "DARK_POLYGON_GRASSURFACE3_FILL_2",
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "#727E67"
+            "fill": "LIGHT_LFPX_POLYGON_GRASSURFACE3_FILL"
           }
         }
       }

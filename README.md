@@ -52,17 +52,20 @@ A map displaying the available, work-in-progress and planned airports is availab
 
 ## Colors  
 
-- **Runways** must be defined as separate polygons, color **COLOR_RunwayConcrete**
-- **Grass runways** must be defined as separate polygons, color **COLOR_RunwayGrass**
-- **Taxiways** must be defined as separate polygons, with the color **COLOR_HardSurface2**
-- **Grass taxiways** must be defined as separate polygons, with the color **COLOR_GrassSurface2**
-- **Aprons** must be defined as separate polygons, with the color **COLOR_HardSurface3**
-- **Grass areas** must be defined as separate polygons, color **COLOR_GrasSurface**
-- **Buildings** must be defined as separate polygons, color **COLOR_Building**
-- **CAT I holding points** must be defined as separate polygons, color **COLOR_Stopbar**
-- **CAT III holding points** must be defined as separate polygons, color **COLOR_TaxiwayOrange**
-- **Unusable paved areas** must be defined as separate polygons, color **COLOR_HardSurface4**
-- **Gate centerlines** must be defined as separate lines (under the [GEO] section), using the color **COLOR_Taxiway**
-- **Intermediate holding points** must be defined as dashed lines, using the color **COLOR_TaxiwayOrange**
+- **Runways** must be defined as separate polygons, color **LIGHT_RUNWAY_CONCRETE**
+- **Grass runways** must be defined as separate polygons, color **LIGHT_RUNWAY_GRASS**
+- **Taxiways** must be defined as separate polygons, with the color **LIGHT_HARD_SURFACE2**
+- **Grass taxiways** must be defined as separate polygons, with the color **LIGHT_GRASS_SURFACE2**
+- **Aprons** must be defined as separate polygons, with the color **LIGHT_HARD_SURFACE3**
+- **Grass areas** must be defined as separate polygons, color **LIGHT_GRAS_SURFACE**
+- **Buildings** must be defined as separate polygons, color **LIGHT_BUILDING**
+- **CAT I holding points** must be defined as separate polygons, color **LIGHT_STOPBAR**
+- **CAT III holding points** must be defined as separate polygons, color **LIGHT_TAXIWAY_ORANGE**
+- **Unusable paved areas** must be defined as separate polygons, color **LIGHT_HARD_SURFACE4**
+- **Gate centerlines** must be defined as separate lines (under the [GEO] section), using the color **LIGHT_TAXIWAY**
+- **Intermediate holding points** must be defined as dashed lines, using the color **LIGHT_TAXIWAY_ORANGE**
   
 If you have any questions or issues regarding the creation or updating of an AVISO, please visit the French vACC Discord server.
+
+Palette values are centralized in `Colours.sct` under `DARK_*`, `LIGHT_*`,
+and `REAL_<ICAO>_*` names. Preserved files reference these definitions.

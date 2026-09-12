@@ -4,12 +4,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#111318",
+      "stroke": "DARK_LINE_RUNWAYCONCRETE_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#555555"
+          "stroke": "LIGHT_LINE_RUNWAYCONCRETE_STROKE"
         }
       }
     }
@@ -19,12 +19,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#4E5A69",
+      "stroke": "DARK_LINE_TAXIWAY_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#C0B631"
+          "stroke": "LIGHT_LINE_TAXIWAY_STROKE"
         }
       }
     }
@@ -34,12 +34,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#808080",
+      "stroke": "DARK_LINE_APRONSURFACE_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#808080"
+          "stroke": "LIGHT_LINE_APRONSURFACE_STROKE"
         }
       }
     }
@@ -49,12 +49,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#7E0000",
+      "stroke": "DARK_LINE_STOPBAR_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#7E0000"
+          "stroke": "LIGHT_LINE_STOPBAR_STROKE"
         }
       }
     }
@@ -64,12 +64,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#000000",
+      "stroke": "DARK_LINE_TWR_CTR_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#000000"
+          "stroke": "LIGHT_LINE_TWR_CTR_STROKE"
         }
       }
     }
@@ -79,12 +79,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#808080",
+      "stroke": "DARK_LINE_LABELS_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#808080"
+          "stroke": "LIGHT_LINE_LABELS_STROKE"
         }
       }
     }
@@ -94,10 +94,10 @@
     "layer": "Labels",
     "object_type": "Label",
     "paint": {
-      "text-color": "#CCCCCC",
+      "text-color": "DARK_LABEL_GATES_TEXT_COLOR",
       "text-font": "Arial",
       "text-size": 12,
-      "text-halo-color": "#000000",
+      "text-halo-color": "DARK_LABEL_GATES_TEXT_HALO_COLOR",
       "text-halo-width": 1,
       "text-anchor": "center",
       "zoomLevel": 9
@@ -108,10 +108,10 @@
     "layer": "Labels",
     "object_type": "Label",
     "paint": {
-      "text-color": "#CCCCCC",
+      "text-color": "DARK_LABEL_TAXIWAYS_TEXT_COLOR",
       "text-font": "Arial",
       "text-size": 12,
-      "text-halo-color": "#000000",
+      "text-halo-color": "DARK_LABEL_TAXIWAYS_TEXT_HALO_COLOR",
       "text-halo-width": 1,
       "text-anchor": "center",
       "zoomLevel": 7
@@ -122,12 +122,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#859A77",
+      "stroke": "DARK_LINE_RUNWAYGRASS_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#008000"
+          "stroke": "LIGHT_LINE_RUNWAYGRASS_STROKE"
         }
       }
     }
@@ -137,11 +137,11 @@
     "layer": "Terrain",
     "object_type": "Area",
     "paint": {
-      "fill": "#010D19",
+      "fill": "DARK_POLYGON_GRASSURFACE_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#00512F"
+          "fill": "LIGHT_POLYGON_GRASSURFACE_FILL"
         }
       }
     }
@@ -151,11 +151,11 @@
     "layer": "Airfield surfaces",
     "object_type": "Area",
     "paint": {
-      "fill": "#152841",
+      "fill": "DARK_POLYGON_HARDSURFACE4_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#969393"
+          "fill": "LIGHT_POLYGON_HARDSURFACE4_FILL"
         }
       }
     }
@@ -165,11 +165,11 @@
     "layer": "Airfield surfaces",
     "object_type": "Area",
     "paint": {
-      "fill": "#222D3C",
+      "fill": "DARK_POLYGON_HARDSURFACE3_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#8A807F"
+          "fill": "LIGHT_POLYGON_HARDSURFACE3_FILL"
         }
       }
     }
@@ -179,11 +179,11 @@
     "layer": "Airfield surfaces",
     "object_type": "Area",
     "paint": {
-      "fill": "#2F3949",
+      "fill": "DARK_POLYGON_HARDSURFACE2_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#595E5B"
+          "fill": "LIGHT_POLYGON_HARDSURFACE2_FILL"
         }
       }
     }
@@ -193,11 +193,11 @@
     "layer": "Airfield surfaces",
     "object_type": "Area",
     "paint": {
-      "fill": "#111318",
+      "fill": "DARK_POLYGON_RUNWAYCONCRETE_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#555555"
+          "fill": "LIGHT_POLYGON_RUNWAYCONCRETE_FILL"
         }
       }
     }
@@ -207,11 +207,11 @@
     "layer": "Buildings and structures",
     "object_type": "Area",
     "paint": {
-      "fill": "#475570",
+      "fill": "DARK_POLYGON_BUILDING_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#394446"
+          "fill": "LIGHT_POLYGON_BUILDING_FILL"
         }
       }
     }
@@ -221,11 +221,11 @@
     "layer": "Surface markings",
     "object_type": "Area",
     "paint": {
-      "fill": "#7E0000",
+      "fill": "DARK_POLYGON_STOPBAR_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#7E0000"
+          "fill": "LIGHT_POLYGON_STOPBAR_FILL"
         }
       }
     }
@@ -235,12 +235,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#808080",
+      "stroke": "DARK_LINE_RUNWAYBORDER_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#808080"
+          "stroke": "LIGHT_LINE_RUNWAYBORDER_STROKE"
         }
       }
     }
@@ -250,12 +250,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#FFFF00",
+      "stroke": "DARK_LINE_CENTERLINES_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#FFFF00"
+          "stroke": "LIGHT_LINE_CENTERLINES_STROKE"
         }
       }
     }
@@ -266,8 +266,8 @@
     "object_type": "Label",
     "paint": {
       "text-anchor": "center",
-      "text-color": "#CCCCCC",
-      "text-halo-color": "#000000",
+      "text-color": "DARK_LABEL_TEXT_LABEL_LABELS_TEXT_COLOR",
+      "text-halo-color": "DARK_LABEL_TEXT_LABEL_LABELS_TEXT_HALO_COLOR",
       "text-halo-width": 1,
       "text-size": 12,
       "zoomLevel": 0
@@ -278,11 +278,11 @@
     "layer": "Terrain",
     "object_type": "Area",
     "paint": {
-      "fill": "#574242",
+      "fill": "DARK_POLYGON_TERRAIN1_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#574242"
+          "fill": "LIGHT_POLYGON_TERRAIN1_FILL"
         }
       }
     }
@@ -292,11 +292,11 @@
     "layer": "Airfield surfaces",
     "object_type": "Area",
     "paint": {
-      "fill": "#859A77",
+      "fill": "DARK_POLYGON_RUNWAYGRASS_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#008000"
+          "fill": "LIGHT_POLYGON_RUNWAYGRASS_FILL"
         }
       }
     }
@@ -306,11 +306,11 @@
     "layer": "Airfield surfaces",
     "object_type": "Area",
     "paint": {
-      "fill": "#CC8B00",
+      "fill": "DARK_POLYGON_TAXIWAYORANGE_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#CC6D00"
+          "fill": "LIGHT_POLYGON_TAXIWAYORANGE_FILL"
         }
       }
     }
@@ -320,12 +320,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#0000FF",
+      "stroke": "DARK_LINE_TAXIWAYBORDER_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#0000FF"
+          "stroke": "LIGHT_LINE_TAXIWAYBORDER_STROKE"
         }
       }
     }
@@ -335,12 +335,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#CC8B00",
+      "stroke": "DARK_LINE_TAXIWAYORANGE_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#CC6D00"
+          "stroke": "LIGHT_LINE_TAXIWAYORANGE_STROKE"
         }
       }
     }
@@ -350,12 +350,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#3B5296",
+      "stroke": "DARK_LINE_TAXIWAYBLUE_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#004080"
+          "stroke": "LIGHT_LINE_TAXIWAYBLUE_STROKE"
         }
       }
     }
@@ -365,11 +365,11 @@
     "layer": "Operational restrictions",
     "object_type": "Area",
     "paint": {
-      "fill": "#FF0000",
+      "fill": "DARK_POLYGON_CLOSUREAREA_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#FF0000"
+          "fill": "LIGHT_POLYGON_CLOSUREAREA_FILL"
         }
       }
     }
@@ -379,11 +379,11 @@
     "layer": "Terrain",
     "object_type": "Area",
     "paint": {
-      "fill": "#339933",
+      "fill": "DARK_POLYGON_GRASSURFACE2_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#339933"
+          "fill": "LIGHT_POLYGON_GRASSURFACE2_FILL"
         }
       }
     }
@@ -393,12 +393,12 @@
     "layer": "Guidance lines",
     "object_type": "Line",
     "paint": {
-      "stroke": "#B4424B",
+      "stroke": "DARK_LINE_LANDMARK3_STROKE",
       "stroke-opacity": 1,
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "#B4424B"
+          "stroke": "LIGHT_LINE_LANDMARK3_STROKE"
         }
       }
     }
@@ -408,7 +408,7 @@
     "layer": "Reference points",
     "object_type": "Label",
     "paint": {
-      "text-color": "#CCCCCC",
+      "text-color": "DARK_AIRPORT_REFERENCE_TEXT_COLOR",
       "text-size": 12,
       "text-halo-width": 1
     }
@@ -418,11 +418,11 @@
     "layer": "Airfield surfaces",
     "object_type": "Area",
     "paint": {
-      "fill": "#808080",
+      "fill": "DARK_POLYGON_RUNWAYBORDER_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#808080"
+          "fill": "LIGHT_POLYGON_RUNWAYBORDER_FILL"
         }
       }
     }
@@ -432,11 +432,11 @@
     "layer": "Airfield surfaces",
     "object_type": "Area",
     "paint": {
-      "fill": "#152841",
+      "fill": "DARK_POLYGON_HARDSURFACE1_FILL",
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "#969393"
+          "fill": "LIGHT_POLYGON_HARDSURFACE1_FILL"
         }
       }
     }

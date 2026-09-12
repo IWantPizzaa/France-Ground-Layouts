@@ -14,8 +14,8 @@
       "light"
     ],
     "background_colors": {
-      "dark": "#434A4F",
-      "light": "#434A4F"
+      "dark": "DARK_BACKGROUND_COLORS",
+      "light": "LIGHT_LFBF_BACKGROUND_COLORS"
     },
     "runways": [
       {
@@ -58,12 +58,12 @@
       "layer": "Guidance lines",
       "object_type": "Line",
       "paint": {
-        "stroke": "#7E7E7E",
+        "stroke": "DARK_LINE_LANDMARK3_STROKE_2",
         "stroke-opacity": 1,
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "#7E7E7E"
+            "stroke": "LIGHT_LFBF_LINE_LANDMARK3_STROKE"
           }
         }
       }
@@ -77,7 +77,7 @@
       "id": "stands-and-gates",
       "name": "Stands & gates",
       "visible": true,
-      "accent": "#d4bd39"
+      "accent": "DARK_VSMR_GROUPS_ACCENT"
     }
   ]
 }

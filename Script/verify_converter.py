@@ -2,6 +2,7 @@
 import copy
 import io
 import json
+import re
 from pathlib import Path
 import tempfile
 from unittest.mock import patch
@@ -15,6 +16,23 @@ def main():
     root = c.ROOT
     source = c.load_source(root)
     c.require_native_ids(source)
+    for path in (root / 'Preserved').rglob('*.json'):
+        assert not re.search(r'"#[0-9A-Fa-f]{6}"', path.read_text(encoding='utf-8')), 'Palette literals belong in Colours.sct'
+    changed_colors = dict(source['colors'], DARK_BACKGROUND_COLORS='#123456')
+    changed_settings = c.load_preserved(changed_colors)
+    assert changed_settings['recipes']['LFPG']['document']['metadata']['background_colors']['dark'] == '#123456'
+    missing_colors = dict(source['colors'])
+    del missing_colors['DARK_BACKGROUND_COLORS']
+    try:
+        c.load_preserved(missing_colors)
+        raise AssertionError('Undefined palette color accepted')
+    except ValueError as error:
+        assert 'Undefined palette color' in str(error)
+    try:
+        c.read_colors(b'#define DARK_TEST 0\n#define DARK_TEST 1\n')
+        raise AssertionError('Duplicate palette definition accepted')
+    except ValueError as error:
+        assert 'Duplicate color' in str(error)
     expected_files = {p.name: p.read_bytes() for p in (root / 'AVISO').glob('*.geojson')}
     assert expected_files, 'Generate AVISO before running the checks'
     with tempfile.TemporaryDirectory(prefix='vsmr-aviso-tests-') as scratch:

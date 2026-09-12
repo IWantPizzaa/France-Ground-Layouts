@@ -47,9 +47,10 @@ New or changed unmatched GNG geometry remains live with a generated ID; if an
 edit changes its identity, review its feature overrides in Preserved. Keep GNG
 and KMZ geometry synchronized when maintaining a layout.
 
-Light colors are standard COLOR_* definitions in Colours.sct and KML styles.
-Dark/Real palette variants, vSMR groups, zoom levels and runway settings remain
-in Preserved. Real palettes are not created for every airport.
+All color values are standard #define entries in Colours.sct: LIGHT_*, DARK_*
+and REAL_<ICAO>_*. GNG and KML style names use LIGHT_* entries; KML also embeds
+its native color values for authoring applications. Preserved references the
+palette names and stores vSMR groups, zoom levels and runway settings. Real palettes are not created for every airport.
 
 ## Local changes and checks
 

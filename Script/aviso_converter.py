@@ -25,6 +25,7 @@ GITHUB_URL = 'https://codeload.github.com/IWantPizzaa/France-Ground-Layouts/zip/
 COORD = re.compile(r'([NSEW])(\d{2,3})[. :](\d{2})[. :](\d{2}(?:\.\d+)?)')
 NS = {'k': 'http://www.opengis.net/kml/2.2'}
 DEFAULT_STYLES = {}
+COLOR_TOKEN = r'(?:COLOR_|DARK_|LIGHT_|REAL_)[A-Za-z0-9_]+'
 
 
 def packed(value):
@@ -85,7 +86,7 @@ def parse_gng(file, data):
         text = raw.split(';')[0].strip()
         if not text or text.startswith('//'):
             continue
-        if re.fullmatch(r'COLOR_\w+', text):
+        if re.fullmatch(COLOR_TOKEN, text):
             flush()
             color = text
             continue
@@ -94,7 +95,7 @@ def parse_gng(file, data):
             flush()
             pts = pairs(matches)
             token = text[matches[-1].end():].strip()
-            if not re.fullmatch(r'COLOR_\w+|\d+', token):
+            if not re.fullmatch(COLOR_TOKEN + r'|\d+', token):
                 raise ValueError(f'{file}:{number}: unsupported line color {token!r}')
             lines[token].append(pts)
         elif len(matches) == 2:
@@ -182,7 +183,7 @@ def parse_kmz(file, data):
                         kind = {'Point': 'label', 'Polygon': 'polygon', 'LineString': 'line'}[typ]
                         color_path = 'k:PolyStyle/k:color' if kind == 'polygon' else 'k:LineStyle/k:color'
                         color = style.findtext(color_path, default='', namespaces=NS) if style is not None else ''
-                        item = record(file, kind, style_id if style_id.startswith('COLOR_') else label if label.startswith('COLOR_') else '', label,
+                        item = record(file, kind, style_id if re.fullmatch(COLOR_TOKEN, style_id) else label if re.fullmatch(COLOR_TOKEN, label) else '', label,
                                       dict(type=typ, coordinates=coordinates))
                         item['folder'] = '/'.join(folders)
                         if len(color) == 8:
@@ -230,6 +231,18 @@ def source_archive(path):
     return zipfile.ZipFile(buffer)
 
 
+def read_colors(data):
+    colors = {}
+    for name, number in re.findall(r'#define\s+(\w+)\s+(\d+)', decode(data)):
+        if name in colors:
+            raise ValueError('Duplicate color definition: ' + name)
+        value = int(number)
+        if not 0 <= value <= 0xFFFFFF:
+            raise ValueError('Invalid color value: ' + name)
+        colors[name] = '#%02X%02X%02X' % (value & 255, (value >> 8) & 255, (value >> 16) & 255)
+    return colors
+
+
 def load_source(path):
     airports = collections.defaultdict(list)
     inventory, gng, kmz, extras = set(), {}, {}, {}
@@ -257,8 +270,7 @@ def load_source(path):
                 code = Path(file).stem[:4].upper()
                 kmz[file] = (code, parse_kmz(file, data))
             elif file == 'Colours.sct':
-                extras['colors'] = {m[1]: '#%02X%02X%02X' % (int(m[2]) & 255, (int(m[2]) >> 8) & 255, (int(m[2]) >> 16) & 255)
-                                    for m in re.finditer(r'#define\s+(\w+)\s+(\d+)', decode(data))}
+                extras['colors'] = read_colors(data)
         for file, (code, records) in sorted(gng.items()):
             airports[code].extend(records)
         published = set(airports)
@@ -284,7 +296,9 @@ def coordinates(geometry):
     yield from walk(geometry['coordinates'])
 
 
-def load_preserved():
+def load_preserved(colors=None):
+    if colors is None:
+        colors = read_colors((ROOT / 'Colours.sct').read_bytes())
     folder = ROOT / 'Preserved'
     common = json.loads((folder / 'common.json').read_text(encoding='utf-8-sig'))
     def merge(base, changes):
@@ -297,6 +311,10 @@ def load_preserved():
     def resolve(value, stack=()):
         if isinstance(value, list):
             return [resolve(v, stack) for v in value]
+        if isinstance(value, str) and re.fullmatch(r'(?:DARK_|LIGHT_|REAL_)[A-Za-z0-9_]+', value):
+            if value not in colors:
+                raise ValueError('Undefined palette color: ' + value)
+            return colors[value]
         if not isinstance(value, dict):
             return value
         reference = value.get('$ref')
@@ -333,19 +351,20 @@ def label_category(file):
 
 def infer_style(item, doc, colors):
     kind = item['kind']
-    token = item['color'].removeprefix('COLOR_').lower()
+    token = re.sub(r'^(?:COLOR_|LIGHT_|DARK_|REAL_[A-Z]{4}_)', '', item['color']).lower()
     prefix = ('label.' + re.sub('[^a-z0-9]+', '-', label_category(item['file']).lower()).strip('-')) if kind == 'label' else kind + '.' + token + '.'
     for key in list(doc['styles']) + list(DEFAULT_STYLES):
-        normalized = re.sub(r'\W+', '_', key)
-        if key == prefix or key.startswith(prefix) or item['color'].startswith('COLOR_vSMR_' + normalized + '_'):
+        normalized = re.sub(r'(?:[._-])[a-fA-F0-9]{6}(?=$|[._-])', '', key)
+        normalized = re.sub(r'\W+', '_', normalized).upper()
+        if key == prefix or key.startswith(prefix) or item['color'] == 'LIGHT_' + normalized:
             if key not in doc['styles']:
                 doc['styles'][key] = copy.deepcopy(DEFAULT_STYLES[key])
             return key
     style_id = prefix.rstrip('.')
-    color = colors.get(item['color'], '#CCCCCC')
-    category = label_category(item['file']) if kind == 'label' else item['color'].removeprefix('COLOR_')
+    color = colors.get(item['color'], colors['DARK_DEFAULT_TEXT'])
+    category = label_category(item['file']) if kind == 'label' else token
     layer = {'label': 'Labels', 'line': 'Guidance lines', 'polygon': 'Airfield surfaces'}[kind]
-    paint = {'text-color': color, 'text-font': 'Arial', 'text-size': 12, 'text-halo-color': '#000000', 'text-halo-width': 1, 'text-anchor': 'center', 'zoomLevel': 9 if 'gate' in category.lower() else 7} if kind == 'label' else {'stroke': color, 'stroke-width': 1, 'stroke-opacity': 1} if kind == 'line' else {'fill': color, 'fill-opacity': 1}
+    paint = {'text-color': color, 'text-font': 'Arial', 'text-size': 12, 'text-halo-color': colors['DARK_DEFAULT_TEXT_HALO'], 'text-halo-width': 1, 'text-anchor': 'center', 'zoomLevel': 9 if 'gate' in category.lower() else 7} if kind == 'label' else {'stroke': color, 'stroke-width': 1, 'stroke-opacity': 1} if kind == 'line' else {'fill': color, 'fill-opacity': 1}
     doc['styles'][style_id] = dict(name=category, layer=layer, object_type={'label': 'Label', 'line': 'Line', 'polygon': 'Area'}[kind], paint=paint)
     return style_id
 
@@ -488,7 +507,7 @@ def run(source_path=None, output=None):
     source = choose_source() if source_path is None else load_source(source_path)
     require_native_ids(source)
     say('  [2/4] Applying palettes, groups and runtime settings...', '37')
-    saved = load_preserved()
+    saved = load_preserved(source['colors'])
     votes = collections.defaultdict(collections.Counter)
     for recipe in saved['recipes'].values():
         for key, original_style in recipe['document']['styles'].items():
@@ -502,7 +521,7 @@ def run(source_path=None, output=None):
     for n, code in enumerate(all_codes, 1):
         recipe = saved['recipes'].get(code)
         if recipe is None:
-            recipe = dict(document=dict(type='FeatureCollection', name=code + ' AVISO', bbox=[], metadata=dict(schema='vSMR AVISO', schema_version=2, geometry_mode='shared', airport=code, coordinate_reference_system='WGS84', coordinate_order='longitude, latitude', default_color_palette='dark', color_palettes=['dark','light'], background_colors={'dark':'#434A4F','light':'#434A4F'}), styles={}, vsmr_groups=[]), overrides={})
+            recipe = dict(document=dict(type='FeatureCollection', name=code + ' AVISO', bbox=[], metadata=dict(schema='vSMR AVISO', schema_version=2, geometry_mode='shared', airport=code, coordinate_reference_system='WGS84', coordinate_order='longitude, latitude', default_color_palette='dark', color_palettes=['dark','light'], background_colors={'dark':source['colors']['DARK_BACKGROUND_COLORS'],'light':source['colors']['LIGHT_DEFAULT_BACKGROUND']}), styles={}, vsmr_groups=[]), overrides={})
         doc = convert_airport(code, recipe, source['airports'][code], source['colors'])
         update_counts(doc)
         doc['metadata'].update(geometry_source='IWantPizzaa/France-Ground-Layouts', geometry_source_url='https://github.com/IWantPizzaa/France-Ground-Layouts', geometry_license='GPL-3.0')

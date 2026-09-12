@@ -13,8 +13,8 @@
       "day"
     ],
     "background_colors": {
-      "night": "#434A4F",
-      "day": "#434A4F"
+      "night": "DARK_BACKGROUND_COLORS_NIGHT",
+      "day": "DARK_BACKGROUND_COLORS_DAY"
     },
     "geometry_mode": "shared"
   },

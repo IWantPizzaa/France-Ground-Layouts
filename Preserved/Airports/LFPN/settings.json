@@ -14,8 +14,8 @@
       "light"
     ],
     "background_colors": {
-      "dark": "#434A4F",
-      "light": "#434A4F"
+      "dark": "DARK_BACKGROUND_COLORS",
+      "light": "LIGHT_LFPN_BACKGROUND_COLORS"
     },
     "runways": [
       {
@@ -102,11 +102,11 @@
       "layer": "Airfield surfaces",
       "object_type": "Area",
       "paint": {
-        "fill": "#4E5A69",
+        "fill": "DARK_POLYGON_TAXIWAY_FILL",
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "#C0B631"
+            "fill": "LIGHT_LFPN_POLYGON_TAXIWAY_FILL"
           }
         }
       }
@@ -126,7 +126,7 @@
       "id": "stands-and-gates",
       "name": "Stands & gates",
       "visible": true,
-      "accent": "#d4bd39"
+      "accent": "DARK_VSMR_GROUPS_ACCENT"
     }
   ]
 }

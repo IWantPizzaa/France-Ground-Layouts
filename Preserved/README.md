@@ -11,13 +11,20 @@ geometry backup, matching baseline, or numeric geometry-reference table.
 
 ## Editing
 
+All palette color values are defined in **../Colours.sct** using standard
+EuroScope decimal BGR values. These JSON files reference their names:
+`DARK_<ROLE>`, `LIGHT_<ROLE>` and `REAL_<ICAO>_<ROLE>`. Airport-specific Light
+variants include the ICAO. Change the definition to edit its referenced colors;
+do not replace the name with a hex literal. The converter resolves names from
+the selected source's Colours.sct and rejects missing definitions.
+
 Edit a common entry to change all airports referencing it. An airport can override
 individual fields without copying the shared definition:
 
 ```json
 {
   "$ref": "style.line.runwayconcrete.555555",
-  "paint": { "stroke": "#FFFFFF" }
+  "paint": { "stroke": "DARK_LINE_RUNWAYCONCRETE_STROKE" }
 }
 ```
 
