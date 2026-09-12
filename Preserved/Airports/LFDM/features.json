@@ -1,0 +1,12 @@
+{
+  "LFDM-1c05b06f836fe87d7af9": {
+    "style_id": "runway.reference",
+    "source_group": "LFDM Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFDM-7bbf6ce772376c115f1f": {
+    "style_id": "runway.reference",
+    "source_group": "LFDM Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "LFNR-0f4df6e84e76f561a004": {
+    "style_id": "runway.reference",
+    "source_group": "LFNR Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFNR-f11eef36565e16dbd14a": {
+    "style_id": "runway.reference",
+    "source_group": "LFNR Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

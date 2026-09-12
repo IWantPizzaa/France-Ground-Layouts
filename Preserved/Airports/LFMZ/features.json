@@ -1,0 +1,14 @@
+{
+  "LFMZ-a5663d1f47b250cd7db6": "line.runwayconcrete.555555",
+  "LFMZ-84ba4c990b93c5d4ae6a": "line.runwaygrass.008000",
+  "LFMZ-7e68b3629fb679bb9c19": {
+    "style_id": "runway.reference",
+    "source_group": "LFMZ Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFMZ-9f957505c7aef98bfb88": {
+    "style_id": "runway.reference",
+    "source_group": "LFMZ Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

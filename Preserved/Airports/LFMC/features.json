@@ -1,0 +1,13 @@
+{
+  "LFMC-88c8f28b72e25e4bd5a3": "line.runwayconcrete.555555",
+  "LFMC-ffc08fad659bff1d5b87": {
+    "style_id": "runway.reference",
+    "source_group": "LFMC Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFMC-05dc96c958bb1a0c2b1c": {
+    "style_id": "runway.reference",
+    "source_group": "LFMC Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

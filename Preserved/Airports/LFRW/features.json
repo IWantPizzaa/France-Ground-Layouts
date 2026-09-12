@@ -1,0 +1,12 @@
+{
+  "LFRW-b72a438d15abab4082b7": {
+    "style_id": "runway.reference",
+    "source_group": "LFRW Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFRW-3dc8f5f5e6dd16be3722": {
+    "style_id": "runway.reference",
+    "source_group": "LFRW Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

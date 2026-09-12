@@ -1,0 +1,16 @@
+{
+  "LFMS-a6fc54dee7c5d84bcd7f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFMS-5044c0616a4953b4d191": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFMS-bbe7844fc811e28c90da": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFMS-3960ceb9fcf166572a89": {
+    "style_id": "runway.reference",
+    "source_group": "LFMS Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "LFBY-da613f06b67480be213b": "line.runwayconcrete.555555",
+  "LFBY-80e61db889428a296541": {
+    "style_id": "runway.reference",
+    "source_group": "LFBY Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

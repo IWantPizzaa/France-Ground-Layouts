@@ -1,0 +1,92 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFBF AVISO",
+  "bbox": [
+    1.355972222,
+    43.538777778,
+    1.379944444,
+    43.54925
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFBF",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "11",
+          "29"
+        ],
+        "headings": [
+          113,
+          293
+        ],
+        "thresholds": [
+          [
+            1.357196944,
+            43.549082778
+          ],
+          [
+            1.377402778,
+            43.542268889
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      1.357221944,
+      43.549166944
+    ]
+  },
+  "styles": {
+    "line.taxiwayborder.0000ff": {
+      "$ref": "style.line.taxiwayborder.0000ff"
+    },
+    "line.runwayconcrete.555555": {
+      "$ref": "style.line.runwayconcrete.555555"
+    },
+    "line.landmark3.7e7e7e": {
+      "name": "Landmark 3",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "#7E7E7E",
+        "stroke-opacity": 1,
+        "stroke-width": 1,
+        "palette-overrides": {
+          "light": {
+            "stroke": "#7E7E7E"
+          }
+        }
+      }
+    },
+    "label.gates": {
+      "$ref": "style.label.gates"
+    },
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": [
+    {
+      "id": "stands-and-gates",
+      "name": "Stands & gates",
+      "visible": true,
+      "accent": "#d4bd39"
+    }
+  ]
+}

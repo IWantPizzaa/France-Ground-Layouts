@@ -1,0 +1,14 @@
+{
+  "LFQG-9a7e050bda46deb7e253": "line.runwayconcrete.555555",
+  "LFQG-cb42b45d734ae983e024": "line.runwaygrass.008000",
+  "LFQG-51f4116fb69d0f9b931a": {
+    "style_id": "runway.reference",
+    "source_group": "LFQG Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFQG-e19394fb5a06b479bf68": {
+    "style_id": "runway.reference",
+    "source_group": "LFQG Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

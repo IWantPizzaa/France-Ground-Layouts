@@ -1,0 +1,87 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFQA AVISO",
+  "bbox": [
+    4.151972222,
+    49.205361111,
+    4.163333333,
+    49.211666667
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFQA",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "07R",
+          "25L"
+        ],
+        "headings": [
+          65,
+          245
+        ],
+        "thresholds": [
+          [
+            4.152271944,
+            49.206902778
+          ],
+          [
+            4.161793889,
+            49.209635833
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "07",
+          "25"
+        ],
+        "headings": [
+          65,
+          245
+        ],
+        "thresholds": [
+          [
+            4.152266944,
+            49.207446944
+          ],
+          [
+            4.160207778,
+            49.209730833
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      4.156666944,
+      49.208610833
+    ]
+  },
+  "styles": {
+    "line.runwayconcrete.555555": {
+      "$ref": "style.line.runwayconcrete.555555"
+    },
+    "line.runwaygrass.008000": {
+      "$ref": "style.line.runwaygrass.008000"
+    },
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

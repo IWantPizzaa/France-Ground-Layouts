@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFAU AVISO",
+  "bbox": [
+    -1.83305,
+    49.620921944,
+    -1.827635833,
+    49.625221944
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFAU",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "15",
+          "33"
+        ],
+        "headings": [
+          148,
+          328
+        ],
+        "thresholds": [
+          [
+            -1.83305,
+            49.625221944
+          ],
+          [
+            -1.828841944,
+            49.620921944
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "10",
+          "28"
+        ],
+        "headings": [
+          104,
+          284
+        ],
+        "thresholds": [
+          [
+            -1.832993889,
+            49.624002778
+          ],
+          [
+            -1.829591944,
+            49.623474722
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "07",
+          "25"
+        ],
+        "headings": [
+          74,
+          254
+        ],
+        "thresholds": [
+          [
+            -1.831991944,
+            49.622630833
+          ],
+          [
+            -1.827635833,
+            49.623471944
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      -1.83,
+      49.622777778
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

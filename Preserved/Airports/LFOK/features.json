@@ -1,0 +1,130 @@
+{
+  "LFOK-cf59e4978229389f19f9": "polygon.grassurface.00512f",
+  "LFOK-d281130c237a4fce7117": "polygon.hardsurface4.969393",
+  "LFOK-03a4237ece3df18b41a1": "polygon.hardsurface3.8a807f",
+  "LFOK-b4ece837d5758597f7b0": "polygon.hardsurface3.8a807f",
+  "LFOK-60c5c379ae93680cd152": "polygon.hardsurface3.8a807f",
+  "LFOK-a7d43a1c1dfc0b9192f2": "polygon.hardsurface3.8a807f",
+  "LFOK-d11f2c97caae69d3b20c": "polygon.hardsurface2.595e5b",
+  "LFOK-2594d698da64ee902ac3": "polygon.runwayconcrete.555555",
+  "LFOK-1f7778f83e65e5d46599": "polygon.building.394446",
+  "LFOK-ddb9137333015f5d807b": "polygon.building.394446",
+  "LFOK-ebc050b6530153c6f2eb": "polygon.building.394446",
+  "LFOK-e1d3475f07b7e88acb5d": "polygon.building.394446",
+  "LFOK-ebd461aa9ab3abc89800": "polygon.building.394446",
+  "LFOK-4a8082e05f773a3b295f": "polygon.building.394446",
+  "LFOK-bed11b0fcf39750a2e05": "polygon.building.394446",
+  "LFOK-f66334a0a47717e8fc38": "polygon.building.394446",
+  "LFOK-6e60bd36328f3e40007c": "polygon.stopbar.7e0000",
+  "LFOK-0297a286eef12dd8f9e1": "polygon.stopbar.7e0000",
+  "LFOK-f3e0079448502fff14cf": "polygon.stopbar.7e0000",
+  "LFOK-9a0c27e5a6ad5b1fe0f7": "polygon.stopbar.7e0000",
+  "LFOK-f2f36bd96699a484754f": "polygon.taxiwayorange.cc6d00",
+  "LFOK-6057a79b72c72eacbd83": "line.runwayborder.808080",
+  "LFOK-3afb0faecbf6cc01ac94": "line.taxiway.c0b631",
+  "LFOK-4c1bc9f999692aa88687": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-4c70e469b96fe53e15de": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-cdd88f144b003e82efb9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-6ad96bae033afeb10080": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-98744195cc12c22a5924": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-805daa10d61a722c9a92": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-49d9b2677b4e4dc0dc9c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-3ddbc08080c43ea15797": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-d460b7594a2e4d1b2db9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-086bae595809bae91e40": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-9ca781e2bcf1ff8dfd68": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-fa04b97e4dd2c8861665": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-8f5520a31cea5c73a213": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-66ec2f7d40e0ea5d9413": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-60f74a7e9875ae701e8c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-9429dd34fd9e8d392acc": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-cdcbfee12df7f14b81df": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-1b31327f3dd96bca06d6": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-a51b633b2540fb864b0d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-98b7bb9e0f3de26c1660": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-d9b38c91070be4665bdc": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-75a11412ed0e9d116659": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-4be276f523c6886f2cf0": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-533f0c1d198be974b772": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-b46f863cf7e113986793": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-ad8ce122a391fe30efea": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-883d633b69246013a1c1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-adf28de32db5749f6bfd": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-425d1bdb9d22ae6ee5b3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOK-3c805fa239be246cc117": "label.taxiways",
+  "LFOK-2cbc806e4cb35afa01ab": "label.taxiways",
+  "LFOK-192475b9ce6098fa9199": "label.taxiways",
+  "LFOK-705f33d36211e3d19eec": "label.taxiways",
+  "LFOK-d4169082165e38acaaf0": "label.taxiways",
+  "LFOK-696a24f1c26c3a4dde4a": "label.taxiways",
+  "LFOK-e0e3a4fa2b4a67bbed06": "label.taxiways",
+  "LFOK-e86c664247421e722fa1": "label.taxiways",
+  "LFOK-64c0630794903bf6f4e7": "label.taxiways",
+  "LFOK-6a396d7b0a1f20ff20f5": "label.taxiways",
+  "LFOK-451e8adda1f3cd968e4f": "label.taxiways",
+  "LFOK-949da3006b30e438e25e": "label.taxiways",
+  "LFOK-cccc0b6ebf9cfede5ed9": "label.taxiways",
+  "LFOK-01c6915ede20f9979a50": "label.taxiways",
+  "LFOK-21e44795082ef706ac84": "label.taxiways",
+  "LFOK-e7362d4c0621a75a4ec7": "label.taxiways",
+  "LFOK-cc31e25621341f09517a": "label.taxiways",
+  "LFOK-d9f7bb8f3f371ecef63e": "label.taxiways"
+}

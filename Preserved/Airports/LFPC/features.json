@@ -1,0 +1,26 @@
+{
+  "LFPC-f58f74f3c14d5af10b99": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPC-d94891bcb22a53458487": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPC-955b76f0de21d23b84e1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPC-d8f02aed042f333e2fb3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPC-c642d96833502efcef06": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPC-5de1678351f823dbbdd6": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPC-582df67e7d895c2a47ea": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPC-53dc44e831a44bfd16bf": {
+    "$ref": "feature-options.Gates"
+  }
+}

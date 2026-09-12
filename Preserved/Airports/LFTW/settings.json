@@ -1,0 +1,80 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFTW AVISO",
+  "bbox": [
+    4.409055556,
+    43.746388889,
+    4.423111111,
+    43.768416667
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFTW",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "18",
+          "36"
+        ],
+        "headings": [
+          175,
+          355
+        ],
+        "thresholds": [
+          [
+            4.415555833,
+            43.768407778
+          ],
+          [
+            4.417135833,
+            43.746446944
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      4.416388889,
+      43.7575
+    ]
+  },
+  "styles": {
+    "line.taxiway.c0b631": {
+      "$ref": "style.line.taxiway.c0b631"
+    },
+    "line.runwayconcrete.555555": {
+      "$ref": "style.line.runwayconcrete.555555"
+    },
+    "line.apronsurface.808080": {
+      "$ref": "style.line.apronsurface.808080"
+    },
+    "label.gates": {
+      "$ref": "style.label.gates"
+    },
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": [
+    {
+      "id": "stands-and-gates",
+      "name": "Stands & gates",
+      "visible": true,
+      "accent": "#d4bd39"
+    }
+  ]
+}

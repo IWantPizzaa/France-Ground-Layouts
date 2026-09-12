@@ -1,0 +1,12 @@
+{
+  "LFAY-3522f0823e0bbef6d28a": {
+    "style_id": "runway.reference",
+    "source_group": "LFAY Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFAY-415eef660d4959aa60fd": {
+    "style_id": "runway.reference",
+    "source_group": "LFAY Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

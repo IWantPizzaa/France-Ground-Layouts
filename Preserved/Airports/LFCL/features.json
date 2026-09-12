@@ -1,0 +1,8 @@
+{
+  "LFCL-ccdb4e5f3b74b1123795": "line.runwayconcrete.555555",
+  "LFCL-513461b066f2bc689cb2": {
+    "style_id": "runway.reference",
+    "source_group": "LFCL Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

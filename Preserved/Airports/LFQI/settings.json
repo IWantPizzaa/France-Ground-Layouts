@@ -1,0 +1,32 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFQI AVISO",
+  "bbox": [
+    2.865,
+    50.1058,
+    3.41722,
+    50.3153
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "airport": "LFQI",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "night",
+    "color_palettes": [
+      "night",
+      "day"
+    ],
+    "background_colors": {
+      "night": "#434A4F",
+      "day": "#434A4F"
+    },
+    "geometry_mode": "shared"
+  },
+  "styles": {
+    "label.text.label.labels": {
+      "$ref": "style.label.text.label.labels"
+    }
+  }
+}

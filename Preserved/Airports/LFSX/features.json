@@ -1,0 +1,10 @@
+{
+  "LFSX-e5b29323991fb2d4a9d0": "line.taxiway.c0b631",
+  "LFSX-c98a3433d85e3759db4f": "line.runwayconcrete.555555",
+  "LFSX-164435ba40449b8a6bd2": "line.apronsurface.808080",
+  "LFSX-f92a463a2b566df95f4c": {
+    "style_id": "runway.reference",
+    "source_group": "LFSX Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

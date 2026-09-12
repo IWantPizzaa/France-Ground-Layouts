@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFBJ AVISO",
+  "bbox": [
+    0.914696944,
+    45.901143889,
+    0.921566944,
+    45.903296944
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFBJ",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "07",
+          "25"
+        ],
+        "headings": [
+          65,
+          245
+        ],
+        "thresholds": [
+          [
+            0.914696944,
+            45.901143889
+          ],
+          [
+            0.921566944,
+            45.903296944
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      0.918888889,
+      45.9025
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

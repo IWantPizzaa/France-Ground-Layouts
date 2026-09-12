@@ -1,0 +1,46 @@
+{
+  "LFRT-66e7232c2df3ce9bd38a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-1c35b35ef79d17b88398": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-c95d66081222003084ee": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-b42543ac3bc3f01a26c0": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-648d672fca0241114ca8": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-29bbe1c6107872d30216": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-a53627843e91d57addc4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-0981e1525b5c1b7b4865": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-36cae0e9f528ac0e49d1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-867e0fb09d36fbb86d4a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-6f3c9aee9293c4b94e92": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-75083587244d015c3a87": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRT-8b48f304fa96a13d6388": "label.taxiways",
+  "LFRT-79bb93d94386e892e69c": "label.taxiways",
+  "LFRT-413eb9f23e2469007333": "label.taxiways",
+  "LFRT-6c8e7ffcf693987beead": {
+    "style_id": "runway.reference",
+    "source_group": "LFRT Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

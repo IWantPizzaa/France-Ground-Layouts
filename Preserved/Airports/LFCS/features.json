@@ -1,0 +1,12 @@
+{
+  "LFCS-e502afc62c18d2d2a7ee": {
+    "style_id": "runway.reference",
+    "source_group": "LFCS Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFCS-b089ce2c1bb3eb5522b0": {
+    "style_id": "runway.reference",
+    "source_group": "LFCS Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

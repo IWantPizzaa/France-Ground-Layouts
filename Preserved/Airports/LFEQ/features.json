@@ -1,0 +1,22 @@
+{
+  "LFEQ-8ce86bd6454424ec4951": "line.runwayconcrete.555555",
+  "LFEQ-5d181b688173c0908544": "line.taxiway.c0b631",
+  "LFEQ-a500bb25b4e0ba174c8f": "line.apronsurface.808080",
+  "LFEQ-a8c21d7665c13ecfb3b0": "line.stopbar.7e0000",
+  "LFEQ-840096e82bd7a9bc6a47": "line.labels.808080",
+  "LFEQ-cdf46b55fd43b1e2301e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFEQ-035b108f9b795d1f5b65": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFEQ-275393d43529a5f1e4fa": "label.taxiways",
+  "LFEQ-1d83fedf812f2eceef02": "label.taxiways",
+  "LFEQ-7871bceb25358f44ab83": "label.taxiways",
+  "LFEQ-a57bea3bde48dd807c60": "label.taxiways",
+  "LFEQ-b5ae269b41896769e2f7": {
+    "style_id": "runway.reference",
+    "source_group": "LFEQ Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

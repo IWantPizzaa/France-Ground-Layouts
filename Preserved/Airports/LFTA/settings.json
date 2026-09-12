@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFTA AVISO",
+  "bbox": [
+    -1.427960833,
+    46.360191944,
+    -1.426610833,
+    46.367327778
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFTA",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "17",
+          "35"
+        ],
+        "headings": [
+          172,
+          352
+        ],
+        "thresholds": [
+          [
+            -1.427960833,
+            46.367327778
+          ],
+          [
+            -1.426610833,
+            46.360191944
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      -1.427499722,
+      46.365555833
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

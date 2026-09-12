@@ -1,0 +1,7 @@
+{
+  "LFOD-5520d1267bfc186d4bc5": {
+    "style_id": "runway.reference",
+    "source_group": "LFOD Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

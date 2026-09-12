@@ -1,0 +1,9 @@
+{
+  "LFNA-094a4f3bfd7e6316c881": "line.runwayconcrete.555555",
+  "LFNA-88e5078449ed9214682c": "line.runwaygrass.008000",
+  "LFNA-851943b09718e7833164": {
+    "style_id": "runway.reference",
+    "source_group": "LFNA Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

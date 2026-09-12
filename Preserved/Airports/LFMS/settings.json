@@ -1,0 +1,71 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFMS AVISO",
+  "bbox": [
+    4.140475,
+    44.065060833,
+    4.1455,
+    44.075771944
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFMS",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "01",
+          "19"
+        ],
+        "headings": [
+          11,
+          191
+        ],
+        "thresholds": [
+          [
+            4.140475,
+            44.065060833
+          ],
+          [
+            4.143888889,
+            44.075771944
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      4.143055833,
+      44.072777778
+    ]
+  },
+  "styles": {
+    "label.gates": {
+      "$ref": "style.label.gates"
+    },
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": [
+    {
+      "id": "stands-and-gates",
+      "name": "Stands & gates",
+      "visible": true,
+      "accent": "#d4bd39"
+    }
+  ]
+}

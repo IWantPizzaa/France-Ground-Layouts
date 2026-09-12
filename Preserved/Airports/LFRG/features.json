@@ -1,0 +1,96 @@
+{
+  "LFRG-cb96a63122287cc12eab": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-99a8e04c13dd6da6997c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-3558bc0d9717f7b3cc76": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-4048567e502ddbf1e931": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-fa4679739dd3a93977cb": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-48409425e262906d815d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-a2e37068f28361765f35": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-c9baf28614ca89b0b602": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-dd502dc7b8fb0338a358": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-4c94fbb1f19f1314af86": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-708cf38cdb04b54b366b": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-fe5e7fdf7893803210c8": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-823d141fe0b218020c7f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-bfcc2883cb9d9b9d435e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-d0a1e4dbb01cb0a78489": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-31938ab1e16df7b31f6b": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-6c58c9a98389a3915bf9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-398ed95b00774717ac96": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-1b0b19bd4a9b0187146a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-9569fe8b7bdc39381034": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-8b83901afba568f2e979": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-badcbe75112a9463d967": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-fe1f2b535b07c0b38531": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-43ecf5e9718ee225f548": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-77ac7347976f0036be01": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-df9dd46f1be04ad51330": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-f7e15b81cb34915a5ee1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-366047c0c67c67889eae": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-1f41c9241725b7857701": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFRG-a1688e1218cc6a73b98f": "label.taxiways",
+  "LFRG-bbe6a70761b1070b94f3": "label.taxiways",
+  "LFRG-97a46e9a0cd6f251cbe6": {
+    "style_id": "runway.reference",
+    "source_group": "LFRG Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

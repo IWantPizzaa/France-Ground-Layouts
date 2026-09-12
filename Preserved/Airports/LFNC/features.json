@@ -1,0 +1,12 @@
+{
+  "LFNC-765af9a1a1cdeff22d17": {
+    "style_id": "runway.reference",
+    "source_group": "LFNC Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFNC-b563ffa7e49c9c755e32": {
+    "style_id": "runway.reference",
+    "source_group": "LFNC Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

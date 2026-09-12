@@ -1,0 +1,112 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFEY AVISO",
+  "bbox": [
+    -2.396945833,
+    46.712618889,
+    -2.3866975,
+    46.721420833
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFEY",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "14",
+          "32"
+        ],
+        "headings": [
+          142,
+          322
+        ],
+        "thresholds": [
+          [
+            -2.396813889,
+            46.721321944
+          ],
+          [
+            -2.386902778,
+            46.712685833
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "04",
+          "22"
+        ],
+        "headings": [
+          35,
+          215
+        ],
+        "thresholds": [
+          [
+            -2.394371944,
+            46.715782778
+          ],
+          [
+            -2.390638889,
+            46.719496944
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      -2.3925,
+      46.7175
+    ]
+  },
+  "styles": {
+    "line.runwayconcrete.555555": {
+      "$ref": "style.line.runwayconcrete.555555"
+    },
+    "line.runwaygrass.008000": {
+      "$ref": "style.line.runwaygrass.008000"
+    },
+    "line.taxiway.c0b631": {
+      "$ref": "style.line.taxiway.c0b631"
+    },
+    "line.apronsurface.808080": {
+      "$ref": "style.line.apronsurface.808080"
+    },
+    "line.stopbar.7e0000": {
+      "$ref": "style.line.stopbar.7e0000"
+    },
+    "line.labels.808080": {
+      "$ref": "style.line.labels.808080"
+    },
+    "label.gates": {
+      "$ref": "style.label.gates"
+    },
+    "label.taxiways": {
+      "$ref": "style.label.taxiways"
+    },
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": [
+    {
+      "id": "stands-and-gates",
+      "name": "Stands & gates",
+      "visible": true,
+      "accent": "#d4bd39"
+    }
+  ]
+}

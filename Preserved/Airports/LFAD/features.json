@@ -1,0 +1,8 @@
+{
+  "LFAD-da5f1a691c6fa0a257f6": "line.runwaygrass.008000",
+  "LFAD-ede85caa771fa1e267cf": {
+    "style_id": "runway.reference",
+    "source_group": "LFAD Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

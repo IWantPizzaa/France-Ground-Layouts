@@ -1,0 +1,105 @@
+"""Offline conversion and native-format regression checks (standard library only)."""
+import copy
+import io
+import json
+from pathlib import Path
+import tempfile
+from unittest.mock import patch
+import zipfile
+
+import aviso_converter as c
+from native_geometry import native_equivalent
+
+
+def main():
+    root = c.ROOT
+    source = c.load_source(root)
+    c.require_native_ids(source)
+    expected_files = {p.name: p.read_bytes() for p in (root / 'AVISO').glob('*.geojson')}
+    assert expected_files, 'Generate AVISO before running the checks'
+    with tempfile.TemporaryDirectory(prefix='vsmr-aviso-tests-') as scratch:
+        scratch = Path(scratch)
+        c.run(root, scratch / 'AVISO')
+        actual_files = {p.name:p.read_bytes() for p in (scratch / 'AVISO').iterdir()}
+        assert actual_files == expected_files, 'Committed AVISO is not current: regenerate from local source'
+        # Both native representations must agree, including holes and multipart lines.
+        native_gng, native_kmz = {}, {}
+        for path in (root / 'GNG').rglob('*.txt'):
+            for item in c.parse_gng(path.relative_to(root).as_posix(), path.read_bytes()):
+                if 'source_id' in item:
+                    assert item['source_id'] not in native_gng, 'Duplicate GNG feature ID'
+                    native_gng[item['source_id']] = item
+        for path in (root / 'KMZ').glob('*.kmz'):
+            for item in c.parse_kmz(path.relative_to(root).as_posix(), path.read_bytes()):
+                if 'source_id' in item:
+                    assert item['source_id'] not in native_kmz, 'Duplicate KMZ feature ID'
+                    native_kmz[item['source_id']] = item
+        assert native_gng.keys() == native_kmz.keys(), 'GNG/KMZ feature IDs differ'
+        for fid, published in native_gng.items():
+            authoring = native_kmz[fid]
+            assert native_equivalent(published['geometry'], authoring['geometry']), fid
+            if published['kind'] == 'label':
+                assert published['name'] == authoring['name'], fid
+            else:
+                assert source['colors'][published['color']].upper() == authoring['kml_color'].upper(), fid
+
+        # Only the three native source entries are needed; no old geometry snapshot.
+        buffer = io.BytesIO()
+        with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED) as archive:
+            for name in ('GNG', 'KMZ', 'Colours.sct'):
+                path = root / name
+                for file in sorted(path.rglob('*')) if path.is_dir() else [path]:
+                    if file.is_file():
+                        archive.writestr('France-Ground-Layouts-master/' + file.relative_to(root).as_posix(), file.read_bytes())
+        buffer.seek(0)
+        assert c.load_source(buffer) == source
+        with patch.object(c, 'github_source', side_effect=OSError('simulated offline')) as github:
+            assert c.choose_source() == source
+            github.assert_called_once()
+        with patch.object(c, 'github_source', return_value=source), patch.object(c, 'local_source', side_effect=AssertionError('local input used despite GitHub success')):
+            assert c.choose_source() == source
+
+        # Source text/coordinates remain live. Added labels inherit the same settings.
+        saved = c.load_preserved()
+        original = source['airports']['LFPG']
+        edited = copy.deepcopy(original)
+        gate = next(r for r in edited if r['kind']=='label' and r['name']=='I04')
+        gate['name'] = 'RENAMED'
+        gate['geometry']['coordinates'][0] += 0.0001
+        new_gate = copy.deepcopy(gate)
+        new_gate.update(source_id='LFPG-regression-new', name='NEW-GATE')
+        edited.append(new_gate)
+        deleted = next(r['source_id'] for r in edited if r['kind']=='label' and r['name']=='I05')
+        edited = [r for r in edited if r['source_id'] != deleted]
+        doc = c.convert_airport('LFPG', saved['recipes']['LFPG'], edited, source['colors'])
+        result = {f['id']:f for f in doc['features']}
+        assert deleted not in result
+        assert result[gate['source_id']]['properties']['text-field']=='RENAMED'
+        assert result[gate['source_id']]['geometry']==gate['geometry']
+        assert result['LFPG-regression-new']['properties']['style_id']==result[gate['source_id']]['properties']['style_id']
+        assert result['LFPG-regression-new']['properties']['vsmr_group_ids']==result[gate['source_id']]['properties']['vsmr_group_ids']
+
+        # Runtime customizations still apply independently of native geometry.
+        recipe = copy.deepcopy(saved['recipes']['LFPG'])
+        recipe['document']['metadata']['background_colors']['dark'] = '#123456'
+        recipe['document']['styles']['label.gates']['paint']['zoomLevel'] = 11
+        custom = c.convert_airport('LFPG', recipe, original, source['colors'])
+        assert custom['metadata']['background_colors']['dark']=='#123456'
+        assert custom['styles']['label.gates']['paint']['zoomLevel']==11
+        assert [f['geometry'] for f in custom['features']]==[r['geometry'] for r in original]
+
+        broken = scratch / 'broken.zip'
+        broken.write_bytes(b'not a zip')
+        try:
+            c.run(broken, scratch / 'AVISO')
+            raise AssertionError('Malformed ZIP accepted')
+        except zipfile.BadZipFile:
+            pass
+        assert {p.name:p.read_bytes() for p in (scratch / 'AVISO').iterdir()} == actual_files
+        assert not list(scratch.rglob('Conversion report.json'))
+        assert not list(scratch.rglob('Conversion summary.txt'))
+    print(f'PASS: {len(expected_files)} AVISO files; {len(native_gng)} native features; exact GNG/KMZ agreement; source edits; palettes/groups; GitHub priority and fallback.')
+
+
+if __name__ == '__main__':
+    main()

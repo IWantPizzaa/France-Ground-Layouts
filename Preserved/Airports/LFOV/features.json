@@ -1,0 +1,80 @@
+{
+  "LFOV-ec4036b594a7c8d4d28a": "line.runwayconcrete.555555",
+  "LFOV-1e324012b889b149747f": "line.runwaygrass.008000",
+  "LFOV-e2c0d615d201cd1f9e65": "line.taxiway.c0b631",
+  "LFOV-8a3d0c9cc31d3e82ab89": "line.apronsurface.808080",
+  "LFOV-e2164e12b43d18d987b2": "line.stopbar.7e0000",
+  "LFOV-2143c971139e08d9c4be": "line.centerlines.ffff00",
+  "LFOV-4ef8d40b4139fdbc25da": "line.labels.808080",
+  "LFOV-cf9ff9dbbd4eb7df5d99": "line.twr-ctr.000000",
+  "LFOV-8dfc1fb07f9fb4489313": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-2ad10c5324bf28fb98e9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-2f62faa0fd25fd17ea3e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-6199231d045de0bb68b4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-8e0675b558f4d2c95612": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-75565d72659425716018": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-cec8c95b075a38df4b24": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-f1288b6b132f3dab7ea0": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-1bf459ed8190f59bb861": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-52b80b7caec999796de5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-d6e1851c1a851d891346": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-487f266c88d6213c36a4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-f48119880db1234c9a8a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-78e4b1d02269cbb60e6a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-35393130760e60d64e55": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-c10ab843f4818b7e8f5d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-cb9a9607e9ed469f9e86": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-b1fa1c188553bd0ffcb2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-e6e9c70aeed6bb6e7b5c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFOV-f0afe9cb2a2fefcd483e": "label.taxiways",
+  "LFOV-e0fe0459311e6f4745f6": "label.taxiways",
+  "LFOV-add40c3813034d334d21": "label.taxiways",
+  "LFOV-71867675c18e2b61fd88": {
+    "style_id": "runway.reference",
+    "source_group": "LFOV Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFOV-91453577cdf1a67cd0cf": {
+    "style_id": "runway.reference",
+    "source_group": "LFOV Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

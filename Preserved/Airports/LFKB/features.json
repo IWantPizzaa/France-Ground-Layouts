@@ -1,0 +1,152 @@
+{
+  "LFKB-6f6729f1525716faffdd": "polygon.grassurface.00512f",
+  "LFKB-a567e193cf708941a270": "polygon.hardsurface4.969393",
+  "LFKB-9be5b6e69e35a468decb": "polygon.hardsurface4.969393",
+  "LFKB-ab6e992cb156eda6428a": "polygon.hardsurface4.969393",
+  "LFKB-adbd685a372272096e51": "polygon.hardsurface4.969393",
+  "LFKB-5346652ea289a055b746": "polygon.hardsurface4.969393",
+  "LFKB-ac212a36a4216a755c6d": "polygon.hardsurface4.969393",
+  "LFKB-b3b23986f285dbf9f70f": "polygon.hardsurface4.969393",
+  "LFKB-eef5d6da146708e1aa17": "polygon.hardsurface4.969393",
+  "LFKB-b3138638b639c557f86b": "polygon.hardsurface3.8a807f",
+  "LFKB-bc0ba933b5312283664f": "polygon.hardsurface3.8a807f",
+  "LFKB-60c9d09a66b0778b4826": "polygon.hardsurface3.8a807f",
+  "LFKB-ba27977a909843c38490": "polygon.hardsurface3.8a807f",
+  "LFKB-5dce9408a3791930138b": "polygon.hardsurface2.595e5b",
+  "LFKB-7614c37519cc24befdcb": "polygon.runwayconcrete.555555",
+  "LFKB-d8141b09c30dc6a182a3": "polygon.runwayconcrete.555555",
+  "LFKB-cb97b2368107dd045b09": "polygon.building.394446",
+  "LFKB-8f31f04ea017c8d6ee04": "polygon.building.394446",
+  "LFKB-ca3ec730d28c6fdca498": "polygon.building.394446",
+  "LFKB-e110fce3e9ad093d7057": "polygon.building.394446",
+  "LFKB-7d7254bb8adb6662b784": "polygon.building.394446",
+  "LFKB-0dd6da6b777ddd3d4058": "polygon.building.394446",
+  "LFKB-bf300fca191e0e849573": "polygon.building.394446",
+  "LFKB-dfc3b2de2771844d46a7": "polygon.building.394446",
+  "LFKB-c1c2fe0d833cafce3fa1": "polygon.building.394446",
+  "LFKB-5e100254c1dd6ce65a36": "polygon.building.394446",
+  "LFKB-d8154c227a338c168589": "polygon.building.394446",
+  "LFKB-56d155d983e3073a3ab9": "polygon.building.394446",
+  "LFKB-a3eb5b58c0987f71b1ee": "polygon.building.394446",
+  "LFKB-4747e83cb07d4e27170f": "polygon.building.394446",
+  "LFKB-f7e7b781baa32debc0a4": "polygon.building.394446",
+  "LFKB-cb02ef459a4dc47a6373": "polygon.building.394446",
+  "LFKB-df5593b80c3c5b98c424": "polygon.building.394446",
+  "LFKB-e84bbdfaf87f5242086f": "polygon.grassurface.00512f",
+  "LFKB-c59a042ab8013fededa8": "polygon.stopbar.7e0000",
+  "LFKB-806e722760c0bb900d90": "polygon.stopbar.7e0000",
+  "LFKB-399996c2a54bc6c62749": "polygon.stopbar.7e0000",
+  "LFKB-c99d5b2c75a2a39e3d72": "polygon.taxiwayorange.cc6d00",
+  "LFKB-abb6b8f4a22cd08d7e84": "polygon.taxiwayorange.cc6d00",
+  "LFKB-bed143ce1e24e7c9dfd9": "line.taxiway.c0b631",
+  "LFKB-2a4f889f54ed61f1e301": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-07e3398227abbddfd9e7": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-aaa85709223c1b47da1b": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-84200a64c1d1a1f2f0ae": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-d3974f7207faab813201": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-2c09ddf1f482035fcbea": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-5773ebefaaca2f81acb5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-d08858c38a258e4dbb8d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-d3d5f4661329c5b82036": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-4b458c2e43369c33a0fc": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-4e442af91dfd4e178207": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-f3c9f3b75ecf36b63ac4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-e242f2d3c82c2b875c9a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-1fe488215a43d90eb2b9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-972dfd5a1daf928548e2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-1c6d9fd67fbba36b5172": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-3ebeebb0a955e839046a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-c39efadb0c422d227594": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-896dc401cda73ac36e4e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-4a4f3908b119c5719ea1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-02503cfd0b84b1c4dad3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-75eb3e285383e8307b3d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-70518740167ad2f0fdb8": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-1f74990464329bf3aa9a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-8063f8a21382b7704f46": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-c932d7a5519ad184f45e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-70a1f4ec50166e7c2990": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-5d63a10885a5d683d371": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-9860e3856ff23a614cd1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-a556c74286d4b287fedb": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-70455bc0507d5ed8acd9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-bc8bb41f20dfd15db0eb": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKB-5d9ecb2041d18456ab19": "label.taxiways",
+  "LFKB-3556bf3e8cc7d8144dcc": "label.taxiways",
+  "LFKB-c9e044fb06ba30ed6938": "label.taxiways",
+  "LFKB-d5355f747360dd1855a6": "label.taxiways",
+  "LFKB-7b8e1b4c3e2b20c58fc0": "label.taxiways",
+  "LFKB-4e5b8ff50194f2c271f9": "label.taxiways",
+  "LFKB-750ba07e09ba7ffa9bba": "label.taxiways",
+  "LFKB-e402cb2b4cd1d187f411": "label.taxiways",
+  "LFKB-00fc2972f3730da289b3": "label.taxiways",
+  "LFKB-15931de9cd3b5933ba09": "label.taxiways",
+  "LFKB-78420aff0aeba925b005": "label.taxiways",
+  "LFKB-a3913da7df624792a146": "label.taxiways",
+  "LFKB-e9bd0db2ea52dad5a745": "label.taxiways",
+  "LFKB-2c9905c2a2409a3f34ed": "label.taxiways"
+}

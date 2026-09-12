@@ -1,0 +1,22 @@
+{
+  "LFDN-1cc416da04c429cef3bf": "line.taxiway.c0b631",
+  "LFDN-633daf78a1fcebc5bc03": "line.runwayconcrete.555555",
+  "LFDN-395363a3c2b8ebdd538c": "line.apronsurface.808080",
+  "LFDN-dcb23b6f8703823e9f64": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFDN-4e8ce10d5f9c94dc134b": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFDN-da8339b3f8dbf7165f16": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFDN-f3b2989c2f4529187e52": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFDN-7e75bfa2de2154537b0d": {
+    "style_id": "runway.reference",
+    "source_group": "LFDN Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "LFOG-31c0a4d7fe07878b1cd7": "line.runwayconcrete.555555",
+  "LFOG-c5b3782759192129a40c": {
+    "style_id": "runway.reference",
+    "source_group": "LFOG Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

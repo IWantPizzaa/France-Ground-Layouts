@@ -1,0 +1,45 @@
+{
+  "LFSD-acdbc3ede684b2d60f43": "line.runwayconcrete.555555",
+  "LFSD-acf7d20b4c8c32441f37": "line.taxiway.c0b631",
+  "LFSD-913c1d1180cdb7192358": "line.apronsurface.808080",
+  "LFSD-9968f427ae9a2defdcc7": "line.stopbar.7e0000",
+  "LFSD-730befed7ec9697cde57": "line.twr-ctr.000000",
+  "LFSD-cdb5588bb43fa30b72f0": "line.labels.808080",
+  "LFSD-55c03f177138f83835bc": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFSD-920901df91550baecf45": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFSD-10a0b57257cfaf604932": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFSD-fa9533bae9626428db2e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFSD-a53607e16f51f6c9441f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFSD-d3e8e822dfd22b5390a2": "label.taxiways",
+  "LFSD-b5a5b722d2747ed68414": "label.taxiways",
+  "LFSD-ec45fdd6377f388b86cb": "label.taxiways",
+  "LFSD-4f0af657320f75309602": "label.taxiways",
+  "LFSD-76c0dada7563c6db8758": "label.taxiways",
+  "LFSD-4b1729b8b6dc45a16e7a": "label.taxiways",
+  "LFSD-7215b7d1b8c440280db6": "label.taxiways",
+  "LFSD-bd3abb86e88990777c52": "label.taxiways",
+  "LFSD-3582f5c0dea3a215e4ac": "label.taxiways",
+  "LFSD-96589fdae1b40c7fc1b5": "label.taxiways",
+  "LFSD-6326a97d099edf80366f": "label.taxiways",
+  "LFSD-df1e966db7e4933300f7": "label.taxiways",
+  "LFSD-afd2483e67e51cb50fcc": {
+    "style_id": "runway.reference",
+    "source_group": "LFSD Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFSD-4e2e078b5fe667a3c717": {
+    "style_id": "runway.reference",
+    "source_group": "LFSD Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

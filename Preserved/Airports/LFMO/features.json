@@ -1,0 +1,10 @@
+{
+  "LFMO-289fcee5fd442dd29d76": "line.taxiway.c0b631",
+  "LFMO-b3940e7a217e9d3bb9b4": "line.runwayconcrete.555555",
+  "LFMO-615ae78b2483d70c4b9e": "line.apronsurface.808080",
+  "LFMO-95e84b0211ee7848d6f6": {
+    "style_id": "runway.reference",
+    "source_group": "LFMO Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

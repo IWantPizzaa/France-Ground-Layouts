@@ -1,0 +1,30 @@
+{
+  "LFLU-278aba07ffc60e919de4": "line.taxiway.c0b631",
+  "LFLU-f3ca0d057a443787560e": "line.runwayconcrete.555555",
+  "LFLU-22dc2291fa6b8e9dbda2": "line.apronsurface.808080",
+  "LFLU-70c9baea9cf7058df6a3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLU-8e72c346ba7c26b5070a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLU-fb56f5d5163a57c3351e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLU-9da65595f5d820c079b2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLU-7a9c2215bcb90570a377": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLU-7193e78e6b914573c35a": {
+    "style_id": "runway.reference",
+    "source_group": "LFLU Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFLU-6af707cd2ff07f558d34": {
+    "style_id": "runway.reference",
+    "source_group": "LFLU Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

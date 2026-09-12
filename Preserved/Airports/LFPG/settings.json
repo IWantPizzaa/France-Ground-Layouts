@@ -1,0 +1,504 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFPG AVISO",
+  "bbox": [
+    2.493035278,
+    48.986978333,
+    2.615,
+    49.027015
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFPG",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light",
+      "real"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F",
+      "real": "#6F6F6F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "09R",
+          "27L"
+        ],
+        "headings": [
+          84,
+          264
+        ],
+        "thresholds": [
+          [
+            2.513057778,
+            49.020616944
+          ],
+          [
+            2.562116944,
+            49.023252778
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "09L",
+          "27R"
+        ],
+        "headings": [
+          84,
+          264
+        ],
+        "thresholds": [
+          [
+            2.524891944,
+            49.024718889
+          ],
+          [
+            2.561691944,
+            49.026693889
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "08R",
+          "26L"
+        ],
+        "headings": [
+          84,
+          264
+        ],
+        "thresholds": [
+          [
+            2.565660833,
+            48.992913889
+          ],
+          [
+            2.602435833,
+            48.994877778
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "08L",
+          "26R"
+        ],
+        "headings": [
+          84,
+          264
+        ],
+        "thresholds": [
+          [
+            2.552743889,
+            48.995685833
+          ],
+          [
+            2.602010833,
+            48.998318889
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [
+      {
+        "runway": "26L",
+        "mode": "arrival"
+      },
+      {
+        "runway": "26R",
+        "mode": "departure"
+      },
+      {
+        "runway": "27L",
+        "mode": "departure"
+      },
+      {
+        "runway": "27R",
+        "mode": "arrival"
+      }
+    ],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      2.547777778,
+      49.009721944
+    ]
+  },
+  "styles": {
+    "polygon.grassurface.00512f": {
+      "name": "Grass",
+      "layer": "Terrain",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#010D19",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#00512F"
+          },
+          "real": {
+            "fill": "#6A958B"
+          }
+        }
+      }
+    },
+    "polygon.hardsurface4.969393": {
+      "name": "Hard Surface 4",
+      "layer": "Airfield surfaces",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#152841",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#969393"
+          },
+          "real": {
+            "fill": "#9D9D9D"
+          }
+        }
+      }
+    },
+    "polygon.terrain1.574242": {
+      "name": "Terrain 1",
+      "layer": "Terrain",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#574242",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#574242"
+          },
+          "real": {
+            "fill": "#574242"
+          }
+        }
+      }
+    },
+    "polygon.hardsurface3.8a807f": {
+      "name": "Hard Surface 3",
+      "layer": "Airfield surfaces",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#222D3C",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#8A807F"
+          },
+          "real": {
+            "fill": "#9D9D9D"
+          }
+        }
+      }
+    },
+    "polygon.hardsurface2.595e5b": {
+      "name": "Hard Surface 2",
+      "layer": "Airfield surfaces",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#2F3949",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#595E5B"
+          },
+          "real": {
+            "fill": "#4A484B"
+          }
+        }
+      }
+    },
+    "polygon.runwayconcrete.555555": {
+      "name": "Runways",
+      "layer": "Airfield surfaces",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#111318",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#555555"
+          },
+          "real": {
+            "fill": "#181418"
+          }
+        }
+      }
+    },
+    "polygon.runwaygrass.008000": {
+      "name": "Grass runways",
+      "layer": "Airfield surfaces",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#859A77",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#008000"
+          },
+          "real": {
+            "fill": "#6A958B"
+          }
+        }
+      }
+    },
+    "polygon.building.394446": {
+      "name": "Buildings",
+      "layer": "Buildings and structures",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#475570",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#394446"
+          },
+          "real": {
+            "fill": "#394446"
+          }
+        }
+      }
+    },
+    "polygon.stopbar.7e0000": {
+      "name": "Stopbars",
+      "layer": "Surface markings",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#7E0000",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#7E0000"
+          },
+          "real": {
+            "fill": "#7E0000"
+          }
+        }
+      }
+    },
+    "polygon.taxiwayorange.cc6d00": {
+      "name": "Taxiway Orange",
+      "layer": "Airfield surfaces",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#CC8B00",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#CC6D00"
+          },
+          "real": {
+            "fill": "#CC6D00"
+          }
+        }
+      }
+    },
+    "polygon.closurearea.ff0000": {
+      "name": "Closure areas",
+      "layer": "Operational restrictions",
+      "object_type": "Area",
+      "paint": {
+        "fill": "#FF0000",
+        "fill-opacity": 1,
+        "palette-overrides": {
+          "light": {
+            "fill": "#FF0000"
+          },
+          "real": {
+            "fill": "#FF0000"
+          }
+        }
+      }
+    },
+    "line.taxiway.c0b631.stands": {
+      "name": "Taxiways",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "#4E5A69",
+        "stroke-opacity": 1,
+        "stroke-width": 1,
+        "palette-overrides": {
+          "light": {
+            "stroke": "#C0B631"
+          },
+          "real": {
+            "stroke": "#2A2A2A"
+          }
+        }
+      }
+    },
+    "line.taxiwayblue.004080": {
+      "name": "Taxiway Blue",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "#3B5296",
+        "stroke-opacity": 1,
+        "stroke-width": 1,
+        "palette-overrides": {
+          "light": {
+            "stroke": "#004080"
+          },
+          "real": {
+            "stroke": "#181418"
+          }
+        }
+      }
+    },
+    "line.taxiwayorange.cc6d00": {
+      "name": "Taxiway Orange",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "#CC8B00",
+        "stroke-opacity": 1,
+        "stroke-width": 1,
+        "palette-overrides": {
+          "light": {
+            "stroke": "#CC6D00"
+          },
+          "real": {
+            "stroke": "#CC6D00"
+          }
+        }
+      }
+    },
+    "line.taxiway.c0b631": {
+      "name": "Taxiways",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "#4E5A69",
+        "stroke-opacity": 1,
+        "stroke-width": 1,
+        "palette-overrides": {
+          "light": {
+            "stroke": "#C0B631"
+          },
+          "real": {
+            "stroke": "#2A2A2A"
+          }
+        }
+      }
+    },
+    "label.engine-test-area": {
+      "name": "Engine Test Area",
+      "layer": "Labels",
+      "object_type": "Label",
+      "paint": {
+        "text-color": "#CCCCCC",
+        "text-font": "Arial",
+        "text-size": 12,
+        "text-halo-color": "#000000",
+        "text-halo-width": 1,
+        "text-anchor": "center",
+        "zoomLevel": 7
+      }
+    },
+    "label.gates": {
+      "name": "Gates",
+      "layer": "Labels",
+      "object_type": "Label",
+      "paint": {
+        "text-color": "#CCCCCC",
+        "text-font": "Arial",
+        "text-size": 12,
+        "text-halo-color": "#000000",
+        "text-halo-width": 1,
+        "text-anchor": "center",
+        "zoomLevel": 10
+      }
+    },
+    "label.taxiways": {
+      "$ref": "style.label.taxiways"
+    },
+    "label.terminaux": {
+      "name": "Terminaux",
+      "layer": "Labels",
+      "object_type": "Label",
+      "paint": {
+        "text-color": "#CCCCCC",
+        "text-font": "Arial",
+        "text-size": 12,
+        "text-halo-color": "#000000",
+        "text-halo-width": 1,
+        "text-anchor": "center",
+        "zoomLevel": 7
+      }
+    },
+    "label.tora": {
+      "name": "TORA",
+      "layer": "Labels",
+      "object_type": "Label",
+      "paint": {
+        "text-color": "#CCCCCC",
+        "text-font": "Arial",
+        "text-size": 12,
+        "text-halo-color": "#000000",
+        "text-halo-width": 1,
+        "text-anchor": "center",
+        "zoomLevel": 7
+      }
+    },
+    "line.ground_layout_arrows.centerline": {
+      "name": "Ground layout arrows — centerline",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "#FFFF00",
+        "stroke-opacity": 1,
+        "stroke-width": 1.5
+      }
+    },
+    "line.ground_layout_arrows.green": {
+      "name": "Ground layout arrows — green",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "#008000",
+        "stroke-opacity": 1,
+        "stroke-width": 1.5
+      }
+    },
+    "line.ground_layout_arrows.brown": {
+      "name": "Ground layout arrows — brown",
+      "layer": "Guidance lines",
+      "object_type": "Line",
+      "paint": {
+        "stroke": "#A52A2A",
+        "stroke-opacity": 1,
+        "stroke-width": 1.5
+      }
+    }
+  },
+  "vsmr_groups": [
+    {
+      "id": "stands-and-gates",
+      "name": "Stands & gates",
+      "visible": true,
+      "accent": "#d4bd39"
+    },
+    {
+      "id": "ground-layout-east",
+      "name": "East Arrows",
+      "visible": true,
+      "accent": "#d4bd39"
+    },
+    {
+      "id": "ground-layout-west",
+      "name": "West Arrows",
+      "visible": true,
+      "accent": "#d4bd39"
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "LFLY-8c28ee3fa5ef82341608": "polygon.grassurface.00512f",
+  "LFLY-cf36de611e6794c2f8e0": "polygon.runwaygrass.008000",
+  "LFLY-7e978bebd5d8be34dac2": "polygon.runwaygrass.008000",
+  "LFLY-958de8198a8fe7cd8e68": "polygon.hardsurface4.969393",
+  "LFLY-8985a362da8b7c3b694c": "polygon.hardsurface4.969393",
+  "LFLY-1ef190092c376d2009a2": "polygon.hardsurface4.969393",
+  "LFLY-6d4d65ff29883e7332f7": "polygon.hardsurface4.969393",
+  "LFLY-fee0d515b99d4882424f": "polygon.hardsurface4.969393",
+  "LFLY-2b78b02ce66c3d113cfb": "polygon.hardsurface4.969393",
+  "LFLY-794caeb55606fd765d0e": "polygon.hardsurface4.969393",
+  "LFLY-4d89af392812a4c17718": "polygon.hardsurface3.8a807f",
+  "LFLY-b6695781a1f78998145c": "polygon.hardsurface3.8a807f",
+  "LFLY-5a46c1383003a90a1b5a": "polygon.hardsurface3.8a807f",
+  "LFLY-59b35b03a79c8b13051d": "polygon.hardsurface3.8a807f",
+  "LFLY-9dc4ead90c696d7c3bfd": "polygon.hardsurface2.595e5b",
+  "LFLY-2ab52853399b7a7d0f4e": "polygon.hardsurface2.595e5b",
+  "LFLY-8cd7d9d5e7466258fc33": "polygon.hardsurface2.595e5b",
+  "LFLY-24a9d74e2b01f4339594": "polygon.runwayconcrete.555555",
+  "LFLY-b4ae1ae52fbb2d4a6c43": "polygon.runwayconcrete.555555",
+  "LFLY-d264c7c2e689dc27d874": "polygon.building.394446",
+  "LFLY-76e2f2c6aad9a246fe8d": "polygon.building.394446",
+  "LFLY-fcdde0d1e9a44b48029b": "polygon.building.394446",
+  "LFLY-b42e17a833cd280f9f93": "polygon.building.394446",
+  "LFLY-665c5947dbba6f370f6e": "polygon.building.394446",
+  "LFLY-977a72dd926602b9f38f": "polygon.building.394446",
+  "LFLY-6cde8f1961252673d588": "polygon.building.394446",
+  "LFLY-9ec7103354cbb2546e62": "polygon.building.394446",
+  "LFLY-a0cd73545f7bd933853d": "polygon.building.394446",
+  "LFLY-a907e7b290b538d02615": "polygon.building.394446",
+  "LFLY-489bcf3a245aff479d73": "polygon.building.394446",
+  "LFLY-6c5d24101e4ec45d4e17": "polygon.building.394446",
+  "LFLY-79073ed697d173b06e8b": "polygon.building.394446",
+  "LFLY-98539726a347f4ac0c9d": "polygon.building.394446",
+  "LFLY-c37f529bf496207027be": "polygon.building.394446",
+  "LFLY-ae895a44eb52bf1bbf77": "polygon.building.394446",
+  "LFLY-3e4795aac2c5d13e98e4": "polygon.building.394446",
+  "LFLY-f792058caf95175e129b": "polygon.stopbar.7e0000",
+  "LFLY-3d4955ff11a1bce6ae7b": "polygon.stopbar.7e0000",
+  "LFLY-fe44080a71f68ae3fc5f": "polygon.stopbar.7e0000",
+  "LFLY-41ad856cac0d6ecd3da0": "polygon.stopbar.7e0000",
+  "LFLY-32d88f95afca6a237e37": "polygon.stopbar.7e0000",
+  "LFLY-777b8f7913622de957d6": "line.runwayborder.808080",
+  "LFLY-d383f174dcc142dabe5d": "line.taxiway.c0b631",
+  "LFLY-03d0df5bc461ba39588a": "line.taxiwayorange.cc6d00",
+  "LFLY-6a6f85070fb0d8f54cd4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-54797fbcacca8d574702": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-0b127075d95caee0fbfd": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-4a58d7fa234641f14313": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-33741c34e84f2ee3eac4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-89fa57d8d2742cf510a7": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-bdc29cdc9f017e939982": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-230b50dcd60881179f38": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-2972f1fe1da5d7dca7f9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-7cd6c571c7b558bd9f97": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-eb815fcf1281ca34c08a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-6e87873b6e94c8eb1110": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-57cc4732aab5c1700387": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-cc96514d9ca9de48dba5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-1d4cbfa0449a726abeaa": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-9d21ad8e77efd54314f2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-79d5683de48fc408917d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-d5edc23c68310c45e455": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-dfeb31bf3f05dc7e550a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-e2d1c92696c59e321bb4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-f221dfa537e90261c749": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-d503cac2d45c6418cd21": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-a9adef7f78fb2ed2cb7d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-1753d8bf853795c79653": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-d4fec900f8af762b54c3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-6d135f9048f090215c0d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-47460d87a25a1df0fb4e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-83a4cbb74e5bf179c0ed": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-be037bced04cb3de0f4a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-76a848d288419a659339": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-33d133008c4b6935c6b2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-c0ef44679fc174f972c3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-489a40ecc2b6cb5c7637": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-866312c97515503d3693": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-39f96cbff0e5b850cd68": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-54606ffc4156c014a6ad": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-9867561cf75111438ca9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-dc1a099ceb481c096831": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-aa8386d6780087c611d4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-7349951c767d8d93ee57": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-232f870d7c63bdf2febe": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-7283652fe16a89512d2c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-c0cc49a526e12972374f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-94538586300c0b1bf8da": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-706b7d5a18a4a7b1d9f6": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-da2da9dd5a5689f90997": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-5b4f953224cd8a567081": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-8f06bf9067bb8929f7ac": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-d92758f6118104c69ced": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-db319b2269bfd9dfc228": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-847c5bee5e1fa9885872": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-9dbc7f9d9c836299eba3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-058e3d9bc6795bcf3bbc": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-437ac4aa9cd44cd32e67": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-f753e3c7841873ea6a37": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-55263dad7835ee5a1ca1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-0398a10852f4ea28bef1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-a56e2c3c1dcc1a48fc61": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-fc99310cd7af370d6fde": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-57a730b5e2d9cd9e7c22": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-ac6c14bdf0bf6ea3d06d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-10f80a343339b2b50022": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-0a38d9270d862063b60e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-a60f869a269452976539": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-f15817b2d9e7e9f4f9e5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-5624f7525d8c78bae172": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-ce9f6bf0e896edb161ad": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-108225386f5d31b43cdd": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-6c77583af5dcedb71248": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-7aec79ec5f9518566f2b": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-2125a94296be2a8e5125": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-c538dfffd12e1249bac5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-50b8e39e376e3eedc63a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-15ed09fdd706725f0c86": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-ea162413e7bee8559ff7": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-a1cf686da86d8db5f0de": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-f683a3fc70b0126bb21c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-57600cbee66ba73bfacf": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-6d0ca99d46d984e1905c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-e7750357a7674f6e6d84": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-8578554bc4d0829c78df": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-7af1ebc28b4231ee20d7": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-d728f8bf66819c91d3f4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-0fe0fb7de1d4972dcc7f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-edf094664980fb1c88d5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-1a009fdeb1cb3ab7b0a3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-81a757cf7eca2844fdf2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-5a34e459e05ae7c8370b": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-ecb34dc30f91af9ce64d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-aa59ac659a806b0df9ff": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-7363ecba431c932b0262": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-7a31a0c54c49fde3fefd": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-3e7f33b0f0de326b0350": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-405dac164ba3d1e34caf": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-a76549f6f2e6a61e55c5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-544f832c02616a168e3e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-5fbde3d43e6fc3ddb9af": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-031848daeaa5b73ebb65": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-e9d268f7ae30f5f25048": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-bb1e52210d623cc211ea": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-1dfa2b8cccd73623065d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLY-89293ecbe8fd3cc670d4": "label.taxiways",
+  "LFLY-5917f77fba6173bf2bb7": "label.taxiways",
+  "LFLY-bcfe144e1d41ee88601d": "label.taxiways",
+  "LFLY-bffefa3340ad19e1fc80": "label.taxiways",
+  "LFLY-4c32b06510f535bc5ba7": "label.taxiways",
+  "LFLY-6451c4639a356eec32b8": "label.taxiways",
+  "LFLY-564636a508546c02a0d9": "label.taxiways",
+  "LFLY-62a18051d7fbe15c3e12": "label.taxiways",
+  "LFLY-97d1b0fe622b9f129dac": "label.taxiways",
+  "LFLY-2760010fa96b4c815ba0": "label.taxiways",
+  "LFLY-e84696b3612eef978a5b": "label.taxiways",
+  "LFLY-3e150159e37c041f1c86": "label.taxiways",
+  "LFLY-41648460246853d45d25": "label.taxiways",
+  "LFLY-0f15423c5a97797b5904": "label.taxiways",
+  "LFLY-5524eb38875af680fa8c": "label.taxiways",
+  "LFLY-cd1b641f3d9b2789bb71": "label.taxiways",
+  "LFLY-83654491cdefdd5c3247": "label.taxiways",
+  "LFLY-01568e09fa5feb428c65": "label.taxiways",
+  "LFLY-bf3b403b15c893779a36": "label.taxiways",
+  "LFLY-4d936cfb0c5b2a2298d1": "label.taxiways",
+  "LFLY-f88634a9e3846603d1e8": "label.taxiways",
+  "LFLY-c403c94ee756e581f67f": "label.taxiways",
+  "LFLY-ddf5bcab164f69a67a11": "label.taxiways",
+  "LFLY-52dd6853125c842fff47": "label.taxiways",
+  "LFLY-2376921cb041a80167f3": "label.taxiways",
+  "LFLY-9b363b3a7b3e3eb87e34": "label.taxiways",
+  "LFLY-1b2f8acb6759d691b7ad": "label.taxiways",
+  "LFLY-e2e755e34bc2f3cc7acb": "label.taxiways",
+  "LFLY-1d9ac87e786be795be16": "label.taxiways",
+  "LFLY-993b0cd0eea9145db06d": "label.taxiways",
+  "LFLY-c8c6f2b1e66797d0c363": "label.taxiways",
+  "LFLY-004634061d02983e5cc9": "label.taxiways",
+  "LFLY-8a284f6a320e2919ca24": "label.taxiways"
+}

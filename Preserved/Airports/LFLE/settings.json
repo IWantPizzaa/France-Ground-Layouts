@@ -1,0 +1,81 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFLE AVISO",
+  "bbox": [
+    5.971916944,
+    45.557135833,
+    5.979818889,
+    45.564343889
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFLE",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "14L",
+          "32R"
+        ],
+        "headings": [
+          141,
+          321
+        ],
+        "thresholds": [
+          [
+            5.973116944,
+            45.563941944
+          ],
+          [
+            5.979818889,
+            45.557463889
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "14",
+          "32"
+        ],
+        "headings": [
+          141,
+          321
+        ],
+        "thresholds": [
+          [
+            5.971916944,
+            45.564343889
+          ],
+          [
+            5.979355833,
+            45.557135833
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      5.975832778,
+      45.560555833
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

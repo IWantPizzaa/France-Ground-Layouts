@@ -1,0 +1,12 @@
+{
+  "LFME-718aca849fd5eb2d3b5c": {
+    "style_id": "runway.reference",
+    "source_group": "LFME Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFME-16106f965aa86ec27d73": {
+    "style_id": "runway.reference",
+    "source_group": "LFME Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

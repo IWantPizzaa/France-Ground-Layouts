@@ -1,0 +1,12 @@
+{
+  "LFYR-4c6312c52934e7497577": {
+    "style_id": "runway.reference",
+    "source_group": "LFYR Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFYR-0291a731d641abf02949": {
+    "style_id": "runway.reference",
+    "source_group": "LFYR Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

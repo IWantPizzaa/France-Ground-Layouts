@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFSR AVISO",
+  "bbox": [
+    4.033361111,
+    49.303583333,
+    4.059222222,
+    49.318583333
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFSR",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": []
+  },
+  "styles": {
+    "label.gates": {
+      "$ref": "style.label.gates"
+    }
+  },
+  "vsmr_groups": [
+    {
+      "id": "stands-and-gates",
+      "name": "Stands & gates",
+      "visible": true,
+      "accent": "#d4bd39"
+    }
+  ]
+}

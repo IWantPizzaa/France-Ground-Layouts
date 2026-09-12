@@ -1,0 +1,49 @@
+{
+  "LFKS-300e20f8584e78c28409": "line.runwayconcrete.555555",
+  "LFKS-c0addd197ff723184504": "line.taxiway.c0b631",
+  "LFKS-3eea9c444890650b41c1": "line.apronsurface.808080",
+  "LFKS-a0edc3f3cdbb4b516646": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-3045d48271237e1d9636": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-0199a6649d78bfa72d91": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-137293f909269dc179e0": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-4e689d1d33d636c825df": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-764078171ca285d0dc5c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-959db87d2898ff2f9527": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-18b04f1bb06bb1259546": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-8930953affc2e8f75271": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-8a9092af9e3eac6946a2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-087be85d15f050d215c4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-eae5269b5afb0bc7d0f5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-0f678d186fbeedf585dc": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFKS-5a2ffde0d5377ad54184": {
+    "style_id": "runway.reference",
+    "source_group": "LFKS Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

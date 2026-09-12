@@ -1,0 +1,45 @@
+{
+  "LFLN-147ee5e05b73510c1c92": "line.taxiway.c0b631",
+  "LFLN-95c5f2689588bafe8e03": "line.runwayconcrete.555555",
+  "LFLN-c487b934a75c1c5027b8": "line.apronsurface.808080",
+  "LFLN-32ef60e368ae2ae0603a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLN-c4e43587c95fe3a697aa": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLN-827b0acca6e326eac754": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFLN-4bcfb7030772d05447a7": "label.taxiways",
+  "LFLN-ed7982b94ccb54647066": "label.taxiways",
+  "LFLN-1c7e5e68c758a4d17797": "label.taxiways",
+  "LFLN-ca52acc292e3f20ce9b8": "label.taxiways",
+  "LFLN-7e1d572431fa590108fc": "label.taxiways",
+  "LFLN-81650eec52a0c4817db6": "label.taxiways",
+  "LFLN-8ec679e6efee13cf1924": "label.taxiways",
+  "LFLN-e95122f6d20fe5867ca8": "label.taxiways",
+  "LFLN-f3635b689bc88df8fba2": "label.taxiways",
+  "LFLN-2a17b7ea8ad35e6ecf9e": "label.taxiways",
+  "LFLN-fea85611fcba3419f92d": "label.taxiways",
+  "LFLN-5d0efdeafa230eec0f79": "label.taxiways",
+  "LFLN-238beef4f81c86f461c4": "label.taxiways",
+  "LFLN-27662504cb4b59cc3e23": "label.taxiways",
+  "LFLN-5a3dc6bf4614a443d000": "label.taxiways",
+  "LFLN-e6fc814df8ba0aa72c8b": "label.taxiways",
+  "LFLN-13432cbab9a35061d6c4": "label.taxiways",
+  "LFLN-841ce7319001071df683": "label.taxiways",
+  "LFLN-460e7581750886d47b8c": "label.taxiways",
+  "LFLN-47cb55e37c160459c0ac": "label.taxiways",
+  "LFLN-6bc2b819a179b85b2fbf": "label.taxiways",
+  "LFLN-26e2d9c7ff6b65706f32": "label.taxiways",
+  "LFLN-c75c1cc2db17f79b018c": {
+    "$ref": "feature-options.Runway-centerlines.10"
+  },
+  "LFLN-62beb6780db98f56e851": {
+    "$ref": "feature-options.Runway-centerlines.10"
+  },
+  "LFLN-6c67e4838f912a2174bd": {
+    "$ref": "feature-options.Runway-centerlines.10"
+  }
+}

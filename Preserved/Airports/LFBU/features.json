@@ -1,0 +1,86 @@
+{
+  "LFBU-48785507dee8df0f84f0": "line.runwayconcrete.555555",
+  "LFBU-b2d91b80a98a46ae71e9": "line.runwaygrass.008000",
+  "LFBU-f27001a119a419a0c2d6": "line.taxiway.c0b631",
+  "LFBU-9430b99ff2fae586cf08": "line.apronsurface.808080",
+  "LFBU-0b7f88c8425e0f9d04c9": "line.stopbar.7e0000",
+  "LFBU-32b370ddf0d32156fb4a": "line.centerlines.ffff00",
+  "LFBU-e0f48504878cfd35a43d": "line.labels.808080",
+  "LFBU-184bf23ff7ba8827f6e4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-d51f0783175a31020cd8": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-65bf5af2e04c79f26a45": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-2025461691594b7f0af0": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-cc86406b14a96402e1a8": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-c865c58147e24722c505": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-d445f71057dbadaf5617": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-f99e7cec5f74c652fe55": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-cfa31fdc34030f732cff": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-d6f87e30ec5202bf62ac": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-ba89247e5351181da19d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-f5ce96d0a420613bc406": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-8252eeae124c14ec61ae": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-a729c9fd3cf41f2889f2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-d90e9ac5365ff384e0df": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-d378b9a7ef98f6bded30": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-4bfb478285762677f8ba": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-ff8978082cc5fcab4777": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-c47f7ea4aa3776bcf1a8": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-43859d74e9e535bed9e0": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-f5f0d6e8c31a17009e3c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-a8ad0fee13a8ec575ed4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-d175d81f3b0562da6ae2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-010dd295dac77b97143d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBU-d4143fb1bd57770e39bd": {
+    "style_id": "runway.reference",
+    "source_group": "LFBU Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

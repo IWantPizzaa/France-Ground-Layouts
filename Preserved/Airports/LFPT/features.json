@@ -1,0 +1,71 @@
+{
+  "LFPT-84e7fd343423aacbc3be": "line.taxiway.c0b631",
+  "LFPT-abddcd92648d83922def": "line.runwayconcrete.555555",
+  "LFPT-8d762d34d99e7afbf659": "line.apronsurface.808080",
+  "LFPT-3a2174cda49941b3a2b7": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-20c95c1983f86596fc63": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-9338e2fe52613ebd41aa": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-9b84b0c63242bdfd8e82": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-3ac0efc23605f5da75af": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-396482596d1bc2d8bc39": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-24841f87d966c664df01": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-150d2eefb9a494aa80ae": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-2493a6ff7d2cd6bafc46": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFPT-4898c144c0c89d6f267c": "label.taxiways",
+  "LFPT-e0052a55851f4c8ddf8a": "label.taxiways",
+  "LFPT-509b94ae877f79360617": "label.taxiways",
+  "LFPT-47ddac0a7b30aacaf8c7": "label.taxiways",
+  "LFPT-029786f9f0e731ee8090": "label.taxiways",
+  "LFPT-3ae5e8d7b428a7d65c7f": "label.taxiways",
+  "LFPT-8ac59354474fe66a5b35": "label.taxiways",
+  "LFPT-001a189fde6853fe0951": "label.taxiways",
+  "LFPT-d95c76e22c2e20b5d8e6": "label.taxiways",
+  "LFPT-9d9d4e03c393678ca690": "label.taxiways",
+  "LFPT-196e64862baf716ff1c5": "label.taxiways",
+  "LFPT-e5b2dc3639d83c91f327": "label.taxiways",
+  "LFPT-f24c950a5aa0d76deadc": "label.taxiways",
+  "LFPT-0da61787b02137f43ad7": "label.taxiways",
+  "LFPT-898dd359252e0d02d639": "label.taxiways",
+  "LFPT-ec6211018ab2f538c1c4": "label.taxiways",
+  "LFPT-90945648501acc5ad0d1": "label.taxiways",
+  "LFPT-3165ca7476851ffbc23e": "label.taxiways",
+  "LFPT-aba2cb2e04efe3902171": "label.taxiways",
+  "LFPT-0e71e288802b08c2dbe0": "label.taxiways",
+  "LFPT-646e0fb4ed8f737bbcd6": "label.taxiways",
+  "LFPT-bfefa81f4d39f25eeff5": "label.taxiways",
+  "LFPT-d33454d4ceaeda260593": "label.taxiways",
+  "LFPT-9a9a963c342a83343b67": "label.taxiways",
+  "LFPT-093ad0797e10ec2e9fc4": "label.taxiways",
+  "LFPT-ced9102cfc28ec74608b": "label.taxiways",
+  "LFPT-abde3de43905545e1411": "label.taxiways",
+  "LFPT-8c38ddbe3832ce076af7": "label.taxiways",
+  "LFPT-97e5b6bfaaa871e026dc": "label.taxiways",
+  "LFPT-b6954c8b9f1a848e7963": {
+    "style_id": "runway.reference",
+    "source_group": "LFPT Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFPT-f2b23dca25a9cef5cdce": {
+    "style_id": "runway.reference",
+    "source_group": "LFPT Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

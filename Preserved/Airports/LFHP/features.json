@@ -1,0 +1,14 @@
+{
+  "LFHP-60f0741370d4482fbd78": "line.runwayconcrete.555555",
+  "LFHP-b0880cb6f7a00b81e8c0": "line.runwaygrass.008000",
+  "LFHP-a84f5953c98410bd8f95": {
+    "style_id": "runway.reference",
+    "source_group": "LFHP Runways",
+    "geometry_role": "runway_centerline"
+  },
+  "LFHP-1fe957d7c7f5439f1ab1": {
+    "style_id": "runway.reference",
+    "source_group": "LFHP Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

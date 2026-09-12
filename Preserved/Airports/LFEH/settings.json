@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFEH AVISO",
+  "bbox": [
+    2.388585833,
+    47.478025,
+    2.398143889,
+    47.481930833
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFEH",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "06",
+          "24"
+        ],
+        "headings": [
+          57,
+          237
+        ],
+        "thresholds": [
+          [
+            2.388585833,
+            47.478025
+          ],
+          [
+            2.398143889,
+            47.481930833
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      2.392777778,
+      47.479721944
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

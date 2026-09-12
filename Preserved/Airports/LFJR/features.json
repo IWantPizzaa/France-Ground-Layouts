@@ -1,0 +1,101 @@
+{
+  "LFJR-be432689c13b9373a611": "line.runwayconcrete.555555",
+  "LFJR-23f837de88c365b63f20": "line.runwaygrass.008000",
+  "LFJR-cd1e948f6d362f7fca9f": "line.taxiway.c0b631",
+  "LFJR-3bbabd7091db158f8aa8": "line.apronsurface.808080",
+  "LFJR-e442656a036d137b17cb": "line.stopbar.7e0000",
+  "LFJR-b15bb48056db6d1554d6": "line.twr-ctr.000000",
+  "LFJR-f50d78e4035739361003": "line.centerlines.ffff00",
+  "LFJR-fbf1aae5045e5d565ec4": "line.labels.808080",
+  "LFJR-b1b6fbe233f9419586f4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-b6d73fe8931e260045ce": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-0bc9511201e3d49f381c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-8c2ba31ed88a0d5973de": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-22886baabd0b8ff2b036": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-c73735d75ea7218a2174": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-1c2c86c28778b5e63d17": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-b8b29684d0cd30d565c7": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-7749fa8c028ee17a5aae": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-c5779d8b9a5eb3ec2d88": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-441316de24ef3da913b2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-296a2460d81952632488": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-09c013669c3e53a829b7": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-2a34719761b396a64f7b": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-a05cceb95f8cc8dd748f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-695e93e97193883361cb": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-5ba02125540793390d3c": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-a017d20efa2f14a3b546": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-1504302e287253b1ca9a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-a682745b125edf92fdf7": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-e9d09ef7c0b165cccf8a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-3bfae0edc4bda70195f4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-988792440dcec00affd2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-ffd31a0e3c982e2733ae": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-bc31464fd4579d2f7e35": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-6269184aa7b22c9d1167": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFJR-64949413af41028c211f": "label.taxiways",
+  "LFJR-652e3f6d1a7b9301f7d0": "label.taxiways",
+  "LFJR-b549af1cf0e2e9278f69": "label.taxiways",
+  "LFJR-173ac6f04e35b3a15c94": "label.taxiways",
+  "LFJR-e8916722095a09dddc8d": {
+    "$ref": "feature-options.Runway-centerlines.8"
+  },
+  "LFJR-a4898650190af33f9a47": {
+    "$ref": "feature-options.Runway-centerlines.8"
+  },
+  "LFJR-d9e005eae0874d43bfa7": {
+    "$ref": "feature-options.Runway-centerlines.8"
+  }
+}

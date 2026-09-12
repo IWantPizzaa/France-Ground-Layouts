@@ -1,0 +1,81 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFCX AVISO",
+  "bbox": [
+    1.122382778,
+    44.084946944,
+    1.133396944,
+    44.087096944
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFCX",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "10L",
+          "28R"
+        ],
+        "headings": [
+          100,
+          280
+        ],
+        "thresholds": [
+          [
+            1.122777778,
+            44.087096944
+          ],
+          [
+            1.133385833,
+            44.085480833
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "10",
+          "28"
+        ],
+        "headings": [
+          100,
+          280
+        ],
+        "thresholds": [
+          [
+            1.122382778,
+            44.086630833
+          ],
+          [
+            1.133396944,
+            44.084946944
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      1.126943889,
+      44.085832778
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

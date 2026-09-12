@@ -1,0 +1,73 @@
+{
+  "LFBA-81d2f4fb6066e36eeaf4": "line.runwayconcrete.555555",
+  "LFBA-5c2a2c2e51d8fa5ae6e5": "line.taxiway.c0b631",
+  "LFBA-16575a38d117b749c926": "line.apronsurface.808080",
+  "LFBA-420b9b0048945e32e1fa": "line.stopbar.7e0000",
+  "LFBA-9e97a73b614656ec0d1b": "line.twr-ctr.000000",
+  "LFBA-024a21abd0d18caa4507": "line.centerlines.ffff00",
+  "LFBA-b9d16ae987480aae8c7f": "line.labels.808080",
+  "LFBA-ea5aa807cce29d4185e2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-0860c64340468ce28e4f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-03dc8b11e7e8a60607da": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-f3a4d60df772fb760123": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-038b20104b60b070e326": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-c9c28737d4b8d6ca113e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-131cf26f8bad3297ee01": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-66007092494199133645": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-a8adf87a094538073d96": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-a1b64bae54a61aac7246": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-1ca7afe328bb7792e595": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-a867180fd1bff149f5d1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-a8fd2612ca8d745d8587": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-13d7132333e0984094d8": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-6e44615bc371a71a17b2": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-a2781fed6a8a4b614eb9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-98815e9d65bf7df2e182": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBA-dc84c2cbe65e3d410627": "label.taxiways",
+  "LFBA-4eb2fd160d870fbc28ea": "label.taxiways",
+  "LFBA-65cddee45394419c4944": "label.taxiways",
+  "LFBA-7a67b643db61f00adfac": "label.taxiways",
+  "LFBA-4ada997b7294b259d4b5": "label.taxiways",
+  "LFBA-b9bbc84a798240b39363": "label.taxiways",
+  "LFBA-d78e2238820be76062e5": "label.taxiways",
+  "LFBA-5e22970e0f066a3ba6f1": "label.taxiways",
+  "LFBA-fa304be5c2b2397bb613": {
+    "style_id": "runway.reference",
+    "source_group": "LFBA Runways",
+    "geometry_role": "runway_centerline"
+  }
+}

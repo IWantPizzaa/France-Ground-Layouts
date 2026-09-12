@@ -1,0 +1,97 @@
+{
+  "LFBH-e140bb43dca6f9877844": "polygon.grassurface.00512f",
+  "LFBH-2d4aa39ecbb733f93a47": "polygon.hardsurface4.969393",
+  "LFBH-0c8f5328ff1e8e971cfe": "polygon.hardsurface4.969393",
+  "LFBH-22dda821f01216493b00": "polygon.hardsurface4.969393",
+  "LFBH-005a1595e307741b8a9d": "polygon.hardsurface4.969393",
+  "LFBH-e2e3156731f9b8de11fd": "polygon.hardsurface4.969393",
+  "LFBH-c6b4c90275ead2114a63": "polygon.hardsurface4.969393",
+  "LFBH-91c54e7f59e5ff742190": "polygon.runwaygrass.008000",
+  "LFBH-0bdeacf48bece97792dc": "polygon.hardsurface3.8a807f",
+  "LFBH-116293d92d609b7c1c9d": "polygon.hardsurface3.8a807f",
+  "LFBH-2acf050d16f23e3034bb": "polygon.hardsurface3.8a807f",
+  "LFBH-00060f521bce608c904f": "polygon.hardsurface3.8a807f",
+  "LFBH-726a8de604c7014295df": "polygon.hardsurface3.8a807f",
+  "LFBH-f33fa1f212ece1e42709": "polygon.hardsurface3.8a807f",
+  "LFBH-ed8bf5b4f2a0b80ba897": "polygon.hardsurface2.595e5b",
+  "LFBH-dc81b2c0e9a2cf0e5e13": "polygon.hardsurface2.595e5b",
+  "LFBH-bdf9c346b87cab21efff": "polygon.runwayconcrete.555555",
+  "LFBH-0df7533b6e29820754a7": "polygon.building.394446",
+  "LFBH-d6160d410483a0a98328": "polygon.building.394446",
+  "LFBH-26587e41759fca19540e": "polygon.building.394446",
+  "LFBH-c1af46d6ad8c84777031": "polygon.building.394446",
+  "LFBH-083f41e32e0ea79026b7": "polygon.building.394446",
+  "LFBH-94eb456f60b50c142075": "polygon.building.394446",
+  "LFBH-a7588d5fe390800adcc6": "polygon.building.394446",
+  "LFBH-1978ab33d2742842f5c3": "polygon.building.394446",
+  "LFBH-edb09c30c9b36e301e32": "polygon.building.394446",
+  "LFBH-cae4a7bce9347d193cec": "polygon.building.394446",
+  "LFBH-0c31ba56a5260a449f36": "polygon.building.394446",
+  "LFBH-81f5c54ef4725456c3ca": "polygon.building.394446",
+  "LFBH-1af5762398c995b19e31": "polygon.building.394446",
+  "LFBH-34edf1b6d8104b954b27": "polygon.building.394446",
+  "LFBH-aa24606a22aa9c384b02": "polygon.building.394446",
+  "LFBH-826d362f5a7e3fc604db": "polygon.building.394446",
+  "LFBH-98a8ddf0cf0c678b9a9b": "polygon.building.394446",
+  "LFBH-a1758c674d630228e204": "polygon.building.394446",
+  "LFBH-b9eff23f0751fd505aa9": "polygon.building.394446",
+  "LFBH-379f254ae2f3f2cd67c7": "polygon.stopbar.7e0000",
+  "LFBH-f9ae4d265b934a6941d2": "polygon.stopbar.7e0000",
+  "LFBH-3bfa31b1e2d4422680eb": "polygon.taxiwayorange.cc6d00",
+  "LFBH-83cf993415dab13f7d0d": "polygon.taxiwayorange.cc6d00",
+  "LFBH-92dbe5e4a4f06e5daaf6": "polygon.taxiwayorange.cc6d00",
+  "LFBH-d05f056f46a0ad960f66": "polygon.taxiwayorange.cc6d00",
+  "LFBH-834b2da576d45d76470b": "polygon.taxiwayorange.cc6d00",
+  "LFBH-a1378f39f9404b41f1d1": "line.runwayborder.808080",
+  "LFBH-944c055ac3eca708aa67": "line.taxiway.c0b631",
+  "LFBH-a71265e7cc659d3a29c5": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-ef4ab0d601cd47b60532": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-51f6098dd3713d8a9315": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-39695fbb996bdbad9398": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-fc966fe6d5beeba008ce": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-a25a63aaefc6b913da18": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-2586a7012b00daa5ad88": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-476f92d724ac727f107f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-41c5b7ec241aa2c95fd1": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-0a8495707fdc64a8eb26": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-a877bef4311c5d506ed4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-3bb20ff27dca3b2bd8e4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-4213544276e2b0ef4195": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBH-e827a04a56b8d19db3b7": "label.taxiways",
+  "LFBH-5afa42e2e444b353327d": "label.taxiways",
+  "LFBH-fba88d323e146080c9bb": "label.taxiways",
+  "LFBH-74b236a793448420f822": "label.taxiways",
+  "LFBH-5925e641311a7a65edcb": "label.taxiways",
+  "LFBH-6f9a29aa3ae2aa1aa728": "label.taxiways",
+  "LFBH-4921cf7e43dc8fe4aada": "label.taxiways",
+  "LFBH-4aa2d3054479dbe8e9fa": "label.taxiways",
+  "LFBH-26c3e7bbc546016efe19": "label.taxiways",
+  "LFBH-fa8b8c05fe014879a427": "label.taxiways",
+  "LFBH-769722775c5ca99f556d": "label.taxiways"
+}

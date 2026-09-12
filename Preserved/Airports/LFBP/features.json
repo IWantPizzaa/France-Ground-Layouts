@@ -1,0 +1,183 @@
+{
+  "LFBP-96d12189d1860e86684e": "polygon.grassurface.00512f",
+  "LFBP-e95b95e1a61c3aed43dc": "polygon.hardsurface4.969393",
+  "LFBP-ed826744a3b11712aafa": "polygon.hardsurface4.969393",
+  "LFBP-f141efe23cbe1be717f3": "polygon.hardsurface3.8a807f",
+  "LFBP-12114e29b935216c845f": "polygon.hardsurface3.8a807f",
+  "LFBP-31122232cce8ad02d501": "polygon.hardsurface3.8a807f",
+  "LFBP-bb86917edf1f609f540f": "polygon.hardsurface3.8a807f",
+  "LFBP-d2349ee3d64117c46a81": "polygon.hardsurface3.8a807f",
+  "LFBP-b6f4b1b36ed2dc6eb6c7": "polygon.hardsurface3.8a807f",
+  "LFBP-b285f9b8dc28fa439096": "polygon.hardsurface3.8a807f",
+  "LFBP-a5ff8f0b641fba4ec976": "polygon.hardsurface3.8a807f",
+  "LFBP-d439af901d576e2180b2": "polygon.hardsurface3.8a807f",
+  "LFBP-9689d27ad9cc9b13b441": "polygon.hardsurface3.8a807f",
+  "LFBP-c20ad34c17ba0ac7ca83": "polygon.hardsurface3.8a807f",
+  "LFBP-3d004a13c19e4f4f36ae": "polygon.hardsurface2.595e5b",
+  "LFBP-6ca742f123e1dbde741a": "polygon.hardsurface2.595e5b",
+  "LFBP-4d7e0854755100a290f8": "polygon.hardsurface2.595e5b",
+  "LFBP-a298ad1a29bff1441dbf": "polygon.hardsurface2.595e5b",
+  "LFBP-41d1d5cc4d13e57a6550": "polygon.hardsurface2.595e5b",
+  "LFBP-c2767a01e419957957db": "polygon.hardsurface2.595e5b",
+  "LFBP-6c521b6f858bd580a26f": "polygon.hardsurface2.595e5b",
+  "LFBP-5c52d0e1a8698ba1699e": "polygon.runwaygrass.008000",
+  "LFBP-c6a85cc80ef4e51df131": "polygon.runwayconcrete.555555",
+  "LFBP-07e2107752ec672500f2": "polygon.runwayconcrete.555555",
+  "LFBP-fc598bdc5fd445eddb03": "polygon.runwayconcrete.555555",
+  "LFBP-df9b218e4aa9edd158a2": "polygon.runwayconcrete.555555",
+  "LFBP-6156a8d9a71938cbcc9c": "polygon.runwayconcrete.555555",
+  "LFBP-559d0e5b67ecc583314e": "polygon.runwayconcrete.555555",
+  "LFBP-d2368758ba6f57baa104": "polygon.building.394446",
+  "LFBP-69e6f0dd11d671faa1c9": "polygon.building.394446",
+  "LFBP-b0c939259d4f53b3485d": "polygon.building.394446",
+  "LFBP-40ef12c0d83de8137bb4": "polygon.building.394446",
+  "LFBP-12d7cff9840d14384e2e": "polygon.building.394446",
+  "LFBP-9f3fd5361efd15ca5858": "polygon.building.394446",
+  "LFBP-d2feae39cc69d1c40bc1": "polygon.building.394446",
+  "LFBP-72d781c352ff33b8433f": "polygon.building.394446",
+  "LFBP-3783c9f6d83a367c772c": "polygon.building.394446",
+  "LFBP-9026828872fafa35a6ea": "polygon.building.394446",
+  "LFBP-51b7bce6a31367eafb8e": "polygon.building.394446",
+  "LFBP-64e6a0737a78158c4414": "polygon.building.394446",
+  "LFBP-29354edd53df5abafb4b": "polygon.building.394446",
+  "LFBP-71ef7567dbc2f9fb3c0e": "polygon.building.394446",
+  "LFBP-42b1ff9a04b63f61675a": "polygon.building.394446",
+  "LFBP-18691d02ad801f53d29a": "polygon.building.394446",
+  "LFBP-7cdcd2c192f205e84eeb": "polygon.building.394446",
+  "LFBP-1f6371d96d66de6ba175": "polygon.building.394446",
+  "LFBP-d21c3f4becbb1c100286": "polygon.building.394446",
+  "LFBP-e23b212003a5968a1468": "polygon.building.394446",
+  "LFBP-33fff719675efb420b9e": "polygon.building.394446",
+  "LFBP-a415566c448257606e5f": "polygon.building.394446",
+  "LFBP-fb7d3e924c7b6073ade7": "polygon.building.394446",
+  "LFBP-8f76e51b6760a98eacc9": "polygon.building.394446",
+  "LFBP-ea3ebe17258d9c978816": "polygon.building.394446",
+  "LFBP-627e86824e27206be2f6": "polygon.stopbar.7e0000",
+  "LFBP-7bdb78b281f32617133f": "polygon.stopbar.7e0000",
+  "LFBP-41b33890287a92b8a6a5": "polygon.stopbar.7e0000",
+  "LFBP-d7840a01ddcb6da69bab": "polygon.stopbar.7e0000",
+  "LFBP-134396307ac346e9bd57": "polygon.stopbar.7e0000",
+  "LFBP-e121b9dd2a0aeaa1b1e1": "polygon.stopbar.7e0000",
+  "LFBP-05c83902ee856d18d3ee": "polygon.stopbar.7e0000",
+  "LFBP-4216f9e8faa591546b2c": "polygon.stopbar.7e0000",
+  "LFBP-f9eccaa32127bc0b8d14": "line.taxiway.c0b631",
+  "LFBP-2b8c645d0a1518eebfef": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-676e08e040c4f689d287": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-ff7c711d47a93d4be914": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-4ff15b6b70963f7f98e0": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-eac8e35bc93df75fc39f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-5a850d630c1bdbf88f96": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-9e4ceaea8b9725c3a643": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-a6028ff3104bc959062e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-e714bf944f7999855165": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-dd563decf9b3be0f3d89": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-98c2288e817066473273": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-a3ae14eaeb0c76fd9ae4": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-671429e9b20f2a4f7b07": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-18661acf235171feb000": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-296a5d52f4967ac00394": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-13d656f24c32f5e9bae9": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-4f2ff62c5916709d3581": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-416e2b4d20c499814981": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-dd923738a4a5594283b3": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-7fbd8bd2c423648c8259": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-0e90f5ad297c2fa09c09": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-600736b38818ee3b262a": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-500ac1f5a69f694fd621": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-a0d9d2d3f7a7d56bee80": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-96b9f053670b0ab0b1dd": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-9ecd5baed09a823eddd0": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-32e73ad8e3c9c2ae5fd6": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-efc78cc5c38922896e3f": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-198ba5f4c23303a76f2d": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-26a776ef0da80b008d3e": {
+    "$ref": "feature-options.Gates"
+  },
+  "LFBP-f7d0914aabc9febc63b1": "label.taxiways",
+  "LFBP-df1f257eb7223642c0ea": "label.taxiways",
+  "LFBP-de396d423cb42853d99a": "label.taxiways",
+  "LFBP-4eae1c258940794a85e7": "label.taxiways",
+  "LFBP-95f8de877759e19728aa": "label.taxiways",
+  "LFBP-6651b940bf5d2e2524f3": "label.taxiways",
+  "LFBP-ff68466a36fe11b4897c": "label.taxiways",
+  "LFBP-e499eb67a3d78c556808": "label.taxiways",
+  "LFBP-bf3b81d6a0228bd45843": "label.taxiways",
+  "LFBP-a09aab6d0b5b4a0399f7": "label.taxiways",
+  "LFBP-4d036f2eaf8ad31af39c": "label.taxiways",
+  "LFBP-28d80fc39559bb3afaf6": "label.taxiways",
+  "LFBP-cdb091921e2b7bdba699": "label.taxiways",
+  "LFBP-65090c4188ff2be4e5ff": "label.taxiways",
+  "LFBP-4247a06b7d3e519088b1": "label.taxiways",
+  "LFBP-be9e9c51e6d570a741bd": "label.taxiways",
+  "LFBP-b4d9f4b75310fef04aaf": "label.taxiways",
+  "LFBP-00a29b8ac1fb99c8a942": "label.taxiways",
+  "LFBP-a9e5192c25885172eb07": "label.taxiways",
+  "LFBP-d79c4d4b2c07c80149b5": "label.taxiways",
+  "LFBP-c3cbc07369d6f7d8862f": "label.taxiways",
+  "LFBP-5119f424b8798306c8aa": "label.taxiways",
+  "LFBP-74e4deb6d10b15147d29": "label.taxiways",
+  "LFBP-73b38c0a044dee3d1856": "label.taxiways",
+  "LFBP-c686580985de230119ea": "label.taxiways",
+  "LFBP-6aa2b280432afa8f633c": "label.taxiways",
+  "LFBP-5384e4d6dc20d99e260f": "label.taxiways",
+  "LFBP-3340a5a3eb9afae9d1e5": "label.taxiways",
+  "LFBP-33ff4956d10b29f6920a": "label.taxiways"
+}

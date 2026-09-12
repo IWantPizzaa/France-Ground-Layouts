@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFDK AVISO",
+  "bbox": [
+    -1.086610833,
+    45.491202778,
+    -1.080152778,
+    45.495735833
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFDK",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "14",
+          "32"
+        ],
+        "headings": [
+          135,
+          315
+        ],
+        "thresholds": [
+          [
+            -1.086610833,
+            45.495735833
+          ],
+          [
+            -1.080152778,
+            45.491202778
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      -1.083888889,
+      45.493888889
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

@@ -1,0 +1,81 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFEM AVISO",
+  "bbox": [
+    2.679443889,
+    47.957410833,
+    2.691577778,
+    47.964838889
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFEM",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "04R",
+          "22L"
+        ],
+        "headings": [
+          45,
+          225
+        ],
+        "thresholds": [
+          [
+            2.681385833,
+            47.957410833
+          ],
+          [
+            2.691577778,
+            47.963902778
+          ]
+        ]
+      },
+      {
+        "ends": [
+          "04L",
+          "22R"
+        ],
+        "headings": [
+          46,
+          226
+        ],
+        "thresholds": [
+          [
+            2.679443889,
+            47.959280833
+          ],
+          [
+            2.688216944,
+            47.964838889
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      2.684443889,
+      47.959721944
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}

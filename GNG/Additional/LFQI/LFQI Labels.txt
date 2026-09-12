@@ -1,0 +1,20 @@
+; Feature: LFQI-text-lfff-29612
+N050.06.20.8800 E002.52.15.9960 SW
+
+; Feature: LFQI-text-lfff-29613
+N050.18.55.0800 E002.53.54.9960 NW
+
+; Feature: LFQI-text-lfff-29614
+N050.12.19.0800 E002.51.54.0000 W
+
+; Feature: LFQI-text-lfff-29615
+N050.08.39.1200 E003.07.38.1000 S
+
+; Feature: LFQI-text-lfff-29616
+N050.11.31.9200 E003.23.44.9880 E
+
+; Feature: LFQI-text-lfff-29617
+N050.07.13.0800 E003.25.00.0120 SE
+
+; Feature: LFQI-text-lfff-29618
+N050.15.24.1200 E003.25.01.9920 NE

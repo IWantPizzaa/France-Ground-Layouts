@@ -1,3 +1,33 @@
+# France Ground Layouts — vSMR fork
+
+This fork integrates the vSMR additions into native GNG and KMZ source files and
+includes a converter for 395 AVISO datasets. Their geometry, text, palettes,
+groups and runway settings match the original vSMR datasets. Some datasets only
+contain runway references; they are not all complete ground layouts.
+
+**Double-click `Script/Convert AVISO.cmd` on Windows.** The converter reads this
+fork's GitHub source first, falls back to local source when unavailable, and
+writes the GeoJSON files into `AVISO/`. It asks no questions and generates no
+report or summary files. Python 3.10+ is required; there are no extra packages.
+
+- `GNG/`: native regions, lines, labels and stable IDs in ordinary comments.
+- `KMZ/`: matching KML placemarks, including polygon holes and multipart geometry.
+- `Colours.sct`: the Light palette, including shared custom color definitions.
+- `Preserved/`: only vSMR palettes, groups, zoom/runway settings and feature overrides.
+- `Script/`: converter, double-click launcher and regression checks.
+- `AVISO/`: generated shared-geometry GeoJSON files.
+
+See [converter instructions](Script/README.md) and
+[customization instructions](Preserved/README.md). For source edits, run
+`python Script/aviso_converter.py --local`, then `python Script/verify_converter.py`
+before committing the updated native files and AVISO output.
+
+The original [vaccfr/France-Ground-Layouts](https://github.com/vaccfr/France-Ground-Layouts)
+documentation and GPL-3.0 license follow below. Additional datasets are under
+`GNG/Additional/`; established airport directories retain their original FIR grouping.
+
+---
+
 <p align="center"><img src="https://i.imgur.com/n17WHdO.png" width="auto"></p>
 
 <p align="center"><br>Official repository for the ground layouts of the French Sector File<br>

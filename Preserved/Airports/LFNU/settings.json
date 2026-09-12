@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "name": "LFNU AVISO",
+  "bbox": [
+    4.393485833,
+    44.078730833,
+    4.394327778,
+    44.086791944
+  ],
+  "metadata": {
+    "schema": "vSMR AVISO",
+    "schema_version": 2,
+    "geometry_mode": "shared",
+    "airport": "LFNU",
+    "coordinate_reference_system": "WGS84",
+    "coordinate_order": "longitude, latitude",
+    "default_color_palette": "dark",
+    "color_palettes": [
+      "dark",
+      "light"
+    ],
+    "background_colors": {
+      "dark": "#434A4F",
+      "light": "#434A4F"
+    },
+    "runways": [
+      {
+        "ends": [
+          "17",
+          "35"
+        ],
+        "headings": [
+          174,
+          354
+        ],
+        "thresholds": [
+          [
+            4.393485833,
+            44.086791944
+          ],
+          [
+            4.394327778,
+            44.078730833
+          ]
+        ]
+      }
+    ],
+    "saved_active_runways": [],
+    "saved_active_airport_modes": [],
+    "airport_reference": [
+      4.393888889,
+      44.083610833
+    ]
+  },
+  "styles": {
+    "runway.reference": {
+      "$ref": "style.runway.reference"
+    }
+  },
+  "vsmr_groups": []
+}
