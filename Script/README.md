@@ -23,7 +23,7 @@ source may contain different airports and geometry from a customized checkout.
 No reports, summaries or cached downloads are generated.
 
 Data/ contains runtime styles, groups, zoom levels, runway settings and
-per-feature overrides. Colours.sct contains original native COLOR_* definitions
+optional feature-to-toggle-group assignments. Colours.sct contains original native COLOR_* definitions
 plus AVISO palette entries. When external input lacks the AVISO palette entries,
 local definitions supply them; definitions present in the selected source win.
 Local geometry provenance is labeled local, and GitHub provenance names the
@@ -34,8 +34,8 @@ official repository.
 GNG uses standard regions, line segments and text rows without feature comments.
 Matching KML placemarks supply stable identifiers and multipart/hole topology.
 Unmatched GNG remains live with deterministic IDs. KMZ-only layouts without
-placemark IDs receive deterministic IDs as well. New geometry does not
-necessarily inherit the groups of a differently identified previous object.
+placemark IDs receive deterministic IDs as well. Styles are inferred without per-feature mappings. Group assignments are
+explicit: new features never inherit another feature's toggle group.
 Keep both native representations synchronized when editing a layout.
 
 ## Verification

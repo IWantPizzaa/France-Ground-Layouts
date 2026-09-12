@@ -440,18 +440,5 @@
         }
       }
     }
-  },
-  "feature-options.Gates": {
-    "style_id": "label.gates"
-  },
-  "feature-options.TORA-CONF04": {
-    "style_id": "label.tora-conf04"
-  },
-  "feature-options.TORA-CONF22": {
-    "style_id": "label.tora-conf22"
-  },
-  "feature-options.Airport-reference": {
-    "style_id": "airport.reference",
-    "geometry_role": "airport_reference_point"
   }
 }

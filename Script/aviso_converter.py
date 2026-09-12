@@ -346,10 +346,11 @@ def load_preserved(colors=None):
         if not airport.is_dir() or not re.fullmatch('[A-Z]{4}', airport.name):
             continue
         settings = resolve(json.loads((airport / 'settings.json').read_text(encoding='utf-8-sig')))
-        overrides = resolve(json.loads((airport / 'features.json').read_text(encoding='utf-8-sig')))
+        feature_file = airport / 'features.json'
+        overrides = json.loads(feature_file.read_text(encoding='utf-8-sig')) if feature_file.exists() else {}
         for feature_id, options in overrides.items():
-            if isinstance(options, str):
-                overrides[feature_id] = {'style_id': options}
+            if not isinstance(options, dict) or set(options) != {'vsmr_group_ids'}:
+                raise ValueError(str(feature_file) + ': only group assignments are allowed')
         recipes[airport.name] = dict(document=settings, overrides=overrides)
     return dict(recipes=recipes)
 
@@ -367,13 +368,38 @@ def infer_style(item, doc, colors):
     kind = item['kind']
     token = re.sub(r'^(?:COLOR_|LIGHT_|DARK_|REAL_[A-Z]{4}_)', '', item['color']).lower()
     prefix = ('label.' + re.sub('[^a-z0-9]+', '-', label_category(item['file']).lower()).strip('-')) if kind == 'label' else kind + '.' + token + '.'
-    for key in list(doc['styles']) + list(DEFAULT_STYLES):
-        normalized = re.sub(r'(?:[._-])[a-fA-F0-9]{6}(?=$|[._-])', '', key)
-        normalized = re.sub(r'\W+', '_', normalized).upper()
-        if key == prefix or key.startswith(prefix) or item['color'] == 'LIGHT_' + normalized:
-            if key not in doc['styles']:
-                doc['styles'][key] = copy.deepcopy(DEFAULT_STYLES[key])
-            return key
+    candidates = list(doc['styles']) + [k for k in DEFAULT_STYLES if k not in doc['styles']]
+    matches = []
+    def normalized(value):
+        value = re.sub(r'(?:[._-])[a-fA-F0-9]{6}(?=$|[._-])', '', value)
+        return re.sub(r'[^a-z0-9]', '', value.lower())
+    if kind == 'label':
+        category = normalized(Path(item['file']).stem[5:])
+        if not category and 'airport.reference' in doc['styles']:
+            matches = ['airport.reference']
+        else:
+            matches = [k for k in candidates if k.startswith('label.') and normalized(k[6:]) == category]
+            if not matches and category == 'labels' and 'label.text.label.labels' in candidates:
+                matches = ['label.text.label.labels']
+    else:
+        role = re.sub(r'_[0-9]+$', '', token) if token.startswith(kind + '_') else kind + '_' + token
+        matches = [k for k in candidates if normalized(k) == normalized(role)]
+        if kind == 'line' and 'gate' in item['name'].lower():
+            stands = [k for k in candidates if k.endswith('.stands') and normalized(k[:-7]) == normalized(role)]
+            matches = stands or matches
+    if not matches:
+        matches = [k for k in candidates if k == prefix or k.startswith(prefix)]
+    if matches:
+        paint_key = 'fill' if kind == 'polygon' else 'stroke'
+        def rank(key):
+            style = doc['styles'].get(key, DEFAULT_STYLES.get(key))
+            paint = style['paint']
+            light = paint.get('palette-overrides', {}).get('light', {}).get(paint_key, paint.get(paint_key))
+            return (light != colors.get(item['color']), key not in doc['styles'], len(key))
+        key = min(matches, key=rank)
+        if key not in doc['styles']:
+            doc['styles'][key] = copy.deepcopy(DEFAULT_STYLES[key])
+        return key
     style_id = prefix.rstrip('.')
     color = colors.get(item['color'], colors['TEXT_COLOR'])
     category = label_category(item['file']) if kind == 'label' else token
@@ -402,24 +428,27 @@ def convert_airport(code, recipe, records, colors):
     doc = dict(type=recipe['document']['type'], name=recipe['document']['name'], bbox=[],
                **copy.deepcopy({k: v for k, v in recipe['document'].items() if k not in ('type', 'name', 'bbox')}))
     overrides = recipe['overrides']
-    prototypes = {}
-    for item in records:
-        if item['source_id'] in overrides:
-            prototypes.setdefault((item['kind'], item['color'], item['file']), overrides[item['source_id']])
     features = []
     excluded = set(doc['metadata'].pop('exclude_features', []))
     for item in records:
         feature_id = item['source_id']
         if feature_id in excluded:
             continue
-        options = copy.deepcopy(overrides.get(feature_id, prototypes.get((item['kind'], item['color'], item['file']), {})))
-        style_id = options.get('style_id') or infer_style(item, doc, colors)
+        options = copy.deepcopy(overrides.get(feature_id, {}))
+        style_id = infer_style(item, doc, colors)
         style = doc['styles'][style_id]
         props = dict(airport=code, name=item['name'], layer=style['layer'], category=style['name'], object_type=style['object_type'],
                      style_id=style_id, source_group=Path(item['file']).stem if item['kind']=='label' else item['name'],
                      vsmr_group_ids=[], geometry_role={'polygon':'filled_region','line':'linework','label':'text_label'}[item['kind']])
         if item['kind'] == 'label':
             props['text-field'] = item['name']
+        if style_id == 'airport.reference':
+            props['geometry_role'] = 'airport_reference_point'
+        if style_id.startswith('line.ground_layout_arrows.'):
+            props['geometry_role'] = 'directional_arrows'
+            props.pop('source_group', None)
+        if style_id == 'label.text.label.labels':
+            props.pop('source_group', None)
         props.update(options)
         props = {k:v for k,v in props.items() if v is not None}
         features.append(dict(type='Feature', id=feature_id, properties=props, geometry=copy.deepcopy(item['geometry'])))
