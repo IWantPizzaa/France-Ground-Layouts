@@ -9,3 +9,4 @@ jobs:
         with:
           python-version: '3.13'
       - run: python Script/verify_converter.py
+      - run: python Script/verify_upstream.py
