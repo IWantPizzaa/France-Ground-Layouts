@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFBK AVISO",
-  "bbox": [
-    2.359,
-    46.214327778,
-    2.367611111,
-    46.231388889
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

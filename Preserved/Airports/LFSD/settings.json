@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFSD AVISO",
-  "bbox": [
-    5.070112778,
-    47.252046667,
-    5.097009167,
-    47.2814
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

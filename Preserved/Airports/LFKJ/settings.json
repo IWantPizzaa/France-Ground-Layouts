@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFKJ AVISO",
-  "bbox": [
-    8.787072222,
-    41.909698333,
-    8.809576389,
-    41.933330278
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

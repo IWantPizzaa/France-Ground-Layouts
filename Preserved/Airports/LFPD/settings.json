@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPD AVISO",
-  "bbox": [
-    0.565555833,
-    49.102499722,
-    0.565555833,
-    49.102499722
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

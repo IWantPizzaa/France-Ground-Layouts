@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOZ AVISO",
-  "bbox": [
-    2.156,
-    47.892722222,
-    2.174446944,
-    47.903055556
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

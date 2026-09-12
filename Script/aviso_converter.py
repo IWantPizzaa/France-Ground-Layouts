@@ -6,7 +6,6 @@ import argparse
 import copy
 import ctypes
 from decimal import Decimal
-import hashlib
 import io
 import json
 import math
@@ -26,10 +25,6 @@ GITHUB_URL = 'https://codeload.github.com/IWantPizzaa/France-Ground-Layouts/zip/
 COORD = re.compile(r'([NSEW])(\d{2,3})[. :](\d{2})[. :](\d{2}(?:\.\d+)?)')
 NS = {'k': 'http://www.opengis.net/kml/2.2'}
 DEFAULT_STYLES = {}
-
-
-def digest(data):
-    return hashlib.sha256(data).hexdigest()
 
 
 def packed(value):
@@ -237,7 +232,7 @@ def source_archive(path):
 
 def load_source(path):
     airports = collections.defaultdict(list)
-    inventory, gng, kmz, extras = {}, {}, {}, {}
+    inventory, gng, kmz, extras = set(), {}, {}, {}
     with source_archive(path) as archive:
         members = [i for i in archive.infolist() if not i.is_dir()]
         if sum(i.file_size for i in members) > 512 * 1024 * 1024:
@@ -252,7 +247,7 @@ def load_source(path):
             data = archive.read(member)
             if file in inventory:
                 raise ValueError('Duplicate source path: ' + file)
-            inventory[file] = digest(data)
+            inventory.add(file)
             if file.startswith('GNG/') and file.lower().endswith('.txt'):
                 code = Path(file).parent.name.upper()
                 if not re.fullmatch('[A-Z]{4}', code):
@@ -274,10 +269,9 @@ def load_source(path):
             authoring = [r for _, (airport, records) in sorted(kmz.items())
                          if airport == code for r in records]
             airports[code] = match_native_records(code, airports[code], authoring)
-        extras['kmz'] = {f: dict(airport=c, features=len(rs), usage='authoring copy' if c in published else 'reference/region' if c in ('LFXX', 'LFMM') else 'fallback') for f, (c, rs) in kmz.items()}
     if not gng or not kmz or not extras.get('colors'):
         raise ValueError('Expected GNG/, KMZ/ and a valid Colours.sct')
-    return dict(airports=dict(airports), files=inventory, **extras)
+    return dict(airports=dict(airports), **extras)
 
 
 def coordinates(geometry):
@@ -372,7 +366,8 @@ def update_counts(doc):
 
 
 def convert_airport(code, recipe, records, colors):
-    doc = copy.deepcopy(recipe['document'])
+    doc = dict(type=recipe['document']['type'], name=recipe['document']['name'], bbox=[],
+               **copy.deepcopy({k: v for k, v in recipe['document'].items() if k not in ('type', 'name', 'bbox')}))
     overrides = recipe['overrides']
     prototypes = {}
     for item in records:

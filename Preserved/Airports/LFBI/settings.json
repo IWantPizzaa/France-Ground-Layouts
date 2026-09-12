@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFBI AVISO",
-  "bbox": [
-    0.295849167,
-    46.577397222,
-    0.319915278,
-    46.601091944
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

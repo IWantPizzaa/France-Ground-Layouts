@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFON AVISO",
-  "bbox": [
-    1.361388889,
-    48.705832778,
-    1.361388889,
-    48.705832778
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFBR AVISO",
-  "bbox": [
-    1.257527778,
-    43.446805556,
-    1.271833333,
-    43.452611111
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

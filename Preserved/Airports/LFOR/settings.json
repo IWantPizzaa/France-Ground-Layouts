@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOR AVISO",
-  "bbox": [
-    1.523888889,
-    48.458888889,
-    1.523888889,
-    48.458888889
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

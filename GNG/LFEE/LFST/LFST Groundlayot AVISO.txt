@@ -1,1 +1,0 @@
-; Geometry and labels are consolidated in the other files for this airport.

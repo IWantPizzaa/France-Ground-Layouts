@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFJR AVISO",
-  "bbox": [
-    -0.324721667,
-    47.557433333,
-    -0.299668333,
-    47.56377
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

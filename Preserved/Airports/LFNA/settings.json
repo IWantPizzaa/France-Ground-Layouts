@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFNA AVISO",
-  "bbox": [
-    6.031861111,
-    44.448944444,
-    6.040527778,
-    44.45625
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

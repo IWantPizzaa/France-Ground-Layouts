@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOE AVISO",
-  "bbox": [
-    1.199972222,
-    49.016638889,
-    1.235527778,
-    49.043222222
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

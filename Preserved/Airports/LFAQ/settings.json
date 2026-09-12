@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFAQ AVISO",
-  "bbox": [
-    2.6778425,
-    49.967099444,
-    2.710130278,
-    49.973951944
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

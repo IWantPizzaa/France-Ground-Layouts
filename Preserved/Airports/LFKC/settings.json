@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFKC AVISO",
-  "bbox": [
-    8.78853,
-    42.517940278,
-    8.795349167,
-    42.541851389
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOC AVISO",
-  "bbox": [
-    1.361305556,
-    48.051416667,
-    1.393611111,
-    48.066111111
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

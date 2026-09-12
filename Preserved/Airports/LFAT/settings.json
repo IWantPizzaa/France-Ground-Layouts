@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFAT AVISO",
-  "bbox": [
-    1.607886389,
-    50.510421667,
-    1.633860278,
-    50.526934444
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

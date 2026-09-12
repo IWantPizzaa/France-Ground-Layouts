@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFLY AVISO",
-  "bbox": [
-    4.934325,
-    45.717701944,
-    4.950228056,
-    45.738321389
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

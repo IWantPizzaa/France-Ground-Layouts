@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPE AVISO",
-  "bbox": [
-    2.827638889,
-    48.921333333,
-    2.844472222,
-    48.933472222
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOI AVISO",
-  "bbox": [
-    1.831110833,
-    50.142221944,
-    1.831110833,
-    50.142221944
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

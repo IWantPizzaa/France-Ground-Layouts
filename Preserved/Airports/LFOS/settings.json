@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOS AVISO",
-  "bbox": [
-    0.655555833,
-    49.835277778,
-    0.655555833,
-    49.835277778
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

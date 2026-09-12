@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFAV AVISO",
-  "bbox": [
-    3.451583333,
-    50.321916667,
-    3.471611111,
-    50.332138889
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

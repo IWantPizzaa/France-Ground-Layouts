@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFQX AVISO",
-  "bbox": [
-    4.819443889,
-    48.113888889,
-    4.819443889,
-    48.113888889
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

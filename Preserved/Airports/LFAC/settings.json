@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFAC AVISO",
-  "bbox": [
-    1.944919167,
-    50.9573425,
-    1.964513889,
-    50.965622222
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

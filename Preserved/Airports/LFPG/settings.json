@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPG AVISO",
-  "bbox": [
-    2.493035278,
-    48.986978333,
-    2.615,
-    49.027015
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

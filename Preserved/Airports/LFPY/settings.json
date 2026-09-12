@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPY AVISO",
-  "bbox": [
-    2.332221944,
-    48.596110833,
-    2.332221944,
-    48.596110833
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

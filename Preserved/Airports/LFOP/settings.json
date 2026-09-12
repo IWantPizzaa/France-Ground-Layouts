@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOP AVISO",
-  "bbox": [
-    1.165237222,
-    49.377128056,
-    1.197670833,
-    49.393965
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

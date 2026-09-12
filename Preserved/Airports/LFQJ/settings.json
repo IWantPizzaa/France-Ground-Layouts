@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFQJ AVISO",
-  "bbox": [
-    4.03,
-    50.308332778,
-    4.03,
-    50.308332778
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

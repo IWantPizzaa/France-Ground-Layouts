@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPU AVISO",
-  "bbox": [
-    2.797777778,
-    48.340832778,
-    2.797777778,
-    48.340832778
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

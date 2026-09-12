@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFRN AVISO",
-  "bbox": [
-    -1.749514444,
-    48.060964722,
-    -1.715745,
-    48.076474167
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

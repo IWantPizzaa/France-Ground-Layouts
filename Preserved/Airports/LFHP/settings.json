@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFHP AVISO",
-  "bbox": [
-    3.756527778,
-    45.074055556,
-    3.769166667,
-    45.086068889
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

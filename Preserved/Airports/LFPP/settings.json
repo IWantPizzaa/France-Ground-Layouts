@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPP AVISO",
-  "bbox": [
-    2.736943889,
-    49.109166944,
-    2.736943889,
-    49.109166944
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

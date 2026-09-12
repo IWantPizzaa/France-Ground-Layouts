@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFCA AVISO",
-  "bbox": [
-    0.548711389,
-    46.779041944,
-    0.550777778,
-    46.785760833
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

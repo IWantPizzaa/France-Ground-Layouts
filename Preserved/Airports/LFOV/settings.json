@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOV AVISO",
-  "bbox": [
-    -0.751380556,
-    48.025553611,
-    -0.736119722,
-    48.038985556
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

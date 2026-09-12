@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPL AVISO",
-  "bbox": [
-    2.617944167,
-    48.818475278,
-    2.634365556,
-    48.824192222
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

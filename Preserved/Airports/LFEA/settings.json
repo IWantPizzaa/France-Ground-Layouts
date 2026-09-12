@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFEA AVISO",
-  "bbox": [
-    -3.205018889,
-    47.323055556,
-    -3.194694444,
-    47.329166667
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

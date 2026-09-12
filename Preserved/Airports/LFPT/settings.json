@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPT AVISO",
-  "bbox": [
-    2.025916667,
-    49.087638889,
-    2.046583333,
-    49.103138889
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

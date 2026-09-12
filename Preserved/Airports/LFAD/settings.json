@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFAD AVISO",
-  "bbox": [
-    2.795666667,
-    49.427694444,
-    2.807833333,
-    49.435805556
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

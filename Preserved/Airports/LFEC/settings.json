@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFEC AVISO",
-  "bbox": [
-    -5.068906111,
-    48.460353889,
-    -5.0589925,
-    48.465719444
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

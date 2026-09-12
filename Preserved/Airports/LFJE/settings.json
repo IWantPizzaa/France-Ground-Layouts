@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFJE AVISO",
-  "bbox": [
-    5.355277778,
-    44.4625,
-    5.365833333,
-    44.513055556
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

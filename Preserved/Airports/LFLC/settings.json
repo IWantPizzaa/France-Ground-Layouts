@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFLC AVISO",
-  "bbox": [
-    3.145676667,
-    45.777731111,
-    3.200230556,
-    45.7922875
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

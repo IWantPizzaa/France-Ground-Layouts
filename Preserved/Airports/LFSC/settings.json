@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFSC AVISO",
-  "bbox": [
-    7.393111111,
-    47.910777778,
-    7.4085,
-    47.932166667
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

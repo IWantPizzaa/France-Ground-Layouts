@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFGA AVISO",
-  "bbox": [
-    7.356625278,
-    48.102532222,
-    7.3636925,
-    48.116821667
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

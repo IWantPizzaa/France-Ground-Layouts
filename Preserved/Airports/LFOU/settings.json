@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOU AVISO",
-  "bbox": [
-    -0.881243056,
-    47.076481389,
-    -0.872940833,
-    47.087821944
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

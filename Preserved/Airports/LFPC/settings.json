@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFPC AVISO",
-  "bbox": [
-    2.517333333,
-    49.249777778,
-    2.524333333,
-    49.251972222
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

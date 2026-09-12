@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFCY AVISO",
-  "bbox": [
-    -0.978833333,
-    45.627361111,
-    -0.966777778,
-    45.633222222
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

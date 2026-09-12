@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFDN AVISO",
-  "bbox": [
-    -0.997260833,
-    45.883916667,
-    -0.972416667,
-    45.896171944
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

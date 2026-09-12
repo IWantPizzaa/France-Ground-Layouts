@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFOH AVISO",
-  "bbox": [
-    0.077585833,
-    49.526530833,
-    0.099307778,
-    49.541616944
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,

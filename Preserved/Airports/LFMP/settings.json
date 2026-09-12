@@ -1,12 +1,6 @@
 {
   "type": "FeatureCollection",
   "name": "LFMP AVISO",
-  "bbox": [
-    2.859000833,
-    42.729604444,
-    2.880069444,
-    42.756042778
-  ],
   "metadata": {
     "schema": "vSMR AVISO",
     "schema_version": 2,
