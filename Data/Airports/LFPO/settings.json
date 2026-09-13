@@ -137,7 +137,7 @@
       "layer": "Airfield surfaces",
       "object_type": "Area",
       "paint": {
-        "fill": "DARK_POLYGON_PARKPOS",
+        "fill": "DARK_LFPO_POLYGON_PARKPOS",
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {

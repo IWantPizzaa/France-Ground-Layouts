@@ -99,6 +99,7 @@
 ; -----------------------------------------------------------------------------
 ; DARK PALETTE
 ; -----------------------------------------------------------------------------
+#define DARK_LFPO_POLYGON_PARKPOS                               3943714   ; #222D3C
 #define DARK_LINE_AORAPPROACH5                                  8289918   ; #7E7E7E
 #define DARK_LINE_APRONMARKING                                  6710886   ; #666666
 #define DARK_LINE_APRONSURFACE                                  8421504   ; #808080
