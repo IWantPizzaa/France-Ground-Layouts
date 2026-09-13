@@ -22,9 +22,14 @@ def main():
     changed_settings = c.load_preserved(changed_colors)
     assert changed_settings['recipes']['LFPG']['document']['metadata']['background_colors']['dark'] == '#123456'
     assert changed_settings['recipes']['LFPG']['document']['metadata']['background_colors']['real'] == '#6F6F6F'
+    lfpo = changed_settings['recipes']['LFPO']['document']
+    assert lfpo['metadata']['color_palettes'] == ['dark', 'light', 'real']
+    assert lfpo['metadata']['background_colors']['real'] == '#6C6A68'
+    assert not any(k.startswith('polygon.terrain2.') for k in lfpo['styles'])
+    assert not any('TERRAIN2' in r['color'] for r in source['airports']['LFPO'])
     for code, recipe in changed_settings['recipes'].items():
         for mode, color in recipe['document']['metadata']['background_colors'].items():
-            if (code, mode) != ('LFPG', 'real'):
+            if (code, mode) not in (('LFPG', 'real'), ('LFPO', 'real')):
                 assert color == '#123456', (code, mode)
     text_settings = c.load_preserved(dict(source['colors'], TEXT_COLOR='#123456'))
     for recipe in text_settings['recipes'].values():
