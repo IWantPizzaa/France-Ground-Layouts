@@ -1,5 +1,6 @@
 """Offline conversion and native-format regression checks (standard library only)."""
 import copy
+import collections
 import io
 import json
 import re
@@ -9,7 +10,6 @@ from unittest.mock import patch
 import zipfile
 
 import aviso_converter as c
-from native_geometry import match_native_records
 
 
 def main():
@@ -26,7 +26,6 @@ def main():
     assert lfpo['metadata']['color_palettes'] == ['dark', 'light', 'real']
     assert lfpo['metadata']['background_colors']['real'] == '#6C6A68'
     assert not any(k.startswith('polygon.terrain2.') for k in lfpo['styles'])
-    assert not any('TERRAIN2' in r['color'] for r in source['airports']['LFPO'])
     for code, recipe in changed_settings['recipes'].items():
         for mode, color in recipe['document']['metadata']['background_colors'].items():
             if (code, mode) not in (('LFPG', 'real'), ('LFPO', 'real')):
@@ -61,38 +60,47 @@ def main():
         c.run(root, scratch / 'GeoJSON')
         actual_files = {p.name:p.read_bytes() for p in (scratch / 'GeoJSON').iterdir()}
         assert actual_files == expected_files, 'Committed GeoJSON is not current: regenerate from local source'
-        # Both native representations must agree, including holes and multipart lines.
-        native_gng = {r['source_id']: r for records in source['airports'].values() for r in records}
-        native_kmz = {}
+        # Source responsibilities are disjoint; output retains every source shape/text.
+        shapes, labels = collections.defaultdict(list), collections.defaultdict(list)
         for path in (root / 'GNG').rglob('*.txt'):
-            assert b'; Feature:' not in path.read_bytes(), 'GNG must use ordinary native syntax'
+            raw = c.parse_gng(path.relative_to(root).as_posix(), path.read_bytes())
+            assert raw and all(r['kind'] == 'label' for r in raw), path
+            labels[path.parent.name].extend(raw)
         for path in (root / 'KMZ').glob('*.kmz'):
-            for item in c.parse_kmz(path.relative_to(root).as_posix(), path.read_bytes()):
-                if 'source_id' in item:
-                    assert item['source_id'] not in native_kmz, 'Duplicate KMZ feature ID'
-                    native_kmz[item['source_id']] = item
-        assert native_gng.keys() == native_kmz.keys(), 'GNG/KMZ feature IDs differ'
-        for fid, published in native_gng.items():
-            authoring = native_kmz[fid]
-            assert published['geometry'] == authoring['geometry'], fid
-            if published['kind'] == 'label':
-                assert published['name'] == authoring['name'], fid
-            else:
-                assert source['colors'][published['color']].upper() == authoring['kml_color'].upper(), fid
+            raw = c.parse_kmz(path.relative_to(root).as_posix(), path.read_bytes())
+            assert all(r['kind'] != 'label' for r in raw), path
+            if path.stem[:4] not in ('LFXX', 'LFMM'):
+                shapes[path.stem[:4]].extend(raw)
+        def geometry_counts(records):
+            return collections.Counter(c.packed(r['geometry']) for r in records)
+        for code, records in source['airports'].items():
+            assert geometry_counts(r for r in records if r['kind'] != 'label') == geometry_counts(shapes[code]), code
+            output = json.loads(actual_files[code + '.geojson'])
+            assert geometry_counts(output['features']) == geometry_counts(records), code
+            assert collections.Counter((r['name'], c.packed(r['geometry'])) for r in records if r['kind'] == 'label') == collections.Counter((r['name'], c.packed(r['geometry'])) for r in labels[code]), code
+        lfpg = json.loads(actual_files['LFPG.geojson'])
+        counts = collections.Counter(g for f in lfpg['features'] for g in f['properties']['vsmr_group_ids'])
+        assert counts['ground-layout-east'] > 0 and counts['ground-layout-west'] > 0
 
-        # Exercise the raw GNG-to-KML matching, not just already matched records.
-        raw = c.parse_gng('GNG/LFFF/TEST/TEST Gates.txt',
-                          b'N049.00.00.000 E002.00.00.000 renamed\n')
-        authored = dict(raw[0], source_id='TEST-gate', name='old')
-        matched = match_native_records('TEST', raw, [authored])
-        assert matched[0]['source_id'] == 'TEST-gate'
-        assert matched[0]['name'] == 'renamed'
-        assert match_native_records('TEST', [], [authored]) == []
-        moved = copy.deepcopy(raw)
-        moved[0]['geometry']['coordinates'][0] += 0.001
-        updated = match_native_records('TEST', moved, [authored])
-        assert len(updated) == 1 and updated[0]['geometry'] == moved[0]['geometry']
-        assert updated == match_native_records('TEST', moved, [authored])
+        # Unsplitted external inputs must never reintroduce the other representation.
+        label = c.parse_gng('GNG/LFFF/TEST/TEST Gates.txt', b'N049.00.00.000 E002.00.00.000 GATE\n')[0]
+        shape = dict(file='KMZ/TEST.kmz', kind='line', color='COLOR_Taxiway', name='line',
+                     geometry=dict(type='LineString', coordinates=[[2,49],[2.1,49.1]]))
+        gng = {'text': ('TEST', [label, shape])}
+        kmz = {'geometry': ('TEST', [shape, dict(label, name='KMZ label ignored')])}
+        selected = c.assemble_sources(gng, kmz)['TEST']
+        assert [r['kind'] for r in selected] == ['line', 'label']
+        assert selected[1]['name'] == 'GATE'
+        assert c.assemble_sources(gng, {})['TEST'][0]['kind'] == 'label'
+        assert c.assemble_sources({}, kmz)['TEST'][0]['kind'] == 'line'
+        assert len(c.assemble_sources({}, kmz)['TEST']) == 1
+        edited = copy.deepcopy(kmz)
+        edited['geometry'][1][0]['geometry']['coordinates'][0][0] += 0.01
+        assert c.assemble_sources(gng, edited)['TEST'][0]['geometry'] == edited['geometry'][1][0]['geometry']
+        edited['geometry'][1].append(copy.deepcopy(shape))
+        added = c.assemble_sources(gng, edited)['TEST']
+        assert len(added) == 3 and len({r['source_id'] for r in added}) == 3
+        assert added == c.assemble_sources(gng, edited)['TEST']
 
         # Only the three native source entries are needed; no old geometry snapshot.
         buffer = io.BytesIO()
@@ -154,7 +162,7 @@ def main():
         assert {p.name:p.read_bytes() for p in (scratch / 'GeoJSON').iterdir()} == actual_files
         assert not list(scratch.rglob('Conversion report.json'))
         assert not list(scratch.rglob('Conversion summary.txt'))
-    print(f'PASS: {len(expected_files)} GeoJSON files; {len(native_gng)} native features; exact GNG/KMZ agreement; source edits; palettes/groups; explicit local/GitHub selection.')
+    print(f'PASS: {len(expected_files)} GeoJSON files; {sum(len(r) for r in source["airports"].values())} native features; KMZ geometry/GNG text separation; source edits; palettes/groups; explicit local/GitHub selection.')
 
 
 if __name__ == '__main__':

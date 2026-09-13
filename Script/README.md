@@ -31,12 +31,17 @@ official repository.
 
 ## Geometry and identities
 
-GNG uses standard regions, line segments and text rows without feature comments.
-Matching KML placemarks supply stable identifiers and multipart/hole topology.
-Unmatched GNG remains live with deterministic IDs. KMZ-only layouts without
-placemark IDs receive deterministic IDs as well. Styles are inferred without per-feature mappings. Group assignments are
-explicit: new features never inherit another feature's toggle group.
-Keep both native representations synchronized when editing a layout.
+KMZ is the sole source of polygons and lines. GNG contains only text rows
+(latitude, longitude, label), with filenames selecting the text category.
+KMZ point/text placemarks and GNG polygon/line records are ignored when reading
+older, unsplit external packs. Edit geometry in KMZ and text in GNG; no matching
+copy needs updating. KMZ coordinates, holes and multipart geometry are retained.
+Missing or duplicate native identifiers receive deterministic unique IDs.
+
+LFPG arrow toggle assignments in Settings/LFPG.json use `folder:` selectors
+matching a KMZ folder name. New geometry within East/West Arrows inherits the
+corresponding group; unrelated geometry receives no group. Exact feature ID
+assignments are also supported. Styles are inferred without per-feature maps.
 
 ## Verification
 
@@ -47,4 +52,5 @@ python Script/verify_upstream.py
 
 The full regression check compares generated customized layouts with GeoJSON/.
 The upstream check also works against unmodified official layouts, which need
-not have matched GNG/KMZ geometry or committed GeoJSON snapshots.
+still contain GNG geometry and KMZ labels (ignored by the converter), or lack
+committed GeoJSON snapshots.

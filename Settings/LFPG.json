@@ -490,32 +490,12 @@
     }
   ],
   "features": {
-    "line.ground_layout_arrows.east.centerline": {
+    "folder:LFPG Groundlayout East Arrows": {
       "vsmr_group_ids": [
         "ground-layout-east"
       ]
     },
-    "line.ground_layout_arrows.east.green": {
-      "vsmr_group_ids": [
-        "ground-layout-east"
-      ]
-    },
-    "line.ground_layout_arrows.east.brown": {
-      "vsmr_group_ids": [
-        "ground-layout-east"
-      ]
-    },
-    "line.ground_layout_arrows.west.centerline": {
-      "vsmr_group_ids": [
-        "ground-layout-west"
-      ]
-    },
-    "line.ground_layout_arrows.west.green": {
-      "vsmr_group_ids": [
-        "ground-layout-west"
-      ]
-    },
-    "line.ground_layout_arrows.west.brown": {
+    "folder:LFPG Groundlayout West Arrows": {
       "vsmr_group_ids": [
         "ground-layout-west"
       ]

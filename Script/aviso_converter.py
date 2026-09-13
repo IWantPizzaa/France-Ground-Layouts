@@ -19,7 +19,6 @@ import traceback
 import urllib.request
 import zipfile
 import xml.etree.ElementTree as ET
-from native_geometry import match_native_records
 
 ROOT = Path(__file__).resolve().parent.parent
 GITHUB_URL = 'https://codeload.github.com/vaccfr/France-Ground-Layouts/zip/refs/heads/master'
@@ -272,32 +271,35 @@ def load_source(path):
                 kmz[file] = (code, parse_kmz(file, data))
             elif file == 'Colours.sct':
                 extras['colors'] = read_colors(data)
-        for file, (code, records) in sorted(gng.items()):
-            airports[code].extend(records)
-        published = set(airports)
-        for file, (code, records) in sorted(kmz.items()):
-            if code not in published and code not in ('LFXX', 'LFMM'):
-                airports[code].extend(records)
-        for code in published:
-            authoring = [r for _, (airport, records) in sorted(kmz.items())
-                         if airport == code for r in records]
-            airports[code] = match_native_records(code, airports[code], authoring)
-        # Official KMZ-only airports need not provide stable placemark IDs.
-        for code in set(airports) - published:
-            seen = set()
-            for item in airports[code]:
-                identifier = item.get('source_id')
-                if not identifier or identifier in seen:
-                    base = code + '-' + hashlib.sha256(packed(item)).hexdigest()[:20]
-                    identifier, suffix = base, 1
-                    while identifier in seen:
-                        suffix += 1
-                        identifier = base + '-' + str(suffix)
-                    item['source_id'] = identifier
-                seen.add(identifier)
+        airports = assemble_sources(gng, kmz)
     if not gng or not kmz or not extras.get('colors'):
         raise ValueError('Expected GNG/, KMZ/ and a valid Colours.sct')
     return dict(airports=dict(airports), **extras)
+
+
+def assemble_sources(gng, kmz):
+    """KMZ owns surfaces/lines; GNG owns labels, even for unsplit external packs."""
+    airports = collections.defaultdict(list)
+    for _, (code, records) in sorted(kmz.items()):
+        if code not in ('LFXX', 'LFMM'):
+            airports[code].extend(copy.deepcopy(r) for r in records if r['kind'] != 'label')
+    for _, (code, records) in sorted(gng.items()):
+        labels = [copy.deepcopy(r) for r in records if r['kind'] == 'label']
+        if labels:
+            airports[code].extend(labels)
+    for code, records in airports.items():
+        seen = set()
+        for item in records:
+            identifier = item.get('source_id')
+            if not identifier or identifier in seen:
+                base = code + '-' + hashlib.sha256(packed(item)).hexdigest()[:20]
+                identifier, suffix = base, 1
+                while identifier in seen:
+                    suffix += 1
+                    identifier = base + '-' + str(suffix)
+            item['source_id'] = identifier
+            seen.add(identifier)
+    return {code: records for code, records in airports.items() if records}
 
 
 def coordinates(geometry):
@@ -368,6 +370,11 @@ def label_category(file):
 
 def infer_style(item, doc, colors):
     kind = item['kind']
+    if kind == 'line' and any(part.endswith(('East Arrows', 'West Arrows')) for part in item.get('folder', '').split('/')):
+        suffix = {'COLOR_Centerlines': 'centerline', 'COLOR_TaxiwayGreen': 'green', 'COLOR_TaxiwayBrown': 'brown'}.get(item['color'])
+        arrow_style = 'line.ground_layout_arrows.' + (suffix or '')
+        if arrow_style in doc['styles']:
+            return arrow_style
     token = re.sub(r'^(?:COLOR_|LIGHT_|DARK_|REAL_[A-Z]{4}_)', '', item['color']).lower()
     prefix = ('label.' + re.sub('[^a-z0-9]+', '-', label_category(item['file']).lower()).strip('-')) if kind == 'label' else kind + '.' + token + '.'
     candidates = list(doc['styles']) + [k for k in DEFAULT_STYLES if k not in doc['styles']]
@@ -403,7 +410,7 @@ def infer_style(item, doc, colors):
             doc['styles'][key] = copy.deepcopy(DEFAULT_STYLES[key])
         return key
     style_id = prefix.rstrip('.')
-    color = colors.get(item['color'], colors['TEXT_COLOR'])
+    color = colors['TEXT_COLOR'] if kind == 'label' else colors.get(item['color'], item.get('kml_color', colors['TEXT_COLOR']))
     category = label_category(item['file']) if kind == 'label' else token
     layer = {'label': 'Labels', 'line': 'Guidance lines', 'polygon': 'Airfield surfaces'}[kind]
     paint = {'text-color': color, 'text-font': 'Arial', 'text-size': 12, 'text-halo-color': colors['TEXT_HALO_COLOR'], 'text-halo-width': 1, 'text-anchor': 'center', 'zoomLevel': 9 if 'gate' in category.lower() else 7} if kind == 'label' else {'stroke': color, 'stroke-width': 1, 'stroke-opacity': 1} if kind == 'line' else {'fill': color, 'fill-opacity': 1}
@@ -436,7 +443,10 @@ def convert_airport(code, recipe, records, colors):
         feature_id = item['source_id']
         if feature_id in excluded:
             continue
-        options = copy.deepcopy(overrides.get(feature_id, {}))
+        options = {}
+        for folder in item.get('folder', '').split('/'):
+            options.update(copy.deepcopy(overrides.get('folder:' + folder, {})))
+        options.update(copy.deepcopy(overrides.get(feature_id, {})))
         style_id = infer_style(item, doc, colors)
         style = doc['styles'][style_id]
         props = dict(airport=code, name=item['name'], layer=style['layer'], category=style['name'], object_type=style['object_type'],

@@ -40,8 +40,9 @@ If you have any questions or issues regarding the creation or updating of an AVI
 
 ## Optional vSMR AVISO conversion
 
-The native GNG/KMZ files and original `COLOR_*` definitions remain available for
-the French sector-file workflow. Additional palette definitions support AVISO.
+KMZ contains geometry only; GNG contains text only. Edit each item in its single
+source. Native `COLOR_*` definitions and additional AVISO palettes are defined
+in Colours.sct. GNG geometry exports are no longer stored in this checkout.
 
 On Windows, double-click **Script/Convert AVISO.cmd** and choose:
 
