@@ -135,7 +135,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_GRASSURFACE"
+            "fill": "COLOR_GrasSurface"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_GRASSURFACE"
@@ -152,7 +152,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_HARDSURFACE4"
+            "fill": "COLOR_HardSurface4"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_HARDSURFACE4"
@@ -186,7 +186,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_HARDSURFACE3"
+            "fill": "COLOR_HardSurface3"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_HARDSURFACE3"
@@ -203,7 +203,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_HARDSURFACE2"
+            "fill": "COLOR_HardSurface2"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_HARDSURFACE2"
@@ -220,7 +220,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_RUNWAYCONCRETE"
+            "fill": "COLOR_RunwayConcrete"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_RUNWAYCONCRETE"
@@ -237,7 +237,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_RUNWAYGRASS"
+            "fill": "COLOR_RunwayGrass"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_RUNWAYGRASS"
@@ -254,7 +254,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_BUILDING"
+            "fill": "COLOR_Building"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_BUILDING"
@@ -288,7 +288,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_TAXIWAYORANGE"
+            "fill": "COLOR_TaxiwayOrange"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_TAXIWAYORANGE"
@@ -305,7 +305,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPG_POLYGON_CLOSUREAREA"
+            "fill": "COLOR_ClosureArea"
           },
           "real": {
             "fill": "REAL_LFPG_POLYGON_CLOSUREAREA"
@@ -341,7 +341,7 @@
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFPG_LINE_TAXIWAYBLUE"
+            "stroke": "COLOR_TaxiwayBlue"
           },
           "real": {
             "stroke": "REAL_LFPG_LINE_TAXIWAYBLUE"
@@ -359,7 +359,7 @@
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFPG_LINE_TAXIWAYORANGE"
+            "stroke": "COLOR_TaxiwayOrange"
           },
           "real": {
             "stroke": "REAL_LFPG_LINE_TAXIWAYORANGE"
@@ -377,7 +377,7 @@
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFPG_LINE_TAXIWAY"
+            "stroke": "COLOR_Taxiway"
           },
           "real": {
             "stroke": "REAL_LFPG_LINE_TAXIWAY"

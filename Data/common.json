@@ -9,7 +9,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_RUNWAYCONCRETE"
+          "stroke": "COLOR_RunwayConcrete"
         }
       }
     }
@@ -24,7 +24,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_TAXIWAY"
+          "stroke": "COLOR_Taxiway"
         }
       }
     }
@@ -39,7 +39,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_APRONSURFACE"
+          "stroke": "COLOR_ApronSurface"
         }
       }
     }
@@ -84,7 +84,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_LABELS"
+          "stroke": "COLOR_Labels"
         }
       }
     }
@@ -127,7 +127,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_RUNWAYGRASS"
+          "stroke": "COLOR_RunwayGrass"
         }
       }
     }
@@ -141,7 +141,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_GRASSURFACE"
+          "fill": "COLOR_GrasSurface"
         }
       }
     }
@@ -155,7 +155,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_HARDSURFACE4"
+          "fill": "COLOR_HardSurface4"
         }
       }
     }
@@ -169,7 +169,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_HARDSURFACE3"
+          "fill": "COLOR_HardSurface3"
         }
       }
     }
@@ -183,7 +183,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_HARDSURFACE2"
+          "fill": "COLOR_HardSurface2"
         }
       }
     }
@@ -197,7 +197,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_RUNWAYCONCRETE"
+          "fill": "COLOR_RunwayConcrete"
         }
       }
     }
@@ -211,7 +211,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_BUILDING"
+          "fill": "COLOR_Building"
         }
       }
     }
@@ -240,7 +240,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_RUNWAYBORDER"
+          "stroke": "COLOR_RunwayBorder"
         }
       }
     }
@@ -255,7 +255,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_CENTERLINES"
+          "stroke": "COLOR_Centerlines"
         }
       }
     }
@@ -296,7 +296,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_RUNWAYGRASS"
+          "fill": "COLOR_RunwayGrass"
         }
       }
     }
@@ -310,7 +310,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_TAXIWAYORANGE"
+          "fill": "COLOR_TaxiwayOrange"
         }
       }
     }
@@ -325,7 +325,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_TAXIWAYBORDER"
+          "stroke": "COLOR_TaxiwayBorder"
         }
       }
     }
@@ -340,7 +340,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_TAXIWAYORANGE"
+          "stroke": "COLOR_TaxiwayOrange"
         }
       }
     }
@@ -355,7 +355,7 @@
       "stroke-width": 1,
       "palette-overrides": {
         "light": {
-          "stroke": "LIGHT_LINE_TAXIWAYBLUE"
+          "stroke": "COLOR_TaxiwayBlue"
         }
       }
     }
@@ -369,7 +369,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_CLOSUREAREA"
+          "fill": "COLOR_ClosureArea"
         }
       }
     }
@@ -422,7 +422,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_RUNWAYBORDER"
+          "fill": "COLOR_RunwayBorder"
         }
       }
     }
@@ -436,7 +436,7 @@
       "fill-opacity": 1,
       "palette-overrides": {
         "light": {
-          "fill": "LIGHT_POLYGON_HARDSURFACE1"
+          "fill": "COLOR_HardSurface1"
         }
       }
     }

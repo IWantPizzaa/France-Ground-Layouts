@@ -106,7 +106,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPN_POLYGON_TAXIWAY"
+            "fill": "COLOR_Taxiway"
           }
         }
       }

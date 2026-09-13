@@ -97,7 +97,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPZ_POLYGON_APRONSURFACE"
+            "fill": "COLOR_ApronSurface"
           }
         }
       }

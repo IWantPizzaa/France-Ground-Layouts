@@ -76,7 +76,7 @@
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFMT_POLYGON_GRASSURFACE4"
+            "fill": "COLOR_GrasSurface4"
           }
         }
       }

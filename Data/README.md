@@ -10,6 +10,8 @@ are used only for text. Other roles retain their own color references, even
 when their initial RGB values match. Original COLOR_* names remain compatible
 with upstream native layouts. DARK_*, LIGHT_* and REAL_<ICAO>_* describe AVISO
 palette roles. Undefined references are errors.
+Light styles reference native COLOR_* definitions directly when the role and
+value match. Separate LIGHT_* entries are retained for distinct overrides.
 
 $ref objects recursively merge local overrides over common settings. Lists
 replace inherited lists.

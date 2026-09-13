@@ -63,7 +63,7 @@
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFBF_LINE_LANDMARK3"
+            "stroke": "COLOR_Landmark3"
           }
         }
       }
