@@ -102,12 +102,12 @@
       "layer": "Guidance lines",
       "object_type": "Line",
       "paint": {
-        "stroke": "DARK_LINE_AORAPPROACH5_STROKE",
+        "stroke": "DARK_LINE_AORAPPROACH5",
         "stroke-opacity": 1,
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFRD_LINE_AORAPPROACH5_STROKE"
+            "stroke": "LIGHT_LFRD_LINE_AORAPPROACH5"
           }
         }
       }

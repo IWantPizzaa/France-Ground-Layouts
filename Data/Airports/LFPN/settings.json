@@ -102,11 +102,11 @@
       "layer": "Airfield surfaces",
       "object_type": "Area",
       "paint": {
-        "fill": "DARK_POLYGON_TAXIWAY_FILL",
+        "fill": "DARK_POLYGON_TAXIWAY",
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPN_POLYGON_TAXIWAY_FILL"
+            "fill": "LIGHT_LFPN_POLYGON_TAXIWAY"
           }
         }
       }

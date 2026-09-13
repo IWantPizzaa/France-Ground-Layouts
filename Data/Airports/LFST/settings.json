@@ -52,11 +52,11 @@
       "layer": "Terrain",
       "object_type": "Area",
       "paint": {
-        "fill": "DARK_POLYGON_GRASSURFACE4_FILL",
+        "fill": "DARK_POLYGON_GRASSURFACE4",
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFST_POLYGON_GRASSURFACE4_FILL"
+            "fill": "LIGHT_LFST_POLYGON_GRASSURFACE4"
           }
         }
       }

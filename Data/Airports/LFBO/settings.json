@@ -117,12 +117,12 @@
       "layer": "Guidance lines",
       "object_type": "Line",
       "paint": {
-        "stroke": "DARK_LINE_TAXIWAYPURPLE_STROKE",
+        "stroke": "DARK_LINE_TAXIWAYPURPLE",
         "stroke-opacity": 1,
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFBO_LINE_TAXIWAYPURPLE_STROKE"
+            "stroke": "LIGHT_LFBO_LINE_TAXIWAYPURPLE"
           }
         }
       }

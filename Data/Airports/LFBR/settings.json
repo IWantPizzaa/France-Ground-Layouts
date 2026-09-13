@@ -78,12 +78,12 @@
       "layer": "Guidance lines",
       "object_type": "Line",
       "paint": {
-        "stroke": "DARK_LINE_LANDMARK3_STROKE_2",
+        "stroke": "DARK_LINE_LANDMARK3_2",
         "stroke-opacity": 1,
         "stroke-width": 1,
         "palette-overrides": {
           "light": {
-            "stroke": "LIGHT_LFBR_LINE_LANDMARK3_STROKE"
+            "stroke": "LIGHT_LFBR_LINE_LANDMARK3"
           }
         }
       }

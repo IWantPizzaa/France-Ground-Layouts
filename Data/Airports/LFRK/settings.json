@@ -75,11 +75,11 @@
       "layer": "Operational restrictions",
       "object_type": "Area",
       "paint": {
-        "fill": "DARK_POLYGON_DANGERAREA_FILL",
+        "fill": "DARK_POLYGON_DANGERAREA",
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFRK_POLYGON_DANGERAREA_FILL"
+            "fill": "LIGHT_LFRK_POLYGON_DANGERAREA"
           }
         }
       }

@@ -34,11 +34,11 @@
       "layer": "Terrain",
       "object_type": "Area",
       "paint": {
-        "fill": "DARK_POLYGON_GRASSURFACE3_FILL_2",
+        "fill": "DARK_POLYGON_GRASSURFACE3_2",
         "fill-opacity": 1,
         "palette-overrides": {
           "light": {
-            "fill": "LIGHT_LFPX_POLYGON_GRASSURFACE3_FILL"
+            "fill": "LIGHT_LFPX_POLYGON_GRASSURFACE3"
           }
         }
       }
