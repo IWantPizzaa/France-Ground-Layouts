@@ -16,7 +16,7 @@ def main():
     root = c.ROOT
     source = c.load_source(root)
     c.require_native_ids(source)
-    for path in (root / 'Data').rglob('*.json'):
+    for path in (root / 'Settings').rglob('*.json'):
         assert not re.search(r'"#[0-9A-Fa-f]{6}"', path.read_text(encoding='utf-8')), 'Palette literals belong in Colours.sct'
     changed_colors = dict(source['colors'], BACKGROUND_COLOR='#123456')
     changed_settings = c.load_preserved(changed_colors)

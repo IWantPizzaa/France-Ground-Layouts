@@ -488,5 +488,37 @@
       "visible": true,
       "accent": "DARK_VSMR_GROUPS_ACCENT"
     }
-  ]
+  ],
+  "features": {
+    "line.ground_layout_arrows.east.centerline": {
+      "vsmr_group_ids": [
+        "ground-layout-east"
+      ]
+    },
+    "line.ground_layout_arrows.east.green": {
+      "vsmr_group_ids": [
+        "ground-layout-east"
+      ]
+    },
+    "line.ground_layout_arrows.east.brown": {
+      "vsmr_group_ids": [
+        "ground-layout-east"
+      ]
+    },
+    "line.ground_layout_arrows.west.centerline": {
+      "vsmr_group_ids": [
+        "ground-layout-west"
+      ]
+    },
+    "line.ground_layout_arrows.west.green": {
+      "vsmr_group_ids": [
+        "ground-layout-west"
+      ]
+    },
+    "line.ground_layout_arrows.west.brown": {
+      "vsmr_group_ids": [
+        "ground-layout-west"
+      ]
+    }
+  }
 }

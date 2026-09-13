@@ -52,7 +52,7 @@ Python 3.10+ is required. Conversion writes GeoJSON into `GeoJSON/`. No reports 
 summaries are produced. An explicit GitHub failure is reported; it does not
 silently switch to different source data.
 
-`Data/` holds runtime styles, groups, zoom levels and airport settings. Colors
+`Settings/` holds runtime styles, groups, zoom levels and airport settings. Colors
 are defined in Colours.sct. Text/background defaults are shared; unrelated
 geometry roles remain independently editable even when RGB values match.
-See [converter usage](Script/README.md) and [runtime settings](Data/README.md).
+See [converter usage](Script/README.md) and [runtime settings](Settings/README.md).

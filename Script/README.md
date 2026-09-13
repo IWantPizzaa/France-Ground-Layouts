@@ -22,7 +22,7 @@ An explicit source selection overwrites the existing GeoJSON output; official
 source may contain different airports and geometry from a customized checkout.
 No reports, summaries or cached downloads are generated.
 
-Data/ contains runtime styles, groups, zoom levels, runway settings and
+Settings/ contains runtime styles, groups, zoom levels, runway settings and
 optional feature-to-toggle-group assignments. Colours.sct contains original native COLOR_* definitions
 plus AVISO palette entries. When external input lacks the AVISO palette entries,
 local definitions supply them; definitions present in the selected source win.

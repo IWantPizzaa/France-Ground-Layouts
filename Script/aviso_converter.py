@@ -313,7 +313,7 @@ def coordinates(geometry):
 def load_preserved(colors=None):
     if colors is None:
         colors = read_colors((ROOT / 'Colours.sct').read_bytes())
-    folder = ROOT / 'Data'
+    folder = ROOT / 'Settings'
     common = json.loads((folder / 'common.json').read_text(encoding='utf-8-sig'))
     def merge(base, changes):
         for key, value in changes.items():
@@ -342,16 +342,18 @@ def load_preserved(colors=None):
                 merge(base, {key: resolve(child, stack)})
         return base
     recipes = {}
-    for airport in sorted((folder / 'Airports').iterdir()):
-        if not airport.is_dir() or not re.fullmatch('[A-Z]{4}', airport.name):
+    for airport in sorted(folder.glob('*.json')):
+        if not re.fullmatch('[A-Z]{4}', airport.stem):
             continue
-        settings = resolve(json.loads((airport / 'settings.json').read_text(encoding='utf-8-sig')))
-        feature_file = airport / 'features.json'
-        overrides = json.loads(feature_file.read_text(encoding='utf-8-sig')) if feature_file.exists() else {}
+        document = json.loads(airport.read_text(encoding='utf-8-sig'))
+        overrides = document.pop('features', {})
+        if not isinstance(overrides, dict):
+            raise ValueError(str(airport) + ': features must be a group-assignment object')
+        settings = resolve(document)
         for feature_id, options in overrides.items():
             if not isinstance(options, dict) or set(options) != {'vsmr_group_ids'}:
-                raise ValueError(str(feature_file) + ': only group assignments are allowed')
-        recipes[airport.name] = dict(document=settings, overrides=overrides)
+                raise ValueError(str(airport) + ': only group assignments are allowed in features')
+        recipes[airport.stem] = dict(document=settings, overrides=overrides)
     return dict(recipes=recipes)
 
 
