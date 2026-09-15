@@ -40,8 +40,9 @@ If you have any questions or issues regarding the creation or updating of an AVI
 
 ## Optional vSMR AVISO conversion
 
-GNG, KMZ and Colours.sct follow the official pack. The sole source exception is
-the obsolete LFPO background rectangle, replaced by its Real background setting.
+GNG, KMZ and Colours.sct follow the official pack. Source exceptions are the
+obsolete LFPO background rectangle (replaced by its Real background setting)
+and LFBP reference screenshots (removed without changing airport geometry).
 The converter reads them without rewriting, stripping or reorganizing content.
 Customize vSMR only through Settings/, including Settings/Colours.sct for colors.
 
