@@ -30,7 +30,7 @@ Colors in Settings take precedence over the selected pack's native definitions.
 ## Official sources are read-only
 
 GNG/, KMZ/ and root Colours.sct are based on the official pack at
-[vaccfr commit 7c089a7](https://github.com/vaccfr/France-Ground-Layouts/commit/7c089a7164186c3196dc9a4cb3ca8e8e69df2dc7).
+[vaccfr commit 134b865](https://github.com/vaccfr/France-Ground-Layouts/commit/134b8659885665721f415e1e2bf482f54bf10840).
 The sole intentional source exception is LFPO: its obsolete COLOR_Terrain2
 background rectangle is removed from GNG and KMZ. Its Real background is
 set to #6C6A68 through REAL_LFPO_BACKGROUND_COLOR in Settings/Colours.sct.
