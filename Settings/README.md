@@ -4,7 +4,7 @@ Airport settings are flat files: `Settings/LFPG.json`, `Settings/LFPO.json`,
 etc. There are no per-airport folders or separate feature files.
 
 - <ICAO>.json: styles, groups, backgrounds, zoom levels and runway settings.
-- Optional `features` inside <ICAO>.json: toggle-group assignments keyed by feature IDs or `folder:<KMZ folder name>`.
+- Optional `features` inside <ICAO>.json: toggle-group assignments keyed by feature IDs or `file:<GNG filename without extension>`.
 - common.json: reusable runtime settings referenced with {"$ref": "name"}.
 
 Editable colors are named definitions in `Colours.sct` in this folder, layered over
@@ -26,14 +26,14 @@ The optional `features` object inside each airport JSON contains only group assi
 ```json
 {
   "features": {
-    "folder:LFPG Groundlayout East Arrows": {
+    "file:LFPG Groundlayout East Arrows": {
       "vsmr_group_ids": ["ground-layout-east"]
     }
   }
 }
 ```
 
-Only LFPG currently needs the `features` object, for the East/West arrow folders. Other
+Only LFPG currently needs the `features` object, for optional East/West arrow GNG files. Empty groups are hidden. Other
 features need no entries. Styles are inferred from native color names, geometry
 kind and label file categories. Geometry roles follow the selected style;
 no per-feature style or rendering overrides are stored or accepted.
@@ -41,8 +41,7 @@ no per-feature style or rendering overrides are stored or accepted.
 GNG, KMZ and native Colours.sct stay as supplied by the official pack, except
 for the approved LFPO background rectangle removal documented in
 [the converter README](../Script/README.md#official-sources-are-read-only).
-Make appearance changes here, not in the native source files. Geometry is read from KMZ (GNG fallback when
-absent); labels are read from GNG. Keep IDs stable only for
+Make appearance changes here, not in the native source files. Geometry and labels are read exclusively from GNG; KMZ files are ignored. Keep IDs stable only for
 features explicitly assigned to toggle groups. Ordinary feature IDs are an
 output detail, not a mapping that needs manual maintenance. Official GitHub
 layouts may differ from the customized local ones.

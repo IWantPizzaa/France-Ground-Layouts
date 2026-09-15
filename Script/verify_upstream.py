@@ -1,4 +1,4 @@
-"""Offline checks that also work on unmodified official GNG/KMZ layouts."""
+"""Offline checks that also work on unmodified official GNG layouts."""
 import copy
 import json
 from pathlib import Path
@@ -39,7 +39,7 @@ def main():
         for name, data in first.items():
             doc = json.loads(data)
             c.validate(name[:4], doc)
-            assert doc['metadata']['geometry_source'] == 'local GNG/KMZ'
+            assert doc['metadata']['geometry_source'] == 'local GNG'
         c.run(c.ROOT, output)
         assert first == {p.name: p.read_bytes() for p in output.glob('*.geojson')}
     print('PASS: deterministic conversion, explicit sources, isolated text controls and background exceptions.')

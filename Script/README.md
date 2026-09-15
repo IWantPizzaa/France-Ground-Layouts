@@ -14,7 +14,7 @@ python Script/aviso_converter.py --source "path/to/folder-or.zip"
 No arguments means local source; it never contacts GitHub. Explicit GitHub
 selection downloads vaccfr/France-Ground-Layouts master and reports network
 errors without silently using another source. Local input accepts a checkout,
-an extracted outer repository folder, or a ZIP with GNG/, KMZ/ and Colours.sct.
+an extracted outer repository folder, or a ZIP with GNG/ and Colours.sct.
 The root source is preferred, then equivalent inputs under Input/.
 
 GeoJSON/ is generated output. All products are validated before writing files.
@@ -40,14 +40,16 @@ Otherwise, do not reformat coordinates, remove content, rename or reorganize the
 or rebuild KMZ archives. Even images and duplicate native representations stay
 as supplied. Update sources only by replacing them with a new official pack.
 
-The converter reads geometry from KMZ and labels from GNG. Airports without
-KMZ geometry use their GNG geometry. GNG geometry is ignored when KMZ supplies
-it, and KMZ point placemarks are ignored, so the two representations do not
-duplicate features in GeoJSON. Both original formats remain stored unchanged.
-Only airports present in the selected pack generate output.
+The converter reads all geometry and text exclusively from GNG. KMZ files
+remain in the repository for the upstream workflow, but are neither required,
+opened nor parsed. Folder inputs may omit KMZ entirely, and any KMZ entries in
+ZIP inputs are ignored. Colours.sct and Settings supply rendering configuration.
+Only airports with GNG records generate output.
 
-Missing or duplicate feature IDs receive deterministic output IDs without
-writing them back. LFPG arrow groups use KMZ folder selectors in Settings/LFPG.json.
+Feature IDs are deterministic output details and are never written back.
+Optional group assignments use `file:<GNG filename without extension>` or an
+exact feature ID. Groups with no assigned output feature are hidden; objects
+available only in KMZ are not imported.
 Conversion writes only GeoJSON; source/settings directories are rejected as
 output destinations. All changes to appearance belong in Settings/.
 
@@ -59,6 +61,6 @@ python Script/verify_upstream.py
 ```
 
 The full regression check compares regenerated output with GeoJSON/, verifies
-native geometry/text selection and checks that every source/settings file stays
+GNG geometry/text selection and KMZ isolation and checks that every source/settings file stays
 byte-identical after conversion. The upstream check validates deterministic
 conversion and independent color controls. Neither check edits the pack.

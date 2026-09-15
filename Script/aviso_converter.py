@@ -18,12 +18,10 @@ import time
 import traceback
 import urllib.request
 import zipfile
-import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 GITHUB_URL = 'https://codeload.github.com/vaccfr/France-Ground-Layouts/zip/refs/heads/master'
 COORD = re.compile(r'([NSEW])(\d{2,3})[. :](\d{2})[. :](\d{2}(?:\.\d+)?)', re.IGNORECASE)
-NS = {'k': 'http://www.opengis.net/kml/2.2'}
 DEFAULT_STYLES = {}
 COLOR_TOKEN = r'(?:(?:COLOR_|DARK_|LIGHT_|REAL_)[A-Za-z0-9_-]+|BACKGROUND_COLOR|TEXT_COLOR|TEXT_HALO_COLOR)'
 
@@ -130,84 +128,6 @@ def parse_gng(file, data):
     return records
 
 
-def parse_kmz(file, data):
-    records = []
-    with zipfile.ZipFile(io.BytesIO(data)) as kmz:
-        names = sorted(n for n in kmz.namelist() if n.lower().endswith('.kml'))
-        for name in names:
-            text = decode(kmz.read(name))
-            if '<!DOCTYPE' in text.upper() or '<!ENTITY' in text.upper():
-                raise ValueError(file + ': unsupported XML entity declaration')
-            # Some upstream exports use undeclared ns1: metadata elements.
-            prefixes = set(re.findall(r'</?([A-Za-z_][\w.-]*):', text))
-            for prefix in prefixes:
-                if not re.search(r'xmlns:' + re.escape(prefix) + r'\s*=', text):
-                    text = text.replace('<kml ', f'<kml xmlns:{prefix}="urn:export:{prefix}" ', 1)
-            root = ET.fromstring(text)
-            styles = {s.get('id'): s for s in root.findall('.//k:Style', NS)}
-            maps = {}
-            for style in root.findall('.//k:StyleMap', NS):
-                for pair in style.findall('k:Pair', NS):
-                    if pair.findtext('k:key', namespaces=NS) == 'normal':
-                        maps[style.get('id')] = pair.findtext('k:styleUrl', default='', namespaces=NS).lstrip('#')
-
-            def visit(node, folders):
-                tag = node.tag.split('}')[-1]
-                if tag == 'Folder':
-                    folders = folders + [node.findtext('k:name', default='', namespaces=NS)]
-                if tag == 'Placemark':
-                    first_record = len(records)
-                    label = node.findtext('k:name', default='', namespaces=NS)
-                    style_id = node.findtext('k:styleUrl', default='', namespaces=NS).lstrip('#')
-                    style = node.find('k:Style', NS)
-                    if style is None:
-                        style = styles.get(maps.get(style_id, style_id))
-                    def points(element):
-                        value = element.findtext('.//k:coordinates', default='', namespaces=NS)
-                        return [[float(v) for v in item.split(',')[:2]] for item in value.split()]
-                    for geom in node.iter():
-                        typ = geom.tag.split('}')[-1]
-                        if typ not in ('Point', 'LineString', 'Polygon'):
-                            continue
-                        if typ == 'Polygon':
-                            rings = [points(r) for r in geom.findall('k:outerBoundaryIs/k:LinearRing', NS) + geom.findall('k:innerBoundaryIs/k:LinearRing', NS)]
-                            for ring in rings:
-                                if ring and ring[0] != ring[-1]:
-                                    ring.append(ring[0][:])
-                            coordinates = rings
-                        else:
-                            coordinates = points(geom)
-                            if typ == 'Point':
-                                coordinates = coordinates[0] if coordinates else []
-                        if not coordinates:
-                            continue
-                        kind = {'Point': 'label', 'Polygon': 'polygon', 'LineString': 'line'}[typ]
-                        color_path = 'k:PolyStyle/k:color' if kind == 'polygon' else 'k:LineStyle/k:color'
-                        color = style.findtext(color_path, default='', namespaces=NS) if style is not None else ''
-                        item = record(file, kind, style_id if re.fullmatch(COLOR_TOKEN, style_id) else label if re.fullmatch(COLOR_TOKEN, label) else '', label,
-                                      dict(type=typ, coordinates=coordinates))
-                        item['folder'] = '/'.join(folders)
-                        if len(color) == 8:
-                            item['kml_color'] = '#' + color[6:8] + color[4:6] + color[2:4]
-                            item['kml_opacity'] = int(color[:2], 16) / 255
-                        records.append(item)
-                    if node.get('id') and len(records) > first_record:
-                        parts = records[first_record:]
-                        item = parts[0]
-                        item['source_id'] = node.get('id')
-                        if node.find('k:MultiGeometry', NS) is not None:
-                            if any(p['kind'] != item['kind'] for p in parts) or item['kind'] == 'label':
-                                raise ValueError(file + ': mixed multipart placemark ' + node.get('id'))
-                            item['geometry'] = dict(type='MultiPolygon' if item['kind'] == 'polygon' else 'MultiLineString',
-                                                    coordinates=[p['geometry']['coordinates'] for p in parts])
-                        records[first_record:] = [item]
-                    return
-                for child in node:
-                    visit(child, folders)
-            visit(root, [])
-    return records
-
-
 def source_archive(path):
     if hasattr(path, 'read'):
         return zipfile.ZipFile(path)
@@ -216,13 +136,13 @@ def source_archive(path):
         return zipfile.ZipFile(path)
     if not path.is_dir():
         raise ValueError('Source does not exist: ' + str(path))
-    candidates = [path] if all((path / n).exists() for n in ('GNG', 'KMZ', 'Colours.sct')) else [p.parent for p in path.rglob('Colours.sct') if (p.parent / 'GNG').is_dir() and (p.parent / 'KMZ').is_dir()]
+    candidates = [path] if all((path / n).exists() for n in ('GNG', 'Colours.sct')) else [p.parent for p in path.rglob('Colours.sct') if (p.parent / 'GNG').is_dir()]
     if len(candidates) != 1:
-        raise ValueError('Expected one folder containing GNG/, KMZ/ and Colours.sct')
+        raise ValueError('Expected one folder containing GNG/ and Colours.sct')
     folder = candidates[0]
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, 'w') as archive:
-        for name in ('GNG', 'KMZ', 'Colours.sct'):
+        for name in ('GNG', 'Colours.sct'):
             item = folder / name
             paths = sorted(item.rglob('*')) if item.is_dir() else [item]
             for file in paths:
@@ -253,18 +173,22 @@ def palette_colors(native=None):
 
 def load_source(path):
     airports = collections.defaultdict(list)
-    inventory, gng, kmz, extras = set(), {}, {}, {}
+    inventory, gng, extras = set(), {}, {}
     with source_archive(path) as archive:
-        members = [i for i in archive.infolist() if not i.is_dir()]
-        if sum(i.file_size for i in members) > 512 * 1024 * 1024:
+        entries = [(i, i.filename.replace('\\', '/')) for i in archive.infolist() if not i.is_dir()]
+        names = {name for _, name in entries}
+        roots = {m.group(1) for _, name in entries
+                 if (m := re.fullmatch(r'((?:.*/)?)GNG/.*\.txt', name, re.IGNORECASE))
+                 and m.group(1) + 'Colours.sct' in names}
+        if len(roots) != 1:
+            raise ValueError('Expected one source folder containing GNG/ and Colours.sct')
+        prefix = roots.pop()
+        members = [(i, name[len(prefix):]) for i, name in entries
+                   if name == prefix + 'Colours.sct'
+                   or (name.startswith(prefix + 'GNG/') and name.lower().endswith('.txt'))]
+        if sum(i.file_size for i, _ in members) > 512 * 1024 * 1024:
             raise ValueError('Source ZIP is larger than 512 MB uncompressed')
-        for member in members:
-            full = member.filename.replace('\\', '/')
-            # Accept GitHub's outer directory or an archive of the repo contents.
-            match = re.search(r'(?:^|/)(GNG/.*|KMZ/.*|Colours\.sct)$', full)
-            if not match:
-                continue
-            file = match[1]
+        for member, file in members:
             data = archive.read(member)
             if file in inventory:
                 raise ValueError('Duplicate source path: ' + file)
@@ -274,30 +198,20 @@ def load_source(path):
                 if not re.fullmatch('[A-Z]{4}', code):
                     raise ValueError('Invalid airport directory: ' + file)
                 gng[file] = (code, parse_gng(file, data))
-            elif file.startswith('KMZ/') and file.lower().endswith('.kmz'):
-                code = Path(file).stem[:4].upper()
-                kmz[file] = (code, parse_kmz(file, data))
             elif file == 'Colours.sct':
                 extras['colors'] = read_colors(data)
-        airports = assemble_sources(gng, kmz)
-    if not gng or not kmz or not extras.get('colors'):
-        raise ValueError('Expected GNG/, KMZ/ and a valid Colours.sct')
+        airports = assemble_sources(gng)
+    if not gng or not extras.get('colors'):
+        raise ValueError('Expected GNG/ and a valid Colours.sct')
     extras['colors'] = palette_colors(extras['colors'])
     return dict(airports=dict(airports), **extras)
 
 
-def assemble_sources(gng, kmz):
-    """Read KMZ geometry and GNG text; use GNG geometry when no KMZ supplies it."""
+def assemble_sources(gng):
+    """Build all geometry and text exclusively from GNG records."""
     airports = collections.defaultdict(list)
-    for _, (code, records) in sorted(kmz.items()):
-        if code not in ('LFXX', 'LFMM'):
-            airports[code].extend(copy.deepcopy(r) for r in records if r['kind'] != 'label')
-    kmz_geometry = {code for code, records in airports.items() if records}
     for _, (code, records) in sorted(gng.items()):
-        selected = [copy.deepcopy(r) for r in records
-                    if r['kind'] == 'label' or code not in kmz_geometry]
-        if selected:
-            airports[code].extend(selected)
+        airports[code].extend(copy.deepcopy(records))
     for code, records in airports.items():
         seen = set()
         for item in records:
@@ -381,7 +295,7 @@ def label_category(file):
 
 def infer_style(item, doc, colors):
     kind = item['kind']
-    if kind == 'line' and any(part.endswith(('East Arrows', 'West Arrows')) for part in [*item.get('folder', '').split('/'), Path(item['file']).stem]):
+    if kind == 'line' and Path(item['file']).stem.endswith(('East Arrows', 'West Arrows')):
         suffix = {'COLOR_Centerlines': 'centerline', 'COLOR_TaxiwayGreen': 'green', 'COLOR_TaxiwayBrown': 'brown'}.get(item['color'])
         arrow_style = 'line.ground_layout_arrows.' + (suffix or '')
         if arrow_style in doc['styles']:
@@ -421,7 +335,7 @@ def infer_style(item, doc, colors):
             doc['styles'][key] = copy.deepcopy(DEFAULT_STYLES[key])
         return key
     style_id = prefix.rstrip('.')
-    color = colors['TEXT_COLOR'] if kind == 'label' else colors.get(item['color'], item.get('kml_color', colors['TEXT_COLOR']))
+    color = colors['TEXT_COLOR'] if kind == 'label' else colors.get(item['color'], colors['TEXT_COLOR'])
     category = label_category(item['file']) if kind == 'label' else token
     layer = {'label': 'Labels', 'line': 'Guidance lines', 'polygon': 'Airfield surfaces'}[kind]
     paint = {'text-color': color, 'text-font': 'Arial', 'text-size': 12, 'text-halo-color': colors['TEXT_HALO_COLOR'], 'text-halo-width': 1, 'text-anchor': 'center', 'zoomLevel': 9 if 'gate' in category.lower() else 7} if kind == 'label' else {'stroke': color, 'stroke-width': 1, 'stroke-opacity': 1} if kind == 'line' else {'fill': color, 'fill-opacity': 1}
@@ -455,8 +369,7 @@ def convert_airport(code, recipe, records, colors):
         if feature_id in excluded:
             continue
         options = {}
-        for folder in [*item.get('folder', '').split('/'), Path(item['file']).stem]:
-            options.update(copy.deepcopy(overrides.get('folder:' + folder, {})))
+        options.update(copy.deepcopy(overrides.get('file:' + Path(item['file']).stem, {})))
         options.update(copy.deepcopy(overrides.get(feature_id, {})))
         style_id = infer_style(item, doc, colors)
         style = doc['styles'][style_id]
@@ -476,6 +389,8 @@ def convert_airport(code, recipe, records, colors):
         props = {k:v for k,v in props.items() if v is not None}
         features.append(dict(type='Feature', id=feature_id, properties=props, geometry=copy.deepcopy(item['geometry'])))
     doc['features'] = features
+    used_groups = {group for feature in features for group in feature['properties'].get('vsmr_group_ids', [])}
+    doc['vsmr_groups'] = [group for group in doc.get('vsmr_groups', []) if group['id'] in used_groups]
     return doc
 
 
@@ -531,13 +446,13 @@ def require_native_ids(source):
 
 def local_source():
     candidates = []
-    if all((ROOT / name).exists() for name in ('GNG', 'KMZ', 'Colours.sct')):
+    if all((ROOT / name).exists() for name in ('GNG', 'Colours.sct')):
         candidates.append(ROOT)
     folder = ROOT / 'Input'
     if folder.is_dir():
-        if all((folder / name).exists() for name in ('GNG', 'KMZ', 'Colours.sct')):
+        if all((folder / name).exists() for name in ('GNG', 'Colours.sct')):
             candidates.append(folder)
-        candidates.extend(sorted(p for p in folder.iterdir() if p.is_dir() and all((p / name).exists() for name in ('GNG', 'KMZ', 'Colours.sct'))))
+        candidates.extend(sorted(p for p in folder.iterdir() if p.is_dir() and all((p / name).exists() for name in ('GNG', 'Colours.sct'))))
         candidates.extend(sorted(folder.glob('*.zip'), key=lambda p: p.stat().st_mtime, reverse=True))
     errors = []
     for candidate in candidates:
@@ -548,7 +463,7 @@ def local_source():
             return source
         except Exception as error:
             errors.append(str(candidate) + ': ' + str(error))
-    raise ValueError('No usable local source. Put GNG/, KMZ/ and Colours.sct beside Script/, or put them, an extracted repository folder, or its ZIP in Input/. ' + '; '.join(errors))
+    raise ValueError('No usable local source. Put GNG/ and Colours.sct beside Script/, or put them, an extracted repository folder, or its ZIP in Input/. ' + '; '.join(errors))
 
 
 def choose_source(mode='local'):
@@ -574,7 +489,7 @@ def run(source_path=None, output=None, source_mode='local'):
                 raise ValueError('Output overlaps protected source/settings: ' + str(output))
     say('\n  +----------------------------------------------------------+')
     say('  |                  vSMR AVISO CONVERTER                     |')
-    say('  |      France Ground Layouts / GNG and KMZ source      |')
+    say('  |      France Ground Layouts / GNG source              |')
     say('  +----------------------------------------------------------+\n')
     say('  [1/4] Reading official GitHub...' if source_mode == 'github' else '  [1/4] Reading local source...', '37')
     source = choose_source(source_mode) if source_path is None else load_source(source_path)
@@ -597,7 +512,7 @@ def run(source_path=None, output=None, source_mode='local'):
             recipe = dict(document=dict(type='FeatureCollection', name=code + ' AVISO', bbox=[], metadata=dict(schema='vSMR AVISO', schema_version=2, geometry_mode='shared', airport=code, coordinate_reference_system='WGS84', coordinate_order='longitude, latitude', default_color_palette='dark', color_palettes=['dark','light'], background_colors={'dark':source['colors']['BACKGROUND_COLOR'],'light':source['colors']['BACKGROUND_COLOR']}), styles={}, vsmr_groups=[]), overrides={})
         doc = convert_airport(code, recipe, source['airports'][code], source['colors'])
         update_counts(doc)
-        doc['metadata'].update(geometry_source='vaccfr/France-Ground-Layouts' if source_mode == 'github' else 'local GNG/KMZ', geometry_source_url='https://github.com/vaccfr/France-Ground-Layouts' if source_mode == 'github' else '', geometry_license='GPL-3.0')
+        doc['metadata'].update(geometry_source='vaccfr/France-Ground-Layouts' if source_mode == 'github' else 'local GNG', geometry_source_url='https://github.com/vaccfr/France-Ground-Layouts' if source_mode == 'github' else '', geometry_license='GPL-3.0')
         validate(code, doc)
         products[code + '.geojson'] = serialize_document(doc)
         if n % 50 == 0 or n == len(all_codes):

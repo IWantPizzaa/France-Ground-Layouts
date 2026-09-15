@@ -490,12 +490,12 @@
     }
   ],
   "features": {
-    "folder:LFPG Groundlayout East Arrows": {
+    "file:LFPG Groundlayout East Arrows": {
       "vsmr_group_ids": [
         "ground-layout-east"
       ]
     },
-    "folder:LFPG Groundlayout West Arrows": {
+    "file:LFPG Groundlayout West Arrows": {
       "vsmr_group_ids": [
         "ground-layout-west"
       ]

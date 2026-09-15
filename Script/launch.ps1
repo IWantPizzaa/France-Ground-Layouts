@@ -24,7 +24,7 @@ if ($null -eq $converterPython) {
 }
 Write-Host ''
 Write-Host '  AVISO SOURCE' -ForegroundColor Cyan
-Write-Host '  [1] Local GNG / KMZ / Colours.sct (default)'
+Write-Host '  [1] Local GNG / Colours.sct (default)'
 Write-Host '  [2] Original official GitHub repository'
 do {
     $sourceChoice = Read-Host '  Choose 1 or 2 (Enter = local)'

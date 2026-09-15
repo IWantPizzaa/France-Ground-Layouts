@@ -42,12 +42,13 @@ If you have any questions or issues regarding the creation or updating of an AVI
 
 GNG, KMZ and Colours.sct follow the official pack. The sole source exception is
 the obsolete LFPO background rectangle, replaced by its Real background setting.
-The converter reads them without rewriting, stripping or reorganizing content.
+The converter reads geometry and text only from GNG, without rewriting it.
+KMZ files are not opened or parsed.
 Customize vSMR only through Settings/, including Settings/Colours.sct for colors.
 
 On Windows, double-click **Script/Convert AVISO.cmd** and choose:
 
-1. **Local** (default): use this checkout's GNG, KMZ and Colours.sct.
+1. **Local** (default): use this checkout's GNG and Colours.sct.
 2. **Official GitHub**: download original source from vaccfr/France-Ground-Layouts.
 
 Python 3.10+ is required. Conversion writes GeoJSON into `GeoJSON/`. No reports or

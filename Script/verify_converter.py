@@ -62,7 +62,7 @@ def main():
     for name, data in expected_files.items():
         doc = json.loads(data)
         allowed = {'ground-layout-east', 'ground-layout-west'} if name == 'LFPG.geojson' else set()
-        assert {g['id'] for g in doc.get('vsmr_groups', [])} == allowed
+        assert {g['id'] for g in doc.get('vsmr_groups', [])} <= allowed
         for feature in doc['features']:
             assert set(feature['properties'].get('vsmr_group_ids', [])) <= allowed
     with tempfile.TemporaryDirectory(prefix='vsmr-aviso-tests-') as scratch:
@@ -70,46 +70,43 @@ def main():
         c.run(root, scratch / 'GeoJSON')
         actual_files = {p.name:p.read_bytes() for p in (scratch / 'GeoJSON').iterdir()}
         assert actual_files == expected_files, 'Committed GeoJSON is not current: regenerate from local source'
-        # Read original pack files without requiring their representations to be rewritten.
-        shapes, labels, fallback = (collections.defaultdict(list) for _ in range(3))
+        # Every output geometry and label comes from GNG, with no KMZ contribution.
+        native = collections.defaultdict(list)
         for path in (root / 'GNG').rglob('*.txt'):
-            raw = c.parse_gng(path.relative_to(root).as_posix(), path.read_bytes())
-            labels[path.parent.name].extend(r for r in raw if r['kind'] == 'label')
-            fallback[path.parent.name].extend(r for r in raw if r['kind'] != 'label')
-        for path in (root / 'KMZ').glob('*.kmz'):
-            raw = c.parse_kmz(path.relative_to(root).as_posix(), path.read_bytes())
-            if path.stem[:4] not in ('LFXX', 'LFMM'):
-                shapes[path.stem[:4]].extend(r for r in raw if r['kind'] != 'label')
+            native[path.parent.name].extend(c.parse_gng(path.relative_to(root).as_posix(), path.read_bytes()))
         def geometry_counts(records):
             return collections.Counter(c.packed(r['geometry']) for r in records)
         for code, records in source['airports'].items():
-            assert geometry_counts(r for r in records if r['kind'] != 'label') == geometry_counts(shapes[code] or fallback[code]), code
+            assert geometry_counts(records) == geometry_counts(native[code]), code
             output = json.loads(actual_files[code + '.geojson'])
             assert geometry_counts(output['features']) == geometry_counts(records), code
-            assert collections.Counter((r['name'], c.packed(r['geometry'])) for r in records if r['kind'] == 'label') == collections.Counter((r['name'], c.packed(r['geometry'])) for r in labels[code]), code
-        lfpg = json.loads(actual_files['LFPG.geojson'])
-        counts = collections.Counter(g for f in lfpg['features'] for g in f['properties']['vsmr_group_ids'])
-        assert counts['ground-layout-east'] > 0 and counts['ground-layout-west'] > 0
+            assert collections.Counter((r['name'], c.packed(r['geometry'])) for r in records if r['kind'] == 'label') == collections.Counter((r['name'], c.packed(r['geometry'])) for r in native[code] if r['kind'] == 'label'), code
+            used = {g for f in output['features'] for g in f['properties']['vsmr_group_ids']}
+            assert {g['id'] for g in output['vsmr_groups']} == used
 
-        # Original external inputs must never reintroduce the other representation.
+        # No file from KMZ may be opened, even when present beside the input.
+        read_bytes = Path.read_bytes
+        def guarded_read(path):
+            assert 'KMZ' not in path.parts, 'Converter opened a KMZ file'
+            return read_bytes(path)
+        with patch.object(Path, 'read_bytes', guarded_read):
+            assert c.load_source(root) == source
+
+        # Live GNG edits and deterministic IDs do not depend on another format.
         label = c.parse_gng('GNG/LFFF/TEST/TEST Gates.txt', b'N049.00.00.000 E002.00.00.000 GATE\n')[0]
-        shape = dict(file='KMZ/TEST.kmz', kind='line', color='COLOR_Taxiway', name='line',
+        shape = dict(file='GNG/LFFF/TEST/TEST Groundlayout.txt', kind='line', color='COLOR_Taxiway', name='line',
                      geometry=dict(type='LineString', coordinates=[[2,49],[2.1,49.1]]))
         gng = {'text': ('TEST', [label, shape])}
-        kmz = {'geometry': ('TEST', [shape, dict(label, name='KMZ label ignored')])}
-        selected = c.assemble_sources(gng, kmz)['TEST']
-        assert [r['kind'] for r in selected] == ['line', 'label']
-        assert selected[1]['name'] == 'GATE'
-        assert [r['kind'] for r in c.assemble_sources(gng, {})['TEST']] == ['label', 'line']
-        assert c.assemble_sources({}, kmz)['TEST'][0]['kind'] == 'line'
-        assert len(c.assemble_sources({}, kmz)['TEST']) == 1
-        edited = copy.deepcopy(kmz)
-        edited['geometry'][1][0]['geometry']['coordinates'][0][0] += 0.01
-        assert c.assemble_sources(gng, edited)['TEST'][0]['geometry'] == edited['geometry'][1][0]['geometry']
-        edited['geometry'][1].append(copy.deepcopy(shape))
-        added = c.assemble_sources(gng, edited)['TEST']
+        selected = c.assemble_sources(gng)['TEST']
+        assert [r['kind'] for r in selected] == ['label', 'line']
+        assert c.assemble_sources({}) == {}
+        edited = copy.deepcopy(gng)
+        edited['text'][1][1]['geometry']['coordinates'][0][0] += 0.01
+        assert c.assemble_sources(edited)['TEST'][1]['geometry'] == edited['text'][1][1]['geometry']
+        edited['text'][1].append(copy.deepcopy(shape))
+        added = c.assemble_sources(edited)['TEST']
         assert len(added) == 3 and len({r['source_id'] for r in added}) == 3
-        assert added == c.assemble_sources(gng, edited)['TEST']
+        assert added == c.assemble_sources(edited)['TEST']
 
         # Protected output paths must fail before creating or modifying any files.
         for destination in (root, root / 'GNG', root / 'KMZ' / 'output', root / 'Settings'):
@@ -119,16 +116,33 @@ def main():
             except ValueError as error:
                 assert 'protected source/settings' in str(error)
 
-        # Only the three native source entries are needed; no old geometry snapshot.
+        # Only GNG and Colours.sct are required in folder and ZIP inputs.
         buffer = io.BytesIO()
         with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED) as archive:
-            for name in ('GNG', 'KMZ', 'Colours.sct'):
+            for name in ('GNG', 'Colours.sct'):
                 path = root / name
                 for file in sorted(path.rglob('*')) if path.is_dir() else [path]:
                     if file.is_file():
                         archive.writestr('France-Ground-Layouts-master/' + file.relative_to(root).as_posix(), file.read_bytes())
         buffer.seek(0)
         assert c.load_source(buffer) == source
+        plain = scratch / 'gng-only'
+        with zipfile.ZipFile(buffer) as archive:
+            archive.extractall(plain)
+        assert c.load_source(plain) == source
+        assert not list(plain.rglob('KMZ'))
+        with zipfile.ZipFile(buffer, 'a') as archive:
+            archive.writestr('France-Ground-Layouts-master/KMZ/ZZZZ broken.kmz', b'not a KMZ')
+            archive.writestr('France-Ground-Layouts-master/KMZ/Colours.sct', b'invalid, must not be read')
+            archive.writestr('France-Ground-Layouts-master/Settings/Colours.sct', b'not the native source colours')
+        buffer.seek(0)
+        zip_read = zipfile.ZipFile.read
+        def guarded_zip_read(archive, name, *args, **kwargs):
+            filename = name.filename if isinstance(name, zipfile.ZipInfo) else name
+            assert '/KMZ/' not in filename and not filename.startswith('KMZ/'), 'Converter opened KMZ ZIP entry'
+            return zip_read(archive, name, *args, **kwargs)
+        with patch.object(zipfile.ZipFile, 'read', guarded_zip_read):
+            assert c.load_source(buffer) == source
         with patch.object(c, 'github_source', side_effect=AssertionError('Local conversion contacted GitHub')):
             assert c.choose_source() == source
         with patch.object(c, 'github_source', return_value=source), patch.object(c, 'local_source', side_effect=AssertionError('GitHub selection used local input')):
@@ -180,7 +194,7 @@ def main():
         assert not list(scratch.rglob('Conversion report.json'))
         assert not list(scratch.rglob('Conversion summary.txt'))
     assert input_hashes() == original_inputs, 'Conversion modified official sources or settings'
-    print(f'PASS: {len(expected_files)} GeoJSON files; {sum(len(r) for r in source["airports"].values())} native features; unchanged pack sources and geometry fallback; source edits; palettes/groups; explicit local/GitHub selection.')
+    print(f'PASS: {len(expected_files)} GeoJSON files; {sum(len(r) for r in source["airports"].values())} native features; GNG-only inputs, ignored KMZ and unchanged sources; source edits; palettes/groups; explicit local/GitHub selection.')
 
 
 if __name__ == '__main__':
