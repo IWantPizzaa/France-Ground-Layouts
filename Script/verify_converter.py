@@ -26,7 +26,7 @@ def main():
     for path in (root / 'Settings').rglob('*.json'):
         assert not re.search(r'"#[0-9A-Fa-f]{6}"', path.read_text(encoding='utf-8')), 'Palette literals belong in Settings/Colours.sct'
     changed_colors = dict(source['colors'], BACKGROUND_COLOR='#123456')
-    changed_settings = c.load_preserved(changed_colors)
+    changed_settings = c.load_settings(changed_colors)
     assert changed_settings['recipes']['LFPG']['document']['metadata']['background_colors']['dark'] == '#123456'
     assert changed_settings['recipes']['LFPG']['document']['metadata']['background_colors']['real'] == '#6F6F6F'
     lfpo = changed_settings['recipes']['LFPO']['document']
@@ -40,7 +40,7 @@ def main():
         for mode, color in recipe['document']['metadata']['background_colors'].items():
             if (code, mode) not in (('LFPG', 'real'), ('LFPO', 'real')):
                 assert color == '#123456', (code, mode)
-    text_settings = c.load_preserved(dict(source['colors'], TEXT_COLOR='#123456'))
+    text_settings = c.load_settings(dict(source['colors'], TEXT_COLOR='#123456'))
     for recipe in text_settings['recipes'].values():
         for style in recipe['document']['styles'].values():
             if 'text-color' in style['paint']:
@@ -48,7 +48,7 @@ def main():
     missing_colors = dict(source['colors'])
     del missing_colors['BACKGROUND_COLOR']
     try:
-        c.load_preserved(missing_colors)
+        c.load_settings(missing_colors)
         raise AssertionError('Undefined palette color accepted')
     except ValueError as error:
         assert 'Undefined palette color' in str(error)
@@ -141,7 +141,7 @@ def main():
                 pass
 
         # Source text/coordinates remain live. Added labels inherit the same settings.
-        saved = c.load_preserved()
+        saved = c.load_settings()
         original = source['airports']['LFPG']
         edited = copy.deepcopy(original)
         gate = next(r for r in edited if r['kind']=='label' and r['name']=='I04')

@@ -323,7 +323,7 @@ def coordinates(geometry):
     yield from walk(geometry['coordinates'])
 
 
-def load_preserved(colors=None):
+def load_settings(colors=None):
     if colors is None:
         colors = palette_colors()
     folder = ROOT / 'Settings'
@@ -580,7 +580,7 @@ def run(source_path=None, output=None, source_mode='local'):
     source = choose_source(source_mode) if source_path is None else load_source(source_path)
     require_native_ids(source)
     say('  [2/4] Applying palettes, groups and runtime settings...', '37')
-    saved = load_preserved(source['colors'])
+    saved = load_settings(source['colors'])
     votes = collections.defaultdict(collections.Counter)
     for recipe in saved['recipes'].values():
         for key, original_style in recipe['document']['styles'].items():

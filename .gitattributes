@@ -1,3 +1,5 @@
+.gitattributes text eol=lf
+.gitignore text eol=lf
 *.txt text eol=lf
 *.sct text eol=lf
 *.py text eol=lf
@@ -12,4 +14,4 @@
 # Official pack files are preserved byte-for-byte.
 GNG/** -text
 KMZ/** -text
-Colours.sct -text
+/Colours.sct -text

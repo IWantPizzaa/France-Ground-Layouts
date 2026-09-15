@@ -11,9 +11,9 @@ import aviso_converter as c
 def main():
     source = c.load_source(c.ROOT)
     c.require_native_ids(source)
-    settings = c.load_preserved()
+    settings = c.load_settings()
     colors = c.palette_colors()
-    changed = c.load_preserved(dict(colors, TEXT_COLOR='#123456', TEXT_HALO_COLOR='#654321'))
+    changed = c.load_settings(dict(colors, TEXT_COLOR='#123456', TEXT_HALO_COLOR='#654321'))
     for code, recipe in settings['recipes'].items():
         old = recipe['document']
         new = copy.deepcopy(changed['recipes'][code]['document'])
@@ -23,7 +23,7 @@ def main():
                     assert new['styles'][key]['paint'][prop] == ('#123456' if prop == 'text-color' else '#654321')
                     new['styles'][key]['paint'][prop] = style['paint'][prop]
         assert new == old, 'Text controls changed non-text rendering: ' + code
-    changed = c.load_preserved(dict(colors, BACKGROUND_COLOR='#123456'))
+    changed = c.load_settings(dict(colors, BACKGROUND_COLOR='#123456'))
     for code, recipe in changed['recipes'].items():
         for mode, color in recipe['document']['metadata']['background_colors'].items():
             assert color == ({('LFPG', 'real'): '#6F6F6F', ('LFPO', 'real'): '#595E5B'}.get((code, mode), '#123456'))
