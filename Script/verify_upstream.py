@@ -12,7 +12,7 @@ def main():
     source = c.load_source(c.ROOT)
     c.require_native_ids(source)
     settings = c.load_preserved()
-    colors = c.read_colors((c.ROOT / 'Colours.sct').read_bytes())
+    colors = c.palette_colors()
     changed = c.load_preserved(dict(colors, TEXT_COLOR='#123456', TEXT_HALO_COLOR='#654321'))
     for code, recipe in settings['recipes'].items():
         old = recipe['document']
@@ -26,7 +26,7 @@ def main():
     changed = c.load_preserved(dict(colors, BACKGROUND_COLOR='#123456'))
     for code, recipe in changed['recipes'].items():
         for mode, color in recipe['document']['metadata']['background_colors'].items():
-            assert color == ({('LFPG', 'real'): '#6F6F6F', ('LFPO', 'real'): '#6C6A68'}.get((code, mode), '#123456'))
+            assert color == ({('LFPG', 'real'): '#6F6F6F', ('LFPO', 'real'): '#595E5B'}.get((code, mode), '#123456'))
     with patch.object(c, 'github_source', side_effect=AssertionError('Local mode contacted GitHub')):
         assert c.choose_source() == source
     with patch.object(c, 'github_source', return_value=source), patch.object(c, 'local_source', side_effect=AssertionError('GitHub mode used local source')):

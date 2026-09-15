@@ -40,9 +40,10 @@ If you have any questions or issues regarding the creation or updating of an AVI
 
 ## Optional vSMR AVISO conversion
 
-KMZ contains geometry only; GNG contains text only. Edit each item in its single
-source. Native `COLOR_*` definitions and additional AVISO palettes are defined
-in Colours.sct. GNG geometry exports are no longer stored in this checkout.
+GNG, KMZ and Colours.sct follow the official pack. The sole source exception is
+the obsolete LFPO background rectangle, replaced by its Real background setting.
+The converter reads them without rewriting, stripping or reorganizing content.
+Customize vSMR only through Settings/, including Settings/Colours.sct for colors.
 
 On Windows, double-click **Script/Convert AVISO.cmd** and choose:
 
@@ -54,6 +55,6 @@ summaries are produced. An explicit GitHub failure is reported; it does not
 silently switch to different source data.
 
 `Settings/` holds runtime styles, groups, zoom levels and airport settings. Colors
-are defined in Colours.sct. Text/background defaults are shared; unrelated
+are customized in Settings/Colours.sct over the native Colours.sct. Text/background defaults are shared; unrelated
 geometry roles remain independently editable even when RGB values match.
 See [converter usage](Script/README.md) and [runtime settings](Settings/README.md).

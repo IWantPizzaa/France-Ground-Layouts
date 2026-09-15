@@ -1,338 +1,87 @@
-; Native upstream colors and independently editable AVISO palette roles.
-; Decimal BGR values. RGB comments are for readability.
-
-; -----------------------------------------------------------------------------
-; UPSTREAM NATIVE COLORS (compatibility names)
-; -----------------------------------------------------------------------------
-#define COLOR_APP                                               16711680  ; #0000FF
-#define COLOR_AirspaceA                                         8421376   ; #008080
-#define COLOR_AirspaceB                                         8421376   ; #008080
-#define COLOR_AirspaceC                                         8421376   ; #008080
-#define COLOR_AirspaceD                                         8421376   ; #008080
-#define COLOR_AirspaceE                                         8421376   ; #008080
-#define COLOR_AirspaceF                                         8388736   ; #800080
-#define COLOR_AirspaceG                                         8421376   ; #008080
-#define COLOR_AoRapproach1                                      16711680  ; #0000FF
-#define COLOR_AoRapproach2                                      33023     ; #FF8000
-#define COLOR_AoRapproach3                                      4588945   ; #910546
-#define COLOR_AoRapproach4                                      8289918   ; #7E7E7E
-#define COLOR_AoRapproach5                                      8289918   ; #7E7E7E
-#define COLOR_AoRcenter1                                        6579300   ; #646464
-#define COLOR_AoRcenter2                                        8514      ; #422100
-#define COLOR_AoRcenter3                                        8289918   ; #7E7E7E
-#define COLOR_AoRcenter4                                        4276545   ; #414141
-#define COLOR_AoRcenter5                                        8289918   ; #7E7E7E
-#define COLOR_AoRdeparture1                                     32896     ; #808000
-#define COLOR_AoRdeparture2                                     8289918   ; #7E7E7E
-#define COLOR_AoRground1                                        128       ; #800000
-#define COLOR_AoRground2                                        32768     ; #008000
-#define COLOR_ApronSurface                                      8421504   ; #808080
-#define COLOR_Building                                          4604985   ; #394446
-#define COLOR_Building2                                         8421504   ; #808080
-#define COLOR_Centerlines                                       65535     ; #FFFF00
-#define COLOR_ClosureArea                                       255       ; #FF0000
-#define COLOR_Coastline                                         8943708   ; #5C7888
-#define COLOR_DangerArea                                        4342359   ; #574242
-#define COLOR_FIRBorder                                         8421504   ; #808080
-#define COLOR_GrasSurface                                       3100928   ; #00512F
-#define COLOR_GrasSurface2                                      3156512   ; #202A30
-#define COLOR_GrasSurface3                                      3156512   ; #202A30
-#define COLOR_GrasSurface4                                      2829085   ; #1D2B2B
-#define COLOR_HardSurface1                                      9671574   ; #969393
-#define COLOR_HardSurface2                                      5987929   ; #595E5B
-#define COLOR_HardSurface3                                      8355978   ; #8A807F
-#define COLOR_HardSurface4                                      9671574   ; #969393
-#define COLOR_HardSurface5                                      6513507   ; #636363
-#define COLOR_HelipadSurface                                    8421504   ; #808080
-#define COLOR_Holding                                           128       ; #800000
-#define COLOR_Labels                                            8421504   ; #808080
-#define COLOR_Landmark1                                         8289918   ; #7E7E7E
-#define COLOR_Landmark2                                         8289918   ; #7E7E7E
-#define COLOR_Landmark3                                         8289918   ; #7E7E7E
-#define COLOR_Landmark4                                         8289918   ; #7E7E7E
-#define COLOR_Landmark5                                         8289918   ; #7E7E7E
-#define COLOR_Landmark6                                         8289918   ; #7E7E7E
-#define COLOR_Landmark7                                         8289918   ; #7E7E7E
-#define COLOR_MRVA1                                             873576    ; #68540D
-#define COLOR_MRVA2                                             538436    ; #443708
-#define COLOR_ParkPos                                           8388608   ; #000080
-#define COLOR_ParkPosUnused                                     128       ; #800000
-#define COLOR_ProhibitedArea                                    126       ; #7E0000
-#define COLOR_RMZ                                               8388736   ; #800080
-#define COLOR_Releaseline                                       32768     ; #008000
-#define COLOR_RestrictedArea                                    128       ; #800000
-#define COLOR_RunwayBorder                                      8421504   ; #808080
-#define COLOR_RunwayConcrete                                    5592405   ; #555555
-#define COLOR_RunwayGrass                                       32768     ; #008000
-#define COLOR_SID                                               16711680  ; #0000FF
-#define COLOR_STAR                                              16711680  ; #0000FF
-#define COLOR_Stopbar                                           41164     ; #CCA000
-#define COLOR_TEST                                              921102    ; #0E0E0E
-#define COLOR_TMA                                               0         ; #000000
-#define COLOR_TMZ                                               128       ; #800000
-#define COLOR_Taxiway                                           3258048   ; #C0B631
-#define COLOR_TaxiwayBlue                                       8404992   ; #004080
-#define COLOR_TaxiwayBorder                                     16711680  ; #0000FF
-#define COLOR_TaxiwayGreen                                      32768     ; #008000
-#define COLOR_TaxiwayGrey                                       5263440   ; #505050
-#define COLOR_TaxiwayOrange                                     28108     ; #CC6D00
-#define COLOR_Terrain1                                          12900     ; #643200
-#define COLOR_Terrain2                                          12900     ; #643200
-#define COLOR_Terrain3                                          12900     ; #643200
-#define COLOR_Terrain4                                          12900     ; #643200
-#define COLOR_Terrain5                                          12900     ; #643200
-#define COLOR_Terrain6                                          12900     ; #643200
-#define COLOR_Terrain7                                          12900     ; #643200
-#define COLOR_Terrain8                                          12900     ; #643200
-#define COLOR_Terrain9                                          12900     ; #643200
-#define COLOR_UpperSector                                       8514      ; #422100
-#define COLOR_Vectors                                           5135955   ; #535E4E
-#define COLOR_Water                                             8404992   ; #004080
-
-; -----------------------------------------------------------------------------
-; SHARED UI DEFAULTS
-; -----------------------------------------------------------------------------
-#define BACKGROUND_COLOR                                        5196355   ; #434A4F
-#define TEXT_COLOR                                              13421772  ; #CCCCCC
-#define TEXT_HALO_COLOR                                         0         ; #000000
-
-; -----------------------------------------------------------------------------
-; DARK PALETTE
-; -----------------------------------------------------------------------------
-#define DARK_LFPO_POLYGON_PARKPOS                               3943714   ; #222D3C
-#define DARK_LINE_AORAPPROACH5                                  8289918   ; #7E7E7E
-#define DARK_LINE_APRONMARKING                                  6710886   ; #666666
-#define DARK_LINE_APRONSURFACE                                  8421504   ; #808080
-#define DARK_LINE_CENTERLINES                                   65535     ; #FFFF00
-#define DARK_LINE_GROUND_LAYOUT_ARROWS_BROWN                    2763429   ; #A52A2A
-#define DARK_LINE_GROUND_LAYOUT_ARROWS_CENTERLINE               65535     ; #FFFF00
-#define DARK_LINE_GROUND_LAYOUT_ARROWS_GREEN                    32768     ; #008000
-#define DARK_LINE_HARDSURFACE5                                  6904398   ; #4E5A69
-#define DARK_LINE_LABELS                                        8421504   ; #808080
-#define DARK_LINE_LANDMARK3                                     4932276   ; #B4424B
-#define DARK_LINE_LANDMARK3_2                                   8289918   ; #7E7E7E
-#define DARK_LINE_LANDMARK6                                     6710886   ; #666666
-#define DARK_LINE_PARKPOS                                       7232030   ; #1E5A6E
-#define DARK_LINE_RUNWAYBORDER                                  8421504   ; #808080
-#define DARK_LINE_RUNWAYCONCRETE                                1577745   ; #111318
-#define DARK_LINE_RUNWAYGRASS                                   7838341   ; #859A77
-#define DARK_LINE_RUNWAYMARKING                                 6710886   ; #666666
-#define DARK_LINE_STOPBAR                                       126       ; #7E0000
-#define DARK_LINE_TAXIWAYBLUE                                   9851451   ; #3B5296
-#define DARK_LINE_TAXIWAYBORDER                                 16711680  ; #0000FF
-#define DARK_LINE_TAXIWAYGREY                                   5263440   ; #505050
-#define DARK_LINE_TAXIWAYORANGE                                 35788     ; #CC8B00
-#define DARK_LINE_TAXIWAYPURPLE                                 8388736   ; #800080
-#define DARK_LINE_TAXIWAY_STANDS                                6904398   ; #4E5A69
-#define DARK_LINE_TAXIWAY                                       6904398   ; #4E5A69
-#define DARK_LINE_TWR_CTR                                       0         ; #000000
-#define DARK_POLYGON_APRONMARKING                               6710886   ; #666666
-#define DARK_POLYGON_APRONSURFACE                               8421504   ; #808080
-#define DARK_POLYGON_BUILDING2                                  7361863   ; #475570
-#define DARK_POLYGON_BUILDING2_2                                5460564   ; #545253
-#define DARK_POLYGON_BUILDING                                   7361863   ; #475570
-#define DARK_POLYGON_CLOSUREAREA                                255       ; #FF0000
-#define DARK_POLYGON_DANGERAREA                                 526632    ; #280908
-#define DARK_POLYGON_GRASSURFACE2                               3381555   ; #339933
-#define DARK_POLYGON_GRASSURFACE3                               1641729   ; #010D19
-#define DARK_POLYGON_GRASSURFACE3_2                             6782578   ; #727E67
-#define DARK_POLYGON_GRASSURFACE4                               2829085   ; #1D2B2B
-#define DARK_POLYGON_GRASSURFACE                                1641729   ; #010D19
-#define DARK_POLYGON_HARDSURFACE1                               4270101   ; #152841
-#define DARK_POLYGON_HARDSURFACE2                               4798767   ; #2F3949
-#define DARK_POLYGON_HARDSURFACE3                               3943714   ; #222D3C
-#define DARK_POLYGON_HARDSURFACE4                               4270101   ; #152841
-#define DARK_POLYGON_HARDSURFACE5                               1577745   ; #111318
-#define DARK_POLYGON_HARDSURFACE5_2                             6513507   ; #636363
-#define DARK_POLYGON_LANDMARK2                                  1114880   ; #000311
-#define DARK_POLYGON_LANDMARK3                                  5058859   ; #2B314D
-#define DARK_POLYGON_LANDMARK4                                  1114880   ; #000311
-#define DARK_POLYGON_LANDMARK5                                  35788     ; #CC8B00
-#define DARK_POLYGON_LANDMARK6                                  6710886   ; #666666
-#define DARK_POLYGON_OTHERMARKING                               2762591   ; #5F272A
-#define DARK_POLYGON_PARKPOS                                    7232030   ; #1E5A6E
-#define DARK_POLYGON_RUNWAYBORDER                               8421504   ; #808080
-#define DARK_POLYGON_RUNWAYCONCRETE                             1577745   ; #111318
-#define DARK_POLYGON_RUNWAYGRASS                                7838341   ; #859A77
-#define DARK_POLYGON_RUNWAYMARKING                              6710886   ; #666666
-#define DARK_POLYGON_STOPBAR                                    126       ; #7E0000
-#define DARK_POLYGON_STOPBAR_2                                  2762591   ; #5F272A
-#define DARK_POLYGON_TAXIWAYORANGE                              35788     ; #CC8B00
-#define DARK_POLYGON_TAXIWAY                                    6904398   ; #4E5A69
-#define DARK_POLYGON_TERRAIN1                                   4342359   ; #574242
-#define DARK_POLYGON_TERRAIN2                                   4798767   ; #2F3949
-#define DARK_POLYGON_TERRAIN2_2                                 6842988   ; #6C6A68
-#define DARK_POLYGON_TERRAIN3                                   3943714   ; #222D3C
-#define DARK_POLYGON_TERRAIN3_2                                 2434344   ; #282525
-#define DARK_POLYGON_TERRAIN4                                   4270101   ; #152841
-#define DARK_POLYGON_TERRAIN4_2                                 3156627   ; #932A30
-#define DARK_POLYGON_TERRAIN5                                   1641729   ; #010D19
-#define DARK_POLYGON_TERRAIN6                                   4798767   ; #2F3949
-#define DARK_POLYGON_TERRAIN7                                   3943714   ; #222D3C
-#define DARK_POLYGON_TERRAIN8                                   4270101   ; #152841
-#define DARK_POLYGON_TERRAIN9                                   7361863   ; #475570
-#define DARK_POLYGON_WATER                                      5058859   ; #2B314D
-#define DARK_VSMR_GROUPS_ACCENT                                 3784148   ; #D4BD39
-
-; -----------------------------------------------------------------------------
-; LIGHT PALETTE
-; -----------------------------------------------------------------------------
-#define LIGHT_AIRPORT_REFERENCE                                 13421772  ; #CCCCCC
-
-#define LIGHT_LABEL_ENGINE_TEST_AREA                            13421772  ; #CCCCCC
-#define LIGHT_LABEL_GATES                                       13421772  ; #CCCCCC
-#define LIGHT_LABEL_TAXIWAYS                                    13421772  ; #CCCCCC
-#define LIGHT_LABEL_TERMINAUX                                   13421772  ; #CCCCCC
-#define LIGHT_LABEL_TEXT_LABEL_LABELS                           13421772  ; #CCCCCC
-#define LIGHT_LABEL_TORA                                        13421772  ; #CCCCCC
-#define LIGHT_LABEL_TORA_CONF04                                 13421772  ; #CCCCCC
-#define LIGHT_LABEL_TORA_CONF22                                 13421772  ; #CCCCCC
-
-#define LIGHT_LFBO_LINE_TAXIWAYPURPLE                           8388736   ; #800080
-
-#define LIGHT_LFML_LINE_HARDSURFACE5                            3258048   ; #C0B631
-#define LIGHT_LFML_LINE_LANDMARK6                               11776947  ; #B3B3B3
-#define LIGHT_LFML_POLYGON_HARDSURFACE5                         5592405   ; #555555
-#define LIGHT_LFML_POLYGON_LANDMARK3                            8404992   ; #004080
-#define LIGHT_LFML_POLYGON_LANDMARK4                            2368032   ; #202224
-#define LIGHT_LFML_POLYGON_LANDMARK5                            28108     ; #CC6D00
-#define LIGHT_LFML_POLYGON_LANDMARK6                            11776947  ; #B3B3B3
-#define LIGHT_LFML_POLYGON_STOPBAR                              526632    ; #280908
-#define LIGHT_LFML_POLYGON_TERRAIN5                             3100928   ; #00512F
-#define LIGHT_LFML_POLYGON_TERRAIN6                             5987929   ; #595E5B
-#define LIGHT_LFML_POLYGON_TERRAIN7                             8355978   ; #8A807F
-#define LIGHT_LFML_POLYGON_TERRAIN8                             9671574   ; #969393
-#define LIGHT_LFML_POLYGON_TERRAIN9                             4604985   ; #394446
-
-#define LIGHT_LFMN_LINE_APRONMARKING                            11776947  ; #B3B3B3
-#define LIGHT_LFMN_LINE_PARKPOS                                 7040882   ; #726F6B
-#define LIGHT_LFMN_POLYGON_APRONMARKING                         11776947  ; #B3B3B3
-#define LIGHT_LFMN_POLYGON_BUILDING2                            4604985   ; #394446
-#define LIGHT_LFMN_POLYGON_GRASSURFACE3                         3100928   ; #00512F
-#define LIGHT_LFMN_POLYGON_LANDMARK2                            2368032   ; #202224
-#define LIGHT_LFMN_POLYGON_OTHERMARKING                         526632    ; #280908
-#define LIGHT_LFMN_POLYGON_PARKPOS                              7040882   ; #726F6B
-#define LIGHT_LFMN_POLYGON_RUNWAYMARKING                        11776947  ; #B3B3B3
-#define LIGHT_LFMN_POLYGON_TERRAIN2                             5987929   ; #595E5B
-#define LIGHT_LFMN_POLYGON_TERRAIN3                             8355978   ; #8A807F
-#define LIGHT_LFMN_POLYGON_TERRAIN4                             9671574   ; #969393
-
-#define LIGHT_LFPG_LINE_TAXIWAY_STANDS                          3258048   ; #C0B631
-#define LIGHT_LFPG_POLYGON_STOPBAR                              126       ; #7E0000
-#define LIGHT_LFPG_POLYGON_TERRAIN1                             4342359   ; #574242
-
-
-#define LIGHT_LFPX_POLYGON_GRASSURFACE3                         6782578   ; #727E67
-
-#define LIGHT_LFRK_POLYGON_DANGERAREA                           526632    ; #280908
-
-#define LIGHT_LINE_APRONMARKING                                 11776947  ; #B3B3B3
-#define LIGHT_LINE_GROUND_LAYOUT_ARROWS_BROWN                   2763429   ; #A52A2A
-#define LIGHT_LINE_GROUND_LAYOUT_ARROWS_CENTERLINE              65535     ; #FFFF00
-#define LIGHT_LINE_GROUND_LAYOUT_ARROWS_GREEN                   32768     ; #008000
-#define LIGHT_LINE_HARDSURFACE5                                 3258048   ; #C0B631
-#define LIGHT_LINE_LANDMARK3                                    4932276   ; #B4424B
-#define LIGHT_LINE_LANDMARK6                                    11776947  ; #B3B3B3
-#define LIGHT_LINE_PARKPOS                                      7040882   ; #726F6B
-#define LIGHT_LINE_RUNWAYMARKING                                11776947  ; #B3B3B3
-#define LIGHT_LINE_STOPBAR                                      126       ; #7E0000
-#define LIGHT_LINE_TAXIWAYPURPLE                                8388736   ; #800080
-#define LIGHT_LINE_TWR_CTR                                      0         ; #000000
-#define LIGHT_POLYGON_APRONMARKING                              11776947  ; #B3B3B3
-#define LIGHT_POLYGON_BUILDING2                                 4604985   ; #394446
-#define LIGHT_POLYGON_BUILDING2_2                               5460564   ; #545253
-#define LIGHT_POLYGON_DANGERAREA                                526632    ; #280908
-#define LIGHT_POLYGON_GRASSURFACE2                              3381555   ; #339933
-#define LIGHT_POLYGON_GRASSURFACE3                              3100928   ; #00512F
-#define LIGHT_POLYGON_GRASSURFACE3_2                            6782578   ; #727E67
-#define LIGHT_POLYGON_HARDSURFACE5                              5592405   ; #555555
-#define LIGHT_POLYGON_HARDSURFACE5_2                            4144705   ; #413E3F
-#define LIGHT_POLYGON_LANDMARK2                                 2368032   ; #202224
-#define LIGHT_POLYGON_LANDMARK3                                 8404992   ; #004080
-#define LIGHT_POLYGON_LANDMARK4                                 2368032   ; #202224
-#define LIGHT_POLYGON_LANDMARK5                                 28108     ; #CC6D00
-#define LIGHT_POLYGON_LANDMARK6                                 11776947  ; #B3B3B3
-#define LIGHT_POLYGON_OTHERMARKING                              526632    ; #280908
-#define LIGHT_POLYGON_PARKPOS                                   7040882   ; #726F6B
-#define LIGHT_POLYGON_RUNWAYMARKING                             11776947  ; #B3B3B3
-#define LIGHT_POLYGON_STOPBAR                                   126       ; #7E0000
-#define LIGHT_POLYGON_STOPBAR_2                                 526632    ; #280908
-#define LIGHT_POLYGON_TERRAIN1                                  4342359   ; #574242
-#define LIGHT_POLYGON_TERRAIN2                                  6842988   ; #6C6A68
-#define LIGHT_POLYGON_TERRAIN2_2                                5987929   ; #595E5B
-#define LIGHT_POLYGON_TERRAIN3                                  2434344   ; #282525
-#define LIGHT_POLYGON_TERRAIN3_2                                8355978   ; #8A807F
-#define LIGHT_POLYGON_TERRAIN4                                  9671574   ; #969393
-#define LIGHT_POLYGON_TERRAIN4_2                                3156627   ; #932A30
-#define LIGHT_POLYGON_TERRAIN5                                  3100928   ; #00512F
-#define LIGHT_POLYGON_TERRAIN6                                  5987929   ; #595E5B
-#define LIGHT_POLYGON_TERRAIN7                                  8355978   ; #8A807F
-#define LIGHT_POLYGON_TERRAIN8                                  9671574   ; #969393
-#define LIGHT_POLYGON_TERRAIN9                                  4604985   ; #394446
-
-; -----------------------------------------------------------------------------
-; AIRPORT REAL PALETTES
-; -----------------------------------------------------------------------------
-#define REAL_LFML_LINE_HARDSURFACE5                             2500134   ; #262626
-#define REAL_LFML_LINE_LANDMARK6                                10921638  ; #A6A6A6
-#define REAL_LFML_POLYGON_HARDSURFACE5                          2500134   ; #262626
-#define REAL_LFML_POLYGON_LANDMARK3                             4532769   ; #212A45
-#define REAL_LFML_POLYGON_LANDMARK4                             2829090   ; #222B2B
-#define REAL_LFML_POLYGON_LANDMARK5                             46003     ; #B3B300
-#define REAL_LFML_POLYGON_LANDMARK6                             10921638  ; #A6A6A6
-#define REAL_LFML_POLYGON_STOPBAR                               126       ; #7E0000
-#define REAL_LFML_POLYGON_TERRAIN5                              5405291   ; #6B7A52
-#define REAL_LFML_POLYGON_TERRAIN6                              5460819   ; #535353
-#define REAL_LFML_POLYGON_TERRAIN7                              5066061   ; #4D4D4D
-#define REAL_LFML_POLYGON_TERRAIN8                              5855577   ; #595959
-#define REAL_LFML_POLYGON_TERRAIN9                              2378664   ; #A84B24
-
-#define REAL_LFMN_LINE_APRONMARKING                             6579300   ; #646464
-#define REAL_LFMN_LINE_PARKPOS                                  11053224  ; #A8A8A8
-#define REAL_LFMN_LINE_TAXIWAYGREY                              6838088   ; #485768
-#define REAL_LFMN_POLYGON_APRONMARKING                          6579300   ; #646464
-#define REAL_LFMN_POLYGON_BUILDING2                             3618615   ; #373737
-#define REAL_LFMN_POLYGON_GRASSURFACE3                          6055263   ; #5F655C
-#define REAL_LFMN_POLYGON_LANDMARK2                             5724240   ; #505857
-#define REAL_LFMN_POLYGON_OTHERMARKING                          2762591   ; #5F272A
-#define REAL_LFMN_POLYGON_PARKPOS                               11053224  ; #A8A8A8
-#define REAL_LFMN_POLYGON_RUNWAYCONCRETE                        5592405   ; #555555
-#define REAL_LFMN_POLYGON_RUNWAYMARKING                         6710886   ; #666666
-#define REAL_LFMN_POLYGON_TERRAIN2                              8816262   ; #868686
-#define REAL_LFMN_POLYGON_TERRAIN3                              9737364   ; #949494
-#define REAL_LFMN_POLYGON_TERRAIN4                              8816262   ; #868686
-#define REAL_LFMN_POLYGON_WATER                                 7885385   ; #495278
-
-#define REAL_LFPG_BACKGROUND_COLOR                              7303023   ; #6F6F6F
-#define REAL_LFPG_LINE_TAXIWAYBLUE                              1578008   ; #181418
-#define REAL_LFPG_LINE_TAXIWAYORANGE                            28108     ; #CC6D00
-#define REAL_LFPG_LINE_TAXIWAY_STANDS                           2763306   ; #2A2A2A
-#define REAL_LFPG_LINE_TAXIWAY                                  2763306   ; #2A2A2A
-#define REAL_LFPG_POLYGON_BUILDING                              4604985   ; #394446
-#define REAL_LFPG_POLYGON_CLOSUREAREA                           255       ; #FF0000
-#define REAL_LFPG_POLYGON_GRASSURFACE                           9147754   ; #6A958B
-#define REAL_LFPG_POLYGON_HARDSURFACE2                          4933706   ; #4A484B
-#define REAL_LFPG_POLYGON_HARDSURFACE3                          10329501  ; #9D9D9D
-#define REAL_LFPG_POLYGON_HARDSURFACE4                          10329501  ; #9D9D9D
-#define REAL_LFPG_POLYGON_RUNWAYCONCRETE                        1578008   ; #181418
-#define REAL_LFPG_POLYGON_RUNWAYGRASS                           9147754   ; #6A958B
-#define REAL_LFPG_POLYGON_STOPBAR                               126       ; #7E0000
-#define REAL_LFPG_POLYGON_TAXIWAYORANGE                         28108     ; #CC6D00
-#define REAL_LFPG_POLYGON_TERRAIN1                              4342359   ; #574242
-
-; LFPO Real palette (previous Light appearance)
-#define REAL_LFPO_BACKGROUND_COLOR                              6842988   ; #6C6A68
-#define REAL_LFPO_LINE_RUNWAYMARKING                            11776947  ; #B3B3B3
-#define REAL_LFPO_LINE_TAXIWAY                                  3258048   ; #C0B631
-#define REAL_LFPO_LINE_TAXIWAYBLUE                              8404992   ; #004080
-#define REAL_LFPO_LINE_TAXIWAYORANGE                            28108     ; #CC6D00
-#define REAL_LFPO_POLYGON_BUILDING2                             5460564   ; #545253
-#define REAL_LFPO_POLYGON_CLOSUREAREA                           255       ; #FF0000
-#define REAL_LFPO_POLYGON_GRASSURFACE3                          6782578   ; #727E67
-#define REAL_LFPO_POLYGON_HARDSURFACE3                          8355978   ; #8A807F
-#define REAL_LFPO_POLYGON_HARDSURFACE5                          4144705   ; #413E3F
-#define REAL_LFPO_POLYGON_PARKPOS                               7040882   ; #726F6B
-#define REAL_LFPO_POLYGON_RUNWAYMARKING                         11776947  ; #B3B3B3
-#define REAL_LFPO_POLYGON_TAXIWAYORANGE                         28108     ; #CC6D00
-#define REAL_LFPO_POLYGON_TERRAIN3                              2434344   ; #282525
-#define REAL_LFPO_POLYGON_TERRAIN4                              3156627   ; #932A30
+#define COLOR_APP       16711680
+#define COLOR_AirspaceA  8421376
+#define COLOR_AirspaceB  8421376
+#define COLOR_AirspaceC  8421376
+#define COLOR_AirspaceD  8421376
+#define COLOR_AirspaceE  8421376
+#define COLOR_AirspaceF  8388736
+#define COLOR_AirspaceG  8421376
+#define COLOR_AoRapproach1 16711680
+#define COLOR_AoRapproach2    33023
+#define COLOR_AoRapproach3  4588945
+#define COLOR_AoRapproach4  8289918
+#define COLOR_AoRapproach5  8289918
+#define COLOR_AoRcenter1  6579300
+#define COLOR_AoRcenter2     8514
+#define COLOR_AoRcenter3  8289918
+#define COLOR_AoRcenter4  4276545
+#define COLOR_AoRcenter5  8289918
+#define COLOR_AoRdeparture1    32896
+#define COLOR_AoRdeparture2  8289918
+#define COLOR_AoRground1      128
+#define COLOR_AoRground2    32768
+#define COLOR_ApronSurface  8421504
+#define COLOR_Building   4604985
+#define COLOR_Building2  8421504
+#define COLOR_Centerlines    65535
+#define COLOR_ClosureArea      255
+#define COLOR_Coastline  8943708
+#define COLOR_DangerArea  4342359
+#define COLOR_FIRBorder  8421504
+#define COLOR_GrasSurface  3100928
+#define COLOR_GrasSurface2  3156512
+#define COLOR_GrasSurface3  3156512
+#define COLOR_GrasSurface4  2829085
+#define COLOR_HardSurface1  9671574
+#define COLOR_HardSurface2  5987929
+#define COLOR_HardSurface3  8355978
+#define COLOR_HardSurface4  9671574
+#define COLOR_HardSurface5  6513507
+#define COLOR_HelipadSurface  8421504
+#define COLOR_Holding        128
+#define COLOR_Labels     8421504
+#define COLOR_Landmark1  8289918
+#define COLOR_Landmark2  8289918
+#define COLOR_Landmark3  8289918
+#define COLOR_Landmark4  8289918
+#define COLOR_Landmark5  8289918
+#define COLOR_Landmark6  8289918
+#define COLOR_Landmark7  8289918
+#define COLOR_MRVA1       873576
+#define COLOR_MRVA2       538436
+#define COLOR_ParkPos    8388608
+#define COLOR_ParkPosUnused      128
+#define COLOR_ProhibitedArea      126
+#define COLOR_RMZ        8388736
+#define COLOR_Releaseline    32768
+#define COLOR_RestrictedArea      128
+#define COLOR_RunwayBorder  8421504
+#define COLOR_RunwayConcrete  5592405
+#define COLOR_RunwayGrass    32768
+#define COLOR_SID       16711680
+#define COLOR_STAR      16711680
+#define COLOR_Stopbar      41164
+#define COLOR_TACAN-Route  8404992
+#define COLOR_TEST        921102
+#define COLOR_TMA              0
+#define COLOR_TMZ            128
+#define COLOR_TWR-CTR          0
+#define COLOR_Taxiway    3258048
+#define COLOR_TaxiwayBlue  8404992
+#define COLOR_TaxiwayBorder 16711680
+#define COLOR_TaxiwayGreen    32768
+#define COLOR_TaxiwayGrey  5263440
+#define COLOR_TaxiwayOrange    28108
+#define COLOR_Terrain1     12900
+#define COLOR_Terrain2     12900
+#define COLOR_Terrain3     12900
+#define COLOR_Terrain4     12900
+#define COLOR_Terrain5     12900
+#define COLOR_Terrain6     12900
+#define COLOR_Terrain7     12900
+#define COLOR_Terrain8     12900
+#define COLOR_Terrain9     12900
+#define COLOR_UpperSector     8514
+#define COLOR_VFR-Route        0
+#define COLOR_Vectors    5135955
+#define COLOR_Water      8404992

@@ -22,26 +22,34 @@ An explicit source selection overwrites the existing GeoJSON output; official
 source may contain different airports and geometry from a customized checkout.
 No reports, summaries or cached downloads are generated.
 
-Settings/ contains runtime styles, groups, zoom levels, runway settings and
-optional feature-to-toggle-group assignments. Colours.sct contains original native COLOR_* definitions
-plus AVISO palette entries. When external input lacks the AVISO palette entries,
-local definitions supply them; definitions present in the selected source win.
-Local geometry provenance is labeled local, and GitHub provenance names the
-official repository.
+Settings/ is the only place for editable vSMR customization: palettes,
+backgrounds, groups, zoom levels and runway settings. Settings/Colours.sct
+contains palette additions/overrides; the pack's root Colours.sct stays intact.
+Colors in Settings take precedence over the selected pack's native definitions.
 
-## Geometry and identities
+## Official sources are read-only
 
-KMZ is the sole source of polygons and lines. GNG contains only text rows
-(latitude, longitude, label), with filenames selecting the text category.
-KMZ point/text placemarks and GNG polygon/line records are ignored when reading
-older, unsplit external packs. Edit geometry in KMZ and text in GNG; no matching
-copy needs updating. KMZ coordinates, holes and multipart geometry are retained.
-Missing or duplicate native identifiers receive deterministic unique IDs.
+GNG/, KMZ/ and root Colours.sct are based on the official pack at
+[vaccfr commit 7c089a7](https://github.com/vaccfr/France-Ground-Layouts/commit/7c089a7164186c3196dc9a4cb3ca8e8e69df2dc7).
+The sole intentional source exception is LFPO: its obsolete COLOR_Terrain2
+background rectangle is removed from GNG and KMZ. Its previous effective Real
+color (#595E5B) is now REAL_LFPO_BACKGROUND_COLOR in Settings/Colours.sct.
+Preserve this exception when updating the pack.
 
-LFPG arrow toggle assignments in Settings/LFPG.json use `folder:` selectors
-matching a KMZ folder name. New geometry within East/West Arrows inherits the
-corresponding group; unrelated geometry receives no group. Exact feature ID
-assignments are also supported. Styles are inferred without per-feature maps.
+Otherwise, do not reformat coordinates, remove content, rename or reorganize these files,
+or rebuild KMZ archives. Even images and duplicate native representations stay
+as supplied. Update sources only by replacing them with a new official pack.
+
+The converter reads geometry from KMZ and labels from GNG. Airports without
+KMZ geometry use their GNG geometry. GNG geometry is ignored when KMZ supplies
+it, and KMZ point placemarks are ignored, so the two representations do not
+duplicate features in GeoJSON. Both original formats remain stored unchanged.
+Only airports present in the selected pack generate output.
+
+Missing or duplicate feature IDs receive deterministic output IDs without
+writing them back. LFPG arrow groups use KMZ folder selectors in Settings/LFPG.json.
+Conversion writes only GeoJSON; source/settings directories are rejected as
+output destinations. All changes to appearance belong in Settings/.
 
 ## Verification
 
@@ -50,7 +58,7 @@ python Script/verify_converter.py
 python Script/verify_upstream.py
 ```
 
-The full regression check compares generated customized layouts with GeoJSON/.
-The upstream check also works against unmodified official layouts, which need
-still contain GNG geometry and KMZ labels (ignored by the converter), or lack
-committed GeoJSON snapshots.
+The full regression check compares regenerated output with GeoJSON/, verifies
+native geometry/text selection and checks that every source/settings file stays
+byte-identical after conversion. The upstream check validates deterministic
+conversion and independent color controls. Neither check edits the pack.

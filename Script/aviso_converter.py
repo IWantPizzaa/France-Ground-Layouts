@@ -22,10 +22,10 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 GITHUB_URL = 'https://codeload.github.com/vaccfr/France-Ground-Layouts/zip/refs/heads/master'
-COORD = re.compile(r'([NSEW])(\d{2,3})[. :](\d{2})[. :](\d{2}(?:\.\d+)?)')
+COORD = re.compile(r'([NSEW])(\d{2,3})[. :](\d{2})[. :](\d{2}(?:\.\d+)?)', re.IGNORECASE)
 NS = {'k': 'http://www.opengis.net/kml/2.2'}
 DEFAULT_STYLES = {}
-COLOR_TOKEN = r'(?:(?:COLOR_|DARK_|LIGHT_|REAL_)[A-Za-z0-9_]+|BACKGROUND_COLOR|TEXT_COLOR|TEXT_HALO_COLOR)'
+COLOR_TOKEN = r'(?:(?:COLOR_|DARK_|LIGHT_|REAL_)[A-Za-z0-9_-]+|BACKGROUND_COLOR|TEXT_COLOR|TEXT_HALO_COLOR)'
 
 
 def packed(value):
@@ -41,6 +41,7 @@ def decode(data):
 
 def dms(match):
     h, deg, minute, sec = match.groups()
+    h = h.upper()
     fraction_digits = len(sec.partition('.')[2])
     deg, minute, sec = int(deg), int(minute), Decimal(sec)
     # The supplied sector data sometimes uses 60 seconds after rounding.
@@ -55,7 +56,7 @@ def pairs(matches):
         raise ValueError('Unpaired latitude/longitude')
     result = []
     for lat, lon in zip(matches[::2], matches[1::2]):
-        if lat[1] not in 'NS' or lon[1] not in 'EW':
+        if lat[1].upper() not in 'NS' or lon[1].upper() not in 'EW':
             raise ValueError('Expected latitude followed by longitude')
         result.append([dms(lon), dms(lat)])
     return result
@@ -233,13 +234,20 @@ def source_archive(path):
 
 def read_colors(data):
     colors = {}
-    for name, number in re.findall(r'#define\s+(\w+)\s+(\d+)', decode(data)):
+    for name, number in re.findall(r'#define\s+([\w-]+)\s+(\d+)', decode(data)):
         if name in colors:
             raise ValueError('Duplicate color definition: ' + name)
         value = int(number)
         if not 0 <= value <= 0xFFFFFF:
             raise ValueError('Invalid color value: ' + name)
         colors[name] = '#%02X%02X%02X' % (value & 255, (value >> 8) & 255, (value >> 16) & 255)
+    return colors
+
+
+def palette_colors(native=None):
+    """Apply editable vSMR palettes without changing the pack's color definitions."""
+    colors = read_colors((ROOT / 'Colours.sct').read_bytes()) if native is None else dict(native)
+    colors.update(read_colors((ROOT / 'Settings' / 'Colours.sct').read_bytes()))
     return colors
 
 
@@ -274,19 +282,22 @@ def load_source(path):
         airports = assemble_sources(gng, kmz)
     if not gng or not kmz or not extras.get('colors'):
         raise ValueError('Expected GNG/, KMZ/ and a valid Colours.sct')
+    extras['colors'] = palette_colors(extras['colors'])
     return dict(airports=dict(airports), **extras)
 
 
 def assemble_sources(gng, kmz):
-    """KMZ owns surfaces/lines; GNG owns labels, even for unsplit external packs."""
+    """Read KMZ geometry and GNG text; use GNG geometry when no KMZ supplies it."""
     airports = collections.defaultdict(list)
     for _, (code, records) in sorted(kmz.items()):
         if code not in ('LFXX', 'LFMM'):
             airports[code].extend(copy.deepcopy(r) for r in records if r['kind'] != 'label')
+    kmz_geometry = {code for code, records in airports.items() if records}
     for _, (code, records) in sorted(gng.items()):
-        labels = [copy.deepcopy(r) for r in records if r['kind'] == 'label']
-        if labels:
-            airports[code].extend(labels)
+        selected = [copy.deepcopy(r) for r in records
+                    if r['kind'] == 'label' or code not in kmz_geometry]
+        if selected:
+            airports[code].extend(selected)
     for code, records in airports.items():
         seen = set()
         for item in records:
@@ -314,7 +325,7 @@ def coordinates(geometry):
 
 def load_preserved(colors=None):
     if colors is None:
-        colors = read_colors((ROOT / 'Colours.sct').read_bytes())
+        colors = palette_colors()
     folder = ROOT / 'Settings'
     common = json.loads((folder / 'common.json').read_text(encoding='utf-8-sig'))
     def merge(base, changes):
@@ -370,7 +381,7 @@ def label_category(file):
 
 def infer_style(item, doc, colors):
     kind = item['kind']
-    if kind == 'line' and any(part.endswith(('East Arrows', 'West Arrows')) for part in item.get('folder', '').split('/')):
+    if kind == 'line' and any(part.endswith(('East Arrows', 'West Arrows')) for part in [*item.get('folder', '').split('/'), Path(item['file']).stem]):
         suffix = {'COLOR_Centerlines': 'centerline', 'COLOR_TaxiwayGreen': 'green', 'COLOR_TaxiwayBrown': 'brown'}.get(item['color'])
         arrow_style = 'line.ground_layout_arrows.' + (suffix or '')
         if arrow_style in doc['styles']:
@@ -444,7 +455,7 @@ def convert_airport(code, recipe, records, colors):
         if feature_id in excluded:
             continue
         options = {}
-        for folder in item.get('folder', '').split('/'):
+        for folder in [*item.get('folder', '').split('/'), Path(item['file']).stem]:
             options.update(copy.deepcopy(overrides.get('folder:' + folder, {})))
         options.update(copy.deepcopy(overrides.get(feature_id, {})))
         style_id = infer_style(item, doc, colors)
@@ -552,6 +563,15 @@ def choose_source(mode='local'):
 def run(source_path=None, output=None, source_mode='local'):
     start = time.perf_counter()
     output = Path(output) if output is not None else ROOT / 'GeoJSON'
+    source_roots = [ROOT]
+    if isinstance(source_path, (str, Path)) and Path(source_path).is_dir():
+        source_roots.append(Path(source_path))
+    for source_root in source_roots:
+        for name in ('GNG', 'KMZ', 'Settings', 'Colours.sct'):
+            protected = (source_root / name).resolve()
+            destination = output.resolve()
+            if destination == protected or protected in destination.parents or destination in protected.parents:
+                raise ValueError('Output overlaps protected source/settings: ' + str(output))
     say('\n  +----------------------------------------------------------+')
     say('  |                  vSMR AVISO CONVERTER                     |')
     say('  |      France Ground Layouts / GNG and KMZ source      |')
@@ -560,10 +580,7 @@ def run(source_path=None, output=None, source_mode='local'):
     source = choose_source(source_mode) if source_path is None else load_source(source_path)
     require_native_ids(source)
     say('  [2/4] Applying palettes, groups and runtime settings...', '37')
-    palette_colors = read_colors((ROOT / 'Colours.sct').read_bytes())
-    palette_colors.update(source['colors'])
-    source['colors'] = palette_colors
-    saved = load_preserved(palette_colors)
+    saved = load_preserved(source['colors'])
     votes = collections.defaultdict(collections.Counter)
     for recipe in saved['recipes'].values():
         for key, original_style in recipe['document']['styles'].items():
