@@ -169,7 +169,7 @@
 #define REAL_LFPG_POLYGON_STOPBAR                               126       ; #7E0000
 #define REAL_LFPG_POLYGON_TAXIWAYORANGE                         28108     ; #CC6D00
 #define REAL_LFPG_POLYGON_TERRAIN1                              4342359   ; #574242
-#define REAL_LFPO_BACKGROUND_COLOR                              5987929   ; #595E5B
+#define REAL_LFPO_BACKGROUND_COLOR                              6842988   ; #6C6A68
 #define REAL_LFPO_LINE_RUNWAYMARKING                            11776947  ; #B3B3B3
 #define REAL_LFPO_LINE_TAXIWAY                                  3258048   ; #C0B631
 #define REAL_LFPO_LINE_TAXIWAYBLUE                              8404992   ; #004080

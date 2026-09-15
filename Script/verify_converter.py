@@ -31,7 +31,7 @@ def main():
     assert changed_settings['recipes']['LFPG']['document']['metadata']['background_colors']['real'] == '#6F6F6F'
     lfpo = changed_settings['recipes']['LFPO']['document']
     assert lfpo['metadata']['color_palettes'] == ['dark', 'light', 'real']
-    assert lfpo['metadata']['background_colors']['real'] == '#595E5B'
+    assert lfpo['metadata']['background_colors']['real'] == '#6C6A68'
     assert not any(k.startswith('polygon.terrain2.') for k in lfpo['styles'])
     assert not any(r['color'] == 'COLOR_Terrain2' for r in source['airports']['LFPO'])
     for path in (root / 'GNG' / 'LFFF' / 'LFPO').glob('*.txt'):
