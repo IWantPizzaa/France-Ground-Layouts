@@ -39,7 +39,7 @@ kind and label file categories. Geometry roles follow the selected style;
 no per-feature style or rendering overrides are stored or accepted.
 
 GNG, KMZ and native Colours.sct stay as supplied by the official pack, except
-for the approved LFPO background and LFBP reference-image removals documented in
+for the approved LFPO background rectangle removal documented in
 [the converter README](../Script/README.md#official-sources-are-read-only).
 Make appearance changes here, not in the native source files. Geometry is read from KMZ (GNG fallback when
 absent); labels are read from GNG. Keep IDs stable only for

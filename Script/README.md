@@ -31,12 +31,10 @@ Colors in Settings take precedence over the selected pack's native definitions.
 
 GNG/, KMZ/ and root Colours.sct are based on the official pack at
 [vaccfr commit 7c089a7](https://github.com/vaccfr/France-Ground-Layouts/commit/7c089a7164186c3196dc9a4cb3ca8e8e69df2dc7).
-The intentional source exceptions are LFPO and LFBP. For LFPO, its obsolete COLOR_Terrain2
+The sole intentional source exception is LFPO: its obsolete COLOR_Terrain2
 background rectangle is removed from GNG and KMZ. Its Real background is
 set to #6C6A68 through REAL_LFPO_BACKGROUND_COLOR in Settings/Colours.sct.
-For LFBP, four reference screenshots and their GroundOverlay entries are removed
-to keep the KMZ small; its airport geometry is unchanged.
-Preserve these exceptions when updating the pack.
+Preserve this exception when updating the pack.
 
 Otherwise, do not reformat coordinates, remove content, rename or reorganize these files,
 or rebuild KMZ archives. Even images and duplicate native representations stay
