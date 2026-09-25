@@ -30,15 +30,13 @@ Colors in Settings take precedence over the selected pack's native definitions.
 ## Official sources are read-only
 
 GNG/, KMZ/ and root Colours.sct are based on the official pack at
-[vaccfr commit 134b865](https://github.com/vaccfr/France-Ground-Layouts/commit/134b8659885665721f415e1e2bf482f54bf10840).
-The sole intentional source exception is LFPO: its obsolete COLOR_Terrain2
-background rectangle is removed from GNG and KMZ. Its Real background is
-set to #6C6A68 through REAL_LFPO_BACKGROUND_COLOR in Settings/Colours.sct.
-Preserve this exception when updating the pack.
+[vaccfr commit ed923f4](https://github.com/vaccfr/France-Ground-Layouts/commit/ed923f4b8ce11bbf1a0998597fd46595287b4d4c).
+All native source files remain unchanged. The LFPO background rectangle removal
+was already merged upstream in PR #196. LFPO's Real background is configured
+as #6C6A68 in Settings/Colours.sct.
 
-Otherwise, do not reformat coordinates, remove content, rename or reorganize these files,
-or rebuild KMZ archives. Even images and duplicate native representations stay
-as supplied. Update sources only by replacing them with a new official pack.
+Do not reformat coordinates, remove content, rename or reorganize native files,
+or rebuild KMZ archives. Update sources only from the official pack.
 
 The converter reads all geometry and text exclusively from GNG. KMZ files
 remain in the repository for the upstream workflow, but are neither required,
@@ -49,8 +47,7 @@ Only airports with GNG records generate output.
 Feature IDs are deterministic output details and are never written back.
 Optional group assignments use `file:<GNG filename without extension>` or an
 exact feature ID. Groups with no assigned output feature are hidden; objects
-available only in KMZ are not imported. LFPG's East/West arrow groups map directly
-to the two official GNG files through the existing `file:` settings selectors.
+available only in KMZ are not imported.
 Conversion writes only GeoJSON; source/settings directories are rejected as
 output destinations. All changes to appearance belong in Settings/.
 

@@ -33,14 +33,12 @@ The optional `features` object inside each airport JSON contains only group assi
 }
 ```
 
-Only LFPG currently needs the `features` object, for the official East/West arrow GNG files. Empty groups are hidden. Other
+Only LFPG currently needs the `features` object, for optional East/West arrow GNG files. Empty groups are hidden. Other
 features need no entries. Styles are inferred from native color names, geometry
 kind and label file categories. Geometry roles follow the selected style;
 no per-feature style or rendering overrides are stored or accepted.
 
-GNG, KMZ and native Colours.sct stay as supplied by the official pack, except
-for the approved LFPO background rectangle removal documented in
-[the converter README](../Script/README.md#official-sources-are-read-only).
+GNG, KMZ and native Colours.sct remain unchanged from the official pack.
 Make appearance changes here, not in the native source files. Geometry and labels are read exclusively from GNG; KMZ files are ignored. Keep IDs stable only for
 features explicitly assigned to toggle groups. Ordinary feature IDs are an
 output detail, not a mapping that needs manual maintenance. Official GitHub
