@@ -33,7 +33,7 @@ The optional `features` object inside each airport JSON contains only group assi
 }
 ```
 
-Only LFPG currently needs the `features` object, for optional East/West arrow GNG files. Empty groups are hidden. Other
+Only LFPG currently needs the `features` object, for the official East/West arrow GNG files. Empty groups are hidden. Other
 features need no entries. Styles are inferred from native color names, geometry
 kind and label file categories. Geometry roles follow the selected style;
 no per-feature style or rendering overrides are stored or accepted.
