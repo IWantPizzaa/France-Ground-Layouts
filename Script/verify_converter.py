@@ -38,7 +38,7 @@ def main():
         assert not any(r['color'] == 'COLOR_Terrain2' for r in c.parse_gng(path.as_posix(), path.read_bytes()))
     for code, recipe in changed_settings['recipes'].items():
         for mode, color in recipe['document']['metadata']['background_colors'].items():
-            if (code, mode) not in (('LFPG', 'real'), ('LFPO', 'real')):
+            if (code, mode) not in (('LFPG', 'real'), ('LFPO', 'real'), ('LFBO', 'real'), ('LFLL', 'real')):
                 assert color == '#123456', (code, mode)
     text_settings = c.load_settings(dict(source['colors'], TEXT_COLOR='#123456'))
     for recipe in text_settings['recipes'].values():
@@ -61,7 +61,8 @@ def main():
     assert expected_files, 'Generate GeoJSON before running the checks'
     for name, data in expected_files.items():
         doc = json.loads(data)
-        allowed = {'ground-layout-east', 'ground-layout-west'} if name == 'LFPG.geojson' else set()
+        allowed = {'LFPG.geojson': {'ground-layout-east', 'ground-layout-west'},
+                   'LFLL.geojson': {'lfll-distance-labels'}}.get(name, set())
         assert {g['id'] for g in doc.get('vsmr_groups', [])} <= allowed
         for feature in doc['features']:
             assert set(feature['properties'].get('vsmr_group_ids', [])) <= allowed
@@ -91,6 +92,19 @@ def main():
             grouped = [f for f in arrows if group in f['properties']['vsmr_group_ids']]
             assert len(grouped) == 3
             assert {f['properties']['style_id'].rsplit('.', 1)[-1] for f in grouped} == {'centerline', 'brown', 'green'}
+
+        lfll = json.loads(actual_files['LFLL.geojson'])
+        assert 'source_order' not in lfll
+        positions = {name: [i for i, f in enumerate(lfll['features']) if f['properties'].get('source_group') == name]
+                     for name in ('LFLL AVISO', 'LFLL Groundlayout AVISO', 'LFLL Holding points', 'LFLL Gates')}
+        ordered = list(positions.values())
+        assert all(indices for indices in ordered)
+        assert all(max(before) < min(after) for before, after in zip(ordered, ordered[1:]))
+        distances = [f for f in lfll['features'] if 'lfll-distance-labels' in f['properties']['vsmr_group_ids']]
+        assert len(distances) == 9 and all(f['geometry']['type'] == 'Point' for f in distances)
+        for style_id, real_color in [('line.taxiwayblue.004080', '#979BCC'), ('line.taxiwayorange.cc6d00', '#C69A82')]:
+            assert any(f['properties']['style_id'] == style_id for f in lfll['features'])
+            assert lfll['styles'][style_id]['paint']['palette-overrides']['real']['stroke'] == real_color
         # No file from KMZ may be opened, even when present beside the input.
         read_bytes = Path.read_bytes
         def guarded_read(path):

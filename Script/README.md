@@ -24,19 +24,21 @@ No reports, summaries or cached downloads are generated.
 
 Settings/ is the only place for editable vSMR customization: palettes,
 backgrounds, groups, zoom levels and runway settings. Settings/Colours.sct
-contains palette additions/overrides; the pack's root Colours.sct stays intact.
+contains palette additions/overrides; conversion leaves root Colours.sct intact.
 Colors in Settings take precedence over the selected pack's native definitions.
 
 ## Official sources are read-only
 
 GNG/, KMZ/ and root Colours.sct are based on the official pack at
 [vaccfr commit ed923f4](https://github.com/vaccfr/France-Ground-Layouts/commit/ed923f4b8ce11bbf1a0998597fd46595287b4d4c).
-All native source files remain unchanged. The LFPO background rectangle removal
+Conversion leaves all native source files unchanged. The LFPO background rectangle removal
 was already merged upstream in PR #196. LFPO's Real background is configured
 as #6C6A68 in Settings/Colours.sct.
 
-Do not reformat coordinates, remove content, rename or reorganize native files,
-or rebuild KMZ archives. Update sources only from the official pack.
+Local source updates include LFBO gate categories and LFLL geometry/labels imported
+from edited AVISO files. LFLL's KMZ retains its folder structure; new native color
+names describe stand entry lines, surface markings and red taxiway markings.
+Use local mode to retain these additions until they are available upstream.
 
 The converter reads all geometry and text exclusively from GNG. KMZ files
 remain in the repository for the upstream workflow, but are neither required,
