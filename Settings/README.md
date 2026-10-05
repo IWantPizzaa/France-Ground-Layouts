@@ -9,7 +9,7 @@ etc. There are no per-airport folders or separate feature files.
 
 Editable colors are named definitions in `Colours.sct` in this folder, layered over
 the native ../Colours.sct. BACKGROUND_COLOR is the shared
-default; LFBO, LFLL, LFPG and LFPO Real use their own REAL_<ICAO>_BACKGROUND_COLOR.
+default; LFBO, LFLL, LFPG, LFPO and LFSB Real use their own REAL_<ICAO>_BACKGROUND_COLOR.
 TEXT_COLOR and TEXT_HALO_COLOR
 are used only for text. Other roles retain their own color references, even
 when their initial RGB values match. Original COLOR_* names remain compatible
@@ -20,6 +20,13 @@ value match. Separate LIGHT_* entries are retained for distinct overrides.
 
 $ref objects recursively merge local overrides over common settings. Lists
 replace inherited lists.
+
+Real outlines are enabled through `paint.palette-overrides.real.polygon-outline`;
+Dark/Light do not inherit that flag. LFBO outlines grass, hard surfaces and
+runways at width 0.75 and opacity 1. LFSB outlines only grass: its hard surfaces
+and runway style explicitly disable outlines to avoid seams at intersections.
+LFSB keeps its existing widths, opacity and Dark/Light settings. Its Real colors
+use separate `REAL_LFSB_*` roles, including the gray-violet runway color.
 
 The optional `features` object inside each airport JSON contains only group assignments:
 

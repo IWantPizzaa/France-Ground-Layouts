@@ -40,6 +40,10 @@ from edited AVISO files. LFLL's KMZ retains its folder structure; new native col
 names describe stand entry lines, surface markings and red taxiway markings.
 Use local mode to retain these additions until they are available upstream.
 
+LFBO's Real palette includes grass outlines. LFSB has an airport-specific Real
+palette with grass outlines and no outlines on runways or hard surfaces.
+These appearance settings do not modify native GNG/KMZ geometry or Dark/Light.
+
 The converter reads all geometry and text exclusively from GNG. KMZ files
 remain in the repository for the upstream workflow, but are neither required,
 opened nor parsed. Folder inputs may omit KMZ entirely, and any KMZ entries in
@@ -64,3 +68,5 @@ The full regression check compares regenerated output with GeoJSON/, verifies
 GNG geometry/text selection and KMZ isolation and checks that every source/settings file stays
 byte-identical after conversion. The upstream check validates deterministic
 conversion and independent color controls. Neither check edits the pack.
+Palette regressions also check LFBO grass outlines, LFSB runway/apron outline
+suppression and isolation of airport-specific Real color edits.

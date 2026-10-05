@@ -38,8 +38,26 @@ def main():
         assert not any(r['color'] == 'COLOR_Terrain2' for r in c.parse_gng(path.as_posix(), path.read_bytes()))
     for code, recipe in changed_settings['recipes'].items():
         for mode, color in recipe['document']['metadata']['background_colors'].items():
-            if (code, mode) not in (('LFPG', 'real'), ('LFPO', 'real'), ('LFBO', 'real'), ('LFLL', 'real')):
+            if (code, mode) not in (('LFPG', 'real'), ('LFPO', 'real'), ('LFBO', 'real'), ('LFLL', 'real'), ('LFSB', 'real')):
                 assert color == '#123456', (code, mode)
+    lfsb = changed_settings['recipes']['LFSB']['document']
+    assert lfsb['metadata']['color_palettes'] == ['dark', 'light', 'real']
+    assert lfsb['metadata']['background_colors']['real'] == '#252B37'
+    lfbo_grass = changed_settings['recipes']['LFBO']['document']['styles']['polygon.grassurface.00512f']['paint']
+    assert lfbo_grass['stroke-width'] == 0.75 and lfbo_grass['stroke-opacity'] == 1
+    assert lfbo_grass['palette-overrides']['real'] == {'fill': '#434C51', 'stroke': '#5B656B', 'polygon-outline': True}
+    assert 'polygon-outline' not in lfbo_grass and 'polygon-outline' not in lfbo_grass['palette-overrides']['light']
+    outlined_grass = lfsb['styles']['polygon.grassurface.00512f']['paint']['palette-overrides']['real']
+    assert outlined_grass == {'fill': '#252B37', 'stroke': '#495260', 'polygon-outline': True}
+    for key in ('polygon.hardsurface4.969393', 'polygon.hardsurface3.8a807f', 'polygon.hardsurface2.595e5b', 'polygon.runwayconcrete.555555'):
+        assert lfsb['styles'][key]['paint']['palette-overrides']['real']['polygon-outline'] is False
+    assert lfsb['styles']['polygon.runwayconcrete.555555']['paint']['palette-overrides']['real']['fill'] == '#62687C'
+    # Editing this airport's Real surface color must not change Dark/Light or a different role.
+    saved_palette = c.load_settings(source['colors'])['recipes']['LFSB']['document']
+    edited_palette = c.load_settings(dict(source['colors'], REAL_LFSB_POLYGON_RUNWAYCONCRETE='#123456'))['recipes']['LFSB']['document']
+    expected_palette = copy.deepcopy(saved_palette)
+    expected_palette['styles']['polygon.runwayconcrete.555555']['paint']['palette-overrides']['real']['fill'] = '#123456'
+    assert edited_palette == expected_palette
     text_settings = c.load_settings(dict(source['colors'], TEXT_COLOR='#123456'))
     for recipe in text_settings['recipes'].values():
         for style in recipe['document']['styles'].values():
@@ -94,6 +112,10 @@ def main():
             assert {f['properties']['style_id'].rsplit('.', 1)[-1] for f in grouped} == {'centerline', 'brown', 'green'}
 
         lfll = json.loads(actual_files['LFLL.geojson'])
+        for code, counts in [('LFBO', (471, 17)), ('LFLL', (420, 21)), ('LFSB', (235, 13))]:
+            airport = json.loads(actual_files[code + '.geojson'])
+            assert (len(airport['features']), len(airport['styles'])) == counts
+            assert all(style['feature_count'] > 0 for style in airport['styles'].values())
         assert 'source_order' not in lfll
         positions = {name: [i for i, f in enumerate(lfll['features']) if f['properties'].get('source_group') == name]
                      for name in ('LFLL AVISO', 'LFLL Groundlayout AVISO', 'LFLL Holding points', 'LFLL Gates')}
