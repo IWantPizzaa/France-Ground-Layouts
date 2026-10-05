@@ -86,9 +86,13 @@
       "paint": {
         "palette-overrides": {
           "real": {
-            "fill": "REAL_LFBO_POLYGON_GRASSURFACE"
+            "fill": "REAL_LFBO_POLYGON_GRASSURFACE",
+            "stroke": "REAL_LFBO_POLYGON_GRASSURFACE_OUTLINE",
+            "polygon-outline": true
           }
-        }
+        },
+        "stroke-width": 0.75,
+        "stroke-opacity": 1
       }
     },
     "polygon.hardsurface4.969393": {
