@@ -24,25 +24,52 @@ No reports, summaries or cached downloads are generated.
 
 Settings/ is the only place for editable vSMR customization: palettes,
 backgrounds, groups, zoom levels and runway settings. Settings/Colours.sct
-contains palette additions/overrides; the pack's root Colours.sct stays intact.
+contains palette additions/overrides; conversion leaves root Colours.sct intact.
 Colors in Settings take precedence over the selected pack's native definitions.
 
 ## Official sources are read-only
 
 GNG/, KMZ/ and root Colours.sct are based on the official pack at
 [vaccfr commit ed923f4](https://github.com/vaccfr/France-Ground-Layouts/commit/ed923f4b8ce11bbf1a0998597fd46595287b4d4c).
-All native source files remain unchanged. The LFPO background rectangle removal
+Conversion leaves all native source files unchanged. The LFPO background rectangle removal
 was already merged upstream in PR #196. LFPO's Real background is configured
 as #6C6A68 in Settings/Colours.sct.
 
-Do not reformat coordinates, remove content, rename or reorganize native files,
-or rebuild KMZ archives. Update sources only from the official pack.
+Local source updates include LFBO gate categories, LFLL geometry/labels imported
+from edited AVISO files, and missing geometry restored from official KMZ into
+18 airport GNG sources. Existing GNG text and geometry are preserved. Lille
+uses the more detailed LFQQ Lille V3 geometry instead of overlaying two versions;
+its gate and taxiway text is unchanged. LFLL's KMZ retains its folder structure; new native color
+names describe stand entry lines, surface markings and red taxiway markings.
+Use local mode to retain these additions until they are available upstream.
+
+LFBO's Real palette includes grass outlines. LFSB has an airport-specific Real
+palette with grass outlines and no outlines on runways or hard surfaces.
+These appearance settings do not modify native GNG/KMZ geometry or Dark/Light.
 
 The converter reads all geometry and text exclusively from GNG. KMZ files
 remain in the repository for the upstream workflow, but are neither required,
 opened nor parsed. Folder inputs may omit KMZ entirely, and any KMZ entries in
 ZIP inputs are ignored. Colours.sct and Settings supply rendering configuration.
 Only airports with GNG records generate output.
+
+KMZ archives are based on official commit
+[2f61d769](https://github.com/vaccfr/France-Ground-Layouts/commit/2f61d769d970e0574d37feccbbc51dc4b234cd8e)
+with geometry changes limited to 10 archives containing additions or surface
+updates. Native folders, styles and bundled assets are retained.
+52 archives are byte-identical to upstream; coordinate rounding, formatting,
+style aliases and line packaging alone do not warrant rewriting them.
+LFRB and the LFXX reference template receive only Point annotation removal,
+preserving their geometry and other XML content. No KMZ contains Point text
+annotations; text remains in GNG only. The 10 changed geometry archives use
+current GNG coordinates and native color tokens. Archives previously emptied
+or reduced to linework are restored byte-for-byte from upstream. Their missing
+polygons and line segments are imported into GNG using native semantic color
+roles and the pack's three decimal places of DMS seconds. Existing GNG geometry
+is retained rather than deleting KMZ-only geometry to force equality. LFPG's
+60m limit lines have separate GNG files; East/West Arrow files are unchanged.
+The regional coastline and reference template have no airport GNG
+counterparts; their geometry is retained and checked for absence of text.
 
 Feature IDs are deterministic output details and are never written back.
 Optional group assignments use `file:<GNG filename without extension>` or an
@@ -56,9 +83,32 @@ output destinations. All changes to appearance belong in Settings/.
 ```powershell
 python Script/verify_converter.py
 python Script/verify_upstream.py
+python Script/verify_kmz_geometry.py
 ```
 
 The full regression check compares regenerated output with GeoJSON/, verifies
 GNG geometry/text selection and KMZ isolation and checks that every source/settings file stays
 byte-identical after conversion. The upstream check validates deterministic
 conversion and independent color controls. Neither check edits the pack.
+Palette regressions also check LFBO grass outlines, LFSB runway/apron outline
+suppression and isolation of airport-specific Real color edits.
+
+The KMZ check exports geometry to temporary GNG and parses it back. Updated
+geometry archives match coordinates, native colors and multiplicities exactly.
+Preserved upstream geometry is compared at native GNG coordinate precision
+(three decimal places of DMS seconds, allowing half a unit plus floating-point
+rounding). Every geometry item in the selected airport KMZ must be covered by
+GNG. Additional geometry already present in GNG is allowed and reported; the
+check does not claim full inventory equality for those airports. The untouched
+LFQQ standard archive is checked for its own round trip, separately from the
+selected V3 source. Original style aliases and repeated
+line segments do not affect this spatial check; polygon counts are preserved.
+The output reports exact matches separately from native-precision matches.
+Polygon starting vertices/winding and line direction/packaging do not affect
+geometry. The check does not reproduce comments, whitespace, file splits or GNG
+text. Repeated directed segments are exported into separate temporary GNG files
+to preserve multiplicities where the exact comparison applies. All 64 KMZ are
+checked for KML parsing, complete active style references and absence of Point
+annotations. The official LFPG archive's unbound `ns1:link` prefix is interpreted
+using its declared Atom namespace in memory; its bytes are left unchanged.
+Unused legacy styles are left untouched.
