@@ -50,6 +50,16 @@ opened nor parsed. Folder inputs may omit KMZ entirely, and any KMZ entries in
 ZIP inputs are ignored. Colours.sct and Settings supply rendering configuration.
 Only airports with GNG records generate output.
 
+KMZ archives were refreshed from official commit
+[2f61d769](https://github.com/vaccfr/France-Ground-Layouts/commit/2f61d769d970e0574d37feccbbc51dc4b234cd8e)
+and aligned to this checkout's GNG geometry. Native folders, styles and bundled
+assets are retained. Point annotations/descriptions are removed and all labels
+are disabled; text remains in GNG only. Airport KMZ geometry uses the exact
+coordinates and native color tokens of current GNG, including its omissions.
+LFLG, LFMU, LFPM and LFRK currently have text-only GNG, so their KMZ contain no
+geometry. The regional coastline and reference template have no airport GNG
+counterparts; their geometry is retained and checked for absence of text.
+
 Feature IDs are deterministic output details and are never written back.
 Optional group assignments use `file:<GNG filename without extension>` or an
 exact feature ID. Groups with no assigned output feature are hidden; objects
@@ -62,6 +72,7 @@ output destinations. All changes to appearance belong in Settings/.
 ```powershell
 python Script/verify_converter.py
 python Script/verify_upstream.py
+python Script/verify_kmz_geometry.py
 ```
 
 The full regression check compares regenerated output with GeoJSON/, verifies
@@ -70,3 +81,13 @@ byte-identical after conversion. The upstream check validates deterministic
 conversion and independent color controls. Neither check edits the pack.
 Palette regressions also check LFBO grass outlines, LFSB runway/apron outline
 suppression and isolation of airport-specific Real color edits.
+
+The KMZ check exports geometry to temporary GNG and parses it back. Coordinates,
+native colors and geometry multiplicities must match exactly, without a spatial
+tolerance. Polygon starting vertices/winding and line direction/packaging do
+not affect the geometric comparison. The check does not reproduce comments,
+whitespace, file splits or GNG text; it checks geometry, not byte-identical source
+formatting. Repeated directed segments are exported into separate temporary
+GNG files to preserve multiplicities despite native per-file deduplication.
+All 64 KMZ are checked for
+valid XML, complete style references and absence of text annotations.
