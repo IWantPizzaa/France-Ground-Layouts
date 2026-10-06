@@ -50,6 +50,7 @@ On Windows, double-click **Script/Convert AVISO.cmd** and choose:
 
 1. **Local** (default): use this checkout's GNG and Colours.sct.
 2. **Official GitHub**: download original source from vaccfr/France-Ground-Layouts.
+3. **QGIS → GeoJSON**: export saved edits from the complete LFXX project or one airport project.
 
 Python 3.10+ is required. Conversion writes GeoJSON into `GeoJSON/`. No reports or
 summaries are produced. An explicit GitHub failure is reported; it does not
@@ -59,3 +60,18 @@ silently switch to different source data.
 are customized in Settings/Colours.sct over the native Colours.sct. Text/background defaults are shared; unrelated
 geometry roles remain independently editable even when RGB values match.
 See [converter usage](Script/README.md) and [runtime settings](Settings/README.md).
+
+## QGIS projects
+
+`QGIS/` contains the complete **LFXX.qgz** project, 160 individual airport
+projects in `Aeroports/`, and their shared **AVISO.gpkg** data. These projects
+come directly from the final vSMR GeoJSON and use Real palettes where available,
+otherwise Light. The requested 12 background rectangles and the LFMM regional
+coastline are excluded. See [QGIS editing and export](QGIS/README.md).
+
+To export saved QGIS edits without changing native sources:
+
+```powershell
+python Script/aviso_converter.py --qgis
+python Script/aviso_converter.py --qgis "QGIS/Aeroports/LFPG.qgz"
+```

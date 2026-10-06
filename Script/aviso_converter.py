@@ -490,7 +490,7 @@ def run(source_path=None, output=None, source_mode='local'):
     if isinstance(source_path, (str, Path)) and Path(source_path).is_dir():
         source_roots.append(Path(source_path))
     for source_root in source_roots:
-        for name in ('GNG', 'KMZ', 'Settings', 'Colours.sct'):
+        for name in ('GNG', 'KMZ', 'Settings', 'QGIS', 'Colours.sct'):
             protected = (source_root / name).resolve()
             destination = output.resolve()
             if destination == protected or protected in destination.parents or destination in protected.parents:
@@ -550,8 +550,16 @@ if __name__ == '__main__':
         inputs.add_argument('--local', action='store_true', help='Convert this checkout before committing local source edits')
         inputs.add_argument('--source', type=Path, help='Convert an explicit repository folder or ZIP')
         inputs.add_argument('--github', action='store_true', help='Download original data from vaccfr/France-Ground-Layouts')
+        inputs.add_argument('--qgis', nargs='?', type=Path, const=ROOT / 'QGIS' / 'LFXX.qgz',
+                            help='Export the bundled QGIS project, an airport project, or a GeoPackage to AVISO GeoJSON')
+        parser.add_argument('--output', type=Path, help='GeoJSON output directory (default: GeoJSON/)')
         arguments = parser.parse_args()
-        run(ROOT if arguments.local else arguments.source, source_mode='github' if arguments.github else 'local')
+        if arguments.qgis is not None:
+            from qgis_converter import run as run_qgis
+            run_qgis(arguments.qgis, arguments.output, log=say)
+        else:
+            run(ROOT if arguments.local else arguments.source, output=arguments.output,
+                source_mode='github' if arguments.github else 'local')
     except Exception as error:
         say('\n  CONVERSION FAILED: ' + str(error), '91')
         traceback.print_exc()

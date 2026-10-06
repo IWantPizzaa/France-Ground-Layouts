@@ -23,14 +23,22 @@ if ($null -eq $converterPython) {
     return
 }
 Write-Host ''
-Write-Host '  AVISO SOURCE' -ForegroundColor Cyan
+Write-Host '  AVISO CONVERSION' -ForegroundColor Cyan
 Write-Host '  [1] Local GNG / Colours.sct (default)'
 Write-Host '  [2] Original official GitHub repository'
+Write-Host '  [3] QGIS projects -> AVISO GeoJSON'
 do {
-    $sourceChoice = Read-Host '  Choose 1 or 2 (Enter = local)'
-} while ($sourceChoice -notin @('', '1', '2'))
+    $sourceChoice = Read-Host '  Choose 1, 2 or 3 (Enter = local)'
+} while ($sourceChoice -notin @('', '1', '2', '3'))
 $sourceArgs = @('--local')
 if ($sourceChoice -eq '2') { $sourceArgs = @('--github') }
+if ($sourceChoice -eq '3') {
+    Write-Host '  Enter = all airports from QGIS/LFXX.qgz.' -ForegroundColor Cyan
+    Write-Host '  Or enter the path to one saved airport project or AVISO.gpkg.'
+    $qgisPath = (Read-Host '  QGIS input').Trim().Trim('"')
+    $sourceArgs = @('--qgis')
+    if ($qgisPath) { $sourceArgs += $qgisPath }
+}
 & $converterPython @converterArgs (Join-Path $PSScriptRoot 'aviso_converter.py') @sourceArgs
 if ($LASTEXITCODE -ne 0) {
     Write-Host 'Conversion did not complete. See the error above.' -ForegroundColor Red

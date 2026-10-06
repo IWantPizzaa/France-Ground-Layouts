@@ -21,3 +21,4 @@ jobs:
       - run: python Script/verify_converter.py
       - run: python Script/verify_upstream.py
       - run: python Script/verify_kmz_geometry.py
+      - run: python Script/verify_qgis_converter.py

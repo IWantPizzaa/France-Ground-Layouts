@@ -1,7 +1,7 @@
 # AVISO converter
 
 Double-click **Convert AVISO.cmd** on Windows. Select local source (Enter/1) or
-the original official GitHub source (2). Python 3.10+ is required.
+the original official GitHub source (2), or QGIS → GeoJSON (3). Python 3.10+ is required.
 
 For unattended conversion:
 
@@ -9,6 +9,9 @@ For unattended conversion:
 python Script/aviso_converter.py --local
 python Script/aviso_converter.py --github
 python Script/aviso_converter.py --source "path/to/folder-or.zip"
+python Script/aviso_converter.py --qgis
+python Script/aviso_converter.py --qgis "QGIS/Aeroports/LFPG.qgz"
+python Script/aviso_converter.py --qgis "QGIS/AVISO.gpkg" --output "path/to/GeoJSON"
 ```
 
 No arguments means local source; it never contacts GitHub. Explicit GitHub
@@ -21,6 +24,22 @@ GeoJSON/ is generated output. All products are validated before writing files.
 An explicit source selection overwrites the existing GeoJSON output; official
 source may contain different airports and geometry from a customized checkout.
 No reports, summaries or cached downloads are generated.
+
+## QGIS → GeoJSON
+
+Option 3 exports the saved **QGIS/LFXX.qgz** project by default. An explicit
+airport `.qgz`/`.qgs` exports that airport only; the bundled GeoPackage exports
+all airports. Geometry and editable attributes come from the saved QGIS layers.
+Original AVISO styles, palettes, groups and metadata are retained, with bounds
+and feature counts recalculated. The exporter validates every airport before
+writing and preserves unrelated GeoJSON files when exporting one airport.
+
+This mode uses Python's standard library and does not require an installed QGIS
+Python environment. Input layers must be GeoPackages created by the AVISO QGIS
+workflow and retain EPSG:4326 geometry and their AVISO attribute fields. Save
+layer edits and the QGIS project before exporting. Local/GitHub conversion
+continues to use GNG; QGIS conversion does not read or modify native sources.
+See [the QGIS editing guide](../QGIS/README.md).
 
 Settings/ is the only place for editable vSMR customization: palettes,
 backgrounds, groups, zoom levels and runway settings. Settings/Colours.sct
@@ -73,6 +92,7 @@ output destinations. All changes to appearance belong in Settings/.
 python Script/verify_converter.py
 python Script/verify_upstream.py
 python Script/verify_kmz_geometry.py
+python Script/verify_qgis_converter.py
 ```
 
 The full regression check compares regenerated output with GeoJSON/, verifies

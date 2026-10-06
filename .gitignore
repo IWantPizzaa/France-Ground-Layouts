@@ -2,3 +2,6 @@ __pycache__/
 *.py[cod]
 *.tmp
 Input/
+*.gpkg-wal
+*.gpkg-shm
+*.qgz~
